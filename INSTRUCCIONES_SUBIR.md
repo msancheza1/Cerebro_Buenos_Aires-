@@ -1,7 +1,7 @@
 # Cómo subir Cerebro Buenos Aires a GitHub
 
 El repo git ya está inicializado y con el commit hecho. Repositorio destino:
-**https://github.com/juanjosediazrodriguez/Cerebro_BA.git**
+**https://github.com/msancheza1/Cerebro_Buenos_Aires-.git**
 
 > Nota: no se pudo hacer el push desde el entorno de Kiro porque el conector de GitHub
 > de la sesión no tiene una identidad válida (todas las URLs de github.com se redirigen
@@ -12,7 +12,7 @@ El repo git ya está inicializado y con el commit hecho. Repositorio destino:
 
 ```bash
 cd cerebro-buenos-aires
-git remote add origin https://github.com/juanjosediazrodriguez/Cerebro_BA.git  # si ya existe: git remote set-url origin ...
+git remote add origin https://github.com/msancheza1/Cerebro_Buenos_Aires-.git  # si ya existe: git remote set-url origin ...
 git branch -M main
 git push -u origin main
 ```
@@ -32,7 +32,7 @@ Se generó `Cerebro_BA.bundle` (carpeta padre del proyecto). Con él:
 ```bash
 git clone Cerebro_BA.bundle Cerebro_BA
 cd Cerebro_BA
-git remote set-url origin https://github.com/juanjosediazrodriguez/Cerebro_BA.git
+git remote set-url origin https://github.com/msancheza1/Cerebro_Buenos_Aires-.git
 git push -u origin main
 ```
 
