@@ -1,0 +1,11 @@
+# artefactos derivados y binarios (se regeneran con el pipeline)
+*.sqlite
+*.sqlite-wal
+*.sqlite-shm
+lakehouse/ducklake_data/
+lakehouse/iceberg_warehouse/
+lakehouse/catalog.ducklake*
+__pycache__/
+*.pyc
+.venv/
+.python-version

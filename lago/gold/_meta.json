@@ -1,0 +1,52 @@
+{
+  "generado": "2026-09-25T14:39:12",
+  "motor": "sqlite",
+  "estado": "verificado",
+  "indicadores": [
+    "estaciones_ecobici",
+    "km_ciclovias",
+    "espacios_verdes",
+    "m2_espacios_verdes",
+    "hospitales"
+  ],
+  "publicables": {
+    "ecobici": true,
+    "ciclovias": true,
+    "espacios_verdes": true,
+    "hospitales": true
+  },
+  "fuentes": {
+    "ecobici": {
+      "fuente": "Buenos Aires Data",
+      "organismo": "Secretaría de Transporte y Obras Públicas (GCBA)",
+      "url": "https://data.buenosaires.gob.ar/dataset/estaciones-bicicletas-publicas",
+      "licencia": "CC-BY",
+      "_origen": "semilla_demo",
+      "fecha_dato": "2026-09-25T14:39:11"
+    },
+    "ciclovias": {
+      "fuente": "Buenos Aires Data",
+      "organismo": "Secretaría de Transporte y Obras Públicas (GCBA)",
+      "url": "https://data.buenosaires.gob.ar/dataset/ciclovias",
+      "licencia": "CC-BY",
+      "_origen": "semilla_demo",
+      "fecha_dato": "2026-09-25T14:39:11"
+    },
+    "espacios_verdes": {
+      "fuente": "Buenos Aires Data",
+      "organismo": "Ministerio de Espacio Público e Higiene Urbana (GCBA)",
+      "url": "https://data.buenosaires.gob.ar/dataset/espacios-verdes",
+      "licencia": "CC-BY",
+      "_origen": "semilla_demo",
+      "fecha_dato": "2026-09-25T14:39:11"
+    },
+    "hospitales": {
+      "fuente": "Buenos Aires Data",
+      "organismo": "Ministerio de Salud (GCBA)",
+      "url": "https://data.buenosaires.gob.ar/dataset/hospitales",
+      "licencia": "CC-BY",
+      "_origen": "semilla_demo",
+      "fecha_dato": "2026-09-25T14:39:11"
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "dominio": "ecobici",
+  "fuente": "Buenos Aires Data",
+  "organismo": "Secretaría de Transporte y Obras Públicas (GCBA)",
+  "url": "https://data.buenosaires.gob.ar/dataset/estaciones-bicicletas-publicas",
+  "licencia": "CC-BY",
+  "formato": "csv",
+  "fecha_ingesta": "2026-09-25T14:39:11",
+  "herramienta": "semilla",
+  "_origen": "semilla_demo",
+  "filas": 300
+}

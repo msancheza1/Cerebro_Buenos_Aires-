@@ -1,0 +1,36 @@
+id,nombre,tipo,comuna,direccion,lat,lon
+1,Hospital de Emergencias 1,hospital_general,1,Calle 4436,-34.579922,-58.436504
+2,Hospital de Ninos 2,hospital_especializado,6,Calle 7268,-34.645999,-58.478504
+3,Hospital Materno 3,hospital_general,1,Calle 6977,-34.698079,-58.426465
+4,Hospital de Emergencias 4,hospital_especializado,2,Calle 3803,-34.691516,-58.386806
+5,Hospital de Emergencias 5,hospital_general,2,Calle 8555,-34.531065,-58.425198
+6,Hospital General 6,hospital_especializado,7,Calle 6505,-34.645603,-58.335877
+7,Hospital de Agudos 7,hospital_especializado,6,Calle 288,-34.695934,-58.509609
+8,Hospital General 8,hospital_general,11,Calle 1799,-34.550002,-58.425912
+9,Hospital General 9,hospital_general,7,Calle 6014,-34.678598,-58.507038
+10,Hospital de Emergencias 10,hospital_general,8,Calle 6947,-34.673869,-58.356196
+11,Hospital de Ninos 11,hospital_especializado,1,Calle 9860,-34.690133,-58.507442
+12,Hospital de Ninos 12,hospital_general,5,Calle 7062,-34.693865,-58.397197
+13,Hospital de Emergencias 13,hospital_general,3,Calle 65,-34.664785,-58.51846
+14,Hospital de Ninos 14,hospital_general,3,Calle 2366,-34.622244,-58.391177
+15,Hospital Materno 15,hospital_general,6,Calle 9030,-34.662768,-58.439679
+16,Hospital Oftalmologico 16,hospital_general,1,Calle 8781,-34.604397,-58.529549
+17,Hospital de Emergencias 17,hospital_general,1,Calle 2415,-34.594141,-58.437331
+18,Hospital de Ninos 18,hospital_especializado,15,Calle 5519,-34.605249,-58.356015
+19,Hospital de Emergencias 19,hospital_general,10,Calle 3893,-34.691444,-58.364876
+20,Hospital General 20,hospital_general,1,Calle 7277,-34.698329,-58.46804
+21,Hospital de Emergencias 21,hospital_especializado,3,Calle 2167,-34.675041,-58.520527
+22,Hospital de Emergencias 22,hospital_especializado,4,Calle 1614,-34.611972,-58.506472
+23,Hospital Materno 23,hospital_especializado,9,Calle 3257,-34.581244,-58.336515
+24,Hospital de Agudos 24,hospital_especializado,12,Calle 2536,-34.681018,-58.497534
+25,Hospital de Emergencias 25,hospital_especializado,12,Calle 3506,-34.607902,-58.451843
+26,Hospital Oftalmologico 26,hospital_especializado,5,Calle 2124,-34.559432,-58.337689
+27,Hospital de Emergencias 27,hospital_general,7,Calle 5864,-34.680744,-58.49943
+28,Hospital General 28,hospital_especializado,5,Calle 7588,-34.651739,-58.470668
+29,Hospital de Agudos 29,hospital_general,14,Calle 2626,-34.568475,-58.392731
+30,Hospital Oftalmologico 30,hospital_especializado,15,Calle 9192,-34.611642,-58.501222
+31,Hospital de Emergencias 31,hospital_general,3,Calle 6420,-34.617382,-58.44244
+32,Hospital de Emergencias 32,hospital_especializado,13,Calle 1665,-34.625074,-58.469119
+33,Hospital de Ninos 33,hospital_especializado,1,Calle 1584,-34.664853,-58.399254
+34,Hospital de Emergencias 34,hospital_general,9,Calle 9377,-34.608331,-58.507582
+35,Hospital Materno 35,hospital_especializado,6,Calle 2698,-34.560837,-58.47468

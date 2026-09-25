@@ -1,0 +1,12 @@
+{
+  "dominio": "hospitales",
+  "fuente": "Buenos Aires Data",
+  "organismo": "Ministerio de Salud (GCBA)",
+  "url": "https://data.buenosaires.gob.ar/dataset/hospitales",
+  "licencia": "CC-BY",
+  "formato": "csv",
+  "fecha_ingesta": "2026-09-25T14:39:11",
+  "herramienta": "semilla",
+  "_origen": "semilla_demo",
+  "filas": 35
+}

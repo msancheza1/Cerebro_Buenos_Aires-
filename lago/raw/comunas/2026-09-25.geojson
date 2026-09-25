@@ -1,0 +1,216 @@
+{
+  "type": "FeatureCollection",
+  "_origen": "semilla_demo",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "comuna": 1,
+        "nombre": "Comuna 1"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.501319,
+          -34.586755
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "comuna": 2,
+        "nombre": "Comuna 2"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.369273,
+          -34.575159
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "comuna": 3,
+        "nombre": "Comuna 3"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.446949,
+          -34.585447
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "comuna": 4,
+        "nombre": "Comuna 4"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.412513,
+          -34.683686
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "comuna": 5,
+        "nombre": "Comuna 5"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.386909,
+          -34.626102
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "comuna": 6,
+        "nombre": "Comuna 6"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.424771,
+          -34.652173
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "comuna": 7,
+        "nombre": "Comuna 7"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.379009,
+          -34.685663
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "comuna": 8,
+        "nombre": "Comuna 8"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.505503,
+          -34.692606
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "comuna": 9,
+        "nombre": "Comuna 9"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.527714,
+          -34.543634
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "comuna": 10,
+        "nombre": "Comuna 10"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.443689,
+          -34.609877
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "comuna": 11,
+        "nombre": "Comuna 11"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.498792,
+          -34.634355
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "comuna": 12,
+        "nombre": "Comuna 12"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.519832,
+          -34.648078
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "comuna": 13,
+        "nombre": "Comuna 13"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.449314,
+          -34.689324
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "comuna": 14,
+        "nombre": "Comuna 14"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.43063,
+          -34.592703
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "comuna": 15,
+        "nombre": "Comuna 15"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.476406,
+          -34.625965
+        ]
+      }
+    }
+  ]
+}
