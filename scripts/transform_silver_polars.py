@@ -16,9 +16,7 @@ import glob
 import sys
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parents[1]
-RAW = ROOT / "lago" / "raw"
-SILVER = ROOT / "lago" / "silver"
+from pipeline_common import RAW, SILVER
 LAT_MIN, LAT_MAX = -34.71, -34.52
 LON_MIN, LON_MAX = -58.54, -58.33
 

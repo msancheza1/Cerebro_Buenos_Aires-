@@ -1,154 +1,152 @@
 #!/usr/bin/env python3
-"""
-Tramo GOLD — SILVER -> indicadores por comuna (lago/gold).
-
-Solo publica dominios marcados "publicable": true en lago/silver/_verificacion.json.
-"Si falla, no se publica."
-
-Motor de consulta (dos herramientas, requisito del taller):
-  A) SQLite (biblioteca estándar de Python)  -> corre en el sandbox
-  B) DuckDB (scripts/query_duckdb.py)         -> documentada (mismas queries)
-Decisión en la bitácora: DuckDB para analítica sobre Parquet; SQLite como plan B
-sin dependencias (el que corre aquí).
-
-Construye:
-  - lago/gold/indicadores_por_comuna.csv   (una fila por comuna con todos los indicadores)
-  - lago/gold/<indicador>.csv              (uno por indicador, para el dashboard)
-  - lago/gold/_meta.json                   (fuentes + fecha + estado verificado)
-  - lago/gold/cerebro.sqlite               (base consultable)
-
-Uso:
-    python scripts/build_gold.py
-"""
+"""Construye GOLD sólo desde un lote SILVER completo, vigente y verificado."""
 from __future__ import annotations
+
 import csv
 import datetime as dt
 import json
+import shutil
 import sqlite3
-import sys
+import tempfile
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parents[1]
-SILVER = ROOT / "lago" / "silver"
-GOLD = ROOT / "lago" / "gold"
-COMUNAS = list(range(1, 16))
+from pipeline_common import GOLD, REQUIRED_DOMAINS, ROOT, SILVER, atomic_write_text, replace_directory, sha256_file
+
+COMUNAS = tuple(range(1, 16))
 
 
-def _verificacion() -> dict:
-    p = SILVER / "_verificacion.json"
-    if not p.exists():
-        print("[!] No existe _verificacion.json. Corré scripts/verify.py primero.", file=sys.stderr)
-        return {}
-    return json.loads(p.read_text(encoding="utf-8")).get("resultado", {})
+def _verification() -> dict:
+    path = SILVER / "_verificacion.json"
+    if not path.exists():
+        raise ValueError("falta _verificacion.json; ejecutá verify.py")
+    verification = json.loads(path.read_text(encoding="utf-8"))
+    if verification.get("quality_status") != "verified":
+        raise ValueError("la verificación no habilitó este lote")
+    results = verification.get("resultado", {})
+    if set(results) != set(REQUIRED_DOMAINS):
+        raise ValueError("el reporte no contiene exactamente todos los dominios requeridos")
+    for domain in REQUIRED_DOMAINS:
+        result = results[domain]
+        silver_path = SILVER / f"{domain}.csv"
+        if not result.get("publicable"):
+            raise ValueError(f"{domain} no es publicable")
+        meta_path = SILVER / f"{domain}.meta.json"
+        if not silver_path.exists() or result.get("sha256") != sha256_file(silver_path):
+            raise ValueError(f"{domain} cambió después de ser verificado")
+        if not meta_path.exists() or result.get("meta_sha256") != sha256_file(meta_path):
+            raise ValueError(f"la procedencia de {domain} cambió después de ser verificada")
+    return verification
 
 
-def _publicable(dominio: str, verif: dict) -> bool:
-    return verif.get(dominio, {}).get("publicable", False)
-
-
-def _cargar_silver(con: sqlite3.Connection, dominio: str):
-    p = SILVER / f"{dominio}.csv"
-    with p.open(encoding="utf-8") as f:
-        reader = csv.reader(f)
-        cols = next(reader)
+def _load_silver(connection: sqlite3.Connection, domain: str) -> None:
+    if domain not in REQUIRED_DOMAINS:
+        raise ValueError(f"dominio SQL no permitido: {domain}")
+    path = SILVER / f"{domain}.csv"
+    with path.open(encoding="utf-8") as stream:
+        reader = csv.reader(stream)
+        columns = next(reader)
         rows = list(reader)
-    con.execute(f"DROP TABLE IF EXISTS {dominio}")
-    con.execute(f"CREATE TABLE {dominio} ({', '.join(c + ' TEXT' for c in cols)})")
-    ph = ", ".join("?" for _ in cols)
-    con.executemany(f"INSERT INTO {dominio} VALUES ({ph})", rows)
-    con.commit()
+    connection.execute(f"CREATE TABLE {domain} ({', '.join(column + ' TEXT' for column in columns)})")
+    placeholders = ", ".join("?" for _ in columns)
+    connection.executemany(f"INSERT INTO {domain} VALUES ({placeholders})", rows)
 
 
-def _fuentes_meta(dominios) -> dict:
-    out = {}
-    for d in dominios:
-        mp = SILVER / f"{d}.meta.json"
-        if mp.exists():
-            m = json.loads(mp.read_text(encoding="utf-8"))
-            out[d] = {"fuente": m.get("fuente"), "organismo": m.get("organismo"),
-                      "url": m.get("url"), "licencia": m.get("licencia"),
-                      "_origen": m.get("_origen"),
-                      "fecha_dato": m.get("fecha_transformacion")}
-    return out
+def _sources_meta(domains) -> dict:
+    sources = {}
+    for domain in domains:
+        metadata = json.loads((SILVER / f"{domain}.meta.json").read_text(encoding="utf-8"))
+        sources[domain] = {
+            "fuente": metadata["fuente"],
+            "organismo": metadata["organismo"],
+            "url": metadata["url"],
+            "licencia": metadata["licencia"],
+            "_origen": metadata["_origen"],
+            "run_id": metadata["run_id"],
+            "raw_sha256": metadata["raw_sha256"],
+            "fecha_ingesta": metadata["fecha_ingesta"],
+            "source_updated_at": metadata.get("source_updated_at"),
+        }
+    return sources
+
+
+def _write_csv(path: Path, fieldnames: list[str], rows: list[dict]) -> None:
+    with path.open("w", newline="", encoding="utf-8") as stream:
+        writer = csv.DictWriter(stream, fieldnames=fieldnames)
+        writer.writeheader()
+        writer.writerows(rows)
+
+
+def build_into(output: Path, verification: dict) -> None:
+    output.mkdir(parents=True, exist_ok=True)
+    connection = sqlite3.connect(output / "cerebro.sqlite")
+    try:
+        for domain in REQUIRED_DOMAINS:
+            _load_silver(connection, domain)
+        connection.execute("CREATE TABLE comunas (comuna INTEGER PRIMARY KEY)")
+        connection.executemany("INSERT INTO comunas VALUES (?)", [(value,) for value in COMUNAS])
+        connection.commit()
+
+        indicators = {}
+
+        def aggregate(domain, expression, alias):
+            query = (f"SELECT CAST(comuna AS INTEGER), {expression} FROM {domain} "
+                     "GROUP BY CAST(comuna AS INTEGER)")
+            indicators[alias] = {int(row[0]): row[1] for row in connection.execute(query)}
+
+        aggregate("ecobici", "COUNT(*)", "estaciones_ecobici")
+        aggregate("ciclovias", "ROUND(SUM(CAST(long_metros AS REAL))/1000.0, 2)", "km_ciclovias")
+        aggregate("espacios_verdes", "COUNT(*)", "espacios_verdes")
+        aggregate("espacios_verdes", "ROUND(SUM(CAST(area_m2 AS REAL)), 1)", "m2_espacios_verdes")
+        aggregate("hospitales", "COUNT(*)", "hospitales")
+
+        indicator_names = list(indicators)
+        rows = [
+            {"comuna": comuna, **{name: indicators[name].get(comuna, 0) for name in indicator_names}}
+            for comuna in COMUNAS
+        ]
+        _write_csv(output / "indicadores_por_comuna.csv", ["comuna", *indicator_names], rows)
+        for name in indicator_names:
+            _write_csv(output / f"{name}.csv", ["comuna", name],
+                       [{"comuna": comuna, name: indicators[name].get(comuna, 0)} for comuna in COMUNAS])
+
+        provenance = verification["provenance_status"]
+        metadata = {
+            "generado": dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds"),
+            "motor": "sqlite",
+            "quality_status": "verified",
+            "provenance_status": provenance,
+            "datos_oficiales": provenance == "official",
+            "estado": "verificado" if provenance == "official" else "demo_no_oficial",
+            "run_id": verification["run_id"],
+            "indicadores": indicator_names,
+            "publicables": {domain: True for domain in REQUIRED_DOMAINS},
+            "fuentes": _sources_meta(REQUIRED_DOMAINS),
+        }
+        atomic_write_text(output / "_meta.json", json.dumps(metadata, ensure_ascii=False, indent=2))
+    finally:
+        connection.close()
 
 
 def main() -> int:
-    GOLD.mkdir(parents=True, exist_ok=True)
-    verif = _verificacion()
+    try:
+        verification = _verification()
+    except (ValueError, json.JSONDecodeError) as error:
+        print(f"[FALLO] GOLD no publicado: {error}")
+        return 1
 
-    publicables = {d: _publicable(d, verif) for d in
-                   ["ecobici", "ciclovias", "espacios_verdes", "hospitales"]}
-    print("GOLD — dominios publicables:", publicables)
+    GOLD.parent.mkdir(parents=True, exist_ok=True)
+    staging = Path(tempfile.mkdtemp(prefix=".gold-staging-", dir=GOLD.parent))
+    try:
+        build_into(staging, verification)
+        replace_directory(staging, GOLD)
+    except Exception as error:
+        shutil.rmtree(staging, ignore_errors=True)
+        print(f"[FALLO] GOLD anterior conservado: {error}")
+        return 1
 
-    con = sqlite3.connect(GOLD / "cerebro.sqlite")
-    con.execute("PRAGMA journal_mode=WAL")
-
-    for d, ok in publicables.items():
-        if ok:
-            _cargar_silver(con, d)
-
-    # tabla base de comunas 1..15
-    con.execute("DROP TABLE IF EXISTS comunas")
-    con.execute("CREATE TABLE comunas (comuna INTEGER)")
-    con.executemany("INSERT INTO comunas VALUES (?)", [(c,) for c in COMUNAS])
-    con.commit()
-
-    # ---- indicadores por comuna (SQL). Solo si el dominio es publicable ----
-    indicadores = {}  # nombre_col -> {comuna: valor}
-
-    def agg(dominio, expr, alias):
-        if not publicables.get(dominio):
-            return
-        q = f"""
-            SELECT CAST(comuna AS INTEGER) AS comuna, {expr} AS val
-            FROM {dominio} GROUP BY CAST(comuna AS INTEGER)
-        """
-        res = {int(r[0]): r[1] for r in con.execute(q) if r[0] is not None}
-        indicadores[alias] = res
-
-    agg("ecobici", "COUNT(*)", "estaciones_ecobici")
-    agg("ciclovias", "ROUND(SUM(CAST(long_metros AS REAL))/1000.0, 2)", "km_ciclovias")
-    agg("espacios_verdes", "COUNT(*)", "espacios_verdes")
-    agg("espacios_verdes", "ROUND(SUM(CAST(area_m2 AS REAL)), 1)", "m2_espacios_verdes")
-    agg("hospitales", "COUNT(*)", "hospitales")
-
-    # ---- tabla ancha por comuna ----
-    cols_ind = list(indicadores.keys())
-    filas = []
-    for c in COMUNAS:
-        fila = {"comuna": c}
-        for col in cols_ind:
-            fila[col] = indicadores[col].get(c, 0)
-        filas.append(fila)
-
-    ancha = GOLD / "indicadores_por_comuna.csv"
-    with ancha.open("w", newline="", encoding="utf-8") as f:
-        w = csv.DictWriter(f, fieldnames=["comuna"] + cols_ind)
-        w.writeheader()
-        w.writerows(filas)
-
-    # ---- un CSV por indicador (para el dashboard) ----
-    for col in cols_ind:
-        p = GOLD / f"{col}.csv"
-        with p.open("w", newline="", encoding="utf-8") as f:
-            w = csv.writer(f)
-            w.writerow(["comuna", col])
-            for c in COMUNAS:
-                w.writerow([c, indicadores[col].get(c, 0)])
-
-    # ---- meta gold: fuentes + fecha + estado verificado ----
-    (GOLD / "_meta.json").write_text(json.dumps({
-        "generado": dt.datetime.now().isoformat(timespec="seconds"),
-        "motor": "sqlite",
-        "estado": "verificado",
-        "indicadores": cols_ind,
-        "publicables": publicables,
-        "fuentes": _fuentes_meta([d for d, ok in publicables.items() if ok]),
-    }, ensure_ascii=False, indent=2), encoding="utf-8")
-
-    con.close()
-    print(f"[ok] {len(cols_ind)} indicadores por comuna -> {ancha.relative_to(ROOT)}")
-    print(f"     indicadores: {cols_ind}")
+    metadata = json.loads((GOLD / "_meta.json").read_text(encoding="utf-8"))
+    print(f"[ok] GOLD atómico: {len(metadata['indicadores'])} indicadores × {len(COMUNAS)} comunas")
+    print(f"     calidad={metadata['quality_status']} · procedencia={metadata['provenance_status']}")
     return 0
 
 

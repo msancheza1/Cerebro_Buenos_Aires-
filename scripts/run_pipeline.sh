@@ -1,42 +1,53 @@
 #!/usr/bin/env bash
-# Orquesta el pipeline completo de Cerebro Buenos Aires.
-# Uso:
-#   bash scripts/run_pipeline.sh            # usa datos semilla (offline)
-#   bash scripts/run_pipeline.sh --ingesta  # intenta ingesta real (necesita internet)
+# Pipeline seguro de Cerebro Buenos Aires.
+#   bash scripts/run_pipeline.sh --demo      # datos generados, aislados de lago/
+#   bash scripts/run_pipeline.sh --ingesta   # fuentes oficiales; aborta ante cualquier fallo
 set -euo pipefail
 cd "$(dirname "$0")/.."
-PY=python
+PY="${PYTHON:-python3}"
+MODE="${1:---demo}"
 
-echo "════════════════════════════════════════════════"
-echo " CEREBRO BUENOS AIRES · pipeline"
-echo "════════════════════════════════════════════════"
+case "$MODE" in
+  --demo)
+    export CEREBRO_MODE=demo
+    export CEREBRO_RAW_DIR="$PWD/demo/raw"
+    export CEREBRO_SILVER_DIR="$PWD/build/demo/silver"
+    export CEREBRO_GOLD_DIR="$PWD/build/demo/gold"
+    export CEREBRO_APP_DIR="$PWD/app/demo"
+    echo "MODO DEMO · cifras generadas, NO oficiales"
+    "$PY" scripts/_gen_seed.py
+    ;;
+  --ingesta)
+    export CEREBRO_MODE=official
+    export CEREBRO_RAW_DIR="$PWD/lago/raw"
+    export CEREBRO_SILVER_DIR="$PWD/lago/silver"
+    export CEREBRO_GOLD_DIR="$PWD/lago/gold"
+    export CEREBRO_APP_DIR="$PWD/app/official"
+    echo "MODO OFICIAL · el lote completo debe descargarse y validar"
+    "$PY" scripts/ingest_all.py
+    ;;
+  *)
+    echo "Uso: bash scripts/run_pipeline.sh [--demo|--ingesta]" >&2
+    exit 2
+    ;;
+esac
 
-if [[ "${1:-}" == "--ingesta" ]]; then
-  echo "[0/6] Ingesta REAL desde BA Data..."
-  $PY scripts/ingest_all.py || echo "  (ingesta falló; sigo con lo que haya en lago/raw/)"
-else
-  echo "[0/6] Datos semilla (offline)..."
-  $PY scripts/_gen_seed.py
-fi
+echo "[1/6] Limpieza BRONZE -> SILVER"
+"$PY" scripts/transform_silver.py
 
-echo "[1/6] Limpieza  bronze -> silver..."
-$PY scripts/transform_silver.py
+echo "[2/6] Verificación atómica"
+"$PY" scripts/verify.py
 
-echo "[2/6] Verificación (si falla, no se publica)..."
-$PY scripts/verify.py
+echo "[3/6] Validaciones existentes"
+"$PY" tests/test_verificacion.py
 
-echo "[3/6] Tests de verificación..."
-$PY tests/test_verificacion.py
+echo "[4/6] Publicación SILVER -> GOLD"
+"$PY" scripts/build_gold.py
 
-echo "[4/6] Indicadores  silver -> gold..."
-$PY scripts/build_gold.py
+echo "[5/6] Consultas SQLite"
+"$PY" scripts/query_sqlite.py
 
-echo "[5/6] Consultas de ejemplo (SQLite)..."
-$PY scripts/query_sqlite.py
+echo "[6/6] Dashboard"
+"$PY" scripts/build_dashboard.py
 
-echo "[6/6] Dashboard estático..."
-$PY scripts/build_dashboard.py
-
-echo "════════════════════════════════════════════════"
-echo " OK. Abrí app/index.html en el navegador."
-echo "════════════════════════════════════════════════"
+echo "OK · $CEREBRO_APP_DIR/index.html · modo=$CEREBRO_MODE"

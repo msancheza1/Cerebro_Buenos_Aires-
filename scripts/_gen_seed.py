@@ -1,14 +1,10 @@
 #!/usr/bin/env python3
 """
-Generador de DATOS SEMILLA (solo para poder correr el pipeline sin internet).
+Generador de DATOS SEMILLA para ejecutar el pipeline sin internet.
 
-⚠️  NO son datos oficiales. Cada archivo lleva "_origen": "semilla_demo" en su meta.
-    Respetan la ESTRUCTURA real de los datasets de BA Data (columnas y rangos plausibles:
-    comunas 1-15, coordenadas dentro de CABA) para que la limpieza/validación/gold
-    funcionen igual que con los datos reales.
-
-Cuando corras scripts/ingest_all.py con internet, estos archivos se sobrescriben con
-los datos oficiales descargados.
+⚠️ NO son observaciones oficiales ni prueban el esquema actual de BA Data. Implementan
+el contrato de demostración del proyecto, usan valores plausibles y se guardan fuera
+del lago oficial para impedir que una demo sobrescriba o se mezcle con una descarga.
 """
 from __future__ import annotations
 import csv
@@ -16,12 +12,11 @@ import datetime as dt
 import io
 import json
 import random
-from pathlib import Path
+from pipeline_common import (MODE, RAW, ROOT, atomic_write_text, display_path,
+                             sha256_bytes)
 
 random.seed(1515)  # reproducible
-ROOT = Path(__file__).resolve().parents[1]
-RAW = ROOT / "lago" / "raw"
-HOY = dt.date.today().isoformat()
+RUN_ID = "demo-seed-v1"
 
 # CABA aprox: lat -34.705..-34.526 , lon -58.531..-58.335 ; comunas 1..15
 LAT_MIN, LAT_MAX = -34.705, -34.526
@@ -54,20 +49,26 @@ def escribir_csv(dominio: str, fieldnames: list[str], filas: list[dict],
     w.writeheader()
     w.writerows(filas)
     contenido = buf.getvalue()
-    (d / f"{HOY}.csv").write_text(contenido, encoding="utf-8")
-    (d / f"{HOY}.csv.meta.json").write_text(json.dumps({
+    archivo = d / "seed.csv"
+    atomic_write_text(archivo, contenido)
+    meta = {
         "dominio": dominio,
-        "fuente": "Buenos Aires Data",
+        "fuente": "Buenos Aires Data (fuente de referencia; datos generados)",
         "organismo": organismo,
         "url": url,
         "licencia": "CC-BY",
         "formato": "csv",
         "fecha_ingesta": dt.datetime.now().isoformat(timespec="seconds"),
-        "herramienta": "semilla",
+        "herramienta": "generador_semilla",
         "_origen": "semilla_demo",
+        "run_id": RUN_ID,
         "filas": len(filas),
-    }, ensure_ascii=False, indent=2), encoding="utf-8")
-    print(f"[seed] {dominio:16s} {len(filas):>4d} filas -> {(d / (HOY + '.csv')).relative_to(ROOT)}")
+        "bytes": len(contenido.encode("utf-8")),
+        "sha256": sha256_bytes(contenido.encode("utf-8")),
+    }
+    atomic_write_text(archivo.with_suffix(".csv.meta.json"),
+                      json.dumps(meta, ensure_ascii=False, indent=2))
+    print(f"[seed] {dominio:16s} {len(filas):>4d} filas -> {display_path(archivo)}")
 
 
 def gen_ecobici():
@@ -170,23 +171,33 @@ def gen_comunas():
           "features": feats}
     d = RAW / "comunas"
     d.mkdir(parents=True, exist_ok=True)
-    (d / f"{HOY}.geojson").write_text(json.dumps(fc, ensure_ascii=False, indent=2),
-                                      encoding="utf-8")
-    (d / f"{HOY}.geojson.meta.json").write_text(json.dumps({
-        "dominio": "comunas", "fuente": "Buenos Aires Data", "organismo": "GCBA",
-        "url": "https://data.buenosaires.gob.ar/dataset/comunas",
+    archivo = d / "seed.geojson"
+    contenido = json.dumps(fc, ensure_ascii=False, indent=2)
+    atomic_write_text(archivo, contenido)
+    meta = {
+        "dominio": "comunas", "fuente": "Buenos Aires Data (fuente de referencia; datos generados)",
+        "organismo": "GCBA", "url": "https://data.buenosaires.gob.ar/dataset/comunas",
         "licencia": "CC-BY", "formato": "geojson",
         "fecha_ingesta": dt.datetime.now().isoformat(timespec="seconds"),
-        "herramienta": "semilla", "_origen": "semilla_demo", "features": len(feats),
-    }, ensure_ascii=False, indent=2), encoding="utf-8")
-    print(f"[seed] comunas          {len(feats):>4d} features -> {(d / (HOY + '.geojson')).relative_to(ROOT)}")
+        "herramienta": "generador_semilla", "_origen": "semilla_demo",
+        "run_id": RUN_ID, "features": len(feats),
+        "bytes": len(contenido.encode("utf-8")),
+        "sha256": sha256_bytes(contenido.encode("utf-8")),
+    }
+    atomic_write_text(archivo.with_suffix(".geojson.meta.json"),
+                      json.dumps(meta, ensure_ascii=False, indent=2))
+    print(f"[seed] comunas          {len(feats):>4d} features -> {display_path(archivo)}")
 
 
 if __name__ == "__main__":
-    print(f"Generando datos semilla (NO oficiales) en lago/raw/ — {HOY}\n")
+    if MODE != "demo":
+        raise SystemExit("La semilla solo puede generarse con CEREBRO_MODE=demo.")
+    if RAW == (ROOT / "lago" / "raw").resolve():
+        raise SystemExit("La semilla no puede escribirse en el lago oficial.")
+    print(f"Generando datos semilla NO OFICIALES en {display_path(RAW)}/\n")
     gen_ecobici()
     gen_ciclovias()
     gen_espacios_verdes()
     gen_hospitales()
     gen_comunas()
-    print("\n[ok] Semilla lista. Estos datos se sobrescriben al correr ingest_all.py con internet.")
+    print("\n[ok] Semilla demo aislada del lago oficial.")

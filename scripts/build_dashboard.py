@@ -2,9 +2,8 @@
 """
 Tramo VISTAS — Herramienta A: dashboard HTML estático autocontenido.
 
-Lee lago/gold/indicadores_por_comuna.csv + lago/gold/_meta.json y genera app/index.html
-(sin servidor, sin dependencias: se abre en cualquier navegador). Incluye el bloque
-obligatorio de fuente / vigencia / última ingesta / estado verificado, como en Cerebro Lima.
+Lee la capa GOLD configurada y genera un HTML autocontenido en el directorio APP
+configurado (sin servidor ni dependencias). Incluye fuente, ingesta, calidad y procedencia.
 
 Herramienta B: app/streamlit_app.py (interactivo; requiere streamlit).
 Decisión en la bitácora: HTML estático para publicar sin infra (elegido para el entregable);
@@ -16,12 +15,16 @@ Uso:
 from __future__ import annotations
 import csv
 import datetime as dt
+import html as html_lib
 import json
-from pathlib import Path
+from urllib.parse import urlparse
 
-ROOT = Path(__file__).resolve().parents[1]
-GOLD = ROOT / "lago" / "gold"
-APP = ROOT / "app"
+from pipeline_common import APP, GOLD, atomic_write_text, display_path
+
+
+def _safe_url(value: str) -> str:
+    parsed = urlparse(value or "")
+    return value if parsed.scheme == "https" and parsed.netloc else "#"
 
 
 def _cargar():
@@ -34,7 +37,7 @@ def _cargar():
 def _num(v):
     try:
         f = float(v)
-        return int(f) if f.is_integer() else round(f, 1)
+        return int(f) if f.is_integer() else f
     except (ValueError, TypeError):
         return 0
 
@@ -56,16 +59,23 @@ def main() -> int:
         "hospitales": "Hospitales",
     }
 
-    # fuentes (deduplicadas)
-    fuentes = meta.get("fuentes", {})
-    origen_demo = any((f.get("_origen") == "semilla_demo") for f in fuentes.values())
+    def format_value(indicator, value):
+        decimals = 2 if indicator == "km_ciclovias" else (
+            1 if indicator == "m2_espacios_verdes" else 0
+        )
+        return f"{float(value):,.{decimals}f}"
+
+    provenance = meta.get("provenance_status", "unknown")
+    origen_demo = provenance == "demo"
+    if meta.get("quality_status") != "verified":
+        raise ValueError("GOLD no tiene quality_status=verified")
 
     def tarjetas_totales():
         out = []
         for k in indicadores:
             out.append(f"""
             <div class="card">
-              <div class="card-val">{total[k]:,}</div>
+              <div class="card-val">{format_value(k, total[k])}</div>
               <div class="card-lbl">{etiquetas.get(k, k)}</div>
             </div>""")
         return "".join(out)
@@ -73,7 +83,7 @@ def main() -> int:
     def filas_tabla():
         out = []
         for r in filas:
-            celdas = "".join(f"<td>{_num(r[k]):,}</td>" for k in indicadores)
+            celdas = "".join(f"<td>{format_value(k, r[k])}</td>" for k in indicadores)
             out.append(f"<tr><td class='com'>Comuna {r['comuna']}</td>{celdas}</tr>")
         return "".join(out)
 
@@ -87,24 +97,33 @@ def main() -> int:
             <div class="bar-row">
               <span class="bar-lbl">Comuna {r['comuna']}</span>
               <span class="bar-track"><span class="bar-fill" style="width:{pct:.1f}%"></span></span>
-              <span class="bar-val">{v:,}</span>
+              <span class="bar-val">{format_value(indicador, v)}</span>
             </div>""")
         return "".join(out)
 
+    fuentes = meta.get("fuentes", {})
     fuentes_html = "".join(
-        f"<li><b>{d}</b>: {m.get('fuente','')} — {m.get('organismo','')} "
-        f"(<a href='{m.get('url','#')}'>dataset</a>, licencia {m.get('licencia','')})</li>"
-        for d, m in fuentes.items()
+        f"<li><b>{html_lib.escape(str(domain))}</b>: {html_lib.escape(str(source.get('fuente', '')))} — "
+        f"{html_lib.escape(str(source.get('organismo', '')))} "
+        f"(<a href='{html_lib.escape(_safe_url(str(source.get('url', ''))), quote=True)}' "
+        f"rel='noreferrer'>dataset</a>, licencia {html_lib.escape(str(source.get('licencia', '')))}) "
+        f"· ingesta {html_lib.escape(str(source.get('fecha_ingesta', 'sin fecha')))}</li>"
+        for domain, source in fuentes.items()
+    )
+    graficos_html = "".join(
+        f"<h2>{html_lib.escape(etiquetas.get(indicator, indicator))} por comuna</h2>"
+        f"<div>{barras(indicator)}</div>"
+        for indicator in indicadores
     )
 
     generado = meta.get("generado", dt.datetime.now().isoformat(timespec="seconds"))
 
     aviso_demo = ""
     if origen_demo:
-        aviso_demo = ("<div class='aviso'>⚠️ Datos <b>SEMILLA (demo)</b>: respetan la "
-                      "estructura real de BA Data pero NO son oficiales. Corré "
-                      "<code>scripts/ingest_all.py</code> con internet para reemplazarlos "
-                      "por datos descargados y recalcular todo.</div>")
+        aviso_demo = ("<div class='aviso'><strong>DEMO · NO OFICIAL.</strong> "
+                      "Estas cifras fueron generadas para probar el pipeline y no describen "
+                      "Buenos Aires. Las fuentes enlazadas son referencias de procedencia, "
+                      "no el origen de observaciones descargadas.</div>")
 
     html = f"""<!doctype html>
 <html lang="es">
@@ -145,8 +164,9 @@ def main() -> int:
   .ficha {{ background:var(--card); border:1px solid var(--line); border-radius:12px;
             padding:18px; margin-top:32px; font-size:14px; }}
   .ficha b {{ color:var(--acc2); }}
-  .estado {{ display:inline-block; background:#0f5132; color:#d1fae5;
-             padding:2px 10px; border-radius:20px; font-size:13px; }}
+  .estado {{ display:inline-block; padding:2px 10px; border-radius:20px; font-size:13px; }}
+  .estado.demo {{ background:#7a4b00; color:#fff3cd; }}
+  .estado.official {{ background:#0f5132; color:#d1fae5; }}
   a {{ color:var(--acc); }}
   footer {{ color:var(--muted); font-size:12px; text-align:center; padding:24px; }}
 </style>
@@ -160,14 +180,7 @@ def main() -> int:
   {aviso_demo}
   <section class="cards">{tarjetas_totales()}</section>
 
-  <h2>Estaciones Ecobici por comuna</h2>
-  <div>{barras('estaciones_ecobici')}</div>
-
-  <h2>Espacios verdes por comuna</h2>
-  <div>{barras('espacios_verdes')}</div>
-
-  <h2>Hospitales por comuna</h2>
-  <div>{barras('hospitales')}</div>
+  {graficos_html}
 
   <h2>Tabla de indicadores por comuna</h2>
   <table>
@@ -179,20 +192,24 @@ def main() -> int:
     <div><b>Fuentes</b><ul>{fuentes_html}</ul></div>
     <div><b>Última construcción (gold):</b> {generado}</div>
     <div><b>Motor de consulta:</b> {meta.get('motor','sqlite')}</div>
-    <div style="margin-top:8px"><b>Estado:</b> <span class="estado">✓ {meta.get('estado','verificado')}</span></div>
+    <div><b>Calidad:</b> <span class="estado {'demo' if origen_demo else 'official'}">✓ verificada</span></div>
+    <div style="margin-top:8px"><b>Procedencia:</b> <span class="estado {'demo' if origen_demo else 'official'}">{html_lib.escape(provenance)}</span></div>
     <div style="margin-top:8px; color:var(--muted)">
-      Cero cifras sin fuente, sin vigencia ni fecha de prueba. Cada indicador se recalcula
-      desde datos verificados en la capa GOLD.
+      La verificación confirma estructura y reglas de calidad. No convierte una semilla
+      de demostración en una estadística oficial.
     </div>
   </div>
 </main>
-<footer>Cerebro Buenos Aires · datos: Gobierno de la Ciudad de Buenos Aires (BA Data)</footer>
+<footer>Cerebro Buenos Aires · {'DEMO NO OFICIAL · fuentes de referencia: BA Data' if origen_demo else 'datos descargados de BA Data'}</footer>
 </body>
 </html>"""
 
-    (APP / "index.html").write_text(html, encoding="utf-8")
-    print(f"[ok] Dashboard -> {(APP / 'index.html').relative_to(ROOT)}  ({len(html):,} bytes)")
-    print(f"     Totales: " + ", ".join(f"{etiquetas.get(k,k)}={total[k]:,}" for k in indicadores))
+    output = APP / "index.html"
+    atomic_write_text(output, html)
+    print(f"[ok] Dashboard -> {display_path(output)}  ({len(html):,} bytes)")
+    print("     Totales: " + ", ".join(
+        f"{etiquetas.get(k, k)}={format_value(k, total[k])}" for k in indicadores
+    ))
     return 0
 
 
