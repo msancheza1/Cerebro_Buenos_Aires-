@@ -17,7 +17,8 @@ declaradas con honestidad (el propio taller pide distinguir lo «corrido» de lo
   scripts (`scripts/ingest_all.py`, `scripts/catalogo_ckan.py`) quedan listos y **fallan de
   forma controlada** sin conexión (verificado: `403` del proxy).
 - Para poder correr el pipeline completo, se usaron **datos semilla** (marcados
-  `_origen: semilla_demo`) con la **estructura real** de los datasets de BA Data.
+  `_origen: semilla_demo`) que implementan el **contrato demo del proyecto**; no se
+  afirma que reproduzcan el esquema actual de BA Data sin una descarga verificable.
 - Herramientas no instalables offline (pandas, polars, duckdb, pyarrow, streamlit, pandera)
   se dejan como **variante B documentada y ejecutable con internet**; la **variante A**
   de cada tramo usa lo disponible (Python stdlib, SQLite, Node.js) y **sí se corrió**.
@@ -130,7 +131,7 @@ recomendada al escalar (mejor que GE para 4 datasets: GE es *overkill*).
 | Ventaja | Viene con Python, transaccional | Analítico, lee Parquet/CSV directo, ventana/CTE veloces |
 | Desventaja | No columnar, menos óptimo para analítica | Dependencia extra |
 
-**Salida real (SQLite):** Comuna 1 lidera todo — 47 estaciones Ecobici, 35 espacios verdes,
+**Salida demo ejecutada (no estadística oficial):** Comuna 1 lidera en la semilla generada — 47 estaciones Ecobici, 35 espacios verdes,
 7 hospitales (índice de infraestructura = 89), seguida por comunas 14, 13, 2 y 4.
 
 **Decisión:** **DuckDB** es la elección conceptual (replica «carpeta de Parquet con DuckDB
@@ -161,7 +162,7 @@ de interoperabilidad al que apuntan los grandes. Scripts A y B listos para corre
 
 | | A: HTML estático | B: Streamlit |
 |---|---|---|
-| Corrido | **Sí** (`app/index.html`, 18 KB) | No (sin instalar); app lista |
+| Corrido | **Sí** (`app/demo/index.html`, 26 KB) | No (sin instalar); app lista |
 | Ventaja | Cero infra, se publica en cualquier hosting, abre offline | Interactivo (selectores, filtros), rápido de prototipar |
 | Desventaja | No interactivo | Necesita servidor Python corriendo |
 
@@ -173,14 +174,13 @@ servidor), con el bloque obligatorio **Fuente · Última construcción · Estado
 
 ## Trazabilidad de cifras (regla «cero cifras sin fuente/vigencia/fecha»)
 
-- Cada archivo en `lago/raw/**` tiene un `*.meta.json` con **fuente, URL, licencia, fecha de
-  ingesta y sha256**.
-- SILVER hereda esa procedencia (`lago/silver/*.meta.json`).
-- GOLD (`lago/gold/_meta.json`) guarda **fuentes + fecha de construcción + estado verificado**,
-  y el dashboard lo muestra.
-- Los números actuales provienen de **datos semilla** (declarado en pantalla y en meta). Al
-  correr `scripts/ingest_all.py` con internet, se reemplazan por datos **oficiales** de BA Data
-  y **todo se recalcula** con la misma cadena de trazabilidad.
+- Cada descarga oficial en `lago/raw/**` y cada semilla en `demo/raw/**` tiene un
+  `*.meta.json` con **fuente de referencia, URL, licencia, fecha de ingesta, run_id y sha256**.
+- SILVER hereda la procedencia, el hash BRONZE y métricas de descarte en sus sidecars.
+- GOLD separa **calidad** (`verified`) de **procedencia** (`demo` u `official`); el dashboard
+  nunca presenta una semilla técnicamente válida como estadística oficial.
+- El modo demo y el oficial usan directorios distintos. La ingesta oficial no reutiliza ni
+  mezcla fuentes anteriores si falla un recurso.
 
 ---
 
@@ -197,13 +197,36 @@ servidor), con el bloque obligatorio **Fuente · Última construcción · Estado
 
 | Tramo | Herramienta corrida | Resultado |
 |---|---|---|
-| Ingesta (semilla) | stdlib | 5 dominios en `lago/raw/` |
+| Ingesta (semilla) | stdlib | 5 dominios aislados en `demo/raw/` |
 | Limpieza | stdlib | ecobici 289 (11 descartadas), ciclovías 120, verdes 250, hospitales 35 |
 | Verificación | reglas propias | 4/4 publicables · tests 6/6 |
 | Gold | SQLite | 5 indicadores × 15 comunas |
-| Consulta | SQLite | Comuna 1 líder (índice 89) |
+| Consulta | SQLite | En la semilla demo, Comuna 1 lidera (índice 89) |
 | Lakehouse | SQLite | time travel v1=100 → v2=105 |
-| Vistas | HTML | `app/index.html` generado |
+| Vistas | HTML | `app/demo/index.html` generado |
 
 *Pendiente de correr con internet:* ingesta real (BA Data), y variantes B (CKAN, Polars,
 Pandera, DuckDB, DuckLake, Iceberg, Streamlit) — todas con script listo.
+
+
+
+---
+
+## Revisión de seguridad de publicación — 2026-09-25
+
+Una segunda revisión detectó que el primer MVP podía continuar después de una ingesta
+fallida, reutilizar salidas antiguas y etiquetar un GOLD parcial como «verificado». Se
+corrigieron esas debilidades:
+
+1. demo y oficial quedaron en rutas separadas;
+2. la ingesta usa staging y cancela el lote completo ante cualquier fallo;
+3. BRONZE exige sidecar y SHA-256 coincidente;
+4. SILVER y GOLD se reemplazan como conjuntos completos;
+5. `verify.py` retorna error y detiene el pipeline si falla un dominio, hay mezcla de
+   procedencias, cambia un hash o la tasa de descarte supera 10 %;
+6. GOLD vuelve a comprobar los hashes verificados;
+7. el dashboard separa demo (`app/demo`) de oficial (`app/official`), distingue calidad
+   técnica de oficialidad y grafica los cinco indicadores.
+
+**Decisión revisada:** «si falla, no se publica» se interpreta de manera **atómica por
+corrida**, no como publicación parcial por dominio.

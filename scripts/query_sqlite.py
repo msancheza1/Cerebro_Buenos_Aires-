@@ -10,10 +10,9 @@ Uso:
 """
 from __future__ import annotations
 import sqlite3
-from pathlib import Path
+from pipeline_common import GOLD
 
-ROOT = Path(__file__).resolve().parents[1]
-DB = ROOT / "lago" / "gold" / "cerebro.sqlite"
+DB = GOLD / "cerebro.sqlite"
 
 
 def tabla(con, titulo, sql):

@@ -13,8 +13,8 @@ import csv
 import sys
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parents[1]
-SILVER = ROOT / "lago" / "silver"
+from pipeline_common import ROOT, SILVER
+
 LH = ROOT / "lakehouse"
 
 
