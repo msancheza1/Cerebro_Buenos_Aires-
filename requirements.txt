@@ -1,0 +1,34 @@
+# Cerebro Buenos Aires — dependencias directas del proyecto
+# ------------------------------------------------------------------
+# El pipeline "núcleo" (ingesta -> silver -> verify -> gold -> query SQLite
+# -> dashboard HTML -> lakehouse de bolsillo) corre SOLO con la biblioteca
+# estándar de Python. Estas dependencias habilitan las "herramientas B"
+# documentadas en la bitácora (Parquet, Polars, DuckDB, Pandera, Streamlit,
+# Iceberg) y el dashboard interactivo.
+#
+# Instalar:   python -m pip install -r requirements.txt
+# Reproducir exacto:  python -m pip install -r requirements.lock.txt
+# Versiones fijadas (==) para reproducibilidad; probadas en Python 3.13.
+
+# --- Transformación SILVER: formato Parquet (herramienta B sobre CSV) ---
+pyarrow==25.0.1
+
+# --- Transformación alternativa documentada: Polars ---
+polars==1.44.2
+
+# --- Consulta analítica sobre Parquet (herramienta B frente a SQLite) ---
+duckdb==1.5.6
+
+# --- Validación (herramienta B frente a reglas propias stdlib) ---
+pandera==0.33.1
+
+# --- Lakehouse: tabla abierta Apache Iceberg (herramienta B frente a DuckLake) ---
+pyiceberg==0.12.0
+
+# --- Dashboard interactivo (herramienta B frente al HTML estático) ---
+streamlit==1.64.0
+pandas==3.0.6
+
+# --- Ingesta real desde BA Data con cliente HTTP de alto nivel (opcional;
+#     ingest_all.py usa urllib de stdlib por defecto) ---
+requests==2.34.2

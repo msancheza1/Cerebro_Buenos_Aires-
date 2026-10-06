@@ -96,19 +96,57 @@ real, los `raw/` se reemplazan por datos oficiales y los indicadores se recalcul
 
 ## Cómo correr
 
-```bash
-cd cerebro-buenos-aires
+### Requisitos
 
+El **pipeline núcleo** (ingesta → silver → verify → gold → consulta SQLite →
+dashboard HTML → lakehouse de bolsillo) corre **solo con la biblioteca estándar
+de Python 3.9+**: no necesitas instalar nada.
+
+Para habilitar las *herramientas B* documentadas (Parquet, Polars, DuckDB,
+Pandera, Iceberg) y el dashboard interactivo de Streamlit:
+
+```bash
+python -m venv .venv
+# Windows:        .venv\Scripts\activate
+# Linux / macOS:  source .venv/bin/activate
+
+pip install -r requirements.txt          # dependencias directas (versiones ==)
+# o, para reproducir el entorno exacto probado:
+pip install -r requirements.lock.txt
+```
+
+### Opción rápida: pipeline completo en un comando (recomendado)
+
+```bash
+python scripts/run_pipeline.py              # datos semilla (offline)
+python scripts/run_pipeline.py --ingesta    # ingesta REAL desde BA Data (urllib)
+python scripts/run_pipeline.py --curl       # ingesta REAL usando curl
+```
+
+`run_pipeline.py` es multiplataforma (Windows, Linux, macOS), usa el mismo
+intérprete con el que lo invocás (respeta el `.venv`), corre los 7 tramos en
+orden y **se detiene en el primer fallo**.
+
+### Opción manual: tramo por tramo
+
+```bash
 # 0) (opcional) Ingesta REAL desde BA Data — requiere internet
 python scripts/ingest_all.py            # baja a lago/raw/  (o usa --curl)
 
-# Si NO hay internet, el repo ya trae datos semilla en lago/raw/
+# Si NO hay internet, generá datos semilla:
+python scripts/_gen_seed.py
 
 # 1) Limpieza  bronze -> silver
 python scripts/transform_silver.py
 
+# 1-bis) Gobernanza: diccionario de datos (catalogo/diccionario_datos.{json,md})
+python scripts/diccionario.py
+
 # 2) Verificación (si falla, no publica)
 python scripts/verify.py
+
+# 2-bis) Gobernanza: perfilado / completitud por columna (lago/silver/_perfilado.json)
+python scripts/profile_silver.py
 
 # 3) Indicadores  silver -> gold
 python scripts/build_gold.py
@@ -119,26 +157,40 @@ python scripts/query_sqlite.py
 # 5) Lakehouse demo: versionado + time travel
 python scripts/lakehouse_timetravel.py
 
-# 6) Dashboard estático (abrir en navegador)
-open app/index.html          # o servir la carpeta app/
+# 6) Dashboard estático (regenera app/index.html con fecha + cifras actuales)
+python scripts/build_dashboard.py
+#    luego abrí app/index.html en el navegador
 
 # 6-bis) Dashboard Streamlit (requiere streamlit instalado)
 streamlit run app/streamlit_app.py
 ```
+
+> **Nota de portabilidad (Windows):** los scripts imprimen caracteres Unicode
+> (`✓`, `✗`, `·`, `m²`). Para evitar `UnicodeEncodeError` en consolas cp1252,
+> cada script importa `scripts/_utf8.py`, que reconfigura la salida a UTF-8 de
+> forma automática. No necesitás `set PYTHONUTF8=1` ni el flag `-X utf8`.
 
 ## Estructura
 
 ```
 cerebro-buenos-aires/
 ├── catalogo/           catalogo.csv  (inventario de fuentes)
+│   ├── diccionario_datos.json  diccionario de datos (consumible por código)
+│   └── diccionario_datos.md    diccionario de datos (legible)
 ├── scripts/            ingesta, transformación, verificación, gold, consultas, lakehouse
+│   ├── run_pipeline.py orquestador multiplataforma (corre todo en orden)
+│   ├── diccionario.py  gobernanza: genera el diccionario de datos
+│   ├── profile_silver.py  gobernanza: perfilado/completitud por columna
+│   └── _utf8.py        helper de portabilidad (salida UTF-8 en Windows)
 ├── lago/
 │   ├── raw/            BRONZE (datos semilla / descargados)
-│   ├── silver/         PLATA  (limpio, parquet/csv)
-│   └── gold/           ORO    (indicadores por comuna)
+│   ├── silver/         PLATA  (limpio, parquet/csv; + _perfilado.json)
+│   └── gold/           ORO    (indicadores por comuna; _meta.json con linaje)
 ├── tests/              tests de reglas de validación
 ├── app/                dashboard (HTML estático + Streamlit)
 ├── bitacora/           exploracion.md  (justifica cada herramienta)
+├── requirements.txt    dependencias directas (versiones fijadas)
+├── requirements.lock.txt  entorno exacto (pip freeze)
 └── README.md
 ```
 

@@ -11,6 +11,7 @@ Cuando corras scripts/ingest_all.py con internet, estos archivos se sobrescriben
 los datos oficiales descargados.
 """
 from __future__ import annotations
+import _utf8  # noqa: F401  (reconfigura stdout/stderr a UTF-8; portabilidad Windows)
 import csv
 import datetime as dt
 import io

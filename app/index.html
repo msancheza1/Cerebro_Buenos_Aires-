@@ -312,9 +312,22 @@
     <tbody><tr><td class='com'>Comuna 1</td><td>47</td><td>23.6</td><td>35</td><td>1,560,404.8</td><td>7</td></tr><tr><td class='com'>Comuna 2</td><td>26</td><td>24.1</td><td>16</td><td>811,272.8</td><td>2</td></tr><tr><td class='com'>Comuna 3</td><td>21</td><td>14.6</td><td>18</td><td>726,671.1</td><td>4</td></tr><tr><td class='com'>Comuna 4</td><td>30</td><td>8.2</td><td>13</td><td>509,411.3</td><td>1</td></tr><tr><td class='com'>Comuna 5</td><td>15</td><td>10.5</td><td>16</td><td>747,657.5</td><td>3</td></tr><tr><td class='com'>Comuna 6</td><td>10</td><td>11.6</td><td>20</td><td>932,631.5</td><td>4</td></tr><tr><td class='com'>Comuna 7</td><td>14</td><td>14.6</td><td>16</td><td>732,117.3</td><td>3</td></tr><tr><td class='com'>Comuna 8</td><td>8</td><td>5.3</td><td>9</td><td>415,438.7</td><td>1</td></tr><tr><td class='com'>Comuna 9</td><td>9</td><td>14.8</td><td>11</td><td>372,460.3</td><td>2</td></tr><tr><td class='com'>Comuna 10</td><td>9</td><td>3.6</td><td>12</td><td>623,635.9</td><td>1</td></tr><tr><td class='com'>Comuna 11</td><td>18</td><td>11.3</td><td>18</td><td>821,344.7</td><td>1</td></tr><tr><td class='com'>Comuna 12</td><td>14</td><td>6.5</td><td>12</td><td>610,033.4</td><td>2</td></tr><tr><td class='com'>Comuna 13</td><td>24</td><td>9.5</td><td>23</td><td>848,751.2</td><td>1</td></tr><tr><td class='com'>Comuna 14</td><td>30</td><td>19.1</td><td>18</td><td>777,869</td><td>1</td></tr><tr><td class='com'>Comuna 15</td><td>14</td><td>6.6</td><td>13</td><td>594,541.3</td><td>2</td></tr></tbody>
   </table>
 
+  <h2>Linaje de datos</h2>
+  <div class="ficha">
+    <div style="color:var(--muted); margin-bottom:10px">
+      Cada indicador se rastrea hasta el archivo crudo (BRONZE) y su huella SHA-256.
+      Trazabilidad GOLD ← SILVER ← RAW.
+    </div>
+    <table>
+      <thead><tr><th>Dominio</th><th>Archivo RAW</th><th>SHA-256 (raw)</th>
+        <th>Filas publicadas</th><th>Filas descartadas</th></tr></thead>
+      <tbody><tr><td class='com'>ecobici</td><td style='text-align:left'><code>lago\raw\ecobici\2026-10-06.csv</code></td><td style='text-align:left'><code title='ee49c070b3c060c2bdb3e99a8073dfb2693d75d8e70addcbedda3859074f4fbf'>ee49c070b3c0…</code></td><td>289</td><td>11</td></tr><tr><td class='com'>ciclovias</td><td style='text-align:left'><code>lago\raw\ciclovias\2026-10-06.csv</code></td><td style='text-align:left'><code title='17b83a595b505806ab9c2c47d409cca9b66d0cf49f73176d58694cc1fd24bf97'>17b83a595b50…</code></td><td>120</td><td>0</td></tr><tr><td class='com'>espacios_verdes</td><td style='text-align:left'><code>lago\raw\espacios_verdes\2026-10-06.csv</code></td><td style='text-align:left'><code title='1e73128eb9d7ebe6e735c36294feb8f0fc69213e194beca627c30f89dfcc1184'>1e73128eb9d7…</code></td><td>250</td><td>0</td></tr><tr><td class='com'>hospitales</td><td style='text-align:left'><code>lago\raw\hospitales\2026-10-06.csv</code></td><td style='text-align:left'><code title='0672af8438a3497e2915267780149e0445c5d5446cd5bd6e6c41581a7bcecb4a'>0672af8438a3…</code></td><td>35</td><td>0</td></tr></tbody>
+    </table>
+    <div style="margin-top:14px"><b>Indicadores → origen</b><ul><li><b>Estaciones Ecobici</b> ← dominio <code>ecobici</code></li><li><b>Km de ciclovías</b> ← dominio <code>ciclovias</code></li><li><b>Espacios verdes</b> ← dominio <code>espacios_verdes</code></li><li><b>m² de espacios verdes</b> ← dominio <code>espacios_verdes</code></li><li><b>Hospitales</b> ← dominio <code>hospitales</code></li></ul></div>
+  </div>
   <div class="ficha">
     <div><b>Fuentes</b><ul><li><b>ecobici</b>: Buenos Aires Data — Secretaría de Transporte y Obras Públicas (GCBA) (<a href='https://data.buenosaires.gob.ar/dataset/estaciones-bicicletas-publicas'>dataset</a>, licencia CC-BY)</li><li><b>ciclovias</b>: Buenos Aires Data — Secretaría de Transporte y Obras Públicas (GCBA) (<a href='https://data.buenosaires.gob.ar/dataset/ciclovias'>dataset</a>, licencia CC-BY)</li><li><b>espacios_verdes</b>: Buenos Aires Data — Ministerio de Espacio Público e Higiene Urbana (GCBA) (<a href='https://data.buenosaires.gob.ar/dataset/espacios-verdes'>dataset</a>, licencia CC-BY)</li><li><b>hospitales</b>: Buenos Aires Data — Ministerio de Salud (GCBA) (<a href='https://data.buenosaires.gob.ar/dataset/hospitales'>dataset</a>, licencia CC-BY)</li></ul></div>
-    <div><b>Última construcción (gold):</b> 2026-09-25T14:39:12</div>
+    <div><b>Última construcción (gold):</b> 2026-10-06T16:15:52</div>
     <div><b>Motor de consulta:</b> sqlite</div>
     <div style="margin-top:8px"><b>Estado:</b> <span class="estado">✓ verificado</span></div>
     <div style="margin-top:8px; color:var(--muted)">

@@ -18,6 +18,7 @@ Uso:
     python scripts/ingest_all.py ecobici      # solo una fuente
 """
 from __future__ import annotations
+import _utf8  # noqa: F401  (reconfigura stdout/stderr a UTF-8; portabilidad Windows)
 import datetime as dt
 import hashlib
 import json

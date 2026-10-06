@@ -1,5 +1,5 @@
 {
-  "generado": "2026-09-25T14:39:12",
+  "generado": "2026-10-06T16:15:52",
   "motor": "sqlite",
   "estado": "verificado",
   "indicadores": [
@@ -9,6 +9,13 @@
     "m2_espacios_verdes",
     "hospitales"
   ],
+  "indicador_dominio": {
+    "estaciones_ecobici": "ecobici",
+    "km_ciclovias": "ciclovias",
+    "espacios_verdes": "espacios_verdes",
+    "m2_espacios_verdes": "espacios_verdes",
+    "hospitales": "hospitales"
+  },
   "publicables": {
     "ecobici": true,
     "ciclovias": true,
@@ -22,7 +29,7 @@
       "url": "https://data.buenosaires.gob.ar/dataset/estaciones-bicicletas-publicas",
       "licencia": "CC-BY",
       "_origen": "semilla_demo",
-      "fecha_dato": "2026-09-25T14:39:11"
+      "fecha_dato": "2026-10-06T16:15:52"
     },
     "ciclovias": {
       "fuente": "Buenos Aires Data",
@@ -30,7 +37,7 @@
       "url": "https://data.buenosaires.gob.ar/dataset/ciclovias",
       "licencia": "CC-BY",
       "_origen": "semilla_demo",
-      "fecha_dato": "2026-09-25T14:39:11"
+      "fecha_dato": "2026-10-06T16:15:52"
     },
     "espacios_verdes": {
       "fuente": "Buenos Aires Data",
@@ -38,7 +45,7 @@
       "url": "https://data.buenosaires.gob.ar/dataset/espacios-verdes",
       "licencia": "CC-BY",
       "_origen": "semilla_demo",
-      "fecha_dato": "2026-09-25T14:39:11"
+      "fecha_dato": "2026-10-06T16:15:52"
     },
     "hospitales": {
       "fuente": "Buenos Aires Data",
@@ -46,7 +53,45 @@
       "url": "https://data.buenosaires.gob.ar/dataset/hospitales",
       "licencia": "CC-BY",
       "_origen": "semilla_demo",
-      "fecha_dato": "2026-09-25T14:39:11"
+      "fecha_dato": "2026-10-06T16:15:52"
+    }
+  },
+  "linaje": {
+    "ecobici": {
+      "raw_file": "lago\\raw\\ecobici\\2026-10-06.csv",
+      "raw_sha256": "ee49c070b3c060c2bdb3e99a8073dfb2693d75d8e70addcbedda3859074f4fbf",
+      "raw_sha256_ingesta": null,
+      "sha256_coincide": null,
+      "filas_descartadas": 11,
+      "filas_salida": 289,
+      "fecha_transformacion": "2026-10-06T16:15:52"
+    },
+    "ciclovias": {
+      "raw_file": "lago\\raw\\ciclovias\\2026-10-06.csv",
+      "raw_sha256": "17b83a595b505806ab9c2c47d409cca9b66d0cf49f73176d58694cc1fd24bf97",
+      "raw_sha256_ingesta": null,
+      "sha256_coincide": null,
+      "filas_descartadas": 0,
+      "filas_salida": 120,
+      "fecha_transformacion": "2026-10-06T16:15:52"
+    },
+    "espacios_verdes": {
+      "raw_file": "lago\\raw\\espacios_verdes\\2026-10-06.csv",
+      "raw_sha256": "1e73128eb9d7ebe6e735c36294feb8f0fc69213e194beca627c30f89dfcc1184",
+      "raw_sha256_ingesta": null,
+      "sha256_coincide": null,
+      "filas_descartadas": 0,
+      "filas_salida": 250,
+      "fecha_transformacion": "2026-10-06T16:15:52"
+    },
+    "hospitales": {
+      "raw_file": "lago\\raw\\hospitales\\2026-10-06.csv",
+      "raw_sha256": "0672af8438a3497e2915267780149e0445c5d5446cd5bd6e6c41581a7bcecb4a",
+      "raw_sha256_ingesta": null,
+      "sha256_coincide": null,
+      "filas_descartadas": 0,
+      "filas_salida": 35,
+      "fecha_transformacion": "2026-10-06T16:15:52"
     }
   }
 }

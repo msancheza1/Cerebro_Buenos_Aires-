@@ -24,6 +24,7 @@ Salida:
   - exit code != 0 si algún dominio crítico falla
 """
 from __future__ import annotations
+import _utf8  # noqa: F401  (reconfigura stdout/stderr a UTF-8; portabilidad Windows)
 import csv
 import datetime as dt
 import json

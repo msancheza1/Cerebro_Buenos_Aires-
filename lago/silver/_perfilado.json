@@ -1,0 +1,303 @@
+{
+  "fecha": "2026-10-06T16:15:52",
+  "resultado": {
+    "ecobici": {
+      "filas": 289,
+      "columnas": {
+        "id": {
+          "tipo": "entero",
+          "total": 289,
+          "no_nulos": 289,
+          "nulos": 0,
+          "completitud_pct": 100.0,
+          "distintos": 289,
+          "min": 1.0,
+          "max": 300.0,
+          "media": 151.8131,
+          "desvio": 87.027
+        },
+        "nombre": {
+          "tipo": "texto",
+          "total": 289,
+          "no_nulos": 289,
+          "nulos": 0,
+          "completitud_pct": 100.0,
+          "distintos": 289
+        },
+        "comuna": {
+          "tipo": "entero",
+          "total": 289,
+          "no_nulos": 289,
+          "nulos": 0,
+          "completitud_pct": 100.0,
+          "distintos": 15,
+          "min": 1.0,
+          "max": 15.0,
+          "media": 7.1211,
+          "desvio": 4.9324,
+          "fuera_rango": 0
+        },
+        "lat": {
+          "tipo": "decimal",
+          "total": 289,
+          "no_nulos": 289,
+          "nulos": 0,
+          "completitud_pct": 100.0,
+          "distintos": 289,
+          "min": -34.7047,
+          "max": -34.5261,
+          "media": -34.6051,
+          "desvio": 0.0513,
+          "fuera_rango": 0
+        },
+        "lon": {
+          "tipo": "decimal",
+          "total": 289,
+          "no_nulos": 289,
+          "nulos": 0,
+          "completitud_pct": 100.0,
+          "distintos": 289,
+          "min": -58.5302,
+          "max": -58.3353,
+          "media": -58.4314,
+          "desvio": 0.0573,
+          "fuera_rango": 0
+        },
+        "anclajes_totales": {
+          "tipo": "entero",
+          "total": 289,
+          "no_nulos": 289,
+          "nulos": 0,
+          "completitud_pct": 100.0,
+          "distintos": 6,
+          "min": 12.0,
+          "max": 32.0,
+          "media": 21.481,
+          "desvio": 7.0686
+        }
+      }
+    },
+    "ciclovias": {
+      "filas": 120,
+      "columnas": {
+        "id": {
+          "tipo": "entero",
+          "total": 120,
+          "no_nulos": 120,
+          "nulos": 0,
+          "completitud_pct": 100.0,
+          "distintos": 120,
+          "min": 1.0,
+          "max": 120.0,
+          "media": 60.5,
+          "desvio": 34.7851
+        },
+        "nombre": {
+          "tipo": "texto",
+          "total": 120,
+          "no_nulos": 120,
+          "nulos": 0,
+          "completitud_pct": 100.0,
+          "distintos": 120
+        },
+        "comuna": {
+          "tipo": "entero",
+          "total": 120,
+          "no_nulos": 120,
+          "nulos": 0,
+          "completitud_pct": 100.0,
+          "distintos": 15,
+          "min": 1.0,
+          "max": 15.0,
+          "media": 7.0,
+          "desvio": 4.7368,
+          "fuera_rango": 0
+        },
+        "long_metros": {
+          "tipo": "decimal",
+          "total": 120,
+          "no_nulos": 120,
+          "nulos": 0,
+          "completitud_pct": 100.0,
+          "distintos": 119,
+          "min": 127.2,
+          "max": 3186.6,
+          "media": 1532.3275,
+          "desvio": 869.4823
+        },
+        "tipo": {
+          "tipo": "texto",
+          "total": 120,
+          "no_nulos": 120,
+          "nulos": 0,
+          "completitud_pct": 100.0,
+          "distintos": 2
+        }
+      }
+    },
+    "espacios_verdes": {
+      "filas": 250,
+      "columnas": {
+        "id": {
+          "tipo": "entero",
+          "total": 250,
+          "no_nulos": 250,
+          "nulos": 0,
+          "completitud_pct": 100.0,
+          "distintos": 250,
+          "min": 1.0,
+          "max": 250.0,
+          "media": 125.5,
+          "desvio": 72.313
+        },
+        "nombre": {
+          "tipo": "texto",
+          "total": 250,
+          "no_nulos": 250,
+          "nulos": 0,
+          "completitud_pct": 100.0,
+          "distintos": 250
+        },
+        "comuna": {
+          "tipo": "entero",
+          "total": 250,
+          "no_nulos": 250,
+          "nulos": 0,
+          "completitud_pct": 100.0,
+          "distintos": 15,
+          "min": 1.0,
+          "max": 15.0,
+          "media": 7.456,
+          "desvio": 4.6517,
+          "fuera_rango": 0
+        },
+        "area_m2": {
+          "tipo": "decimal",
+          "total": 250,
+          "no_nulos": 250,
+          "nulos": 0,
+          "completitud_pct": 100.0,
+          "distintos": 250,
+          "min": 188.9,
+          "max": 89674.7,
+          "media": 44336.9632,
+          "desvio": 26556.3405
+        },
+        "clasificacion": {
+          "tipo": "texto",
+          "total": 250,
+          "no_nulos": 250,
+          "nulos": 0,
+          "completitud_pct": 100.0,
+          "distintos": 4
+        },
+        "lat": {
+          "tipo": "decimal",
+          "total": 250,
+          "no_nulos": 250,
+          "nulos": 0,
+          "completitud_pct": 100.0,
+          "distintos": 250,
+          "min": -34.7039,
+          "max": -34.5264,
+          "media": -34.6086,
+          "desvio": 0.0508,
+          "fuera_rango": 0
+        },
+        "lon": {
+          "tipo": "decimal",
+          "total": 250,
+          "no_nulos": 250,
+          "nulos": 0,
+          "completitud_pct": 100.0,
+          "distintos": 250,
+          "min": -58.5306,
+          "max": -58.3366,
+          "media": -58.4371,
+          "desvio": 0.0553,
+          "fuera_rango": 0
+        }
+      }
+    },
+    "hospitales": {
+      "filas": 35,
+      "columnas": {
+        "id": {
+          "tipo": "entero",
+          "total": 35,
+          "no_nulos": 35,
+          "nulos": 0,
+          "completitud_pct": 100.0,
+          "distintos": 35,
+          "min": 1.0,
+          "max": 35.0,
+          "media": 18.0,
+          "desvio": 10.247
+        },
+        "nombre": {
+          "tipo": "texto",
+          "total": 35,
+          "no_nulos": 35,
+          "nulos": 0,
+          "completitud_pct": 100.0,
+          "distintos": 35
+        },
+        "tipo": {
+          "tipo": "texto",
+          "total": 35,
+          "no_nulos": 35,
+          "nulos": 0,
+          "completitud_pct": 100.0,
+          "distintos": 2
+        },
+        "comuna": {
+          "tipo": "entero",
+          "total": 35,
+          "no_nulos": 35,
+          "nulos": 0,
+          "completitud_pct": 100.0,
+          "distintos": 15,
+          "min": 1.0,
+          "max": 15.0,
+          "media": 6.1429,
+          "desvio": 4.4135,
+          "fuera_rango": 0
+        },
+        "direccion": {
+          "tipo": "texto",
+          "total": 35,
+          "no_nulos": 35,
+          "nulos": 0,
+          "completitud_pct": 100.0,
+          "distintos": 35
+        },
+        "lat": {
+          "tipo": "decimal",
+          "total": 35,
+          "no_nulos": 35,
+          "nulos": 0,
+          "completitud_pct": 100.0,
+          "distintos": 35,
+          "min": -34.6983,
+          "max": -34.5311,
+          "media": -34.635,
+          "desvio": 0.0494,
+          "fuera_rango": 0
+        },
+        "lon": {
+          "tipo": "decimal",
+          "total": 35,
+          "no_nulos": 35,
+          "nulos": 0,
+          "completitud_pct": 100.0,
+          "distintos": 35,
+          "min": -58.5295,
+          "max": -58.3359,
+          "media": -58.443,
+          "desvio": 0.06,
+          "fuera_rango": 0
+        }
+      }
+    }
+  }
+}

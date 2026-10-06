@@ -9,6 +9,7 @@ Uso:
     python scripts/query_sqlite.py
 """
 from __future__ import annotations
+import _utf8  # noqa: F401  (reconfigura stdout/stderr a UTF-8; portabilidad Windows)
 import sqlite3
 from pathlib import Path
 

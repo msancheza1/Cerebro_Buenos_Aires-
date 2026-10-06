@@ -21,8 +21,10 @@ Uso:
     python scripts/build_gold.py
 """
 from __future__ import annotations
+import _utf8  # noqa: F401  (reconfigura stdout/stderr a UTF-8; portabilidad Windows)
 import csv
 import datetime as dt
+import hashlib
 import json
 import sqlite3
 import sys
@@ -69,6 +71,50 @@ def _fuentes_meta(dominios) -> dict:
                       "url": m.get("url"), "licencia": m.get("licencia"),
                       "_origen": m.get("_origen"),
                       "fecha_dato": m.get("fecha_transformacion")}
+    return out
+
+
+def _sha256_archivo(p: Path) -> str | None:
+    """SHA256 del contenido de un archivo (para linaje reproducible)."""
+    if not p.exists():
+        return None
+    h = hashlib.sha256()
+    with p.open("rb") as f:
+        for bloque in iter(lambda: f.read(65536), b""):
+            h.update(bloque)
+    return h.hexdigest()
+
+
+def _linaje(dominios) -> dict:
+    """De qué archivo RAW (+ sha256) salió cada dominio y cuántas filas sobrevivieron.
+
+    Encadena GOLD <- SILVER.meta.json <- RAW (archivo + hash). Permite rastrear
+    cualquier indicador hasta el byte exacto del dato de origen.
+    """
+    out = {}
+    for d in dominios:
+        mp = SILVER / f"{d}.meta.json"
+        if not mp.exists():
+            continue
+        m = json.loads(mp.read_text(encoding="utf-8"))
+        raw_rel = m.get("raw_file", "")
+        raw_abs = (ROOT / raw_rel) if raw_rel else None
+        sha = _sha256_archivo(raw_abs) if raw_abs else None
+        # si la ingesta dejó un sidecar con sha256, lo preferimos como referencia cruzada
+        sha_ingesta = None
+        if raw_abs:
+            side = raw_abs.with_suffix(raw_abs.suffix + ".meta.json")
+            if side.exists():
+                sha_ingesta = json.loads(side.read_text(encoding="utf-8")).get("sha256")
+        out[d] = {
+            "raw_file": raw_rel,
+            "raw_sha256": sha,
+            "raw_sha256_ingesta": sha_ingesta,
+            "sha256_coincide": (sha is not None and sha == sha_ingesta) if sha_ingesta else None,
+            "filas_descartadas": m.get("filas_descartadas"),
+            "filas_salida": m.get("filas_salida"),
+            "fecha_transformacion": m.get("fecha_transformacion"),
+        }
     return out
 
 
@@ -136,14 +182,25 @@ def main() -> int:
             for c in COMUNAS:
                 w.writerow([c, indicadores[col].get(c, 0)])
 
-    # ---- meta gold: fuentes + fecha + estado verificado ----
+    # ---- meta gold: fuentes + fecha + estado verificado + LINAJE ----
+    dominios_ok = [d for d, ok in publicables.items() if ok]
+    # de qué dominio sale cada indicador (para linaje a nivel indicador)
+    indicador_dominio = {
+        "estaciones_ecobici": "ecobici",
+        "km_ciclovias": "ciclovias",
+        "espacios_verdes": "espacios_verdes",
+        "m2_espacios_verdes": "espacios_verdes",
+        "hospitales": "hospitales",
+    }
     (GOLD / "_meta.json").write_text(json.dumps({
         "generado": dt.datetime.now().isoformat(timespec="seconds"),
         "motor": "sqlite",
         "estado": "verificado",
         "indicadores": cols_ind,
+        "indicador_dominio": {k: v for k, v in indicador_dominio.items() if k in cols_ind},
         "publicables": publicables,
-        "fuentes": _fuentes_meta([d for d, ok in publicables.items() if ok]),
+        "fuentes": _fuentes_meta(dominios_ok),
+        "linaje": _linaje(dominios_ok),
     }, ensure_ascii=False, indent=2), encoding="utf-8")
 
     con.close()

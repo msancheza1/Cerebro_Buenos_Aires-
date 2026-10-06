@@ -14,6 +14,7 @@ Uso:
     python scripts/build_dashboard.py
 """
 from __future__ import annotations
+import _utf8  # noqa: F401  (reconfigura stdout/stderr a UTF-8; portabilidad Windows)
 import csv
 import datetime as dt
 import json
@@ -99,6 +100,45 @@ def main() -> int:
 
     generado = meta.get("generado", dt.datetime.now().isoformat(timespec="seconds"))
 
+    # ---- linaje: de qué raw (+sha256) y con cuántas filas sale cada dominio ----
+    linaje = meta.get("linaje", {})
+    indicador_dominio = meta.get("indicador_dominio", {})
+
+    def _sha_corto(s):
+        return (s[:12] + "…") if s else "—"
+
+    if linaje:
+        filas_linaje = "".join(
+            f"<tr><td class='com'>{d}</td>"
+            f"<td style='text-align:left'><code>{l.get('raw_file','')}</code></td>"
+            f"<td style='text-align:left'><code title='{l.get('raw_sha256','')}'>"
+            f"{_sha_corto(l.get('raw_sha256'))}</code></td>"
+            f"<td>{l.get('filas_salida','—')}</td>"
+            f"<td>{l.get('filas_descartadas','—')}</td></tr>"
+            for d, l in linaje.items()
+        )
+        # qué indicador viene de qué dominio
+        ind_dom = "".join(
+            f"<li><b>{etiquetas.get(k,k)}</b> ← dominio <code>{v}</code></li>"
+            for k, v in indicador_dominio.items()
+        )
+        linaje_html = f"""
+  <h2>Linaje de datos</h2>
+  <div class="ficha">
+    <div style="color:var(--muted); margin-bottom:10px">
+      Cada indicador se rastrea hasta el archivo crudo (BRONZE) y su huella SHA-256.
+      Trazabilidad GOLD ← SILVER ← RAW.
+    </div>
+    <table>
+      <thead><tr><th>Dominio</th><th>Archivo RAW</th><th>SHA-256 (raw)</th>
+        <th>Filas publicadas</th><th>Filas descartadas</th></tr></thead>
+      <tbody>{filas_linaje}</tbody>
+    </table>
+    <div style="margin-top:14px"><b>Indicadores → origen</b><ul>{ind_dom}</ul></div>
+  </div>"""
+    else:
+        linaje_html = ""
+
     aviso_demo = ""
     if origen_demo:
         aviso_demo = ("<div class='aviso'>⚠️ Datos <b>SEMILLA (demo)</b>: respetan la "
@@ -174,7 +214,7 @@ def main() -> int:
     <thead><tr><th>Comuna</th>{''.join(f'<th>{etiquetas.get(k,k)}</th>' for k in indicadores)}</tr></thead>
     <tbody>{filas_tabla()}</tbody>
   </table>
-
+{linaje_html}
   <div class="ficha">
     <div><b>Fuentes</b><ul>{fuentes_html}</ul></div>
     <div><b>Última construcción (gold):</b> {generado}</div>

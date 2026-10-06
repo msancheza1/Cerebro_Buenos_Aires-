@@ -9,6 +9,7 @@ Requiere DuckDB con la extensión ducklake. Uso:
     python scripts/lakehouse_ducklake.py
 """
 from __future__ import annotations
+import _utf8  # noqa: F401  (reconfigura stdout/stderr a UTF-8; portabilidad Windows)
 import csv
 import sys
 from pathlib import Path

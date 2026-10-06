@@ -20,6 +20,7 @@ Uso:
     python scripts/lakehouse_timetravel.py
 """
 from __future__ import annotations
+import _utf8  # noqa: F401  (reconfigura stdout/stderr a UTF-8; portabilidad Windows)
 import csv
 import datetime as dt
 import sqlite3
