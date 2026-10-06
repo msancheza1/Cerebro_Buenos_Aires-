@@ -1,25 +1,25 @@
 {
-  "fecha": "2026-10-06T16:49:26",
+  "fecha": "2026-10-06T17:09:15",
   "herramienta": "reglas_propias_stdlib",
   "resultado": {
     "ecobici": {
       "publicable": true,
-      "filas": 289,
+      "filas": 406,
       "violaciones": []
     },
     "ciclovias": {
       "publicable": true,
-      "filas": 120,
+      "filas": 2764,
       "violaciones": []
     },
     "espacios_verdes": {
       "publicable": true,
-      "filas": 250,
+      "filas": 2176,
       "violaciones": []
     },
     "hospitales": {
       "publicable": true,
-      "filas": 35,
+      "filas": 36,
       "violaciones": []
     }
   }

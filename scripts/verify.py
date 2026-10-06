@@ -88,10 +88,15 @@ def regla_no_vacio(filas, col):
 
 
 CHECKS = {
-    "ecobici": lambda f: reglas_comunes(f) + reglas_coords(f) + regla_positivo(f, "anclajes_totales"),
+    # Reglas alineadas a los datos REALES de BA Data:
+    #  - ecobici: coords (lat/lon reales) + comunas; ya no hay anclajes_totales
+    #  - ciclovias: longitud > 0
+    #  - espacios_verdes: área > 0 (sin coords puntuales: son polígonos)
+    #  - hospitales: nombre no vacío (ubicación viene como geometría proyectada)
+    "ecobici": lambda f: reglas_comunes(f) + reglas_coords(f),
     "ciclovias": lambda f: reglas_comunes(f) + regla_positivo(f, "long_metros"),
-    "espacios_verdes": lambda f: reglas_comunes(f) + reglas_coords(f) + regla_positivo(f, "area_m2"),
-    "hospitales": lambda f: reglas_comunes(f) + reglas_coords(f) + regla_no_vacio(f, "nombre"),
+    "espacios_verdes": lambda f: reglas_comunes(f) + regla_positivo(f, "area_m2"),
+    "hospitales": lambda f: reglas_comunes(f) + regla_no_vacio(f, "nombre"),
 }
 
 

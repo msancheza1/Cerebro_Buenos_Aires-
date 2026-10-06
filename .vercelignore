@@ -1,0 +1,22 @@
+# Vercel solo necesita el dashboard estático (app/index.html).
+# Excluimos el pipeline, el entorno y los datos crudos pesados.
+.venv/
+__pycache__/
+*.pyc
+
+# datos y artefactos del pipeline (el HTML ya trae los datos horneados)
+lago/
+lakehouse/
+catalogo/
+bitacora/
+tests/
+scripts/
+
+# el dashboard interactivo Streamlit no corre en hosting estático
+app/streamlit_app.py
+app/__pycache__/
+
+# archivos de proyecto que no hacen falta en el deploy
+requirements*.txt
+*.md
+!app/**

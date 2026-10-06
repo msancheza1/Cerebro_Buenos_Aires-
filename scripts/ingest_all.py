@@ -39,15 +39,23 @@ def _sha256(b: bytes) -> str:
     return hashlib.sha256(b).hexdigest()
 
 
+# User-Agent de navegador: el WAF de BA Data rechaza clientes "programáticos".
+UA = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
+      "(KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36")
+
+
 def bajar_urllib(url: str) -> bytes:
-    req = urllib.request.Request(url, headers={"User-Agent": "cerebro-ba/1.0"})
-    with urllib.request.urlopen(req, timeout=60) as resp:
+    req = urllib.request.Request(url, headers={
+        "User-Agent": UA,
+        "Accept": "text/csv,application/csv,application/geo+json,application/json,*/*",
+    })
+    with urllib.request.urlopen(req, timeout=120) as resp:
         return resp.read()
 
 
 def bajar_curl(url: str) -> bytes:
     out = subprocess.run(
-        ["curl", "-sSL", "--fail", "-A", "cerebro-ba/1.0", url],
+        ["curl", "-sSL", "--fail", "--max-time", "120", "-A", UA, url],
         capture_output=True, check=True,
     )
     return out.stdout

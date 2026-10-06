@@ -31,6 +31,10 @@ import re
 import sys
 from pathlib import Path
 
+# datasets reales traen columnas 'geometry' (WKT de polígonos) que superan el
+# límite por defecto de campo CSV (128 KB). Lo subimos para poder leerlas.
+csv.field_size_limit(10 * 1024 * 1024)
+
 ROOT = Path(__file__).resolve().parents[1]
 RAW = ROOT / "lago" / "raw"
 SILVER = ROOT / "lago" / "silver"
@@ -89,10 +93,17 @@ def _coord_ok(lat, lon) -> bool:
 
 # --- limpiadores por dominio: devuelven (filas_limpias, schema, descartadas) ---
 
-def limpiar_csv_generico(archivo, mapping, coords=True, num_cols=None):
-    """mapping: {col_salida: col_entrada}. num_cols: {col: 'int'|'float'}."""
+def limpiar_csv_generico(archivo, mapping, coords=True, num_cols=None,
+                         derivar_comuna=None, auto_id=False):
+    """mapping: {col_salida: col_entrada}. num_cols: {col: 'int'|'float'}.
+
+    derivar_comuna: LocalizadorComunas opcional. Si el raw NO trae comuna válida
+      pero sí lat/lon, se asigna la comuna por punto-en-polígono (unión espacial).
+    auto_id: si True y el id del raw viene vacío/duplicado, se genera uno incremental.
+    """
     num_cols = num_cols or {}
     filas, vistos, descartadas = [], set(), 0
+    contador_id = 0
     with archivo.open(encoding="utf-8") as f:
         for row in csv.DictReader(f):
             out = {}
@@ -102,6 +113,15 @@ def limpiar_csv_generico(archivo, mapping, coords=True, num_cols=None):
                     out[dst] = _to_int(val) if num_cols[dst] == "int" else _to_float(val)
                 else:
                     out[dst] = _title(val) if dst == "nombre" else _norm_str(val)
+
+            # derivar comuna por coordenadas si falta y hay localizador
+            if (derivar_comuna is not None and
+                    (out.get("comuna") is None or
+                     not (COMUNA_MIN <= (out.get("comuna") or 0) <= COMUNA_MAX))):
+                c = derivar_comuna.comuna_de(out.get("lon"), out.get("lat"))
+                if c is not None:
+                    out["comuna"] = c
+
             # comuna válida
             if "comuna" in out and (out["comuna"] is None
                                     or not (COMUNA_MIN <= out["comuna"] <= COMUNA_MAX)):
@@ -111,7 +131,10 @@ def limpiar_csv_generico(archivo, mapping, coords=True, num_cols=None):
             if coords and not _coord_ok(out.get("lat"), out.get("lon")):
                 descartadas += 1
                 continue
-            # id único
+            # id: auto-incremental si hace falta
+            if auto_id and (out.get("id") is None or out.get("id") in vistos):
+                contador_id += 1
+                out["id"] = contador_id
             rid = out.get("id")
             if rid in vistos:
                 descartadas += 1
@@ -121,61 +144,84 @@ def limpiar_csv_generico(archivo, mapping, coords=True, num_cols=None):
     return filas, descartadas
 
 
+def _localizador():
+    """LocalizadorComunas desde el geojson de comunas (gold o raw)."""
+    from geo import LocalizadorComunas
+    for cand in (ROOT / "lago" / "gold" / "comunas.geojson",):
+        if cand.exists():
+            loc = LocalizadorComunas(cand)
+            if loc.disponible():
+                return loc
+    # fallback: último geojson de raw/comunas
+    import glob as _glob
+    gjs = sorted(p for p in _glob.glob(str(RAW / "comunas" / "*.geojson"))
+                 if not Path(p).name.startswith("_"))
+    if gjs:
+        loc = LocalizadorComunas(Path(gjs[-1]))
+        return loc if loc.disponible() else None
+    return None
+
+
 def dom_ecobici(archivo):
+    # Real BA Data: id, nombre, comuna(vacía), latitud, longitud.
+    # La comuna viene vacía -> se deriva por punto-en-polígono con el geojson.
     return limpiar_csv_generico(
         archivo,
         mapping={"id": "id", "nombre": "nombre", "comuna": "comuna",
-                 "lat": "lat", "lon": "long", "anclajes_totales": "anclajes_totales"},
+                 "lat": "latitud", "lon": "longitud"},
         coords=True,
-        num_cols={"id": "int", "comuna": "int", "lat": "float", "lon": "float",
-                  "anclajes_totales": "int"},
+        num_cols={"id": "int", "comuna": "int", "lat": "float", "lon": "float"},
+        derivar_comuna=_localizador(),
+        auto_id=True,
     )
 
 
 def dom_ciclovias(archivo):
-    # sin coordenadas puntuales (son líneas); no validamos coords
+    # Real: id, nombre, tipo, comuna, longitud_m, geometry. Sin coords puntuales.
     return limpiar_csv_generico(
         archivo,
         mapping={"id": "id", "nombre": "nombre", "comuna": "comuna",
-                 "long_metros": "long_metros", "tipo": "tipo"},
+                 "long_metros": "longitud_m", "tipo": "tipo"},
         coords=False,
         num_cols={"id": "int", "comuna": "int", "long_metros": "float"},
+        auto_id=True,
     )
 
 
 def dom_espacios_verdes(archivo):
+    # Real: id, nombre, comuna, clasificac, area, geometry. Sin lat/lon puntual.
     return limpiar_csv_generico(
         archivo,
         mapping={"id": "id", "nombre": "nombre", "comuna": "comuna",
-                 "area_m2": "area_m2", "clasificacion": "clasificacion",
-                 "lat": "lat", "lon": "lon"},
-        coords=True,
-        num_cols={"id": "int", "comuna": "int", "area_m2": "float",
-                  "lat": "float", "lon": "float"},
+                 "area_m2": "area", "clasificacion": "clasificac"},
+        coords=False,
+        num_cols={"id": "int", "comuna": "int", "area_m2": "float"},
+        auto_id=True,
     )
 
 
 def dom_hospitales(archivo):
+    # Real: nam(nombre), esp(tipo), com(comuna), dir(direccion), geometry(proyectada).
+    # No hay lat/lon WGS84 -> no validamos coords; dejamos lat/lon vacíos.
     return limpiar_csv_generico(
         archivo,
-        mapping={"id": "id", "nombre": "nombre", "tipo": "tipo", "comuna": "comuna",
-                 "direccion": "direccion", "lat": "lat", "lon": "lon"},
-        coords=True,
-        num_cols={"id": "int", "comuna": "int", "lat": "float", "lon": "float"},
+        mapping={"id": "id", "nombre": "nam", "tipo": "esp", "comuna": "com",
+                 "direccion": "dir"},
+        coords=False,
+        num_cols={"id": "int", "comuna": "int"},
+        auto_id=True,
     )
 
 
 SCHEMAS = {
     "ecobici": [("id", "INT64"), ("nombre", "UTF8"), ("comuna", "INT64"),
-                ("lat", "DOUBLE"), ("lon", "DOUBLE"), ("anclajes_totales", "INT64")],
+                ("lat", "DOUBLE"), ("lon", "DOUBLE")],
     "ciclovias": [("id", "INT64"), ("nombre", "UTF8"), ("comuna", "INT64"),
                   ("long_metros", "DOUBLE"), ("tipo", "UTF8")],
     "espacios_verdes": [("id", "INT64"), ("nombre", "UTF8"), ("comuna", "INT64"),
-                        ("area_m2", "DOUBLE"), ("clasificacion", "UTF8"),
-                        ("lat", "DOUBLE"), ("lon", "DOUBLE")],
+                        ("area_m2", "DOUBLE"), ("clasificacion", "UTF8")],
     "hospitales": [("id", "INT64"), ("nombre", "UTF8"), ("tipo", "UTF8"),
-                   ("comuna", "INT64"), ("direccion", "UTF8"),
-                   ("lat", "DOUBLE"), ("lon", "DOUBLE")],
+                   ("comuna", "INT64"), ("direccion", "UTF8")],
 }
 LIMPIADORES = {
     "ecobici": dom_ecobici,

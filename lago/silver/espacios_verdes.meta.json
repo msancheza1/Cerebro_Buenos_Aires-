@@ -2,12 +2,12 @@
   "dominio": "espacios_verdes",
   "fuente": "Buenos Aires Data",
   "organismo": "Ministerio de Espacio Público e Higiene Urbana (GCBA)",
-  "url": "https://data.buenosaires.gob.ar/dataset/espacios-verdes",
+  "url": "https://data.buenosaires.gob.ar/dataset/espacios-verdes/resource/df878bd5-5759-4af3-badc-2a4c1ae0ebf8/download",
   "licencia": "CC-BY",
-  "_origen": "semilla_demo",
+  "_origen": "descarga",
   "raw_file": "lago\\raw\\espacios_verdes\\2026-10-06.csv",
-  "fecha_transformacion": "2026-10-06T16:49:26",
-  "filas_salida": 250,
+  "fecha_transformacion": "2026-10-06T17:08:43",
+  "filas_salida": 2176,
   "filas_descartadas": 0,
   "formato_parquet": true
 }

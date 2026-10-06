@@ -1,36 +1,37 @@
-id,nombre,tipo,comuna,direccion,lat,lon
-1,Hospital De Emergencias 1,hospital_general,1,Calle 4436,-34.579922,-58.436504
-2,Hospital De Ninos 2,hospital_especializado,6,Calle 7268,-34.645999,-58.478504
-3,Hospital Materno 3,hospital_general,1,Calle 6977,-34.698079,-58.426465
-4,Hospital De Emergencias 4,hospital_especializado,2,Calle 3803,-34.691516,-58.386806
-5,Hospital De Emergencias 5,hospital_general,2,Calle 8555,-34.531065,-58.425198
-6,Hospital General 6,hospital_especializado,7,Calle 6505,-34.645603,-58.335877
-7,Hospital De Agudos 7,hospital_especializado,6,Calle 288,-34.695934,-58.509609
-8,Hospital General 8,hospital_general,11,Calle 1799,-34.550002,-58.425912
-9,Hospital General 9,hospital_general,7,Calle 6014,-34.678598,-58.507038
-10,Hospital De Emergencias 10,hospital_general,8,Calle 6947,-34.673869,-58.356196
-11,Hospital De Ninos 11,hospital_especializado,1,Calle 9860,-34.690133,-58.507442
-12,Hospital De Ninos 12,hospital_general,5,Calle 7062,-34.693865,-58.397197
-13,Hospital De Emergencias 13,hospital_general,3,Calle 65,-34.664785,-58.51846
-14,Hospital De Ninos 14,hospital_general,3,Calle 2366,-34.622244,-58.391177
-15,Hospital Materno 15,hospital_general,6,Calle 9030,-34.662768,-58.439679
-16,Hospital Oftalmologico 16,hospital_general,1,Calle 8781,-34.604397,-58.529549
-17,Hospital De Emergencias 17,hospital_general,1,Calle 2415,-34.594141,-58.437331
-18,Hospital De Ninos 18,hospital_especializado,15,Calle 5519,-34.605249,-58.356015
-19,Hospital De Emergencias 19,hospital_general,10,Calle 3893,-34.691444,-58.364876
-20,Hospital General 20,hospital_general,1,Calle 7277,-34.698329,-58.46804
-21,Hospital De Emergencias 21,hospital_especializado,3,Calle 2167,-34.675041,-58.520527
-22,Hospital De Emergencias 22,hospital_especializado,4,Calle 1614,-34.611972,-58.506472
-23,Hospital Materno 23,hospital_especializado,9,Calle 3257,-34.581244,-58.336515
-24,Hospital De Agudos 24,hospital_especializado,12,Calle 2536,-34.681018,-58.497534
-25,Hospital De Emergencias 25,hospital_especializado,12,Calle 3506,-34.607902,-58.451843
-26,Hospital Oftalmologico 26,hospital_especializado,5,Calle 2124,-34.559432,-58.337689
-27,Hospital De Emergencias 27,hospital_general,7,Calle 5864,-34.680744,-58.49943
-28,Hospital General 28,hospital_especializado,5,Calle 7588,-34.651739,-58.470668
-29,Hospital De Agudos 29,hospital_general,14,Calle 2626,-34.568475,-58.392731
-30,Hospital Oftalmologico 30,hospital_especializado,15,Calle 9192,-34.611642,-58.501222
-31,Hospital De Emergencias 31,hospital_general,3,Calle 6420,-34.617382,-58.44244
-32,Hospital De Emergencias 32,hospital_especializado,13,Calle 1665,-34.625074,-58.469119
-33,Hospital De Ninos 33,hospital_especializado,1,Calle 1584,-34.664853,-58.399254
-34,Hospital De Emergencias 34,hospital_general,9,Calle 9377,-34.608331,-58.507582
-35,Hospital Materno 35,hospital_especializado,6,Calle 2698,-34.560837,-58.47468
+id,nombre,tipo,comuna,direccion
+1,Dr. J. Garrahan,Pediatria,4,Combate De Los Pozos 1881
+2,Emerg Psiquiatricas Torcuato De Alvear,Salud Mental,15,Warnes Av. 2630
+3,Gastroenterologia B. Udaondo,Enf. Apar. Digestivo,4,Caseros Av. 2061
+4,Infecciosas F. Muñiz,Infectologia,4,Uspallata 2272
+5,Odontologia J. Dueñas,Odontologia,5,Muñiz 15
+6,Odontologia Infantil Don Benito Quinquela Martin,Odontologia,4,Don Pedro De Mendoza Av. 1795
+7,Oftalmologia Santa Lucia,Oftalmologia,3,San Juan Av. 2021
+8,Quemados Dr. Arturo Umberto Illia,Quemados,6,"Goyena, Pedro Av. 369"
+9,Rehabilitacion M. Rocca,Med. Fisica - Rehabilitacion,10,Segurola Av. 1949
+10,Rehabilitacion Respiratoria Maria Ferrer,Neumonologia,4,Finochietto Enrique Dr. 849
+11,Salud Mental Braulio Moyano,Salud Mental,4,Brandsen 2570
+12,Salud Mental J. Borda,Salud Mental,4,"Carrillo, Ramon, Dr. 375"
+13,Hospital Especializado Infanto Juvenil C. Tobar Garcia,Salud Mental,4,"Carrillo, Ramon, Dr. 315"
+14,Hospital Especializado Materno Infantil R. Sarda,Materno-Infantil,4,"Luca, Esteban De 2151"
+15,Hospital Especializado Odontologico Dr. R. Carrillo (Ex Nacional),Odontologia,2,Sanchez De Bustamante 2529
+16,Hospital Especializado Oftalmologico Dr. P. Lagleyze,Oftalmologia,11,"Justo, Juan B. Av. 4151"
+17,A. Zubizarreta,Basicas - Criticas - Otras,11,Nueva York 3952
+18,B. Rivadavia,Basicas - Criticas - Otras,2,Las Heras General Av. 2670
+19,Cecilia Grierson,,8,"Fernandez De La Cruz, F., Gral. Av. 4402"
+20,D. Velez Sarsfield,Basicas - Criticas - Otras,10,"Calderon De La Barca, Pedro 1550"
+21,Donacion F. Santojanni,Basicas - Criticas - Otras,9,Pilar 950
+22,Dr C. Argerich,Basicas - Criticas - Otras,4,Pi Y Margall 750
+23,Dr. C. Durand,Basicas - Criticas - Otras,6,Diaz Velez Av. 5044
+24,Dr. E. Tornu,Basicas - Criticas - Otras,15,Combatientes De Malvinas Av. 3002
+25,Dr. I. Pirovano,Basicas - Criticas - Otras,12,Monroe Av. 3555
+26,Dr. J. A. Fernandez,Basicas - Criticas - Otras,14,Cerviño Av. 3356
+27,Dr. T. Alvarez,Basicas - Criticas - Otras,7,"Aranguren, Juan F., Dr. 2701"
+28,J. A. Penna,Basicas - Criticas - Otras,4,"Chutro, Pedro, Prof., Dr. 3380"
+29,J. M. Ramos Mejia,Basicas - Criticas - Otras,3,"Urquiza, Gral. 609"
+30,P. Piñero,Basicas - Criticas - Otras,7,Varela Av. 1301
+31,P. De Elizalde,Pediatria,4,"Montes De Oca, Manuel Av. 40"
+32,R. Gutierrez,Pediatria,2,Gallo 1330
+33,Hospital Municipal De Oncologia M. Curie,Oncologia,6,Patricias Argentinas Av. 150
+34,Inst. De Zoonosis L. Pasteur,Zoonosis,6,Diaz Velez Av. 4821
+35,Instituto De Rehabilitacion Psicofisica (I.R.E.P.),Med. Fisica - Rehabilitacion,13,Echeverria 955
+36,Talleres Protegidos De Rehabilitacion Psiquiatrica,Salud Mental,4,Suarez Av. 2215

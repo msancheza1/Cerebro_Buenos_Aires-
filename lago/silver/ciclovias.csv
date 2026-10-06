@@ -1,121 +1,2765 @@
 id,nombre,comuna,long_metros,tipo
-1,Ciclovia Diag 1,11,2986.5,bicisenda
-2,Ciclovia Diag 2,5,2341.0,ciclovia
-3,Ciclovia Av 3,3,567.7,bicisenda
-4,Ciclovia Calle 4,5,2275.6,bicisenda
-5,Ciclovia Diag 5,8,1329.5,bicisenda
-6,Ciclovia Av 6,2,1982.4,bicisenda
-7,Ciclovia Calle 7,2,2214.8,bicisenda
-8,Ciclovia Calle 8,12,138.3,bicisenda
-9,Ciclovia Calle 9,1,674.2,bicisenda
-10,Ciclovia Calle 10,1,1906.0,ciclovia
-11,Ciclovia Calle 11,4,1519.4,ciclovia
-12,Ciclovia Diag 12,4,908.8,ciclovia
-13,Ciclovia Av 13,12,485.7,bicisenda
-14,Ciclovia Av 14,1,1739.4,bicisenda
-15,Ciclovia Av 15,14,270.6,bicisenda
-16,Ciclovia Av 16,3,2323.9,bicisenda
-17,Ciclovia Av 17,1,1384.6,bicisenda
-18,Ciclovia Calle 18,6,1739.4,ciclovia
-19,Ciclovia Diag 19,7,1864.8,ciclovia
-20,Ciclovia Av 20,11,937.6,ciclovia
-21,Ciclovia Diag 21,13,1971.8,bicisenda
-22,Ciclovia Av 22,2,1751.9,bicisenda
-23,Ciclovia Av 23,14,267.5,bicisenda
-24,Ciclovia Diag 24,5,1742.2,ciclovia
-25,Ciclovia Diag 25,7,2796.8,ciclovia
-26,Ciclovia Calle 26,3,2165.3,ciclovia
-27,Ciclovia Diag 27,1,2831.9,bicisenda
-28,Ciclovia Diag 28,7,967.8,bicisenda
-29,Ciclovia Calle 29,2,425.4,bicisenda
-30,Ciclovia Diag 30,6,524.0,ciclovia
-31,Ciclovia Av 31,14,927.3,bicisenda
-32,Ciclovia Diag 32,11,1019.6,bicisenda
-33,Ciclovia Av 33,6,850.9,ciclovia
-34,Ciclovia Av 34,1,1227.4,bicisenda
-35,Ciclovia Calle 35,15,1516.2,ciclovia
-36,Ciclovia Av 36,11,452.5,bicisenda
-37,Ciclovia Av 37,11,1109.8,ciclovia
-38,Ciclovia Calle 38,2,3004.2,bicisenda
-39,Ciclovia Calle 39,14,2655.5,bicisenda
-40,Ciclovia Av 40,13,873.7,ciclovia
-41,Ciclovia Diag 41,4,379.4,bicisenda
-42,Ciclovia Calle 42,6,1093.8,bicisenda
-43,Ciclovia Calle 43,5,380.2,ciclovia
-44,Ciclovia Av 44,1,1639.9,bicisenda
-45,Ciclovia Diag 45,2,2179.2,bicisenda
-46,Ciclovia Calle 46,3,2473.2,ciclovia
-47,Ciclovia Diag 47,3,2988.5,ciclovia
-48,Ciclovia Diag 48,1,537.2,ciclovia
-49,Ciclovia Calle 49,7,2427.6,ciclovia
-50,Ciclovia Calle 50,7,360.1,ciclovia
-51,Ciclovia Calle 51,9,1819.5,ciclovia
-52,Ciclovia Av 52,3,277.6,bicisenda
-53,Ciclovia Av 53,14,1038.9,bicisenda
-54,Ciclovia Calle 54,2,384.4,bicisenda
-55,Ciclovia Av 55,12,1212.4,bicisenda
-56,Ciclovia Calle 56,9,2402.5,bicisenda
-57,Ciclovia Av 57,4,1284.0,ciclovia
-58,Ciclovia Av 58,9,997.4,ciclovia
-59,Ciclovia Av 59,6,1836.3,ciclovia
-60,Ciclovia Diag 60,5,989.1,ciclovia
-61,Ciclovia Calle 61,15,1633.8,ciclovia
-62,Ciclovia Av 62,8,1421.0,ciclovia
-63,Ciclovia Calle 63,13,1575.2,ciclovia
-64,Ciclovia Diag 64,1,312.2,bicisenda
-65,Ciclovia Av 65,10,1031.5,ciclovia
-66,Ciclovia Diag 66,14,1356.6,ciclovia
-67,Ciclovia Av 67,12,1183.2,bicisenda
-68,Ciclovia Diag 68,9,2686.3,ciclovia
-69,Ciclovia Calle 69,4,127.2,ciclovia
-70,Ciclovia Calle 70,15,1399.9,bicisenda
-71,Ciclovia Av 71,14,1567.2,ciclovia
-72,Ciclovia Av 72,11,1283.2,ciclovia
-73,Ciclovia Calle 73,15,2094.8,ciclovia
-74,Ciclovia Diag 74,3,228.3,ciclovia
-75,Ciclovia Calle 75,2,2162.5,bicisenda
-76,Ciclovia Diag 76,4,3174.6,bicisenda
-77,Ciclovia Av 77,2,2424.2,bicisenda
-78,Ciclovia Av 78,2,2498.3,bicisenda
-79,Ciclovia Av 79,1,782.7,ciclovia
-80,Ciclovia Calle 80,1,848.4,ciclovia
-81,Ciclovia Av 81,1,2972.0,ciclovia
-82,Ciclovia Av 82,5,1816.7,bicisenda
-83,Ciclovia Av 83,14,2620.5,bicisenda
-84,Ciclovia Calle 84,6,760.7,ciclovia
-85,Ciclovia Diag 85,1,1202.8,bicisenda
-86,Ciclovia Av 86,7,2799.2,bicisenda
-87,Ciclovia Diag 87,3,933.8,bicisenda
-88,Ciclovia Diag 88,1,1813.7,bicisenda
-89,Ciclovia Diag 89,6,3131.6,bicisenda
-90,Ciclovia Diag 90,13,3072.9,bicisenda
-91,Ciclovia Diag 91,2,1781.2,bicisenda
-92,Ciclovia Calle 92,1,2390.5,ciclovia
-93,Ciclovia Av 93,14,2411.3,ciclovia
-94,Ciclovia Calle 94,3,1793.2,bicisenda
-95,Ciclovia Diag 95,5,956.1,bicisenda
-96,Ciclovia Calle 96,14,143.7,bicisenda
-97,Ciclovia Calle 97,14,1042.9,ciclovia
-98,Ciclovia Calle 98,9,3186.6,bicisenda
-99,Ciclovia Diag 99,12,1406.7,ciclovia
-100,Ciclovia Diag 100,4,851.1,ciclovia
-101,Ciclovia Calle 101,14,2118.6,ciclovia
-102,Ciclovia Calle 102,7,646.2,ciclovia
-103,Ciclovia Calle 103,7,2708.5,bicisenda
-104,Ciclovia Av 104,6,1646.2,ciclovia
-105,Ciclovia Av 105,8,2602.0,ciclovia
-106,Ciclovia Calle 106,11,556.4,ciclovia
-107,Ciclovia Av 107,3,817.8,bicisenda
-108,Ciclovia Diag 108,1,158.8,ciclovia
-109,Ciclovia Av 109,14,564.5,bicisenda
-110,Ciclovia Calle 110,9,1523.9,bicisenda
-111,Ciclovia Diag 111,2,339.8,ciclovia
-112,Ciclovia Calle 112,14,2098.4,ciclovia
-113,Ciclovia Calle 113,12,175.7,ciclovia
-114,Ciclovia Calle 114,1,1123.7,ciclovia
-115,Ciclovia Diag 115,12,1915.4,bicisenda
-116,Ciclovia Diag 116,9,2193.8,ciclovia
-117,Ciclovia Calle 117,10,2576.1,bicisenda
-118,Ciclovia Av 118,2,2966.5,ciclovia
-119,Ciclovia Calle 119,11,2928.6,bicisenda
-120,Ciclovia Calle 120,13,1967.0,bicisenda
+1,"Peron, Juan Domingo, Tte. General",1,52.98,Ciclovías mano única
+2,Rincon,3,118.72,Ciclovías
+3,Nueva York,15,129.98,Ciclovías
+4,Estados Unidos,5,71.0,Ciclovías
+5,Estrada,7,132.34,Ciclovías
+6,"Figueroa Alcorta, Pres. Av.",14,88.27,Ciclovías
+7,Del Libertador Av.,14,174.07,Ciclovías
+8,Chaco,6,26.08,Ciclovías
+9,"Cevallos, Virrey",1,148.33,Ciclovías
+10,Fray Cayetano Rodriguez,7,126.83,Ciclovías
+11,"Gonzalez, Elpidio",10,113.14,Ciclovías
+12,Bolivar,4,18.81,Ciclovías
+13,French,2,113.17,Ciclovías
+14,"Blanes, Juan Manuel",4,103.99,Ciclovías
+15,Arenales,2,117.05,Ciclovías
+16,Godoy Cruz,14,139.77,Ciclovías
+17,Del Libertador Av.,14,250.94,Ciclovías
+18,Tucuman,1,36.99,Ciclovías
+19,"Moreau De Justo, Alicia Av.",1,122.41,Ciclovías
+20,Cordoba Av.,1,39.69,Ciclovías mano única
+21,Quilmes,4,127.44,Ciclovías
+22,Rondeau,4,168.77,Ciclovías
+23,Quilmes,4,62.33,Ciclovías
+24,Roseti,15,98.5,Ciclovías
+25,Godoy Cruz,14,72.65,Ciclovías
+26,"Garcia, Juan Agustin",11,124.24,Ciclovías
+27,"Roldan, Belisario Av.",14,18.25,Ciclovías
+28,"Garcia, Teodoro",14,189.2,Ciclovías
+29,Moron,10,117.52,Ciclovías
+30,"Calvo, Carlos",3,153.29,Ciclovías
+31,Primera Junta,7,72.93,Ciclovías
+32,Picheuta,7,101.53,Ciclovías
+33,"Garcia, Teodoro",14,107.95,Ciclovías
+34,"Moreau De Justo, Alicia Av.",1,9.09,Ciclovías
+35,Bolivar,1,10.77,Ciclovías
+36,Las Casas,5,139.75,Ciclovías
+37,Ceretti,12,99.83,Ciclovías
+38,Chivilcoy Av.,11,116.75,Ciclovías mano única
+39,"Vallese, Felipe",6,114.52,Ciclovías
+40,Doblas,6,123.76,Ciclovías
+41,Constitucion,1,154.75,Ciclovías
+42,Chivilcoy,10,67.69,Ciclovías
+43,"Garcia, Juan Agustin",11,27.33,Ciclovías
+44,Garcia Del Rio,12,111.25,Ciclovías
+45,"Hugo, Victor",10,125.54,Ciclovías
+46,Del Libertador Av.,13,29.09,Ciclovías
+47,"Alvear, Marcelo T. De",1,63.74,Ciclovías
+48,Paseo Interno Agronomia (No Oficial),15,242.53,Ciclovías
+49,"Cevallos, Virrey",1,97.07,Ciclovías
+50,Cordoba Av.,2,126.66,Ciclovías mano única
+51,"Pedraza, Manuela",12,102.25,Ciclovías
+52,"Diaz, Cesar, Gral.",11,134.76,Ciclovías
+53,"Hugo, Victor",10,118.95,Ciclovías
+54,Sarmiento Av.,14,60.18,Ciclovías
+55,"Alsina, Adolfo",1,37.35,Ciclovías mano única
+56,Griveo,11,89.32,Ciclovías
+57,Padilla,15,97.64,Ciclovías
+58,"Calvo, Carlos",3,113.78,Ciclovías
+59,Bolivar,1,138.59,Ciclovías
+60,Roseti,15,105.39,Ciclovías
+61,La Pampa,12,33.61,Ciclovías
+62,Complejo Parque De Los Niños (Sin Nombre Oficial),13,53.91,Ciclovías
+63,"Rodo, Jose E.",9,92.18,Ciclovías
+64,"Roca, Cnel. Av.",8,33.6,Ciclovías
+65,Gorriti,14,113.53,Ciclovías
+66,"Rodo, Jose E.",9,265.21,Ciclovías
+67,Echeverria,13,125.58,Ciclovías
+68,Griveo,12,73.01,Ciclovías
+69,Griveo,11,51.85,Ciclovías
+70,"Calvo, Carlos",3,87.0,Ciclovías
+71,Uspallata,4,156.0,Ciclovías
+72,"Artigas, Jose Gervasio, Gral.",11,133.33,Ciclovías
+73,Sendero Parque Chacabuco (No Oficial),7,254.31,Ciclovías
+74,Garcia Del Rio,12,103.23,Ciclovías
+75,Liniers Virrey,5,117.01,Ciclovías
+76,Uspallata,4,134.63,Ciclovías
+77,Corrientes Av.,1,63.08,Ciclovías mano única
+78,Suipacha,1,165.9,Ciclovías
+79,"Borges, Jorge Luis",14,47.65,Ciclovías
+80,"Blanes, Juan Manuel",4,118.57,Ciclovías
+81,"Rodo, Jose E.",9,59.53,Ciclovías
+82,Tacuari,1,125.23,Ciclovías
+83,Mendez De Andes,6,106.78,Ciclovías
+84,Sarmiento Av.,14,294.18,Ciclovías
+85,"Artigas, Jose Gervasio, Gral.",11,55.39,Ciclovías
+86,"Garcia, Juan Agustin",11,98.2,Ciclovías
+87,Loyola,15,45.65,Ciclovías
+88,Complejo Ciudad Universitaria (Sin Nombre Oficial),13,61.93,Ciclovías
+89,Moron,10,83.19,Ciclovías
+90,"Alvarez, Julian",14,126.54,Ciclovías
+91,La Rabida (N) Av.,1,16.88,Ciclovías
+92,Montevideo,2,135.48,Ciclovías
+93,Miro,7,22.49,Ciclovías
+94,Tronador,12,57.93,Ciclovías
+95,Vilela,12,111.41,Ciclovías
+96,"Rodo, Jose E.",9,25.19,Ciclovías
+97,"Hornos, Gral.",4,67.36,Ciclovías
+98,Guatemala,14,129.61,Ciclovías
+99,Patricias Argentinas Av.,6,38.23,Ciclovías
+100,"Oroño, Nicasio",15,118.42,Ciclovías
+101,"Fernandez, Sara Beatriz",1,28.4,Ciclovías
+102,"Alvear, Marcelo T. De",2,143.15,Ciclovías
+103,Irala,4,95.36,Ciclovías
+104,"Cevallos, Virrey",1,131.09,Ciclovías
+105,"Cevallos, Virrey",1,111.58,Ciclovías
+106,Del Libertador Av.,14,85.29,Ciclovías
+107,Pola,9,137.27,Ciclovías
+108,"Gonzalez, Elpidio",10,110.72,Ciclovías
+109,Calzada Circular Plaza Italia,14,78.95,Ciclovías
+110,Pedernera,7,120.95,Ciclovías
+111,Uspallata,4,109.55,Ciclovías
+112,La Pampa,13,27.57,Ciclovías
+113,Serrano,15,124.49,Ciclovías
+114,"Calvo, Carlos",3,159.23,Ciclovías
+115,Echeverria,13,102.33,Ciclovías
+116,Tucuman,5,117.3,Ciclovías
+117,"Alcorta, Amancio Av.",4,147.17,Ciclovías
+118,Tres Arroyos,11,72.68,Ciclovías
+119,"Bonifacio, Jose",6,76.06,Ciclovías
+120,Cuba,13,100.95,Ciclovías
+121,Chile,1,40.07,Ciclovías
+122,Amenabar,13,129.0,Ciclovías
+123,Doblas,6,81.08,Ciclovías
+124,La Pampa,13,125.42,Ciclovías
+125,15 De Noviembre De 1889,4,118.63,Ciclovías
+126,Humboldt,14,153.91,Ciclovías
+127,"Calvo, Carlos",3,95.45,Ciclovías
+128,Estrada,7,54.49,Ciclovías
+129,Moron,10,120.39,Ciclovías
+130,Del Libertador Av.,2,127.0,Ciclovías
+131,"Roca, Cnel. Av.",8,110.81,Ciclovías
+132,"Garay, Juan De Av.",1,69.15,Ciclovías
+133,Treinta Y Tres Orientales,5,122.47,Ciclovías
+134,Tucuman,3,118.81,Ciclovías
+135,Cucha Cucha,15,147.64,Ciclovías
+136,Forest Av.,13,126.92,Ciclovías mano única
+137,"Calvo, Carlos",3,136.89,Ciclovías
+138,Cordoba Av.,2,139.62,Ciclovías mano única
+139,"Beiro, Francisco Av.",15,130.52,Ciclovías
+140,Del Libertador Av.,13,92.74,Ciclovías
+141,Del Libertador Av.,14,677.37,Ciclovías
+142,"Mansilla, Lucio Norberto, General",14,94.65,Ciclovías
+143,Mexico,5,122.63,Ciclovías
+144,Herrera,4,97.08,Ciclovías
+145,Primera Junta,9,123.77,Ciclovías
+146,French,2,128.39,Ciclovías
+147,Doblas,6,140.99,Ciclovías
+148,Chivilcoy,10,118.9,Ciclovías
+149,"Obligado Rafael, Av.Costanera",13,90.63,Ciclovías
+150,Pedernera,7,73.11,Ciclovías
+151,Gorriti,14,129.55,Ciclovías
+152,"Uriburu Jose E., Pres.",2,186.84,Ciclovías
+153,"Calvo, Carlos",3,127.36,Ciclovías
+154,Quesada,13,66.33,Ciclovías
+155,"Obligado Rafael, Av.Costanera",14,278.47,Ciclovías
+156,Cordoba Av.,14,24.93,Ciclovías mano única
+157,Rincon,3,124.19,Ciclovías
+158,"Roca, Cnel. Av.",8,285.18,Ciclovías
+159,Tacuari,1,134.04,Ciclovías
+160,Chivilcoy Av.,11,117.61,Ciclovías mano única
+161,Del Libertador Av.,13,144.15,Ciclovías
+162,La Pampa,12,72.33,Ciclovías
+163,Roseti,15,109.71,Ciclovías
+164,"Rabanal, Francisco, Intendente Av.",4,10.25,Ciclovías
+165,Estrada,7,64.6,Ciclovías
+166,Amenabar,13,110.27,Ciclovías
+167,Del Libertador Av.,13,79.17,Ciclovías
+168,11 De Septiembre De 1888,13,126.59,Ciclovías
+169,Brasil,4,75.75,Ciclovías
+170,Blanco Encalada,13,42.22,Ciclovías
+171,Estado Plurinacional De Bolivia,12,99.8,Ciclovías
+172,Patricias Argentinas Av.,6,224.67,Ciclovías
+173,Griveo,12,128.75,Ciclovías
+174,Superi,12,100.38,Ciclovías
+175,Del Libertador Av.,14,122.92,Ciclovías
+176,"Borges, Jorge Luis",14,118.18,Ciclovías
+177,"Alvear, Marcelo T. De",1,139.05,Ciclovías
+178,"Ravignani, Emilio, Dr.",14,90.71,Ciclovías
+179,Sarmiento,1,126.72,Ciclovías
+180,Echeverria,13,100.61,Ciclovías
+181,Achaval,6,142.25,Ciclovías
+182,Echeverria,13,103.15,Ciclovías
+183,Corrientes Av.,3,102.33,Ciclovías mano única
+184,Ecuador,2,93.22,Ciclovías
+185,Liniers Virrey,5,139.08,Ciclovías
+186,Machu Picchu,1,37.34,Ciclovías
+187,"Garcia, Juan Agustin",11,67.52,Ciclovías
+188,Chile,3,139.36,Ciclovías
+189,"Calvo, Carlos",1,125.53,Ciclovías
+190,Arenales,1,84.71,Ciclovías
+191,Cordoba Av.,2,130.32,Ciclovías mano única
+192,"Vera Peñaloza, Rosario",1,47.1,Ciclovías
+193,"Artigas, Jose Gervasio, Gral.",11,66.57,Ciclovías
+194,Del Libertador Av.,13,85.63,Ciclovías
+195,Miller,12,25.37,Ciclovías
+196,Barco Centenera Del,7,195.33,Ciclovías
+197,"Peron, Juan Domingo, Tte. General",3,84.7,Ciclovías
+198,"Roca, Cnel. Av.",8,230.31,Ciclovías
+199,Puente Peatonal Carlos Sanchez Viamonte,2,32.23,Ciclovías
+200,Puente Caballito,6,437.8,Ciclovías
+201,Del Libertador Av.,14,5.62,Ciclovías
+202,"Garcia, Teodoro",14,117.43,Ciclovías
+203,"Hugo, Victor",10,124.96,Ciclovías
+204,Roseti,15,130.74,Ciclovías
+205,"Guiraldes, Int.",13,31.89,Ciclovías
+206,Suipacha,1,126.69,Ciclovías
+207,Tres Arroyos,11,170.1,Ciclovías
+208,Fray Cayetano Rodriguez,7,50.93,Ciclovías
+209,Mexico,3,137.28,Ciclovías
+210,"Uriburu Jose E., Pres.",3,125.88,Ciclovías
+211,"Bilbao, Francisco",7,97.97,Ciclovías
+212,Balbastro,7,116.85,Ciclovías
+213,"Alsina, Valentin Av.",14,334.34,Ciclovías
+214,"Lacroze, Federico",14,98.59,Ciclovías
+215,Cuba,13,100.56,Ciclovías
+216,Chivilcoy Av.,11,117.84,Ciclovías mano única
+217,Ecuador,3,141.37,Ciclovías
+218,Loyola,15,128.08,Ciclovías
+219,Tres Arroyos,15,113.09,Ciclovías
+220,Tacuari,1,232.63,Ciclovías
+221,Arenales,1,137.33,Ciclovías
+222,Tronador,12,132.34,Ciclovías
+223,Del Libertador Av.,13,105.33,Ciclovías
+224,"Lugones, Leopoldo Av.",13,105.2,Ciclovías
+225,San Martin,1,80.22,Ciclovías
+226,"Bilbao, Francisco",7,104.06,Ciclovías
+227,Bulnes,5,56.46,Ciclovías
+228,Montevideo,1,134.08,Ciclovías
+229,Humahuaca,5,144.55,Ciclovías
+230,Treinta Y Tres Orientales,5,92.56,Ciclovías
+231,Treinta Y Tres Orientales,5,118.31,Ciclovías
+232,Estrada,7,27.28,Ciclovías
+233,Pola,9,27.1,Ciclovías
+234,Patricias Argentinas Av.,6,127.73,Ciclovías
+235,Zañartu,7,133.54,Ciclovías
+236,Puan,6,108.87,Ciclovías
+237,"Guiraldes, Int.",13,120.22,Ciclovías
+238,Loyola,15,117.78,Ciclovías
+239,Humahuaca,5,135.1,Ciclovías
+240,Valle,6,117.01,Ciclovías
+241,Complejo Ciudad Universitaria (Sin Nombre Oficial),13,107.19,Ciclovías
+242,Nueva York,15,65.21,Ciclovías
+243,Don Bosco,5,126.59,Ciclovías
+244,Estado De Israel Av.,15,68.0,Ciclovías mano única
+245,Estados Unidos,5,133.58,Ciclovías
+246,Cordoba Av.,2,122.5,Ciclovías mano única
+247,Liniers Virrey,5,77.79,Ciclovías
+248,Pepiri,4,127.69,Ciclovías
+249,Cordoba Av.,2,69.74,Ciclovías mano única
+250,Nueva York,15,147.06,Ciclovías
+251,Griveo,11,64.63,Ciclovías
+252,Blanco Encalada,12,104.6,Ciclovías
+253,Miller,12,97.53,Ciclovías
+254,Estrada,7,133.97,Ciclovías
+255,Zavaleta,4,100.62,Ciclovías
+256,Rosales Av.,1,155.82,Ciclovías
+257,Humahuaca,5,128.11,Ciclovías
+258,Quilmes,4,127.63,Ciclovías
+259,Fragata Pres. Sarmiento,6,125.94,Ciclovías
+260,"Peron, Juan Domingo, Tte. General",1,42.4,Ciclovías mano única
+261,San Juan Av.,1,114.42,Ciclovías
+262,"Sastre, Marcos",10,52.54,Ciclovías
+263,"Garcia, Martin Av.",1,113.04,Ciclovías
+264,Melian Av.,13,28.83,Ciclovías
+265,Martinez Castro,9,131.46,Ciclovías
+266,"Peron, Juan Domingo, Tte. General",3,127.71,Ciclovías
+267,"Diaz, Cnel. Av.",14,65.87,Ciclovías
+268,La Pampa,12,114.05,Ciclovías
+269,Irala,4,105.18,Ciclovías
+270,Cordoba Av.,2,126.02,Ciclovías mano única
+271,Pepiri,4,118.33,Ciclovías
+272,Patron,9,107.26,Ciclovías
+273,San Martin,1,78.02,Ciclovías
+274,Azopardo,1,137.59,Ciclovías
+275,Bravard,15,55.47,Ciclovías
+276,Estado De Israel Av.,15,136.45,Ciclovías mano única
+277,Echeverria,13,100.28,Ciclovías
+278,"Alvarez, Julian",14,109.26,Ciclovías
+279,Granaderos,7,101.01,Ciclovías
+280,"Colectora Cantilo, Int.",13,956.93,Ciclovías
+281,"Peron, Juan Domingo, Tte. General",5,123.44,Ciclovías
+282,Ceretti,12,40.02,Ciclovías
+283,Amenabar,13,168.54,Ciclovías
+284,Don Bosco,5,142.09,Ciclovías
+285,"Falcon, Ramon L.,Cnel.",6,50.12,Ciclovías
+286,Fragata Pres. Sarmiento,6,139.83,Ciclovías
+287,Don Pedro De Mendoza Av.,4,108.18,Ciclovías
+288,Chivilcoy Av.,11,99.64,Ciclovías mano única
+289,"Vedia, Agustin De",4,53.89,Ciclovías
+290,Fragata Pres. Sarmiento,6,120.0,Ciclovías
+291,Tucuman,3,94.23,Ciclovías
+292,"Roca, Cnel. Av.",8,395.9,Ciclovías
+293,Estrada,7,30.88,Ciclovías
+294,Zañartu,7,115.8,Ciclovías
+295,"Garcia, Teodoro",13,63.05,Ciclovías
+296,Granaderos,7,131.28,Ciclovías
+297,Pavon,5,51.78,Ciclovías
+298,"Alvear, Marcelo T. De",1,62.1,Ciclovías
+299,La Pampa,12,110.66,Ciclovías
+300,Del Libertador Av.,14,112.12,Ciclovías
+301,Herrera,4,248.78,Ciclovías
+302,"Martinez, Enrique, Gral.",13,92.99,Ciclovías
+303,Primera Junta,7,73.3,Ciclovías
+304,Las Casas,5,94.68,Ciclovías
+305,Moron,7,106.35,Ciclovías
+306,Brasil,1,112.28,Ciclovías
+307,Corrientes Av.,3,108.66,Ciclovías mano única
+308,Amenabar,13,105.3,Ciclovías
+309,"Hugo, Victor",10,116.99,Ciclovías
+310,Misiones,3,126.35,Ciclovías
+311,Azopardo,1,242.14,Ciclovías
+312,Rondeau,4,133.77,Ciclovías
+313,Loyola,15,132.56,Ciclovías
+314,"Gonzalez, Elpidio",10,127.15,Ciclovías
+315,11 De Septiembre De 1888,13,128.6,Ciclovías
+316,San Martin,1,54.94,Ciclovías
+317,"Pedraza, Manuela",12,52.99,Ciclovías
+318,Valle,6,125.99,Ciclovías
+319,Miller,12,97.66,Ciclovías
+320,Tucuman,3,129.33,Ciclovías
+321,Gorriti,14,113.41,Ciclovías
+322,Chiclana Av.,4,15.23,Ciclovías
+323,Uspallata,4,153.12,Ciclovías
+324,Maipu Av.,1,248.16,Ciclovías
+325,Del Libertador Av.,1,163.56,Ciclovías
+326,Chivilcoy Av.,11,117.02,Ciclovías mano única
+327,Roseti,15,129.33,Ciclovías
+328,Soler,14,55.85,Ciclovías
+329,"Mansilla, Lucio Norberto, General",2,44.2,Ciclovías
+330,Balbastro,7,103.6,Ciclovías
+331,Echeverria,13,7.33,Ciclovías
+332,"Mansilla, Lucio Norberto, General",2,100.75,Ciclovías
+333,Bolivar,4,124.21,Ciclovías
+334,Tres Arroyos,6,109.26,Ciclovías
+335,Tucuman,1,125.9,Ciclovías
+336,Chile,1,143.38,Ciclovías
+337,Vertiz Virrey Av.,13,134.14,Ciclovías
+338,Blanco Encalada,12,112.42,Ciclovías
+339,Treinta Y Tres Orientales,5,114.69,Ciclovías
+340,Dorrego Av.,14,249.91,Ciclovías
+341,Cordoba Av.,14,29.28,Ciclovías mano única
+342,Del Libertador Av.,1,95.26,Ciclovías
+343,"Ravignani, Emilio, Dr.",14,85.99,Ciclovías
+344,Congreso,13,128.12,Ciclovías
+345,Ituzaingo,4,78.84,Ciclovías
+346,"Lamas, Andres",11,94.88,Ciclovías
+347,"Diaz, Cesar, Gral.",11,135.95,Ciclovías
+348,"Irigoyen, Bernardo De",1,69.56,Ciclovías
+349,"Rodriguez, Martin",4,103.4,Ciclovías
+350,Chivilcoy Av.,11,106.54,Ciclovías mano única
+351,"Diaz, Cnel. Av.",14,85.68,Ciclovías
+352,French,2,114.14,Ciclovías
+353,Ecuador,2,128.31,Ciclovías
+354,Del Libertador Av.,13,78.25,Ciclovías
+355,"Mansilla, Lucio Norberto, General",2,62.14,Ciclovías
+356,Rawson,5,131.85,Ciclovías
+357,Cordoba Av.,2,126.28,Ciclovías mano única
+358,"Garcia, Juan Agustin",11,136.76,Ciclovías
+359,"Araoz De Lamadrid, Gregorio, Gral.",4,145.46,Ciclovías
+360,Estados Unidos,5,69.83,Ciclovías
+361,Corrientes Av.,1,137.28,Ciclovías mano única
+362,Unanue,8,137.44,Ciclovías mano única
+363,"Acuña De Figueroa, Francisco",5,140.98,Ciclovías
+364,"Rodo, Jose E.",9,58.64,Ciclovías
+365,"Alsina, Adolfo",1,138.19,Ciclovías mano única
+366,Treinta Y Tres Orientales,5,142.85,Ciclovías
+367,Corrientes Av.,15,130.73,Ciclovías mano única
+368,Ceretti,12,78.59,Ciclovías
+369,Moldes,13,44.3,Ciclovías
+370,"Rodo, Jose E.",9,40.66,Ciclovías
+371,Griveo,11,147.49,Ciclovías
+372,Chile,3,124.9,Ciclovías
+373,Del Libertador Av.,1,166.24,Ciclovías
+374,Belgrano Av.,1,76.9,Ciclovías
+375,Vertiz Virrey Av.,13,149.93,Ciclovías
+376,"Moreau De Justo, Alicia Av.",1,15.98,Ciclovías
+377,Pola,9,97.9,Ciclovías
+378,"Roldan, Belisario Av.",14,291.38,Ciclovías
+379,San Martin,1,129.98,Ciclovías
+380,Caboto,4,72.21,Ciclovías
+381,"Moreau De Justo, Alicia Av.",1,105.82,Ciclovías
+382,Patron,9,103.56,Ciclovías
+383,Azopardo,1,110.57,Ciclovías
+384,La Pampa,12,173.14,Ciclovías
+385,"Alsina, Adolfo",1,134.5,Ciclovías mano única
+386,Echeverria,13,45.57,Ciclovías
+387,Del Libertador Av.,13,92.95,Ciclovías
+388,"Diaz, Cesar, Gral.",11,65.58,Ciclovías
+389,Pola,9,147.72,Ciclovías
+390,La Pampa,12,25.83,Ciclovías
+391,Miller,12,15.43,Ciclovías
+392,Mendez De Andes,6,16.95,Ciclovías
+393,"Alvarez, Julian",14,134.86,Ciclovías
+394,"Diaz, Cesar, Gral.",10,114.87,Ciclovías
+395,"Moreau De Justo, Alicia Av.",1,91.38,Ciclovías
+396,Moron,10,136.8,Ciclovías
+397,"Figueroa Alcorta, Pres. Av.",2,40.43,Ciclovías
+398,La Pampa,12,94.31,Ciclovías
+399,Humboldt,14,121.43,Ciclovías
+400,Del Libertador Av.,14,73.95,Ciclovías
+401,Fragata Pres. Sarmiento,6,127.3,Ciclovías
+402,"Diaz, Cnel. Av.",14,94.02,Ciclovías
+403,Estrada,7,27.2,Ciclovías
+404,Tres Arroyos,6,96.17,Ciclovías
+405,"Jauretche, Arturo",6,100.11,Ciclovías
+406,Estado Plurinacional De Bolivia,12,113.12,Ciclovías
+407,"Martinez, Enrique, Gral.",13,105.06,Ciclovías
+408,"Lamas, Andres",11,133.5,Ciclovías
+409,Bolivar,1,6.96,Ciclovías
+410,Griveo,12,75.69,Ciclovías
+411,Tres Arroyos,11,131.74,Ciclovías
+412,Soler,14,107.48,Ciclovías
+413,Griveo,11,153.17,Ciclovías
+414,"Figueroa Alcorta, Pres. Av.",14,431.99,Ciclovías
+415,"Lamas, Andres",11,132.97,Ciclovías
+416,"Pedraza, Manuela",12,100.08,Ciclovías
+417,Miller,12,144.14,Ciclovías
+418,Sarmiento,1,128.74,Ciclovías
+419,"Figueroa Alcorta, Pres. Av.",14,143.95,Ciclovías
+420,"Roca, Cnel. Av.",8,112.06,Ciclovías
+421,Suipacha,1,138.89,Ciclovías
+422,Cordoba Av.,2,106.4,Ciclovías mano única
+423,Loyola,15,77.51,Ciclovías
+424,"Gallardo, Angel Av.",15,86.17,Ciclovías mano única
+425,"Figueroa Alcorta, Pres. Av.",13,127.63,Ciclovías
+426,"Uriburu Jose E., Pres.",3,135.18,Ciclovías
+427,Gaona Av.,11,32.07,Ciclovías
+428,Estado Plurinacional De Bolivia,12,99.66,Ciclovías
+429,Corrientes Av.,15,132.28,Ciclovías mano única
+430,Miro,7,134.79,Ciclovías
+431,Corrientes Av.,5,134.8,Ciclovías mano única
+432,"Anchorena, Tomas Manuel De, Dr.",3,6.87,Ciclovías
+433,"Obligado Rafael, Av.Costanera",14,212.89,Ciclovías
+434,"Calvo, Carlos",3,120.44,Ciclovías
+435,La Pampa,12,96.9,Ciclovías
+436,Sendero Zapata (No Oficial),14,85.66,Ciclovías
+437,Treinta Y Tres Orientales,5,72.96,Ciclovías
+438,"Artigas, Jose Gervasio, Gral.",11,133.25,Ciclovías
+439,"Bilbao, Francisco",7,58.19,Ciclovías
+440,"Diaz, Cesar, Gral.",11,142.78,Ciclovías
+441,Billinghurst,5,129.05,Ciclovías
+442,Tucuman,3,133.45,Ciclovías
+443,Pola,9,71.66,Ciclovías
+444,Corrientes Av.,15,114.58,Ciclovías mano única
+445,"Alvear, Marcelo T. De",1,140.49,Ciclovías
+446,Superi,12,104.34,Ciclovías
+447,Dean Funes,3,101.11,Ciclovías
+448,Suipacha,1,156.27,Ciclovías
+449,Complejo Parque De Los Niños (Sin Nombre Oficial),13,60.03,Ciclovías
+450,Otamendi,6,80.84,Ciclovías
+451,Superi,13,129.19,Ciclovías
+452,Brasil,1,82.17,Ciclovías
+453,Superi,12,100.68,Ciclovías
+454,Rincon,3,119.95,Ciclovías
+455,Puan,6,143.11,Ciclovías
+456,Chivilcoy Av.,11,117.53,Ciclovías mano única
+457,"Lamas, Andres",11,109.45,Ciclovías
+458,Cucha Cucha,15,138.56,Ciclovías
+459,"Cevallos, Virrey",1,140.36,Ciclovías
+460,"Perette, Carlos H.",1,103.6,Ciclovías
+461,Billinghurst,2,135.91,Ciclovías
+462,Dean Funes,4,108.13,Ciclovías
+463,15 De Noviembre De 1889,4,310.48,Ciclovías
+464,Del Libertador Av.,13,130.36,Ciclovías
+465,Azcuenaga,2,125.14,Ciclovías
+466,"Samperio, Manuel J.",4,144.48,Ciclovías
+467,Mexico,3,143.63,Ciclovías
+468,Martinez Castro,9,11.74,Ciclovías
+469,Estivao,6,80.9,Ciclovías
+470,Pavon,3,88.2,Ciclovías
+471,Cuba,13,83.55,Ciclovías
+472,"D'Esposito, Arnaldo",4,124.96,Ciclovías
+473,Azopardo,1,124.0,Ciclovías
+474,"Bonifacio, Jose",7,129.04,Ciclovías
+475,Ruiz De Los Llanos,10,6.76,Ciclovías
+476,"Figueroa Alcorta, Pres. Av.",2,28.25,Ciclovías
+477,Del Libertador Av.,2,184.26,Ciclovías
+478,"Obligado Rafael, Av.Costanera",14,156.28,Ciclovías
+479,"Roca, Cnel. Av.",8,92.88,Ciclovías
+480,"Mansilla, Lucio Norberto, General",2,110.41,Ciclovías
+481,Treinta Y Tres Orientales,5,138.52,Ciclovías
+482,Rincon,3,125.01,Ciclovías
+483,Roseti,15,103.76,Ciclovías
+484,"Borges, Jorge Luis",14,60.05,Ciclovías
+485,Blanco Encalada,12,123.11,Ciclovías
+486,Nueva York,15,63.93,Ciclovías
+487,Del Libertador Av.,14,82.08,Ciclovías
+488,Pola,9,114.62,Ciclovías
+489,"Ravignani, Emilio, Dr.",14,83.55,Ciclovías
+490,"Bonifacio, Jose",10,104.91,Ciclovías
+491,Roseti,15,96.72,Ciclovías
+492,Estrada,7,50.96,Ciclovías
+493,Pavon,3,12.63,Ciclovías
+494,Humahuaca,5,100.23,Ciclovías
+495,Chivilcoy Av.,11,24.27,Ciclovías mano única
+496,"Figueroa Alcorta, Pres. Av.",14,16.13,Ciclovías
+497,"Alvarez, Julian",14,135.29,Ciclovías
+498,Blanco Encalada,12,96.57,Ciclovías
+499,San Martin,1,129.81,Ciclovías
+500,Cordoba Av.,1,77.09,Ciclovías mano única
+501,Liniers Virrey,5,127.58,Ciclovías
+502,Treinta Y Tres Orientales,5,81.86,Ciclovías
+503,Cordoba Av.,14,123.18,Ciclovías mano única
+504,"Moreau De Justo, Alicia Av.",1,64.43,Ciclovías
+505,Arenales,1,32.71,Ciclovías
+506,Fragata Pres. Sarmiento,6,172.38,Ciclovías
+507,Dean Funes,3,171.63,Ciclovías
+508,Complejo Ciudad Universitaria (Sin Nombre Oficial),13,190.73,Ciclovías
+509,"Blanes, Juan Manuel",4,122.93,Ciclovías
+510,Blanco Encalada,12,63.83,Ciclovías
+511,"Bonifacio, Jose",9,158.32,Ciclovías
+512,Cordoba Av.,14,121.47,Ciclovías mano única
+513,Moldes,13,54.9,Ciclovías
+514,Del Libertador Av.,13,96.27,Ciclovías
+515,Unanue,8,102.83,Ciclovías mano única
+516,"Hornos, Gral.",4,173.46,Ciclovías
+517,"Lamas, Andres",11,140.67,Ciclovías
+518,Treinta Y Tres Orientales,5,100.41,Ciclovías
+519,"Calvo, Carlos",3,122.62,Ciclovías
+520,Estado Plurinacional De Bolivia,15,94.83,Ciclovías
+521,"Garcia, Juan Agustin",11,134.39,Ciclovías
+522,"Irigoyen, Bernardo De",1,122.35,Ciclovías
+523,Del Libertador Av.,2,8.65,Ciclovías
+524,Chivilcoy,10,136.82,Ciclovías
+525,Primera Junta,7,105.16,Ciclovías
+526,Parque Del Vega,13,758.36,Ciclovías
+527,"Cevallos, Virrey",1,110.44,Ciclovías
+528,Chivilcoy Av.,11,55.18,Ciclovías mano única
+529,Billinghurst,2,134.45,Ciclovías
+530,Charcas,2,140.48,Ciclovías
+531,"Pedraza, Manuela",13,157.81,Ciclovías
+532,Gurruchaga,15,130.38,Ciclovías
+533,Treinta Y Tres Orientales,5,140.43,Ciclovías
+534,Don Bosco,5,137.86,Ciclovías
+535,Pepiri,4,127.44,Ciclovías
+536,"Newbery, Jorge Av.",15,123.03,Ciclovías
+537,Culpina,7,141.15,Ciclovías
+538,Uspallata,4,116.28,Ciclovías
+539,"Obligado Rafael, Av.Costanera",13,174.54,Ciclovías
+540,"Diaz, Cesar, Gral.",11,137.1,Ciclovías
+541,Estado De Israel Av.,15,14.06,Ciclovías mano única
+542,Valle,6,73.09,Ciclovías
+543,Azopardo,1,130.03,Ciclovías
+544,Valle,6,83.46,Ciclovías
+545,Cordoba Av.,2,59.61,Ciclovías mano única
+546,Corrientes Av.,5,118.75,Ciclovías mano única
+547,"Hornos, Gral.",4,202.91,Ciclovías
+548,Quilmes,4,153.33,Ciclovías
+549,Godoy Cruz,14,105.38,Ciclovías
+550,Nueva York,15,151.84,Ciclovías
+551,"Vera Peñaloza, Rosario",1,72.32,Ciclovías
+552,11 De Septiembre De 1888,13,119.3,Ciclovías
+553,Dorrego,13,31.33,Ciclovías
+554,Arenales,1,129.85,Ciclovías
+555,Chivilcoy,10,137.91,Ciclovías
+556,Chivilcoy,10,80.51,Ciclovías
+557,Pedernera,7,187.82,Ciclovías
+558,"Rodo, Jose E.",9,148.97,Ciclovías
+559,"Rabanal, Francisco, Intendente Av.",4,98.24,Ciclovías
+560,"Figueroa Alcorta, Pres. Av.",13,17.88,Ciclovías
+561,Cordoba Av.,2,110.96,Ciclovías mano única
+562,Otamendi,6,79.97,Ciclovías
+563,Matheu,3,122.61,Ciclovías
+564,Unanue,8,77.35,Ciclovías mano única
+565,Pola,9,156.04,Ciclovías
+566,Del Libertador Av.,14,49.44,Ciclovías
+567,Mendez De Andes,6,100.32,Ciclovías
+568,Roseti,15,126.56,Ciclovías
+569,Complejo Ciudad Universitaria (Sin Nombre Oficial),13,14.48,Ciclovías
+570,"Perette, Carlos H.",1,115.67,Ciclovías
+571,La Pampa,13,80.15,Ciclovías
+572,"Colectora Cantilo, Int.",13,33.66,Ciclovías
+573,"Araoz De Lamadrid, Gregorio, Gral.",4,46.67,Ciclovías
+574,"Beiro, Francisco Av.",15,84.48,Ciclovías
+575,Otamendi,6,138.17,Ciclovías
+576,Liniers Virrey,5,138.56,Ciclovías
+577,Ceretti,12,134.99,Ciclovías
+578,Patron,9,104.3,Ciclovías
+579,Padilla,15,129.85,Ciclovías
+580,"Pedraza, Manuela",13,25.17,Ciclovías
+581,"Acuña De Figueroa, Francisco",5,129.1,Ciclovías
+582,Chaco,6,12.51,Ciclovías
+583,Quito,5,131.62,Ciclovías
+584,Caboto,4,55.24,Ciclovías
+585,Estado De Israel Av.,15,111.98,Ciclovías mano única
+586,Pepiri,4,30.03,Ciclovías
+587,Sarmiento Av.,14,63.98,Ciclovías
+588,"Pedraza, Manuela",12,61.15,Ciclovías
+589,"Vera Peñaloza, Rosario",1,64.4,Ciclovías
+590,Gurruchaga,15,129.54,Ciclovías
+591,"Moreau De Justo, Alicia Av.",1,165.39,Ciclovías
+592,"Borges, Jorge Luis",14,79.67,Ciclovías
+593,Unanue,8,103.12,Ciclovías mano única
+594,"Cevallos, Virrey",1,129.89,Ciclovías
+595,Sarmiento Av.,14,300.58,Ciclovías
+596,"Rabanal, Francisco, Intendente Av.",8,117.6,Ciclovías
+597,Billinghurst,5,175.64,Ciclovías
+598,Rondeau,5,106.26,Ciclovías
+599,Estado Plurinacional De Bolivia,15,98.9,Ciclovías
+600,Estrada,7,31.1,Ciclovías
+601,"Uriburu Jose E., Pres.",3,136.11,Ciclovías
+602,"Alvarez, Julian",14,56.21,Ciclovías
+603,La Pampa,12,88.24,Ciclovías
+604,Alberti,4,132.79,Ciclovías
+605,"Alsina, Adolfo",1,128.45,Ciclovías mano única
+606,"Gallardo, Angel Av.",15,155.91,Ciclovías mano única
+607,Cuba,13,92.27,Ciclovías
+608,Estivao,6,100.58,Ciclovías
+609,"Bilbao, Francisco",7,104.36,Ciclovías
+610,La Pampa,12,22.99,Ciclovías
+611,Zapata,13,127.81,Ciclovías
+612,"Favaloro, Rene Dr.",4,140.44,Ciclovías
+613,"Alvear, Marcelo T. De",2,129.2,Ciclovías
+614,Complejo Ciudad Universitaria (Sin Nombre Oficial),13,145.8,Ciclovías
+615,Sendero Parque Chacabuco (No Oficial),7,84.06,Ciclovías
+616,"Figueroa Alcorta, Pres. Av.",2,111.66,Ciclovías
+617,"Moreau De Justo, Alicia Av.",1,134.27,Ciclovías
+618,"Ramos Mejia, Jose Maria, Dr. Av.",1,203.52,Ciclovías
+619,Del Libertador Av.,13,106.09,Ciclovías
+620,Zañartu,7,118.5,Ciclovías
+621,"Cevallos, Virrey",1,142.59,Ciclovías
+622,Espinosa,6,123.15,Ciclovías
+623,Nueva York,15,65.75,Ciclovías
+624,"Calvo, Carlos",5,132.39,Ciclovías
+625,"Alvarez, Julian",15,124.69,Ciclovías
+626,Chivilcoy,10,69.7,Ciclovías
+627,"Garcia, Teodoro",14,108.12,Ciclovías
+628,Pavon,1,58.32,Ciclovías
+629,Corrientes Av.,1,129.9,Ciclovías mano única
+630,"Diaz, Cesar, Gral.",11,140.17,Ciclovías
+631,Corrientes Av.,5,83.05,Ciclovías mano única
+632,"Beiro, Francisco Av.",15,45.14,Ciclovías
+633,"Acuña De Figueroa, Francisco",14,135.18,Ciclovías
+634,Ceretti,12,78.41,Ciclovías
+635,Zañartu,7,117.22,Ciclovías
+636,"Gonzalez, Elpidio",11,96.08,Ciclovías
+637,Pepiri,4,150.86,Ciclovías
+638,"Barros Pazos, Jose",8,67.49,Ciclovías mano única
+639,"Gonzalez, Elpidio",10,121.66,Ciclovías
+640,11 De Septiembre De 1888,13,66.96,Ciclovías
+641,Humboldt,15,127.47,Ciclovías
+642,"Martinez, Enrique, Gral.",13,95.63,Ciclovías
+643,"Rodo, Jose E.",9,103.1,Ciclovías
+644,Corrientes Av.,3,115.81,Ciclovías mano única
+645,Sanchez De Bustamante,2,15.23,Ciclovías
+646,Griveo,12,81.89,Ciclovías
+647,Vilela,12,101.34,Ciclovías
+648,"Diaz, Cnel. Av.",14,10.13,Ciclovías
+649,Tres Arroyos,15,96.73,Ciclovías
+650,Miller,12,50.39,Ciclovías
+651,"Garcia, Martin Av.",1,12.02,Ciclovías
+652,Echeverria,13,115.56,Ciclovías
+653,Martinez Castro,9,161.61,Ciclovías
+654,"Bonifacio, Jose",6,132.91,Ciclovías
+655,"Alvarez, Julian",14,125.54,Ciclovías
+656,Mendez De Andes,6,124.37,Ciclovías
+657,Senillosa,6,136.47,Ciclovías
+658,"Pedraza, Manuela",13,32.0,Ciclovías
+659,"Bonifacio, Jose",10,102.33,Ciclovías
+660,Camino De Sirga,4,503.26,Ciclovías
+661,"Acuña De Figueroa, Francisco",5,186.75,Ciclovías
+662,Mendez De Andes,7,127.5,Ciclovías
+663,Juncal,2,33.35,Ciclovías
+664,Primera Junta,7,108.21,Ciclovías
+665,Irala,4,107.02,Ciclovías
+666,Pedernera,7,122.22,Ciclovías
+667,"Bilbao, Francisco",7,110.95,Ciclovías
+668,Chivilcoy Av.,11,118.68,Ciclovías mano única
+669,Billinghurst,5,99.97,Ciclovías
+670,Gorriti,14,130.25,Ciclovías
+671,Soler,14,122.24,Ciclovías
+672,Tres Arroyos,15,11.09,Ciclovías
+673,Tres Arroyos,15,118.83,Ciclovías
+674,Cuba,13,98.21,Ciclovías
+675,Brasil Av.,1,136.02,Ciclovías
+676,Treinta Y Tres Orientales,5,77.65,Ciclovías
+677,Pavon,5,75.81,Ciclovías
+678,Ibera,12,47.48,Ciclovías
+679,Pola,9,63.26,Ciclovías
+680,Treinta Y Tres Orientales,5,82.87,Ciclovías
+681,Monroe,13,136.49,Ciclovías
+682,Defensa,1,33.91,Ciclovías
+683,Pola,9,149.42,Ciclovías
+684,Pedernera,7,135.51,Ciclovías
+685,Juncal,2,6.12,Ciclovías
+686,"Rabanal, Francisco, Intendente Av.",8,117.08,Ciclovías
+687,La Pampa,12,110.92,Ciclovías
+688,Camacua,7,153.87,Ciclovías
+689,Del Libertador Av.,14,147.62,Ciclovías
+690,Patricias Argentinas Av.,6,142.83,Ciclovías
+691,"Diaz, Cesar, Gral.",11,124.64,Ciclovías
+692,Echeverria,13,117.12,Ciclovías
+693,"Achaval Rodriguez, T., Dr. Av.",1,41.97,Ciclovías
+694,Mexico,3,140.87,Ciclovías
+695,"Vallese, Felipe",6,95.56,Ciclovías
+696,San Martin,1,50.97,Ciclovías
+697,Corrientes Av.,15,131.27,Ciclovías mano única
+698,Del Libertador Av.,13,67.57,Ciclovías
+699,"Roca, Cnel. Av.",8,122.69,Ciclovías
+700,"Hornos, Gral.",4,95.51,Ciclovías
+701,Corrientes Av.,5,102.19,Ciclovías mano única
+702,"Garcia, Juan Agustin",11,67.76,Ciclovías
+703,"Gonzalez, Elpidio",10,140.65,Ciclovías
+704,Treinta Y Tres Orientales,5,131.04,Ciclovías
+705,Chivilcoy Av.,11,117.81,Ciclovías mano única
+706,Del Libertador Av.,14,125.44,Ciclovías
+707,Doblas,6,142.27,Ciclovías
+708,"Alsina, Adolfo",3,133.15,Ciclovías
+709,Griveo,12,76.62,Ciclovías
+710,Sendero Sin Nombre Oficial - Puente Sobre Av. Lugones,13,236.23,Ciclovías
+711,Sarmiento Av.,14,65.48,Ciclovías
+712,Suipacha,1,66.99,Ciclovías
+713,Amenabar,13,99.83,Ciclovías
+714,Godoy Cruz,14,120.37,Ciclovías
+715,"Figueroa Alcorta, Pres. Av.",2,202.7,Ciclovías
+716,Cuba,13,100.95,Ciclovías
+717,Liniers Virrey,5,148.55,Ciclovías
+718,"Obligado Rafael, Av.Costanera",13,311.24,Ciclovías
+719,"Fernandez, Sara Beatriz",1,531.12,Ciclovías
+720,Monroe,13,124.63,Ciclovías
+721,Cordoba Av.,14,23.45,Ciclovías mano única
+722,"Gonzalez, Elpidio",10,120.84,Ciclovías
+723,Lugones,12,117.97,Ciclovías
+724,"Martinez, Enrique, Gral.",13,68.08,Ciclovías
+725,Miller,12,100.71,Ciclovías
+726,"Pedraza, Manuela",12,125.09,Ciclovías
+727,Miro,7,107.57,Ciclovías
+728,Azopardo,1,147.92,Ciclovías
+729,Culpina,7,60.04,Ciclovías
+730,Pavon,3,124.96,Ciclovías
+731,Cordoba Av.,2,137.95,Ciclovías mano única
+732,Lautaro,7,129.07,Ciclovías
+733,Mendez De Andes,6,112.43,Ciclovías
+734,"Roca, Cnel. Av.",8,106.89,Ciclovías
+735,Patron,9,77.68,Ciclovías
+736,"Artigas, Jose Gervasio, Gral.",11,144.83,Ciclovías
+737,Don Bosco,5,136.62,Ciclovías
+738,Miller,12,67.98,Ciclovías
+739,Del Libertador Av.,13,114.08,Ciclovías
+740,Superi,12,100.74,Ciclovías
+741,Doblas,7,132.43,Ciclovías
+742,"Alsina, Adolfo",1,38.5,Ciclovías mano única
+743,"Newbery, Jorge Av.",15,112.72,Ciclovías
+744,Ibera,13,84.42,Ciclovías
+745,Corrientes Av.,1,13.31,Ciclovías mano única
+746,"Vega, Niceto, Cnel. Av.",14,22.17,Ciclovías
+747,Balbastro,7,6.67,Ciclovías
+748,Pola,9,58.21,Ciclovías
+749,Complejo Ciudad Universitaria (Sin Nombre Oficial),13,42.65,Ciclovías
+750,Tacuari,1,65.73,Ciclovías
+751,Del Libertador Av.,14,34.14,Ciclovías
+752,Echeverria,13,100.57,Ciclovías
+753,Chaco,6,58.06,Ciclovías
+754,"Sastre, Marcos",10,94.44,Ciclovías
+755,Complejo Parque De Los Niños (Sin Nombre Oficial),13,163.51,Ciclovías
+756,Del Libertador Av.,14,108.84,Ciclovías
+757,Godoy Cruz,14,81.66,Ciclovías
+758,Dean Funes,4,169.71,Ciclovías
+759,Garcia Del Rio,12,115.82,Ciclovías
+760,Corrientes Av.,5,147.82,Ciclovías mano única
+761,Machu Picchu,1,54.68,Ciclovías
+762,Constitucion,1,116.76,Ciclovías
+763,Tres Arroyos,6,126.03,Ciclovías
+764,Azopardo,1,131.07,Ciclovías
+765,Amenabar,13,154.1,Ciclovías
+766,"Garcia, Juan Agustin",11,27.24,Ciclovías
+767,La Pampa,12,82.74,Ciclovías
+768,Corrientes Av.,5,123.07,Ciclovías mano única
+769,Forest Av.,15,218.82,Ciclovías mano única
+770,Forest Av.,15,201.54,Ciclovías mano única
+771,"Calvo, Carlos",3,122.36,Ciclovías
+772,"Acuña De Figueroa, Francisco",5,53.19,Ciclovías
+773,"Roca, Cnel. Av.",8,217.03,Ciclovías
+774,Montevideo,1,131.09,Ciclovías
+775,Del Libertador Av.,1,177.84,Ciclovías
+776,"Peron, Juan Domingo, Tte. General",5,143.01,Ciclovías
+777,Del Libertador Av.,13,123.71,Ciclovías
+778,Irala,4,104.82,Ciclovías
+779,Griveo,12,130.05,Ciclovías
+780,Tucuman,3,112.08,Ciclovías
+781,"Barros Pazos, Jose",8,103.28,Ciclovías mano única
+782,Casares Av.,14,46.92,Ciclovías
+783,Chivilcoy Av.,11,95.59,Ciclovías mano única
+784,Doblas,6,84.35,Ciclovías
+785,Nueva York,15,130.31,Ciclovías
+786,Cucha Cucha,15,126.54,Ciclovías
+787,Estado Plurinacional De Bolivia,12,99.05,Ciclovías
+788,Uspallata,4,150.04,Ciclovías
+789,Humahuaca,3,130.18,Ciclovías
+790,Herrera,4,113.6,Ciclovías
+791,"Roca, Julio A., Presidente Diagonal Sur Av.",1,16.77,Ciclovías mano única
+792,"Perette, Carlos H.",1,29.96,Ciclovías
+793,Superi,12,57.75,Ciclovías
+794,Caboto,4,85.02,Ciclovías
+795,Echeverria,13,117.03,Ciclovías
+796,"Roca, Cnel. Av.",8,81.81,Ciclovías
+797,"Pedraza, Manuela",12,100.94,Ciclovías
+798,Uspallata,4,179.44,Ciclovías
+799,"Garcia, Juan Agustin",11,141.78,Ciclovías
+800,Quilmes,4,117.58,Ciclovías
+801,Tronador,12,73.84,Ciclovías
+802,Padilla,15,62.78,Ciclovías
+803,Loyola,15,115.12,Ciclovías
+804,Pepiri,4,34.41,Ciclovías
+805,Balbastro,7,121.99,Ciclovías
+806,Ibera,12,13.27,Ciclovías
+807,Olazabal,13,31.11,Ciclovías
+808,"Mansilla, Lucio Norberto, General",2,132.24,Ciclovías
+809,Corrientes Av.,15,135.57,Ciclovías mano única
+810,Ceretti,12,106.9,Ciclovías
+811,"Yrurtia, Rogelio",12,55.19,Ciclovías
+812,Ceretti,12,146.2,Ciclovías
+813,Amenabar,13,128.1,Ciclovías
+814,"Sastre, Marcos",10,96.85,Ciclovías
+815,Nueva York,15,65.15,Ciclovías
+816,11 De Septiembre De 1888,13,128.88,Ciclovías
+817,Congreso,13,102.59,Ciclovías
+818,La Rabida (N) Av.,1,59.7,Ciclovías
+819,Vertiz Virrey Av.,13,58.85,Ciclovías
+820,Complejo Parque De Los Niños (Sin Nombre Oficial),13,50.26,Ciclovías
+821,Superi,13,120.5,Ciclovías
+822,Ceretti,12,100.88,Ciclovías
+823,Fray Cayetano Rodriguez,7,120.13,Ciclovías
+824,Quito,5,136.96,Ciclovías
+825,Corrientes Av.,1,138.33,Ciclovías mano única
+826,La Pampa,12,39.09,Ciclovías
+827,Azcuenaga,2,16.13,Ciclovías
+828,"Newbery, Jorge",13,55.9,Ciclovías
+829,French,2,56.42,Ciclovías
+830,Uspallata,4,159.01,Ciclovías
+831,Treinta Y Tres Orientales,5,192.7,Ciclovías
+832,Liniers Virrey,5,139.22,Ciclovías
+833,Pola,9,158.83,Ciclovías
+834,San Martin,1,52.59,Ciclovías
+835,Pola,9,13.24,Ciclovías
+836,"Diaz, Cnel. Av.",14,75.48,Ciclovías
+837,"Bonifacio, Jose",7,104.6,Ciclovías
+838,Del Libertador Av.,2,117.21,Ciclovías
+839,Ibera,12,102.56,Ciclovías
+840,Echeverria,13,116.87,Ciclovías
+841,Culpina,7,129.17,Ciclovías
+842,"Borges, Jorge Luis",14,149.43,Ciclovías
+843,"Figueroa Alcorta, Pres. Av.",13,152.67,Ciclovías
+844,Valle,6,125.51,Ciclovías
+845,Nueva York,15,64.81,Ciclovías
+846,Valle,6,142.84,Ciclovías
+847,Azopardo,1,73.53,Ciclovías
+848,Estado De Israel Av.,15,11.65,Ciclovías mano única
+849,Del Libertador Av.,14,75.84,Ciclovías
+850,"Alvear, Marcelo T. De",2,134.32,Ciclovías
+851,"Rodo, Jose E.",9,103.44,Ciclovías
+852,11 De Septiembre De 1888,13,125.74,Ciclovías
+853,Bouchard,1,122.95,Ciclovías
+854,French,2,106.53,Ciclovías
+855,"Roca, Cnel. Av.",8,82.07,Ciclovías
+856,"Roca, Cnel. Av.",8,357.11,Ciclovías
+857,Fragata Pres. Sarmiento,6,128.57,Ciclovías
+858,"Roca, Cnel. Av.",8,99.45,Ciclovías
+859,Superi,13,157.33,Ciclovías
+860,"Diaz, Cnel. Av.",14,43.94,Ciclovías
+861,Treinta Y Tres Orientales,5,124.82,Ciclovías
+862,Nueva York,15,65.29,Ciclovías
+863,Miller,12,129.98,Ciclovías
+864,Ceretti,15,101.64,Ciclovías
+865,"Mansilla, Lucio Norberto, General",14,109.43,Ciclovías
+866,Corrientes Av.,1,131.59,Ciclovías mano única
+867,Griveo,11,44.69,Ciclovías
+868,Cordoba Av.,2,117.96,Ciclovías mano única
+869,Uspallata,4,29.83,Ciclovías
+870,Corrientes Av.,3,119.42,Ciclovías mano única
+871,Fray Cayetano Rodriguez,7,76.15,Ciclovías
+872,"Sastre, Marcos",10,82.35,Ciclovías
+873,Godoy Cruz,14,137.39,Ciclovías
+874,Dean Funes,3,107.01,Ciclovías
+875,"Sastre, Marcos",10,130.21,Ciclovías
+876,Gorriti,14,109.67,Ciclovías
+877,Ibera,13,119.83,Ciclovías
+878,Palpa,15,86.36,Ciclovías mano única
+879,"Garay, Juan De Av.",1,198.16,Ciclovías
+880,11 De Septiembre De 1888,13,117.37,Ciclovías
+881,De Los Ombues Av.,14,97.65,Ciclovías
+882,"Diaz, Cesar, Gral.",11,85.56,Ciclovías
+883,"Hornos, Gral.",4,121.4,Ciclovías
+884,Potosi,5,137.67,Ciclovías
+885,Humboldt,15,127.09,Ciclovías
+886,Liniers Virrey,5,121.17,Ciclovías
+887,Caboto,4,105.12,Ciclovías
+888,Serrano,14,54.38,Ciclovías
+889,Ceretti,12,127.88,Ciclovías
+890,"Yrurtia, Rogelio",12,34.88,Ciclovías
+891,"Rodo, Jose E.",9,65.15,Ciclovías
+892,Picheuta,7,75.12,Ciclovías
+893,Estado Plurinacional De Bolivia,12,99.87,Ciclovías
+894,Moron,10,105.58,Ciclovías
+895,Antartida Argentina Av.,1,51.1,Ciclovías
+896,Moron,7,111.0,Ciclovías
+897,Estado De Israel Av.,15,51.22,Ciclovías mano única
+898,Lugones,12,126.23,Ciclovías
+899,Herrera,4,74.89,Ciclovías
+900,Loyola,15,126.83,Ciclovías
+901,"Alvarez, Julian",14,264.77,Ciclovías
+902,Serrano,15,140.97,Ciclovías
+903,"Peron, Juan Domingo, Tte. General",3,134.06,Ciclovías mano única
+904,Culpina,7,157.68,Ciclovías
+905,Del Libertador Av.,2,8.13,Ciclovías
+906,"Alvarez, Julian",14,111.91,Ciclovías
+907,Ceretti,12,135.04,Ciclovías
+908,Rincon,3,107.5,Ciclovías
+909,Blanco Encalada,12,104.21,Ciclovías
+910,"Alsina, Adolfo",3,124.66,Ciclovías
+911,Quilmes,4,119.06,Ciclovías
+912,Ibera,13,83.58,Ciclovías
+913,San Martin,1,130.6,Ciclovías
+914,Del Libertador Av.,14,124.22,Ciclovías
+915,"Gonzalez, Elpidio",10,88.03,Ciclovías
+916,Rawson,5,132.7,Ciclovías
+917,Dean Funes,4,136.02,Ciclovías
+918,Tacuari,1,127.3,Ciclovías
+919,Sarmiento Av.,14,488.48,Ciclovías
+920,Del Libertador Av.,1,159.04,Ciclovías
+921,Otamendi,6,76.08,Ciclovías
+922,"Sastre, Marcos",10,38.71,Ciclovías
+923,Cordoba Av.,14,148.17,Ciclovías mano única
+924,"Peron, Juan Domingo, Tte. General",3,118.1,Ciclovías mano única
+925,11 De Septiembre De 1888,13,128.44,Ciclovías
+926,Rivadavia Av.,6,28.65,Ciclovías
+927,Echeverria,13,104.13,Ciclovías
+928,Zapata,14,120.03,Ciclovías
+929,"Sastre, Marcos",10,37.08,Ciclovías
+930,Mexico,3,130.4,Ciclovías
+931,Cuba,13,101.53,Ciclovías
+932,"Vallese, Felipe",6,42.97,Ciclovías
+933,Azopardo,1,131.65,Ciclovías
+934,Forest Av.,15,102.07,Ciclovías mano única
+935,Cucha Cucha,15,138.81,Ciclovías
+936,"Garcia, Juan Agustin",11,31.21,Ciclovías
+937,Patricias Argentinas Av.,6,97.25,Ciclovías
+938,Estrada,7,76.62,Ciclovías
+939,"Calvo, Carlos",3,164.9,Ciclovías
+940,"Guiraldes, Int.",13,31.52,Ciclovías
+941,Puan,6,131.78,Ciclovías
+942,"Peron, Juan Domingo, Tte. General",1,137.67,Ciclovías mano única
+943,"Acuña De Figueroa, Francisco",5,135.29,Ciclovías
+944,Miro,7,153.02,Ciclovías
+945,Potosi,5,57.65,Ciclovías
+946,"Rodo, Jose E.",9,102.93,Ciclovías
+947,Cordoba Av.,1,138.47,Ciclovías mano única
+948,Barco Centenera Del,7,111.95,Ciclovías
+949,"Barros Pazos, Jose",8,129.08,Ciclovías mano única
+950,Camino De Sirga,4,652.76,Ciclovías
+951,"Peron, Juan Domingo, Tte. General",3,137.57,Ciclovías mano única
+952,"Roca, Cnel. Av.",8,65.07,Ciclovías
+953,"Pedraza, Manuela",12,86.73,Ciclovías
+954,Chivilcoy Av.,11,95.28,Ciclovías mano única
+955,Serrano,15,129.64,Ciclovías
+956,"Pedraza, Manuela",12,122.04,Ciclovías
+957,"Figueroa Alcorta, Pres. Av.",13,129.82,Ciclovías
+958,Cordoba Av.,2,129.99,Ciclovías mano única
+959,Echeverria,13,107.44,Ciclovías
+960,Cordoba Av.,14,134.14,Ciclovías mano única
+961,"Roca, Cnel. Av.",8,125.74,Ciclovías
+962,"Roca, Cnel. Av.",8,104.9,Ciclovías
+963,"Vallese, Felipe",6,101.49,Ciclovías
+964,Gorriti,14,91.53,Ciclovías
+965,Moldes,13,102.88,Ciclovías
+966,Montevideo,2,68.69,Ciclovías
+967,"Vera Peñaloza, Rosario",1,88.77,Ciclovías
+968,"Rivadavia Martin, Comodoro",13,83.09,Ciclovías
+969,Balbastro,7,108.12,Ciclovías
+970,"Figueroa Alcorta, Pres. Av.",2,152.53,Ciclovías
+971,Rondeau,4,141.23,Ciclovías
+972,"Figueroa Alcorta, Pres. Av.",13,304.93,Ciclovías
+973,Dean Funes,3,140.8,Ciclovías
+974,Estivao,6,22.03,Ciclovías
+975,Moron,10,121.58,Ciclovías
+976,Tres Arroyos,6,126.41,Ciclovías
+977,Cucha Cucha,15,17.95,Ciclovías
+978,Unanue,8,129.02,Ciclovías mano única
+979,San Martin,1,127.81,Ciclovías
+980,Herrera,4,114.76,Ciclovías
+981,Rawson,5,183.6,Ciclovías
+982,Superi,12,100.44,Ciclovías
+983,Liniers Virrey,5,108.76,Ciclovías
+984,"Figueroa Alcorta, Pres. Av.",14,54.07,Ciclovías
+985,Del Libertador Av.,2,142.0,Ciclovías
+986,Miller,12,172.47,Ciclovías
+987,Moron,10,107.53,Ciclovías
+988,Serrano,15,140.84,Ciclovías
+989,Nueva York,15,73.86,Ciclovías
+990,Patron,9,9.18,Ciclovías
+991,"Peron, Juan Domingo, Tte. General",1,138.3,Ciclovías mano única
+992,Casares Av.,14,67.76,Ciclovías
+993,"Rabanal, Francisco, Intendente Av.",8,234.67,Ciclovías
+994,"Alvear, Marcelo T. De",1,136.47,Ciclovías
+995,"Alcorta, Amancio Av.",4,335.58,Ciclovías
+996,Monroe,13,130.04,Ciclovías
+997,"Roca, Julio A., Presidente Diagonal Sur Av.",1,8.34,Ciclovías mano única
+998,"Rodo, Jose E.",9,25.69,Ciclovías
+999,French,2,125.18,Ciclovías
+1000,Loyola,15,105.4,Ciclovías
+1001,"Figueroa Alcorta, Pres. Av.",13,77.15,Ciclovías
+1002,Tres Arroyos,15,112.95,Ciclovías
+1003,"Gonzalez, Elpidio",10,131.65,Ciclovías
+1004,"Pedraza, Manuela",12,68.68,Ciclovías
+1005,"Justo, Juan B. Av.",15,7.94,Ciclovías
+1006,Mendez De Andes,7,99.44,Ciclovías
+1007,Estado De Israel Av.,15,146.69,Ciclovías mano única
+1008,Otamendi,6,77.04,Ciclovías
+1009,Vertiz Virrey Av.,13,136.33,Ciclovías
+1010,Corrientes Av.,1,132.67,Ciclovías mano única
+1011,Patricias Argentinas Av.,6,16.87,Ciclovías
+1012,Perdriel,4,153.91,Ciclovías
+1013,"Moreau De Justo, Alicia Av.",1,118.37,Ciclovías
+1014,"Moreau De Justo, Alicia Av.",1,125.25,Ciclovías
+1015,Pichincha Av.,4,132.49,Ciclovías
+1016,Corrientes Av.,3,78.48,Ciclovías mano única
+1017,"Alvarez, Julian",14,86.1,Ciclovías
+1018,Pinto,12,35.35,Ciclovías
+1019,Cordoba Av.,2,141.06,Ciclovías mano única
+1020,Amenabar,13,129.38,Ciclovías
+1021,"Rivadavia Martin, Comodoro",13,44.45,Ciclovías
+1022,"Sastre, Marcos",10,46.91,Ciclovías
+1023,"Moreau De Justo, Alicia Av.",1,116.84,Ciclovías
+1024,"Rodo, Jose E.",9,106.08,Ciclovías
+1025,"Mansilla, Lucio Norberto, General",14,105.87,Ciclovías
+1026,"Bullrich, Int. Av.",14,408.45,Ciclovías
+1027,"Araoz De Lamadrid, Gregorio, Gral.",4,138.55,Ciclovías
+1028,"Araoz De Lamadrid, Gregorio, Gral.",4,144.53,Ciclovías
+1029,Ecuador,2,100.26,Ciclovías
+1030,"Pedraza, Manuela",12,101.11,Ciclovías
+1031,Zapata,13,119.72,Ciclovías
+1032,"Alvear, Marcelo T. De",1,79.82,Ciclovías
+1033,Cuba,13,100.53,Ciclovías
+1034,"Moreau De Justo, Alicia Av.",1,84.69,Ciclovías
+1035,Miller,12,100.81,Ciclovías
+1036,Alberti,4,129.92,Ciclovías
+1037,"Artigas, Jose Gervasio, Gral.",11,133.54,Ciclovías
+1038,Gorriti,14,135.74,Ciclovías
+1039,Loyola,15,115.92,Ciclovías
+1040,Gorriti,14,133.81,Ciclovías
+1041,"Figueroa Alcorta, Pres. Av.",14,279.64,Ciclovías
+1042,Azopardo,1,116.61,Ciclovías
+1043,Sarmiento,1,126.7,Ciclovías
+1044,Liniers Virrey,5,103.78,Ciclovías
+1045,Echeverria,13,110.55,Ciclovías
+1046,"Alvarez, Julian",15,123.8,Ciclovías
+1047,Pola,9,63.82,Ciclovías
+1048,Chivilcoy,10,136.95,Ciclovías
+1049,Amenabar,13,125.48,Ciclovías
+1050,Patron,9,127.2,Ciclovías
+1051,"Olaguer Y Feliu, Virrey",13,93.77,Ciclovías
+1052,"Gonzalez, Elpidio",10,185.14,Ciclovías
+1053,"Obligado Rafael, Av.Costanera",14,242.55,Ciclovías
+1054,Ibera,12,55.91,Ciclovías
+1055,Superi,13,18.63,Ciclovías
+1056,Sarmiento Av.,14,287.43,Ciclovías
+1057,Tucuman,3,111.97,Ciclovías
+1058,Del Libertador Av.,2,129.76,Ciclovías
+1059,Finochietto Enrique Dr.,4,68.13,Ciclovías
+1060,Corrientes Av.,15,129.37,Ciclovías mano única
+1061,Sarmiento,1,131.25,Ciclovías
+1062,"Sastre, Marcos",10,132.13,Ciclovías
+1063,Bolivar,1,129.52,Ciclovías
+1064,Constitucion,3,106.37,Ciclovías
+1065,Del Libertador Av.,14,12.04,Ciclovías
+1066,"Cevallos, Virrey",1,140.47,Ciclovías
+1067,Storni Alfonsina,12,58.43,Ciclovías
+1068,Complejo Ciudad Universitaria (Sin Nombre Oficial),13,53.34,Ciclovías
+1069,Sanchez De Loria,3,93.78,Ciclovías
+1070,"Garcia, Juan Agustin",11,140.26,Ciclovías
+1071,Ceretti,12,101.12,Ciclovías
+1072,Del Libertador Av.,13,92.36,Ciclovías
+1073,Doblas,7,85.12,Ciclovías
+1074,Cochabamba,1,130.48,Ciclovías
+1075,"Udaondo, Guillermo Av.",13,129.22,Ciclovías
+1076,Corrientes Av.,5,142.42,Ciclovías mano única
+1077,Juncal,2,26.36,Ciclovías
+1078,Unanue,8,101.58,Ciclovías mano única
+1079,Cuba,13,100.48,Ciclovías
+1080,Constitucion,3,84.01,Ciclovías
+1081,"Guiraldes, Int.",13,57.07,Ciclovías
+1082,Chile,1,35.36,Ciclovías
+1083,Ibera,12,93.12,Ciclovías
+1084,Chivilcoy Av.,11,99.69,Ciclovías mano única
+1085,"Artigas, Jose Gervasio, Gral.",11,66.57,Ciclovías
+1086,Miller,12,123.13,Ciclovías
+1087,Loyola,15,117.37,Ciclovías
+1088,"Vallese, Felipe",6,148.64,Ciclovías
+1089,Liniers Virrey,5,118.52,Ciclovías
+1090,Juncal,2,107.55,Ciclovías
+1091,Rincon,3,128.72,Ciclovías
+1092,"Bonifacio, Jose",7,166.18,Ciclovías
+1093,Monroe,13,123.78,Ciclovías
+1094,Chivilcoy,10,160.86,Ciclovías
+1095,Chivilcoy,11,104.45,Ciclovías
+1096,"Cevallos, Virrey",1,130.35,Ciclovías
+1097,Treinta Y Tres Orientales,5,120.75,Ciclovías
+1098,"Rodriguez, Martin",4,101.04,Ciclovías
+1099,"Rodo, Jose E.",9,126.93,Ciclovías
+1100,11 De Septiembre De 1888,13,117.13,Ciclovías
+1101,"Calvo, Carlos",3,139.65,Ciclovías
+1102,Forest Av.,15,143.83,Ciclovías mano única
+1103,Ibera,13,105.96,Ciclovías
+1104,Pinto,12,65.6,Ciclovías
+1105,Ecuador,3,127.33,Ciclovías
+1106,Sarmiento Av.,14,242.49,Ciclovías
+1107,Pola,9,146.74,Ciclovías
+1108,Blanco Encalada,13,107.57,Ciclovías
+1109,Sendero Peatonal Pueyrredon,2,95.38,Ciclovías
+1110,Arenales,1,143.25,Ciclovías
+1111,Dean Funes,3,81.23,Ciclovías
+1112,Blanco Encalada,12,159.93,Ciclovías
+1113,Chivilcoy,10,69.7,Ciclovías
+1114,Dean Funes,3,124.87,Ciclovías
+1115,Combate De Los Pozos,4,129.94,Ciclovías
+1116,"Bonifacio, Jose",7,134.24,Ciclovías
+1117,"Bavio, Ernesto A.",13,249.69,Ciclovías
+1118,"Peron, Juan Domingo, Tte. General",1,86.27,Ciclovías mano única
+1119,De Los Ombues Av.,14,54.61,Ciclovías
+1120,Amenabar,12,119.03,Ciclovías
+1121,Del Libertador Av.,2,164.88,Ciclovías
+1122,Del Libertador Av.,14,124.87,Ciclovías
+1123,Quilmes,4,132.17,Ciclovías
+1124,Chivilcoy,11,104.55,Ciclovías
+1125,"Peron, Juan Domingo, Tte. General",1,84.95,Ciclovías mano única
+1126,Serrano,15,116.34,Ciclovías
+1127,Caboto,4,100.5,Ciclovías
+1128,Bouchard,1,144.32,Ciclovías
+1129,Mendez De Andes,7,60.85,Ciclovías
+1130,Montevideo,1,140.36,Ciclovías
+1131,Gorriti,14,79.47,Ciclovías
+1132,Granaderos,7,138.1,Ciclovías
+1133,"Rodo, Jose E.",9,127.16,Ciclovías
+1134,"Newbery, Jorge Av.",15,121.35,Ciclovías
+1135,Chivilcoy Av.,11,151.69,Ciclovías mano única
+1136,"Pedraza, Manuela",13,72.41,Ciclovías
+1137,"Alvarez, Julian",15,123.69,Ciclovías
+1138,"Diaz, Cnel. Av.",14,11.44,Ciclovías
+1139,Riglos,7,149.55,Ciclovías
+1140,"Rodo, Jose E.",9,92.3,Ciclovías
+1141,Valle,6,84.55,Ciclovías
+1142,Doblas,6,121.95,Ciclovías
+1143,Del Libertador Av.,13,17.68,Ciclovías
+1144,Gorriti,14,129.55,Ciclovías
+1145,Ibera,12,67.41,Ciclovías
+1146,Amenabar,13,144.35,Ciclovías
+1147,Congreso,13,101.87,Ciclovías
+1148,"Blanes, Juan Manuel",4,128.17,Ciclovías
+1149,Primera Junta,7,124.3,Ciclovías
+1150,Tacuari,1,128.23,Ciclovías
+1151,Fragata Pres. Sarmiento,6,97.21,Ciclovías
+1152,Serrano,14,59.05,Ciclovías
+1153,Ecuador,2,97.18,Ciclovías
+1154,Serrano,14,147.67,Ciclovías
+1155,Cordoba Av.,14,142.03,Ciclovías mano única
+1156,"Jauretche, Arturo",6,146.23,Ciclovías
+1157,"Figueroa Alcorta, Pres. Av.",13,68.08,Ciclovías
+1158,"Gonzalez, Elpidio",10,64.13,Ciclovías
+1159,Vilela,12,102.53,Ciclovías
+1160,Cordoba Av.,2,125.64,Ciclovías mano única
+1161,Liniers Virrey,5,113.75,Ciclovías
+1162,Moron,10,114.49,Ciclovías
+1163,Tucuman,3,158.42,Ciclovías
+1164,Tacuari,1,134.16,Ciclovías
+1165,El Maestro,6,160.21,Ciclovías
+1166,Gorriti,14,123.75,Ciclovías
+1167,"Calvo, Carlos",1,42.02,Ciclovías
+1168,"Uriburu Jose E., Pres.",2,112.65,Ciclovías
+1169,"Roca, Cnel. Av.",8,203.73,Ciclovías
+1170,Corrientes Av.,1,138.48,Ciclovías mano única
+1171,"Barros Pazos, Jose",8,103.16,Ciclovías mano única
+1172,"Oroño, Nicasio",15,122.71,Ciclovías
+1173,"Hugo, Victor",10,127.88,Ciclovías
+1174,Patron,9,67.18,Ciclovías
+1175,Del Libertador Av.,14,131.22,Ciclovías
+1176,Casares Av.,14,32.74,Ciclovías
+1177,Pavon,1,136.47,Ciclovías
+1178,Cucha Cucha,15,157.39,Ciclovías
+1179,Granaderos,7,141.25,Ciclovías
+1180,"Golfarini, Juan Angel, Dr.",13,127.07,Ciclovías
+1181,"Garcia, Juan Agustin",11,55.93,Ciclovías
+1182,Cuba,13,45.47,Ciclovías
+1183,"Mansilla, Lucio Norberto, General",14,33.38,Ciclovías
+1184,Estrada,7,111.54,Ciclovías
+1185,Zapata,13,63.91,Ciclovías
+1186,Suipacha,1,128.97,Ciclovías
+1187,Superi,13,126.06,Ciclovías
+1188,"Obligado Rafael, Av.Costanera",14,168.96,Ciclovías
+1189,Azopardo,1,52.94,Ciclovías
+1190,Complejo Ciudad Universitaria (Sin Nombre Oficial),13,54.41,Ciclovías
+1191,Potosi,5,119.04,Ciclovías
+1192,Del Libertador Av.,14,85.47,Ciclovías
+1193,Del Libertador Av.,14,115.12,Ciclovías
+1194,Tronador,12,9.4,Ciclovías
+1195,Moldes,13,93.85,Ciclovías
+1196,La Pampa,12,104.71,Ciclovías
+1197,Serrano,15,125.05,Ciclovías
+1198,Don Pedro De Mendoza Av.,4,150.71,Ciclovías
+1199,"Alvear, Marcelo T. De",1,135.55,Ciclovías
+1200,Olleros Av.,14,31.9,Ciclovías
+1201,Estivao,6,79.04,Ciclovías
+1202,Corrientes Av.,15,115.26,Ciclovías mano única
+1203,Tacuari,4,68.65,Ciclovías
+1204,Del Libertador Av.,13,95.05,Ciclovías
+1205,Complejo Ciudad Universitaria (Sin Nombre Oficial),13,44.1,Ciclovías
+1206,Complejo Parque De Los Niños (Sin Nombre Oficial),13,81.04,Ciclovías
+1207,Roseti,15,211.78,Ciclovías
+1208,Bolivar,1,54.12,Ciclovías
+1209,"Blanes, Juan Manuel",4,14.99,Ciclovías
+1210,"Diaz, Cesar, Gral.",11,134.04,Ciclovías
+1211,Chile,3,144.77,Ciclovías
+1212,Uspallata,4,133.96,Ciclovías
+1213,"Cevallos, Virrey",1,134.12,Ciclovías
+1214,Corrientes Av.,5,136.63,Ciclovías mano única
+1215,"Hornos, Gral.",4,47.53,Ciclovías
+1216,Gurruchaga,15,51.24,Ciclovías
+1217,"Vallese, Felipe",6,101.6,Ciclovías
+1218,Estado Plurinacional De Bolivia,15,95.4,Ciclovías
+1219,"Gallardo, Angel Av.",15,104.1,Ciclovías mano única
+1220,"Gonzalez, Elpidio",10,63.31,Ciclovías
+1221,"Oroño, Nicasio",15,150.05,Ciclovías
+1222,"Pedraza, Manuela",12,112.17,Ciclovías
+1223,Pola,9,72.5,Ciclovías
+1224,Puan,7,101.14,Ciclovías
+1225,Patron,9,96.02,Ciclovías
+1226,"Rodo, Jose E.",9,127.23,Ciclovías
+1227,Echeverria,13,100.4,Ciclovías
+1228,"Uriburu Jose E., Pres.",3,122.7,Ciclovías
+1229,"Vallese, Felipe",6,100.59,Ciclovías
+1230,Arenales,2,92.98,Ciclovías
+1231,"Barros Pazos, Jose",8,103.58,Ciclovías mano única
+1232,"Cevallos, Virrey",1,97.23,Ciclovías
+1233,"Sastre, Marcos",10,97.97,Ciclovías
+1234,Rivadavia Av.,6,60.01,Ciclovías
+1235,Azcuenaga,2,124.29,Ciclovías
+1236,Bolivar,1,130.46,Ciclovías
+1237,Pedernera,7,87.62,Ciclovías
+1238,"Vera Peñaloza, Rosario",1,17.68,Ciclovías
+1239,"Bonifacio, Jose",7,116.08,Ciclovías
+1240,"Gonzalez, Elpidio",10,87.79,Ciclovías
+1241,Paseo Colon Av.,1,124.89,Ciclovías
+1242,"Rabanal, Francisco, Intendente Av.",8,137.6,Ciclovías
+1243,"Calvo, Carlos",1,131.16,Ciclovías
+1244,"Alvarez, Julian",15,125.0,Ciclovías
+1245,"Alvarez, Julian",14,95.59,Ciclovías
+1246,"Gonzalez, Elpidio",10,52.45,Ciclovías
+1247,Tres Arroyos,15,112.84,Ciclovías
+1248,Gorriti,14,114.51,Ciclovías
+1249,Bolivar,1,57.2,Ciclovías
+1250,Arenales,1,135.18,Ciclovías
+1251,Forest Av.,15,140.25,Ciclovías mano única
+1252,"Gallardo, Angel Av.",15,20.54,Ciclovías mano única
+1253,Finochietto Enrique Dr.,4,138.76,Ciclovías mano única
+1254,"Alvear, Marcelo T. De",2,127.06,Ciclovías
+1255,Uspallata,4,100.63,Ciclovías
+1256,Treinta Y Tres Orientales,5,72.47,Ciclovías
+1257,Patricias Argentinas Av.,6,48.53,Ciclovías
+1258,"Rabanal, Francisco, Intendente Av.",4,123.34,Ciclovías
+1259,Bolivar,1,125.22,Ciclovías
+1260,Bolivar,1,122.33,Ciclovías
+1261,Liniers Virrey,5,87.44,Ciclovías
+1262,Uspallata,4,98.01,Ciclovías
+1263,Del Libertador Av.,13,101.94,Ciclovías
+1264,"Alsina, Adolfo",3,126.38,Ciclovías
+1265,"Hornos, Gral.",4,153.46,Ciclovías
+1266,"Rivadavia Martin, Comodoro",13,100.97,Ciclovías
+1267,"Roca, Cnel. Av.",8,234.68,Ciclovías
+1268,"Acuña De Figueroa, Francisco",14,119.87,Ciclovías
+1269,Culpina,7,159.3,Ciclovías
+1270,"Alsina, Adolfo",3,124.86,Ciclovías
+1271,San Juan Av.,3,38.73,Ciclovías
+1272,"Bilbao, Francisco",7,110.23,Ciclovías
+1273,Tucuman,5,136.37,Ciclovías
+1274,Riglos,6,60.68,Ciclovías
+1275,Ecuador,3,141.91,Ciclovías
+1276,"Alvear, Marcelo T. De",2,122.42,Ciclovías
+1277,"Moreau De Justo, Alicia Av.",1,127.58,Ciclovías
+1278,"Roca, Cnel. Av.",8,205.44,Ciclovías
+1279,La Pampa,12,104.93,Ciclovías
+1280,Estado Plurinacional De Bolivia,15,102.29,Ciclovías
+1281,Griveo,12,75.26,Ciclovías
+1282,"Uriburu Jose E., Pres.",2,138.17,Ciclovías
+1283,Garcia Del Rio,12,102.35,Ciclovías
+1284,Blanco Encalada,13,104.29,Ciclovías
+1285,Tres Arroyos,6,51.62,Ciclovías
+1286,Superi,12,120.49,Ciclovías
+1287,Storni Alfonsina,12,57.28,Ciclovías
+1288,Liniers Virrey,5,71.79,Ciclovías
+1289,Del Libertador Av.,14,84.47,Ciclovías
+1290,"Figueroa Alcorta, Pres. Av.",14,13.34,Ciclovías
+1291,Zañartu,7,106.07,Ciclovías
+1292,Pola,9,91.9,Ciclovías
+1293,"Barros Pazos, Jose",8,77.29,Ciclovías mano única
+1294,Blanco Encalada,12,119.79,Ciclovías
+1295,Dean Funes,4,132.05,Ciclovías
+1296,"Artigas, Jose Gervasio, Gral.",11,138.34,Ciclovías
+1297,"Beiro, Francisco Av.",15,58.32,Ciclovías
+1298,Picheuta,7,84.82,Ciclovías
+1299,"Alvarez, Julian",14,10.59,Ciclovías
+1300,Azcuenaga,2,124.57,Ciclovías
+1301,"Figueroa Alcorta, Pres. Av.",14,218.52,Ciclovías
+1302,Rondeau,5,70.61,Ciclovías
+1303,Rawson,5,154.37,Ciclovías
+1304,"Roca, Cnel. Av.",8,107.86,Ciclovías
+1305,Del Libertador Av.,13,130.25,Ciclovías
+1306,Complejo Parque De Los Niños (Sin Nombre Oficial),13,85.25,Ciclovías
+1307,"Vallese, Felipe",6,26.68,Ciclovías
+1308,"Garcia, Teodoro",14,99.79,Ciclovías
+1309,Estados Unidos,5,127.93,Ciclovías
+1310,Corrientes Av.,3,137.07,Ciclovías mano única
+1311,Melian Av.,12,21.2,Ciclovías
+1312,"Garcia, Teodoro",14,108.55,Ciclovías
+1313,Billinghurst,5,174.0,Ciclovías
+1314,Balbastro,7,185.82,Ciclovías
+1315,Lautaro,7,123.83,Ciclovías
+1316,"Freire, Ramon, Cap. Gral.",13,146.02,Ciclovías
+1317,Montevideo,2,142.72,Ciclovías
+1318,Fragata Pres. Sarmiento,6,121.09,Ciclovías
+1319,Pueyrredon Av.,2,170.48,Ciclovías
+1320,Puan,6,115.63,Ciclovías
+1321,"Rodo, Jose E.",9,43.03,Ciclovías
+1322,"Cevallos, Virrey",1,129.32,Ciclovías
+1323,Irala,4,119.17,Ciclovías
+1324,Del Libertador Av.,14,120.34,Ciclovías
+1325,Pepiri,4,135.77,Ciclovías
+1326,"Rabanal, Francisco, Intendente Av.",8,106.87,Ciclovías
+1327,"Yrurtia, Rogelio",12,40.06,Ciclovías
+1328,Amenabar,13,100.75,Ciclovías
+1329,Tres Arroyos,15,40.94,Ciclovías
+1330,Bouchard,1,125.03,Ciclovías
+1331,Unanue,8,87.07,Ciclovías mano única
+1332,Complejo Ciudad Universitaria (Sin Nombre Oficial),13,177.56,Ciclovías
+1333,Primera Junta,9,151.19,Ciclovías
+1334,Olleros,13,104.3,Ciclovías
+1335,Uspallata,4,136.51,Ciclovías
+1336,La Pampa,12,119.91,Ciclovías
+1337,Tres Arroyos,6,116.99,Ciclovías
+1338,Patricias Argentinas Av.,6,19.56,Ciclovías
+1339,"Peron, Juan Domingo, Tte. General",1,39.29,Ciclovías mano única
+1340,"Figueroa Alcorta, Pres. Av.",14,201.05,Ciclovías
+1341,San Martin,1,128.44,Ciclovías
+1342,Machu Picchu,1,57.01,Ciclovías
+1343,Herrera,4,213.75,Ciclovías
+1344,Moron,10,72.39,Ciclovías
+1345,Rondeau,4,161.2,Ciclovías
+1346,Patron,9,90.94,Ciclovías
+1347,"Martinez, Enrique, Gral.",13,49.34,Ciclovías
+1348,"Alsina, Adolfo",3,134.74,Ciclovías
+1349,Del Libertador Av.,14,151.8,Ciclovías
+1350,"Barros Pazos, Jose",8,104.45,Ciclovías mano única
+1351,"Garcia, Juan Agustin",11,49.22,Ciclovías
+1352,"D'Esposito, Arnaldo",4,112.12,Ciclovías
+1353,Montevideo,1,120.65,Ciclovías
+1354,"Roca, Julio A., Presidente Diagonal Sur Av.",1,6.7,Ciclovías mano única
+1355,Corrientes Av.,15,59.17,Ciclovías mano única
+1356,Cordoba Av.,14,101.48,Ciclovías mano única
+1357,Dorrego,14,25.82,Ciclovías
+1358,Ibera,12,105.08,Ciclovías
+1359,Ecuador,3,154.73,Ciclovías
+1360,Forest Av.,13,205.44,Ciclovías mano única
+1361,Chivilcoy,10,136.37,Ciclovías
+1362,Don Bosco,5,125.34,Ciclovías
+1363,Ibera,13,95.64,Ciclovías
+1364,Del Libertador Av.,13,99.85,Ciclovías
+1365,"Alvarez, Julian",14,79.05,Ciclovías
+1366,"Hornos, Gral.",4,294.77,Ciclovías
+1367,Lima,1,65.59,Ciclovías
+1368,Blanco Encalada,12,140.01,Ciclovías
+1369,"Peron, Juan Domingo, Tte. General",3,126.61,Ciclovías mano única
+1370,"Uriburu Jose E., Pres.",2,168.34,Ciclovías
+1371,Corrientes Av.,3,128.39,Ciclovías mano única
+1372,"Gonzalez, Elpidio",10,127.41,Ciclovías
+1373,Valle,6,136.97,Ciclovías
+1374,Unanue,8,103.76,Ciclovías mano única
+1375,Cucha Cucha,15,59.8,Ciclovías
+1376,"Rodo, Jose E.",9,76.36,Ciclovías
+1377,"Roca, Cnel. Av.",8,102.41,Ciclovías
+1378,"Hornos, Gral.",4,50.44,Ciclovías
+1379,Monroe,12,165.89,Ciclovías
+1380,Las Casas,5,138.26,Ciclovías
+1381,Ecuador,2,139.67,Ciclovías
+1382,Gorriti,14,139.67,Ciclovías
+1383,Arenales,1,84.7,Ciclovías
+1384,Gallo,2,22.7,Ciclovías
+1385,"Diaz, Cesar, Gral.",11,141.39,Ciclovías
+1386,"Pedraza, Manuela",12,119.98,Ciclovías
+1387,"Rabanal, Francisco, Intendente Av.",8,125.82,Ciclovías
+1388,San Martin,1,129.48,Ciclovías
+1389,Dean Funes,3,135.66,Ciclovías
+1390,Nueva York,15,64.74,Ciclovías
+1391,Amenabar,13,100.42,Ciclovías
+1392,"Pedraza, Manuela",12,100.8,Ciclovías
+1393,Miller,12,73.4,Ciclovías
+1394,Dean Funes,4,33.74,Ciclovías
+1395,Chivilcoy Av.,11,109.32,Ciclovías mano única
+1396,"Diaz, Cnel. Av.",14,126.17,Ciclovías
+1397,Chile,1,135.43,Ciclovías mano única
+1398,Estado Plurinacional De Bolivia,12,117.55,Ciclovías
+1399,Cucha Cucha,15,144.23,Ciclovías
+1400,Constitucion,3,111.0,Ciclovías
+1401,Primera Junta,7,124.06,Ciclovías
+1402,Chaco,6,50.68,Ciclovías
+1403,Forest Av.,15,143.03,Ciclovías mano única
+1404,Cordoba Av.,14,111.32,Ciclovías mano única
+1405,"Alvarez, Julian",14,97.41,Ciclovías
+1406,"Alvarez, Julian",15,146.57,Ciclovías
+1407,Miller,12,45.33,Ciclovías
+1408,Melian Av.,12,101.06,Ciclovías
+1409,Moron,10,116.45,Ciclovías
+1410,Primera Junta,9,112.33,Ciclovías
+1411,"Uriburu Jose E., Pres.",3,142.21,Ciclovías
+1412,Patricias Argentinas Av.,6,16.33,Ciclovías
+1413,"Blanes, Juan Manuel",4,17.23,Ciclovías
+1414,"Peron, Juan Domingo, Tte. General",3,130.69,Ciclovías
+1415,Del Libertador Av.,1,110.71,Ciclovías
+1416,"Pedraza, Manuela",12,61.55,Ciclovías
+1417,"Alvarez, Julian",14,92.8,Ciclovías
+1418,Corrientes Av.,1,15.69,Ciclovías mano única
+1419,Suipacha,1,138.42,Ciclovías
+1420,Moron,7,138.03,Ciclovías
+1421,Cuba,13,101.48,Ciclovías
+1422,Ceretti,12,116.07,Ciclovías
+1423,Ibera,12,100.09,Ciclovías
+1424,"Newbery, Jorge Av.",15,86.59,Ciclovías
+1425,Moron,10,175.4,Ciclovías
+1426,Estado De Israel Av.,15,128.89,Ciclovías mano única
+1427,Billinghurst,2,107.31,Ciclovías
+1428,"Garcia, Juan Agustin",11,66.87,Ciclovías
+1429,Cordoba Av.,14,145.99,Ciclovías mano única
+1430,Del Libertador Av.,14,155.94,Ciclovías
+1431,Bolivar,1,127.11,Ciclovías
+1432,"Peron, Juan Domingo, Tte. General",3,144.5,Ciclovías
+1433,Chivilcoy Av.,11,10.3,Ciclovías mano única
+1434,"Pellegrini, Carlos",1,124.26,Ciclovías
+1435,Cordoba Av.,14,112.29,Ciclovías mano única
+1436,"Alvarez, Julian",14,124.48,Ciclovías
+1437,San Nicolas,11,137.06,Ciclovías
+1438,Del Libertador Av.,13,128.58,Ciclovías
+1439,"Pedraza, Manuela",13,100.01,Ciclovías
+1440,"Perette, Carlos H.",1,48.19,Ciclovías
+1441,Humahuaca,5,111.35,Ciclovías
+1442,"Rodo, Jose E.",9,77.14,Ciclovías
+1443,Islas Galapagos,1,20.45,Ciclovías
+1444,Misiones,3,130.52,Ciclovías
+1445,Combate De Los Pozos,4,114.74,Ciclovías
+1446,Miller,12,123.0,Ciclovías
+1447,Forest Av.,15,29.85,Ciclovías mano única
+1448,"Moreau De Justo, Alicia Av.",1,110.36,Ciclovías
+1449,"Garcia, Juan Agustin",11,68.69,Ciclovías
+1450,Pavon,3,157.33,Ciclovías
+1451,Bolivar,4,112.49,Ciclovías
+1452,"Bonifacio, Jose",7,129.06,Ciclovías
+1453,Del Libertador Av.,14,9.59,Ciclovías
+1454,Castelli,3,126.73,Ciclovías
+1455,Pepiri,4,36.07,Ciclovías
+1456,"Cevallos, Virrey",1,109.8,Ciclovías
+1457,Loyola,15,121.72,Ciclovías
+1458,Cuba,13,92.32,Ciclovías
+1459,"Figueroa Alcorta, Pres. Av.",13,13.4,Ciclovías
+1460,Monroe,12,76.65,Ciclovías
+1461,Estrada,7,146.49,Ciclovías
+1462,Fragata Pres. Sarmiento,6,137.07,Ciclovías
+1463,Amenabar,13,102.3,Ciclovías
+1464,Miller,12,100.52,Ciclovías
+1465,Complejo Ciudad Universitaria (Sin Nombre Oficial),13,18.97,Ciclovías
+1466,"Diaz, Cnel. Av.",14,126.92,Ciclovías
+1467,Billinghurst,2,100.8,Ciclovías
+1468,"Roca, Cnel. Av.",8,100.85,Ciclovías
+1469,Serrano,15,124.98,Ciclovías
+1470,Doblas,7,146.85,Ciclovías
+1471,La Rabida (S) Av.,1,90.11,Ciclovías
+1472,Corrientes Av.,5,142.69,Ciclovías mano única
+1473,Rawson,5,76.36,Ciclovías
+1474,"Figueroa Alcorta, Pres. Av.",14,425.26,Ciclovías
+1475,Otamendi,6,115.17,Ciclovías
+1476,"Martinez, Enrique, Gral.",13,117.48,Ciclovías
+1477,Chivilcoy Av.,11,99.67,Ciclovías mano única
+1478,Mendez De Andes,6,143.61,Ciclovías
+1479,Loyola,15,117.36,Ciclovías
+1480,"Alsina, Adolfo",3,102.04,Ciclovías
+1481,Echeverria,13,100.7,Ciclovías
+1482,Pola,9,125.8,Ciclovías
+1483,Juncal,2,115.82,Ciclovías
+1484,"Rivadavia Martin, Comodoro",13,122.24,Ciclovías
+1485,Cuba,13,22.66,Ciclovías
+1486,"Garcia, Juan Agustin",11,67.52,Ciclovías
+1487,"Acuña De Figueroa, Francisco",5,141.24,Ciclovías
+1488,"Araoz De Lamadrid, Gregorio, Gral.",4,96.47,Ciclovías
+1489,Martinez Castro,9,141.22,Ciclovías
+1490,Caboto,4,86.46,Ciclovías
+1491,Bolivar,1,131.67,Ciclovías
+1492,Juncal,2,85.75,Ciclovías
+1493,Chivilcoy Av.,11,95.8,Ciclovías mano única
+1494,Corrientes Av.,5,148.18,Ciclovías mano única
+1495,Complejo Ciudad Universitaria (Sin Nombre Oficial),13,239.74,Ciclovías
+1496,"Gonzalez, Elpidio",10,102.56,Ciclovías
+1497,"Roca, Cnel. Av.",8,104.99,Ciclovías
+1498,"Peron, Juan Domingo, Tte. General",3,126.48,Ciclovías
+1499,Moron,10,117.99,Ciclovías
+1500,Antartida Argentina Av.,1,177.21,Ciclovías
+1501,Moldes,13,94.82,Ciclovías
+1502,Tucuman,3,131.84,Ciclovías
+1503,Superi,12,99.0,Ciclovías
+1504,Montevideo,2,141.91,Ciclovías
+1505,Pasco,3,132.11,Ciclovías
+1506,Complejo Ciudad Universitaria (Sin Nombre Oficial),13,21.26,Ciclovías
+1507,Storni Alfonsina,12,70.72,Ciclovías
+1508,"Mansilla, Lucio Norberto, General",14,137.78,Ciclovías
+1509,Pepiri,4,109.19,Ciclovías
+1510,Amenabar,13,127.08,Ciclovías
+1511,"Blanes, Juan Manuel",4,23.27,Ciclovías
+1512,"Roca, Cnel. Av.",8,47.91,Ciclovías
+1513,Cordoba Av.,14,120.85,Ciclovías mano única
+1514,Moron,10,132.22,Ciclovías
+1515,Del Libertador Av.,14,63.28,Ciclovías
+1516,Machu Picchu,1,43.08,Ciclovías
+1517,Caboto,4,105.41,Ciclovías
+1518,"Gonzalez, Elpidio",10,116.42,Ciclovías
+1519,"Calvo, Carlos",1,38.8,Ciclovías
+1520,"Obligado Rafael, Av.Costanera",13,56.38,Ciclovías
+1521,"Alvear, Marcelo T. De",2,136.49,Ciclovías
+1522,Las Casas,5,104.85,Ciclovías
+1523,"Martinez, Enrique, Gral.",13,97.95,Ciclovías
+1524,"Calvo, Carlos",5,27.5,Ciclovías
+1525,Martinez Castro,9,141.35,Ciclovías
+1526,"Calvo, Carlos",1,139.66,Ciclovías
+1527,"Alvarez, Julian",15,8.78,Ciclovías
+1528,"Gallardo, Angel Av.",15,59.32,Ciclovías mano única
+1529,Pavon,3,143.66,Ciclovías
+1530,Rincon,3,131.5,Ciclovías
+1531,Mendez De Andes,6,85.84,Ciclovías
+1532,Montevideo,2,134.08,Ciclovías
+1533,"Ambrosetti, Juan B.",6,97.91,Ciclovías
+1534,Camino De Sirga,4,500.45,Ciclovías
+1535,Potosi,5,78.34,Ciclovías
+1536,Gorriti,14,102.61,Ciclovías
+1537,Guatemala,14,117.01,Ciclovías
+1538,Mendez De Andes,7,96.7,Ciclovías
+1539,Paseo Colon Av.,1,125.13,Ciclovías
+1540,Cordoba Av.,14,90.13,Ciclovías mano única
+1541,Del Libertador Av.,13,103.87,Ciclovías
+1542,Estrada,7,27.28,Ciclovías
+1543,"Rodo, Jose E.",9,46.59,Ciclovías
+1544,Vertiz Virrey Av.,13,146.4,Ciclovías
+1545,Loyola,15,111.93,Ciclovías
+1546,"Gonzalez, Elpidio",10,166.5,Ciclovías
+1547,Miller,12,49.77,Ciclovías
+1548,Cordoba Av.,2,134.47,Ciclovías mano única
+1549,"Pedraza, Manuela",13,46.23,Ciclovías
+1550,Baigorri,4,161.36,Ciclovías
+1551,Campos Salles,13,677.1,Ciclovías
+1552,San Juan Av.,1,20.56,Ciclovías
+1553,"Figueroa Alcorta, Pres. Av.",13,57.0,Ciclovías
+1554,Martinez Castro,9,159.76,Ciclovías
+1555,Chivilcoy,11,117.86,Ciclovías
+1556,Ecuador,3,105.07,Ciclovías
+1557,"Alvear, Marcelo T. De",2,42.48,Ciclovías
+1558,Liniers Virrey,5,97.14,Ciclovías
+1559,"Bonifacio, Jose",10,100.92,Ciclovías
+1560,Corrientes Av.,1,127.78,Ciclovías mano única
+1561,Caboto,4,102.42,Ciclovías
+1562,"Colectora Cantilo, Int.",13,157.56,Ciclovías
+1563,Castelli,3,141.98,Ciclovías
+1564,Patricias Argentinas Av.,6,67.85,Ciclovías
+1565,"Alvarez, Julian",15,125.15,Ciclovías
+1566,Doblas,6,128.32,Ciclovías mano única
+1567,"Alvarez, Julian",14,158.55,Ciclovías
+1568,La Pampa,12,134.06,Ciclovías
+1569,Cuba,13,137.56,Ciclovías
+1570,Chivilcoy Av.,11,62.36,Ciclovías mano única
+1571,"Alsina, Adolfo",3,113.54,Ciclovías
+1572,Corrientes Av.,15,119.16,Ciclovías mano única
+1573,Del Libertador Av.,14,130.0,Ciclovías
+1574,Patron,9,117.61,Ciclovías
+1575,11 De Septiembre De 1888,13,126.72,Ciclovías
+1576,"Rodriguez, Martin",4,101.7,Ciclovías
+1577,Zavalia,13,160.59,Ciclovías
+1578,Valle,6,58.8,Ciclovías
+1579,Complejo Parque De Los Niños (Sin Nombre Oficial),13,34.69,Ciclovías
+1580,"Rodo, Jose E.",9,42.35,Ciclovías
+1581,"Figueroa Alcorta, Pres. Av.",14,63.46,Ciclovías
+1582,Montevideo,2,142.5,Ciclovías
+1583,"Pedraza, Manuela",13,43.98,Ciclovías
+1584,Miller,12,101.19,Ciclovías
+1585,Machu Picchu,1,37.91,Ciclovías
+1586,"Acuña De Figueroa, Francisco",5,131.4,Ciclovías
+1587,Rincon,3,132.31,Ciclovías
+1588,Congreso,13,26.74,Ciclovías
+1589,Irala,4,101.72,Ciclovías
+1590,Complejo Ciudad Universitaria (Sin Nombre Oficial),13,136.22,Ciclovías
+1591,Herrera,4,151.09,Ciclovías
+1592,"Newbery, Jorge",13,115.45,Ciclovías
+1593,Gorriti,14,156.07,Ciclovías
+1594,Guatemala,14,129.12,Ciclovías
+1595,Cucha Cucha,15,43.81,Ciclovías
+1596,Caboto,4,165.69,Ciclovías
+1597,"Calvo, Carlos",1,124.92,Ciclovías
+1598,Suipacha,1,7.74,Ciclovías
+1599,Estados Unidos,5,131.69,Ciclovías
+1600,Complejo Ciudad Universitaria (Sin Nombre Oficial),13,92.67,Ciclovías
+1601,Liniers Virrey,5,146.23,Ciclovías
+1602,Chivilcoy,10,68.77,Ciclovías
+1603,Sanchez De Loria,3,129.44,Ciclovías
+1604,"Sastre, Marcos",10,71.59,Ciclovías
+1605,Mendez De Andes,7,133.13,Ciclovías
+1606,Humahuaca,5,132.72,Ciclovías
+1607,"Rodo, Jose E.",9,102.73,Ciclovías
+1608,"Perette, Carlos H.",1,78.05,Ciclovías
+1609,Miller,12,139.17,Ciclovías
+1610,Corrientes Av.,15,105.12,Ciclovías mano única
+1611,"Barros Pazos, Jose",8,103.38,Ciclovías mano única
+1612,Estado De Israel Av.,15,5.11,Ciclovías mano única
+1613,Ceretti,12,68.16,Ciclovías
+1614,"Mansilla, Lucio Norberto, General",2,92.89,Ciclovías
+1615,Padilla,15,130.44,Ciclovías
+1616,Blanco Encalada,12,115.97,Ciclovías
+1617,"Lamas, Andres",11,34.49,Ciclovías
+1618,"Beiro, Francisco Av.",15,81.05,Ciclovías
+1619,Del Libertador Av.,13,110.67,Ciclovías
+1620,Cordoba Av.,14,109.51,Ciclovías mano única
+1621,Corrientes Av.,3,108.89,Ciclovías mano única
+1622,Del Libertador Av.,14,120.37,Ciclovías
+1623,Blanco Encalada,12,120.96,Ciclovías
+1624,"Sastre, Marcos",10,136.3,Ciclovías
+1625,Doblas,7,149.28,Ciclovías
+1626,Bolivar,1,124.32,Ciclovías
+1627,Congreso,13,26.64,Ciclovías
+1628,Humboldt,14,120.9,Ciclovías
+1629,Monroe,13,130.45,Ciclovías
+1630,Ibera,12,105.25,Ciclovías
+1631,"Alvarez, Julian",15,141.95,Ciclovías
+1632,Sarmiento Av.,14,70.57,Ciclovías
+1633,Necochea,4,94.43,Ciclovías
+1634,Tacuari,4,129.64,Ciclovías
+1635,"Roldan, Belisario Av.",14,104.72,Ciclovías
+1636,"Roca, Cnel. Av.",8,155.06,Ciclovías
+1637,"Hornos, Gral.",4,37.16,Ciclovías
+1638,Picheuta,7,65.42,Ciclovías
+1639,Chivilcoy Av.,11,117.55,Ciclovías mano única
+1640,Complejo Ciudad Universitaria (Sin Nombre Oficial),13,73.72,Ciclovías
+1641,"Mansilla, Lucio Norberto, General",14,35.1,Ciclovías
+1642,Valle,6,94.45,Ciclovías
+1643,Valle,6,127.07,Ciclovías
+1644,Herrera,4,223.69,Ciclovías
+1645,Tagle,14,251.13,Ciclovías
+1646,"Gallardo, Angel Av.",15,56.79,Ciclovías mano única
+1647,Billinghurst,5,130.75,Ciclovías
+1648,"Figueroa Alcorta, Pres. Av.",13,42.12,Ciclovías
+1649,Paseo Colon Av.,1,140.42,Ciclovías
+1650,"Rodo, Jose E.",9,103.82,Ciclovías
+1651,Corrientes Av.,15,61.11,Ciclovías mano única
+1652,Roseti,15,131.54,Ciclovías
+1653,Gorriti,14,100.84,Ciclovías
+1654,Rondeau,5,90.13,Ciclovías
+1655,"Bonifacio, Jose",7,114.1,Ciclovías
+1656,Tacuari,1,126.79,Ciclovías
+1657,Tres Arroyos,11,72.15,Ciclovías
+1658,Monroe,12,27.48,Ciclovías
+1659,"Acuña De Figueroa, Francisco",14,169.83,Ciclovías
+1660,"Irigoyen, Bernardo De",1,134.01,Ciclovías
+1661,Zañartu,7,118.82,Ciclovías
+1662,Serrano,14,108.71,Ciclovías
+1663,Amenabar,12,16.58,Ciclovías
+1664,Del Libertador Av.,14,118.24,Ciclovías
+1665,"Lamas, Andres",11,119.1,Ciclovías
+1666,Billinghurst,5,115.43,Ciclovías
+1667,"Obligado Rafael, Av.Costanera",13,83.15,Ciclovías
+1668,Dean Funes,4,141.46,Ciclovías
+1669,Amenabar,13,103.94,Ciclovías
+1670,"Uriburu Jose E., Pres.",3,160.88,Ciclovías
+1671,La Pampa,12,104.86,Ciclovías
+1672,Chivilcoy Av.,11,121.94,Ciclovías mano única
+1673,Ecuador,3,191.29,Ciclovías
+1674,Sendero Dorrego (No Oficial),14,54.36,Ciclovías
+1675,"Barros Pazos, Jose",8,105.14,Ciclovías mano única
+1676,Dean Funes,3,137.29,Ciclovías
+1677,Lugones,12,120.3,Ciclovías
+1678,Superi,12,149.74,Ciclovías
+1679,"Pedraza, Manuela",13,46.43,Ciclovías
+1680,"Barros Pazos, Jose",8,87.0,Ciclovías mano única
+1681,Del Libertador Av.,13,76.13,Ciclovías
+1682,Azopardo,4,167.28,Ciclovías
+1683,Bolivar,4,47.11,Ciclovías
+1684,Billinghurst,5,153.27,Ciclovías
+1685,"Sastre, Marcos",10,103.0,Ciclovías
+1686,Picheuta,7,69.86,Ciclovías
+1687,Moldes,13,113.06,Ciclovías
+1688,Bouchard,1,150.69,Ciclovías
+1689,Gorriti,14,55.5,Ciclovías
+1690,"Pellegrini, Carlos",1,130.24,Ciclovías
+1691,"Mansilla, Lucio Norberto, General",2,141.65,Ciclovías
+1692,Del Libertador Av.,14,141.02,Ciclovías
+1693,Combate De Los Pozos,4,252.26,Ciclovías
+1694,"Araoz De Lamadrid, Gregorio, Gral.",4,102.74,Ciclovías
+1695,"Peron, Juan Domingo, Tte. General",1,130.01,Ciclovías mano única
+1696,"Rodo, Jose E.",9,103.23,Ciclovías
+1697,"Roca, Cnel. Av.",8,72.0,Ciclovías
+1698,Estados Unidos,5,60.45,Ciclovías
+1699,Corrientes Av.,1,99.39,Ciclovías mano única
+1700,Casares Av.,14,233.15,Ciclovías
+1701,Griveo,12,74.88,Ciclovías
+1702,"Calvo, Carlos",3,157.2,Ciclovías
+1703,Chile,1,130.24,Ciclovías mano única
+1704,"Perette, Carlos H.",1,17.05,Ciclovías
+1705,"Beiro, Francisco Av.",15,33.66,Ciclovías
+1706,Antartida Argentina Av.,1,193.65,Ciclovías
+1707,Unanue,8,67.03,Ciclovías mano única
+1708,Barco Centenera Del,7,10.97,Ciclovías
+1709,Del Libertador Av.,13,110.18,Ciclovías
+1710,La Pampa,12,47.37,Ciclovías
+1711,Unanue,8,106.09,Ciclovías mano única
+1712,"Martinez, Enrique, Gral.",13,82.8,Ciclovías
+1713,"Alvear, Marcelo T. De",2,125.38,Ciclovías
+1714,Del Libertador Av.,14,81.67,Ciclovías
+1715,"Guiraldes, Int.",13,56.75,Ciclovías
+1716,"Figueroa Alcorta, Pres. Av.",14,166.51,Ciclovías
+1717,Mexico,3,87.28,Ciclovías
+1718,Pedernera,7,60.03,Ciclovías
+1719,Azcuenaga,2,93.72,Ciclovías
+1720,Godoy Cruz,14,144.46,Ciclovías
+1721,Griveo,12,69.21,Ciclovías
+1722,Del Libertador Av.,13,85.39,Ciclovías
+1723,"Rabanal, Francisco, Intendente Av.",4,117.18,Ciclovías
+1724,Chivilcoy Av.,11,20.1,Ciclovías mano única
+1725,"Borges, Jorge Luis",14,151.59,Ciclovías
+1726,Yerbal,6,30.86,Ciclovías
+1727,Cordoba Av.,2,43.81,Ciclovías mano única
+1728,"Newbery, Jorge Av.",15,118.12,Ciclovías
+1729,11 De Septiembre De 1888,13,60.89,Ciclovías
+1730,Cordoba Av.,15,124.97,Ciclovías mano única
+1731,Serrano,14,53.31,Ciclovías
+1732,"Figueroa Alcorta, Pres. Av.",13,72.53,Ciclovías
+1733,Del Libertador Av.,13,127.47,Ciclovías
+1734,Estrada,7,27.29,Ciclovías
+1735,Corrientes Av.,1,135.02,Ciclovías mano única
+1736,"Alsina, Adolfo",3,111.9,Ciclovías
+1737,Montevideo,1,141.32,Ciclovías
+1738,Ibera,13,101.31,Ciclovías
+1739,"Obligado Rafael, Av.Costanera",14,237.83,Ciclovías
+1740,Guatemala,14,135.69,Ciclovías
+1741,Antartida Argentina Av.,1,128.83,Ciclovías
+1742,Tucuman,3,108.57,Ciclovías
+1743,Azcuenaga,2,141.26,Ciclovías
+1744,"Gonzalez, Elpidio",10,141.33,Ciclovías
+1745,Valle,6,160.43,Ciclovías
+1746,Olleros Av.,14,95.9,Ciclovías
+1747,Doblas,7,119.4,Ciclovías
+1748,"Diaz, Cesar, Gral.",11,75.02,Ciclovías
+1749,Ballivian,15,66.99,Ciclovías
+1750,Olleros Av.,14,70.96,Ciclovías
+1751,"Vera Peñaloza, Rosario",1,8.51,Ciclovías
+1752,Gorriti,14,115.84,Ciclovías
+1753,Corrientes Av.,1,90.53,Ciclovías mano única
+1754,Congreso,13,137.82,Ciclovías
+1755,Herrera,4,78.98,Ciclovías
+1756,"Borges, Jorge Luis",14,59.7,Ciclovías
+1757,Tacuari,1,135.6,Ciclovías
+1758,"Garcia, Juan Agustin",11,70.17,Ciclovías
+1759,"Mansilla, Lucio Norberto, General",2,11.89,Ciclovías
+1760,Tres Arroyos,6,125.72,Ciclovías
+1761,Moron,7,131.9,Ciclovías
+1762,Cordoba Av.,14,112.12,Ciclovías mano única
+1763,Irala,4,104.51,Ciclovías
+1764,Billinghurst,2,130.13,Ciclovías
+1765,Blanco Encalada,12,108.96,Ciclovías
+1766,Humahuaca,5,147.69,Ciclovías
+1767,"Cevallos, Virrey",1,134.34,Ciclovías
+1768,Loyola,15,99.65,Ciclovías
+1769,11 De Septiembre De 1888,14,155.92,Ciclovías
+1770,"Cevallos, Virrey",1,118.95,Ciclovías
+1771,Lima,1,108.31,Ciclovías
+1772,Chivilcoy Av.,11,95.26,Ciclovías mano única
+1773,Patron,9,98.28,Ciclovías
+1774,"Alsina, Adolfo",3,117.02,Ciclovías
+1775,Martinez Castro,9,141.3,Ciclovías
+1776,"Udaondo, Guillermo Av.",13,232.23,Ciclovías
+1777,Congreso,13,128.48,Ciclovías
+1778,Loyola,15,96.47,Ciclovías
+1779,Liniers Virrey,5,121.86,Ciclovías
+1780,Suipacha,1,127.52,Ciclovías
+1781,Complejo Ciudad Universitaria (Sin Nombre Oficial),13,53.29,Ciclovías
+1782,Del Libertador Av.,13,95.48,Ciclovías
+1783,Chivilcoy Av.,11,96.58,Ciclovías mano única
+1784,Tucuman,1,118.91,Ciclovías
+1785,Corrientes Av.,5,107.75,Ciclovías mano única
+1786,Corrientes Av.,1,130.69,Ciclovías mano única
+1787,Del Libertador Av.,13,100.63,Ciclovías
+1788,"Pellegrini, Carlos E.",12,109.59,Ciclovías
+1789,"Alvarez, Julian",14,72.43,Ciclovías
+1790,Azopardo,1,138.57,Ciclovías
+1791,Nueva York,15,64.85,Ciclovías
+1792,Camacua,7,139.44,Ciclovías
+1793,"Diaz, Cesar, Gral.",11,105.07,Ciclovías
+1794,"Rodo, Jose E.",9,41.5,Ciclovías
+1795,"Pedraza, Manuela",12,131.59,Ciclovías
+1796,Pepiri,4,104.03,Ciclovías
+1797,Finochietto Enrique Dr.,4,148.17,Ciclovías
+1798,"Roca, Cnel. Av.",8,101.76,Ciclovías
+1799,Treinta Y Tres Orientales,5,137.21,Ciclovías
+1800,"Garay, Juan De Av.",1,112.14,Ciclovías
+1801,Estrada,7,61.75,Ciclovías
+1802,"Diaz, Cesar, Gral.",11,128.66,Ciclovías
+1803,Arenales,1,34.28,Ciclovías
+1804,Estrada,7,64.39,Ciclovías
+1805,Patron,9,103.25,Ciclovías
+1806,Chivilcoy Av.,11,122.01,Ciclovías mano única
+1807,"Pedraza, Manuela",12,66.3,Ciclovías
+1808,"Roldan, Belisario Av.",14,119.87,Ciclovías
+1809,Treinta Y Tres Orientales,5,150.04,Ciclovías
+1810,Monroe,13,6.33,Ciclovías
+1811,"Peron, Juan Domingo, Tte. General",5,90.98,Ciclovías
+1812,Moron,10,109.41,Ciclovías
+1813,"Hornos, Gral.",4,175.2,Ciclovías
+1814,Guatemala,14,129.55,Ciclovías
+1815,Pola,9,72.34,Ciclovías
+1816,Corrientes Av.,15,126.55,Ciclovías mano única
+1817,Corrientes Av.,3,91.44,Ciclovías mano única
+1818,Pavon,1,127.5,Ciclovías
+1819,"Garcia, Martin Av.",1,171.03,Ciclovías
+1820,Tacuari,1,66.86,Ciclovías
+1821,"Sastre, Marcos",10,52.73,Ciclovías
+1822,"Alvear, Marcelo T. De",2,113.56,Ciclovías
+1823,Superi,12,18.33,Ciclovías
+1824,Amenabar,13,107.76,Ciclovías
+1825,Picheuta,7,49.68,Ciclovías
+1826,Pola,9,13.36,Ciclovías
+1827,Mendez De Andes,7,54.92,Ciclovías
+1828,"Barros Pazos, Jose",8,138.35,Ciclovías mano única
+1829,Curapaligue Av.,7,16.57,Ciclovías
+1830,Cordoba Av.,14,102.15,Ciclovías mano única
+1831,Superi,12,133.92,Ciclovías
+1832,Patron,9,104.6,Ciclovías
+1833,"Martinez, Enrique, Gral.",13,104.25,Ciclovías
+1834,Tacuari,1,168.41,Ciclovías
+1835,Gorriti,14,157.06,Ciclovías
+1836,Forest Av.,15,138.02,Ciclovías mano única
+1837,"Vallese, Felipe",6,154.55,Ciclovías
+1838,"Diaz, Cnel. Av.",14,135.22,Ciclovías
+1839,Tacuari,1,108.25,Ciclovías
+1840,Del Libertador Av.,2,63.41,Ciclovías
+1841,Bolivar,1,129.36,Ciclovías
+1842,"Calvo, Carlos",1,136.67,Ciclovías
+1843,Loyola,15,151.54,Ciclovías
+1844,Las Casas,5,101.41,Ciclovías
+1845,Dean Funes,3,133.48,Ciclovías
+1846,"Roca, Cnel. Av.",8,107.28,Ciclovías
+1847,Zapata,14,99.8,Ciclovías
+1848,"Rabanal, Francisco, Intendente Av.",8,117.92,Ciclovías
+1849,Gorriti,14,140.23,Ciclovías
+1850,11 De Septiembre De 1888,13,126.51,Ciclovías
+1851,Sarmiento Av.,14,41.66,Ciclovías
+1852,"Barros Pazos, Jose",8,146.78,Ciclovías mano única
+1853,Puan,6,128.35,Ciclovías
+1854,Chile,1,122.99,Ciclovías
+1855,Corrientes Av.,5,76.3,Ciclovías mano única
+1856,Lima,1,99.4,Ciclovías
+1857,Amenabar,13,128.51,Ciclovías
+1858,Superi,13,127.28,Ciclovías
+1859,"Roldan, Belisario Av.",14,558.02,Ciclovías
+1860,"Bonifacio, Jose",7,125.58,Ciclovías
+1861,"Figueroa Alcorta, Pres. Av.",13,70.38,Ciclovías
+1862,Zapata,14,146.1,Ciclovías
+1863,French,2,140.0,Ciclovías
+1864,Patron,9,103.31,Ciclovías
+1865,Cordoba Av.,15,127.95,Ciclovías mano única
+1866,"Alsina, Adolfo",1,130.79,Ciclovías mano única
+1867,Estado Plurinacional De Bolivia,15,88.47,Ciclovías
+1868,Del Libertador Av.,13,127.74,Ciclovías
+1869,Padilla,15,98.17,Ciclovías
+1870,Otamendi,6,135.38,Ciclovías
+1871,Migueletes,14,117.69,Ciclovías
+1872,Complejo Parque De Los Niños (Sin Nombre Oficial),13,707.16,Ciclovías
+1873,Monroe,13,116.0,Ciclovías
+1874,"Guevara, Trinidad",1,85.64,Ciclovías
+1875,Amenabar,13,101.15,Ciclovías
+1876,Corrientes Av.,15,75.48,Ciclovías mano única
+1877,Uspallata,4,175.54,Ciclovías
+1878,De Los Ombues Av.,14,333.94,Ciclovías
+1879,Mendez De Andes,6,128.09,Ciclovías
+1880,Cordoba Av.,14,130.37,Ciclovías mano única
+1881,Miller,12,129.45,Ciclovías
+1882,"Diaz, Cesar, Gral.",11,60.52,Ciclovías
+1883,Gorriti,14,98.65,Ciclovías
+1884,Miller,12,174.46,Ciclovías
+1885,Estados Unidos,5,122.8,Ciclovías
+1886,"Gonzalez, Elpidio",10,116.52,Ciclovías
+1887,Pepiri,4,127.09,Ciclovías
+1888,"Calvo, Carlos",1,140.74,Ciclovías
+1889,Roseti,15,159.15,Ciclovías
+1890,Corrientes Av.,15,128.08,Ciclovías mano única
+1891,"Alsina, Adolfo",1,131.16,Ciclovías
+1892,Ibera,13,81.18,Ciclovías
+1893,Ceretti,15,95.01,Ciclovías
+1894,Primera Junta,7,127.85,Ciclovías
+1895,Treinta Y Tres Orientales,5,111.52,Ciclovías
+1896,"Garcia, Juan Agustin",11,123.67,Ciclovías
+1897,Miller,12,26.58,Ciclovías
+1898,Griveo,11,58.51,Ciclovías
+1899,Lugones,12,122.08,Ciclovías
+1900,Cordoba Av.,14,155.5,Ciclovías mano única
+1901,"Alsina, Adolfo",1,123.1,Ciclovías mano única
+1902,"Alsina, Adolfo",1,128.78,Ciclovías mano única
+1903,"Rabanal, Francisco, Intendente Av.",8,136.0,Ciclovías
+1904,Moron,7,136.0,Ciclovías
+1905,Caboto,4,125.22,Ciclovías
+1906,Suipacha,1,134.69,Ciclovías
+1907,Blanco Encalada,12,105.14,Ciclovías
+1908,"Garay, Juan De Av.",1,103.55,Ciclovías
+1909,Pola,9,147.33,Ciclovías
+1910,Irala,4,107.31,Ciclovías
+1911,Moron,10,59.69,Ciclovías
+1912,"Peron, Juan Domingo, Tte. General",3,122.66,Ciclovías mano única
+1913,Doblas,7,120.38,Ciclovías
+1914,Griveo,12,77.87,Ciclovías
+1915,Potosi,5,136.93,Ciclovías
+1916,"Colectora Cantilo, Int.",13,38.87,Ciclovías
+1917,Cucha Cucha,15,138.62,Ciclovías
+1918,Moron,10,116.77,Ciclovías
+1919,Doblas,6,181.51,Ciclovías
+1920,Superi,12,50.21,Ciclovías
+1921,Quito,5,132.17,Ciclovías
+1922,15 De Noviembre De 1889,4,137.3,Ciclovías
+1923,Rondeau,5,59.65,Ciclovías
+1924,Liniers Virrey,5,57.68,Ciclovías
+1925,Uspallata,4,78.08,Ciclovías
+1926,Del Libertador Av.,2,130.92,Ciclovías
+1927,"Perette, Carlos H.",1,27.87,Ciclovías
+1928,Guatemala,14,129.34,Ciclovías
+1929,Superi,12,141.13,Ciclovías
+1930,"Obligado Rafael, Av.Costanera",14,329.9,Ciclovías
+1931,Ibera,13,100.0,Ciclovías
+1932,Tucuman,1,137.66,Ciclovías
+1933,"Diaz, Cesar, Gral.",11,136.76,Ciclovías
+1934,Lugones,12,121.93,Ciclovías
+1935,La Rabida (S) Av.,1,52.83,Ciclovías
+1936,"Alsina, Adolfo",1,135.52,Ciclovías mano única
+1937,Miller,12,91.71,Ciclovías
+1938,Roseti,15,108.52,Ciclovías
+1939,"Alsina, Adolfo",3,157.48,Ciclovías
+1940,"Pedraza, Manuela",12,30.4,Ciclovías
+1941,Tacuari,4,147.86,Ciclovías
+1942,Chivilcoy Av.,11,118.36,Ciclovías mano única
+1943,Ecuador,3,160.7,Ciclovías
+1944,Padilla,15,130.27,Ciclovías
+1945,Puan,7,140.39,Ciclovías
+1946,Picheuta,7,62.02,Ciclovías
+1947,"Alsina, Adolfo",1,132.0,Ciclovías mano única
+1948,Patron,9,86.39,Ciclovías
+1949,"Alvear, Marcelo T. De",1,36.87,Ciclovías
+1950,Del Libertador Av.,14,102.58,Ciclovías
+1951,Chile,3,138.82,Ciclovías
+1952,Del Libertador Av.,13,101.89,Ciclovías
+1953,Chivilcoy,10,68.84,Ciclovías
+1954,Rondeau,4,151.53,Ciclovías
+1955,Rincon,3,134.81,Ciclovías
+1956,Serrano,14,60.41,Ciclovías
+1957,"Garcia, Teodoro",13,101.91,Ciclovías
+1958,"Favaloro, Rene Dr.",4,115.91,Ciclovías
+1959,"Arenal, Concepcion",13,80.16,Ciclovías
+1960,Chile,1,146.73,Ciclovías
+1961,"Sastre, Marcos",10,64.94,Ciclovías
+1962,Amenabar,13,142.16,Ciclovías
+1963,"Rodo, Jose E.",9,73.52,Ciclovías
+1964,"Ravignani, Emilio, Dr.",14,131.72,Ciclovías
+1965,"Hornos, Gral.",4,228.44,Ciclovías
+1966,"Figueroa Alcorta, Pres. Av.",14,264.97,Ciclovías
+1967,"Alsina, Adolfo",3,138.9,Ciclovías
+1968,Estados Unidos,5,71.87,Ciclovías
+1969,"Peron, Juan Domingo, Tte. General",5,77.3,Ciclovías
+1970,"Moreau De Justo, Alicia Av.",1,145.77,Ciclovías
+1971,"Alvear, Marcelo T. De",2,122.39,Ciclovías
+1972,Loyola,15,58.42,Ciclovías
+1973,Caboto,4,102.33,Ciclovías
+1974,Serrano,14,17.81,Ciclovías
+1975,Blanco Encalada,12,119.9,Ciclovías
+1976,"Garcia, Martin Av.",1,64.95,Ciclovías
+1977,Estrada,7,121.8,Ciclovías
+1978,Gorriti,14,111.19,Ciclovías
+1979,"Arenal, Concepcion",13,128.28,Ciclovías
+1980,Suipacha,1,140.11,Ciclovías
+1981,Blanco Encalada,13,169.93,Ciclovías
+1982,Moron,10,131.76,Ciclovías
+1983,San Martin,1,191.8,Ciclovías
+1984,Roseti,15,131.66,Ciclovías
+1985,"Sastre, Marcos",10,138.47,Ciclovías
+1986,Cordoba Av.,1,132.59,Ciclovías mano única
+1987,"Bonifacio, Jose",10,108.09,Ciclovías
+1988,Estado De Israel Av.,15,18.1,Ciclovías
+1989,Estado Plurinacional De Bolivia,15,102.53,Ciclovías
+1990,"Achaval Rodriguez, T., Dr. Av.",1,17.43,Ciclovías
+1991,Blanco Encalada,13,5.89,Ciclovías
+1992,"Bullrich, Int. Av.",14,431.46,Ciclovías
+1993,"Rivadavia Martin, Comodoro",13,106.37,Ciclovías
+1994,Potosi,5,157.19,Ciclovías
+1995,"Diaz, Cnel. Av.",14,50.89,Ciclovías
+1996,"Loreto, Virrey",13,70.97,Ciclovías
+1997,Irala,4,103.23,Ciclovías
+1998,Griveo,11,52.61,Ciclovías
+1999,Chivilcoy Av.,11,117.56,Ciclovías mano única
+2000,Griveo,12,129.35,Ciclovías
+2001,Tacuari,1,119.16,Ciclovías
+2002,"Figueroa Alcorta, Pres. Av.",13,65.22,Ciclovías
+2003,Bravard,6,24.81,Ciclovías
+2004,Miller,12,103.26,Ciclovías
+2005,"Cevallos, Virrey",1,131.06,Ciclovías
+2006,Otamendi,6,101.16,Ciclovías
+2007,"Gallardo, Angel Av.",15,5.15,Ciclovías mano única
+2008,Cordoba Av.,2,117.45,Ciclovías mano única
+2009,"Rodo, Jose E.",9,105.33,Ciclovías
+2010,Irala,4,153.02,Ciclovías
+2011,Ibera,12,103.86,Ciclovías
+2012,Serrano,15,125.19,Ciclovías
+2013,Sanlucar De Barrameda,4,36.34,Ciclovías
+2014,San Martin,1,122.35,Ciclovías
+2015,Forest Av.,15,68.65,Ciclovías mano única
+2016,"Bonifacio, Jose",7,136.28,Ciclovías
+2017,"Figueroa Alcorta, Pres. Av.",13,88.76,Ciclovías
+2018,Cordoba Av.,2,78.37,Ciclovías mano única
+2019,"Garcia, Teodoro",15,30.77,Ciclovías mano única
+2020,"Jauretche, Arturo",6,145.67,Ciclovías
+2021,Sarmiento Av.,14,253.62,Ciclovías
+2022,"Hornos, Gral.",4,171.49,Ciclovías
+2023,Superi,13,40.47,Ciclovías
+2024,Corrientes Av.,1,16.04,Ciclovías mano única
+2025,Miro,7,83.8,Ciclovías
+2026,Godoy Cruz,14,120.27,Ciclovías
+2027,Nueva York,15,91.7,Ciclovías
+2028,"Acuña De Figueroa, Francisco",14,146.58,Ciclovías
+2029,Rincon,3,131.19,Ciclovías
+2030,French,2,126.53,Ciclovías
+2031,Treinta Y Tres Orientales,5,94.1,Ciclovías
+2032,La Pampa,12,103.86,Ciclovías
+2033,Culpina,7,134.03,Ciclovías
+2034,Corrientes Av.,3,25.81,Ciclovías mano única
+2035,"Pedraza, Manuela",12,99.78,Ciclovías
+2036,Superi,13,97.72,Ciclovías
+2037,Chivilcoy,10,144.84,Ciclovías
+2038,"Alsina, Adolfo",3,140.58,Ciclovías
+2039,Corrientes Av.,1,125.7,Ciclovías mano única
+2040,Neuquen,6,13.94,Ciclovías
+2041,Griveo,11,76.2,Ciclovías
+2042,"Guiraldes, Int.",13,94.68,Ciclovías
+2043,Achaval,7,61.63,Ciclovías
+2044,Chivilcoy,11,104.38,Ciclovías
+2045,La Pampa,12,69.33,Ciclovías
+2046,Corrientes Av.,3,118.34,Ciclovías mano única
+2047,Dean Funes,3,99.37,Ciclovías
+2048,La Rabida (N) Av.,1,59.99,Ciclovías
+2049,"Diaz, Cesar, Gral.",11,137.72,Ciclovías
+2050,Bravard,15,154.58,Ciclovías
+2051,Del Libertador Av.,2,93.09,Ciclovías
+2052,"Peron, Juan Domingo, Tte. General",3,126.95,Ciclovías mano única
+2053,Chivilcoy Av.,11,99.46,Ciclovías mano única
+2054,Doblas,7,90.5,Ciclovías
+2055,"Sastre, Marcos",10,99.21,Ciclovías
+2056,Unanue,8,103.33,Ciclovías mano única
+2057,Estrada,7,59.55,Ciclovías
+2058,Don Pedro De Mendoza Av.,4,109.67,Ciclovías
+2059,Cucha Cucha,15,138.69,Ciclovías
+2060,Sendero Parque Chacabuco (No Oficial),7,125.96,Ciclovías
+2061,Bolivar,4,25.12,Ciclovías
+2062,Corrientes Av.,15,136.39,Ciclovías mano única
+2063,Doblas,6,79.96,Ciclovías
+2064,Olleros Av.,14,31.77,Ciclovías
+2065,Liniers Virrey,5,139.97,Ciclovías
+2066,"Barros Pazos, Jose",8,100.21,Ciclovías mano única
+2067,Dorrego Av.,14,86.47,Ciclovías
+2068,"Vallese, Felipe",6,29.95,Ciclovías
+2069,Corrientes Av.,1,127.79,Ciclovías mano única
+2070,Miller,12,100.84,Ciclovías
+2071,Sarmiento Av.,14,40.72,Ciclovías
+2072,Riglos,6,158.7,Ciclovías
+2073,Pola,9,145.34,Ciclovías
+2074,"Figueroa Alcorta, Pres. Av.",14,27.95,Ciclovías
+2075,Patron,9,103.31,Ciclovías
+2076,Cordoba Av.,14,104.22,Ciclovías mano única
+2077,"Alvear, Marcelo T. De",1,135.16,Ciclovías
+2078,Del Libertador Av.,13,78.9,Ciclovías
+2079,Sarmiento,1,60.48,Ciclovías
+2080,"Oroño, Nicasio",15,118.6,Ciclovías
+2081,Chivilcoy,10,152.15,Ciclovías
+2082,Viamonte,1,35.59,Ciclovías
+2083,Amenabar,13,140.27,Ciclovías
+2084,Culpina,7,138.23,Ciclovías
+2085,"Martinez, Enrique, Gral.",13,181.75,Ciclovías
+2086,Corrientes Av.,15,160.22,Ciclovías mano única
+2087,Billinghurst,5,94.23,Ciclovías
+2088,Balbastro,7,116.4,Ciclovías
+2089,Balbastro,7,120.79,Ciclovías
+2090,Paseo Colon Av.,1,32.63,Ciclovías
+2091,"Roca, Cnel. Av.",8,55.91,Ciclovías
+2092,"Rodo, Jose E.",9,99.99,Ciclovías
+2093,Pepiri,4,104.61,Ciclovías
+2094,"Alvear, Marcelo T. De",2,133.48,Ciclovías
+2095,Arenales,2,58.08,Ciclovías
+2096,Pi Y Margall,4,64.72,Ciclovías
+2097,Pola,9,135.7,Ciclovías
+2098,Balbastro,7,13.67,Ciclovías
+2099,Rincon,3,138.54,Ciclovías
+2100,Corrientes Av.,1,78.03,Ciclovías
+2101,Ceretti,15,95.45,Ciclovías
+2102,Antartida Argentina Av.,1,94.81,Ciclovías
+2103,"Hornos, Gral.",4,158.08,Ciclovías
+2104,Doblas,7,151.44,Ciclovías
+2105,Ceretti,12,94.51,Ciclovías
+2106,Corrientes Av.,15,111.92,Ciclovías mano única
+2107,Moldes,13,100.02,Ciclovías
+2108,"Garcia, Juan Agustin",11,68.95,Ciclovías
+2109,Azcuenaga,2,173.39,Ciclovías
+2110,Rondeau,4,182.44,Ciclovías
+2111,Complejo Ciudad Universitaria (Sin Nombre Oficial),13,175.3,Ciclovías
+2112,Del Libertador Av.,14,104.6,Ciclovías
+2113,Bolivar,1,149.43,Ciclovías
+2114,"Obligado Rafael, Av.Costanera",14,88.39,Ciclovías
+2115,Ibera,13,17.31,Ciclovías
+2116,Complejo Ciudad Universitaria (Sin Nombre Oficial),13,62.14,Ciclovías
+2117,Brasil,1,70.74,Ciclovías
+2118,"Garcia, Juan Agustin",11,68.37,Ciclovías
+2119,"Moreau De Justo, Alicia Av.",1,136.46,Ciclovías
+2120,Dorrego Av.,14,236.56,Ciclovías
+2121,"Bonifacio, Jose",10,70.21,Ciclovías
+2122,"Peron, Juan Domingo, Tte. General",3,124.48,Ciclovías
+2123,"Gallardo, Angel Av.",15,132.22,Ciclovías mano única
+2124,Complejo Ciudad Universitaria (Sin Nombre Oficial),13,88.29,Ciclovías
+2125,"Roca, Cnel. Av.",8,51.75,Ciclovías
+2126,Chivilcoy,10,67.81,Ciclovías
+2127,Congreso,13,47.34,Ciclovías
+2128,Serrano,15,173.53,Ciclovías
+2129,Ibera,12,50.12,Ciclovías
+2130,"Borges, Jorge Luis",14,147.45,Ciclovías
+2131,Primera Junta,7,62.23,Ciclovías
+2132,Sarmiento,1,130.45,Ciclovías
+2133,Gorriti,14,78.58,Ciclovías
+2134,Del Libertador Av.,13,38.08,Ciclovías
+2135,Blanco Encalada,12,103.94,Ciclovías
+2136,Estado De Israel Av.,15,6.96,Ciclovías mano única
+2137,Sarmiento,1,104.29,Ciclovías
+2138,Herrera,4,143.45,Ciclovías
+2139,Dorrego Av.,14,141.43,Ciclovías
+2140,Camacua,7,134.28,Ciclovías
+2141,"Sastre, Marcos",10,44.51,Ciclovías
+2142,"Garcia, Juan Agustin",11,135.44,Ciclovías
+2143,Don Bosco,5,125.43,Ciclovías
+2144,Godoy Cruz,14,122.86,Ciclovías
+2145,La Pampa,12,104.7,Ciclovías
+2146,Suipacha,1,58.07,Ciclovías
+2147,Las Casas,5,55.87,Ciclovías
+2148,Griveo,11,93.39,Ciclovías
+2149,Superi,13,75.12,Ciclovías
+2150,Padilla,15,126.29,Ciclovías
+2151,Juncal,2,195.61,Ciclovías
+2152,"Lamas, Andres",11,18.32,Ciclovías
+2153,Tucuman,1,130.05,Ciclovías
+2154,Corrientes Av.,1,125.75,Ciclovías mano única
+2155,Bolivar,1,9.49,Ciclovías
+2156,Humahuaca,5,142.49,Ciclovías
+2157,La Pampa,12,88.36,Ciclovías
+2158,Riglos,7,119.87,Ciclovías
+2159,Roseti,15,121.98,Ciclovías
+2160,"Pedraza, Manuela",13,101.25,Ciclovías
+2161,Corrientes Av.,15,102.37,Ciclovías mano única
+2162,Cordoba Av.,2,149.37,Ciclovías mano única
+2163,Padilla,15,102.35,Ciclovías
+2164,Cuba,13,104.86,Ciclovías
+2165,Moron,10,100.62,Ciclovías
+2166,La Pampa,12,70.19,Ciclovías
+2167,Nueva York,15,129.79,Ciclovías
+2168,Mendez De Andes,7,102.07,Ciclovías
+2169,Chivilcoy Av.,11,20.59,Ciclovías mano única
+2170,"Peron, Juan Domingo, Tte. General",1,125.95,Ciclovías mano única
+2171,"Figueroa Alcorta, Pres. Av.",14,316.78,Ciclovías
+2172,Bolivar,1,125.93,Ciclovías
+2173,Sarmiento,1,23.66,Ciclovías
+2174,"Martinez, Enrique, Gral.",13,114.43,Ciclovías
+2175,Alvarez Jonte,15,91.04,Ciclovías
+2176,Ecuador,3,120.84,Ciclovías
+2177,"Hornos, Gral.",4,47.61,Ciclovías
+2178,Billinghurst,5,145.46,Ciclovías
+2179,Martinez Castro,9,110.67,Ciclovías
+2180,Sarmiento Av.,14,263.08,Ciclovías
+2181,Roseti,15,103.43,Ciclovías
+2182,"Sastre, Marcos",10,63.61,Ciclovías
+2183,Fragata Pres. Sarmiento,6,15.48,Ciclovías
+2184,"Bonifacio, Jose",7,149.07,Ciclovías
+2185,"Rabanal, Francisco, Intendente Av.",8,94.21,Ciclovías
+2186,Cordoba Av.,1,122.58,Ciclovías mano única
+2187,Unanue,8,87.52,Ciclovías mano única
+2188,"Figueroa Alcorta, Pres. Av.",13,286.05,Ciclovías
+2189,"Obligado Rafael, Av.Costanera",13,298.5,Ciclovías
+2190,Uspallata,4,122.6,Ciclovías
+2191,Potosi,5,133.04,Ciclovías
+2192,"Pedraza, Manuela",13,40.85,Ciclovías
+2193,"Hugo, Victor",10,143.69,Ciclovías
+2194,Moron,7,108.7,Ciclovías
+2195,"Moreau De Justo, Alicia Av.",1,101.8,Ciclovías
+2196,"Garay, Juan De Av.",3,101.93,Ciclovías
+2197,Chile,1,133.24,Ciclovías mano única
+2198,Ceretti,12,122.28,Ciclovías
+2199,"Mansilla, Lucio Norberto, General",14,99.89,Ciclovías
+2200,Vertiz Virrey Av.,13,57.57,Ciclovías
+2201,Martinez Castro,9,57.28,Ciclovías
+2202,Bolivar,1,135.49,Ciclovías
+2203,"Sastre, Marcos",10,91.39,Ciclovías
+2204,"Diaz, Cesar, Gral.",11,59.45,Ciclovías
+2205,Perdriel,4,104.87,Ciclovías
+2206,"Bonifacio, Jose",7,106.71,Ciclovías
+2207,Bolivar,1,129.63,Ciclovías
+2208,Corrientes Av.,5,133.45,Ciclovías mano única
+2209,Superi,13,124.92,Ciclovías
+2210,"Garcia, Teodoro",14,169.01,Ciclovías
+2211,"Gonzalez, Elpidio",10,132.97,Ciclovías
+2212,"Gonzalez, Elpidio",10,127.17,Ciclovías
+2213,Corrientes Av.,5,135.58,Ciclovías mano única
+2214,Gorriti,14,163.99,Ciclovías
+2215,Mendez De Andes,7,123.13,Ciclovías
+2216,Estado De Israel Av.,15,53.17,Ciclovías mano única
+2217,Del Libertador Av.,1,116.75,Ciclovías
+2218,"Rabanal, Francisco, Intendente Av.",8,135.43,Ciclovías
+2219,Ibera,12,100.45,Ciclovías
+2220,Chivilcoy Av.,11,16.55,Ciclovías mano única
+2221,"Alvear, Marcelo T. De",1,110.24,Ciclovías
+2222,Sarmiento,1,18.3,Ciclovías
+2223,Valle,6,130.11,Ciclovías
+2224,Tucuman,3,133.69,Ciclovías
+2225,Pepiri,4,32.73,Ciclovías
+2226,"Diaz, Cesar, Gral.",11,123.52,Ciclovías
+2227,Tacuari,1,122.49,Ciclovías
+2228,Potosi,5,134.25,Ciclovías
+2229,Zañartu,7,82.32,Ciclovías
+2230,Complejo Parque De Los Niños (Sin Nombre Oficial),13,41.27,Ciclovías
+2231,Miller,12,100.6,Ciclovías
+2232,Yerbal,6,98.58,Ciclovías
+2233,Estrada,7,86.97,Ciclovías
+2234,"Rivadavia Martin, Comodoro",13,124.73,Ciclovías
+2235,Blanco Encalada,12,138.2,Ciclovías
+2236,"Vallese, Felipe",6,121.71,Ciclovías
+2237,Chirimay,6,107.11,Ciclovías
+2238,Nueva York,15,152.09,Ciclovías
+2239,"Udaondo, Guillermo Av.",13,34.95,Ciclovías
+2240,"Rodo, Jose E.",9,100.12,Ciclovías
+2241,Liniers Virrey,5,107.81,Ciclovías
+2242,Pola,9,147.01,Ciclovías
+2243,Corrientes Av.,1,13.63,Ciclovías mano única
+2244,Mexico,3,128.1,Ciclovías
+2245,Doblas,6,83.04,Ciclovías
+2246,Cordoba Av.,2,139.48,Ciclovías mano única
+2247,"Vallese, Felipe",6,13.4,Ciclovías
+2248,Miro,7,100.68,Ciclovías
+2249,Corrientes Av.,15,245.23,Ciclovías mano única
+2250,"Udaondo, Guillermo Av.",13,135.31,Ciclovías
+2251,Chile,1,121.81,Ciclovías
+2252,Estado Plurinacional De Bolivia,12,99.81,Ciclovías
+2253,"Obligado Rafael, Av.Costanera",13,134.91,Ciclovías
+2254,Herrera,4,148.53,Ciclovías
+2255,Del Libertador Av.,13,130.18,Ciclovías
+2256,Complejo Ciudad Universitaria (Sin Nombre Oficial),13,93.46,Ciclovías
+2257,"Sastre, Marcos",10,104.0,Ciclovías
+2258,"Figueroa Alcorta, Pres. Av.",14,64.16,Ciclovías
+2259,"Obligado Rafael, Av.Costanera",13,163.71,Ciclovías
+2260,"Roca, Cnel. Av.",8,33.48,Ciclovías
+2261,Padre M. L. Migone,1,106.88,Ciclovías
+2262,Blanco Encalada,12,103.26,Ciclovías
+2263,"Garcia, Manuel",4,124.49,Ciclovías
+2264,"Vera Peñaloza, Rosario",1,152.07,Ciclovías
+2265,Chivilcoy,10,158.22,Ciclovías
+2266,"Obligado Rafael, Av.Costanera",14,477.37,Ciclovías
+2267,Guayaquil,6,147.11,Ciclovías
+2268,"Ravignani, Emilio, Dr.",14,69.01,Ciclovías
+2269,La Pampa,13,87.74,Ciclovías
+2270,"Cevallos, Virrey",1,117.36,Ciclovías
+2271,Blanco Encalada,12,170.93,Ciclovías
+2272,Liniers Virrey,5,124.18,Ciclovías
+2273,Corrientes Av.,15,24.45,Ciclovías mano única
+2274,Puente Caballito,6,47.92,Ciclovías
+2275,Rondeau,4,139.78,Ciclovías
+2276,"Roldan, Belisario Av.",14,167.28,Ciclovías
+2277,Gorriti,14,104.77,Ciclovías
+2278,Suipacha,1,127.35,Ciclovías
+2279,"Alsina, Adolfo",1,120.33,Ciclovías mano única
+2280,"Figueroa Alcorta, Pres. Av.",14,524.19,Ciclovías
+2281,"Figueroa Alcorta, Pres. Av.",13,68.32,Ciclovías
+2282,Pola,9,147.8,Ciclovías
+2283,Paseo Colon Av.,4,175.63,Ciclovías
+2284,Chile,1,119.42,Ciclovías
+2285,Corrientes Av.,1,128.78,Ciclovías mano única
+2286,Patron,9,57.34,Ciclovías
+2287,Mexico,3,156.31,Ciclovías
+2288,Picheuta,7,74.43,Ciclovías
+2289,"Sastre, Marcos",10,139.93,Ciclovías
+2290,Chivilcoy Av.,11,100.3,Ciclovías mano única
+2291,Cucha Cucha,15,116.46,Ciclovías
+2292,Chivilcoy,10,133.43,Ciclovías
+2293,Griveo,12,130.1,Ciclovías
+2294,Superi,12,100.14,Ciclovías
+2295,Estrada,7,27.67,Ciclovías
+2296,"Acuña De Figueroa, Francisco",5,145.76,Ciclovías
+2297,Del Libertador Av.,13,94.39,Ciclovías
+2298,"Mansilla, Lucio Norberto, General",2,58.21,Ciclovías
+2299,Moron,10,115.68,Ciclovías
+2300,Corrientes Av.,15,16.51,Ciclovías mano única
+2301,Corrientes Av.,15,89.35,Ciclovías mano única
+2302,Tucuman,3,104.09,Ciclovías
+2303,Forest Av.,15,195.19,Ciclovías mano única
+2304,"Cevallos, Virrey",1,146.24,Ciclovías
+2305,"Alsina, Adolfo",3,128.45,Ciclovías
+2306,"Garcia, Juan Agustin",11,68.22,Ciclovías
+2307,Corrientes Av.,3,136.83,Ciclovías mano única
+2308,"Artigas, Jose Gervasio, Gral.",11,133.11,Ciclovías
+2309,"Barros Pazos, Jose",8,104.87,Ciclovías mano única
+2310,Humahuaca,5,142.25,Ciclovías
+2311,"Gonzalez, Elpidio",10,83.72,Ciclovías
+2312,Complejo Ciudad Universitaria (Sin Nombre Oficial),13,132.53,Ciclovías
+2313,"Rodriguez, Martin",4,100.97,Ciclovías
+2314,Superi,13,130.49,Ciclovías
+2315,Zavaleta,4,133.42,Ciclovías
+2316,Chile,1,39.15,Ciclovías
+2317,Ceretti,12,99.98,Ciclovías
+2318,Primera Junta,7,84.67,Ciclovías
+2319,"Garcia, Juan Agustin",11,135.77,Ciclovías
+2320,"Uriburu Jose E., Pres.",2,182.69,Ciclovías
+2321,Martinez Castro,9,133.69,Ciclovías
+2322,Cordoba Av.,14,115.85,Ciclovías mano única
+2323,Chivilcoy Av.,11,92.11,Ciclovías mano única
+2324,"Diaz, Cesar, Gral.",11,98.25,Ciclovías
+2325,"Garcia, Manuel",4,139.95,Ciclovías
+2326,Fragata Pres. Sarmiento,6,109.41,Ciclovías
+2327,"Alsina, Adolfo",1,119.67,Ciclovías mano única
+2328,Humboldt,14,81.53,Ciclovías
+2329,Pavon,3,90.89,Ciclovías
+2330,"Peron, Juan Domingo, Tte. General",1,131.94,Ciclovías mano única
+2331,Chivilcoy Av.,11,100.11,Ciclovías mano única
+2332,Rondeau,5,111.67,Ciclovías
+2333,"Garcia, Juan Agustin",11,124.33,Ciclovías
+2334,Granaderos,7,138.49,Ciclovías
+2335,Liniers Virrey,5,121.14,Ciclovías
+2336,Del Libertador Av.,13,101.61,Ciclovías
+2337,"Peron, Juan Domingo, Tte. General",3,132.36,Ciclovías mano única
+2338,Superi,12,128.61,Ciclovías
+2339,Potosi,5,142.4,Ciclovías
+2340,"Obligado Rafael, Av.Costanera",14,77.5,Ciclovías
+2341,Pichincha Av.,4,125.42,Ciclovías
+2342,Estado Plurinacional De Bolivia,12,117.64,Ciclovías
+2343,"Calvo, Carlos",1,136.69,Ciclovías
+2344,Patricias Argentinas Av.,6,76.47,Ciclovías
+2345,"Garcia, Juan Agustin",11,54.89,Ciclovías
+2346,"Alvarez, Julian",15,116.12,Ciclovías
+2347,Gorriti,14,70.87,Ciclovías
+2348,Congreso,13,72.64,Ciclovías
+2349,Patron,9,103.69,Ciclovías
+2350,Roseti,15,129.75,Ciclovías
+2351,Otamendi,6,68.46,Ciclovías
+2352,"Mansilla, Lucio Norberto, General",2,117.55,Ciclovías
+2353,"Peron, Juan Domingo, Tte. General",3,112.39,Ciclovías
+2354,Arenales,1,41.97,Ciclovías
+2355,Monroe,13,128.59,Ciclovías
+2356,Loyola,15,83.16,Ciclovías
+2357,"Obligado Rafael, Av.Costanera",14,132.52,Ciclovías
+2358,"Pedraza, Manuela",12,14.31,Ciclovías
+2359,Sarmiento Av.,14,38.87,Ciclovías
+2360,Tucuman,3,135.63,Ciclovías
+2361,Irala,4,99.78,Ciclovías
+2362,Chivilcoy Av.,11,106.46,Ciclovías mano única
+2363,Paracas,1,79.19,Ciclovías
+2364,"Guiraldes, Int.",13,80.29,Ciclovías
+2365,Moron,7,131.42,Ciclovías
+2366,Rincon,3,82.15,Ciclovías
+2367,Culpina,7,14.64,Ciclovías
+2368,Montevideo,2,55.99,Ciclovías
+2369,"Obligado Rafael, Av.Costanera",14,94.99,Ciclovías
+2370,"Pedraza, Manuela",12,59.78,Ciclovías
+2371,Complejo Ciudad Universitaria (Sin Nombre Oficial),13,74.64,Ciclovías
+2372,Puan,7,119.85,Ciclovías
+2373,Monroe,13,106.7,Ciclovías
+2374,"Pedraza, Manuela",13,101.01,Ciclovías
+2375,"Alvear, Marcelo T. De",2,144.5,Ciclovías
+2376,Tacuari,1,131.7,Ciclovías
+2377,Dean Funes,4,131.29,Ciclovías
+2378,"Artigas, Jose Gervasio, Gral.",11,122.61,Ciclovías
+2379,"Bonifacio, Jose",7,131.57,Ciclovías
+2380,Chivilcoy,10,66.9,Ciclovías
+2381,"Beiro, Francisco Av.",15,101.52,Ciclovías
+2382,Griveo,11,17.67,Ciclovías
+2383,"Diaz, Cnel. Av.",14,180.71,Ciclovías
+2384,Estados Unidos,5,110.27,Ciclovías
+2385,Antartida Argentina Av.,1,175.24,Ciclovías
+2386,Humahuaca,5,133.27,Ciclovías
+2387,Primera Junta,7,57.95,Ciclovías
+2388,Pola,9,126.06,Ciclovías
+2389,Ecuador,2,138.36,Ciclovías
+2390,Godoy Cruz,14,41.28,Ciclovías
+2391,Riglos,6,141.7,Ciclovías
+2392,Patron,9,103.33,Ciclovías
+2393,"Martinez, Enrique, Gral.",13,113.42,Ciclovías
+2394,Del Libertador Av.,13,24.57,Ciclovías
+2395,"Rodriguez, Martin",4,112.37,Ciclovías
+2396,"Figueroa Alcorta, Pres. Av.",13,189.66,Ciclovías
+2397,Unanue,8,106.01,Ciclovías mano única
+2398,La Pampa,13,119.01,Ciclovías
+2399,Cuba,13,91.82,Ciclovías
+2400,Doblas,6,79.05,Ciclovías
+2401,Chivilcoy,10,69.84,Ciclovías
+2402,Austria,2,193.92,Ciclovías
+2403,Azopardo,1,141.23,Ciclovías
+2404,Rondeau,4,152.77,Ciclovías
+2405,"Alvear, Marcelo T. De",1,100.55,Ciclovías
+2406,"Perez, Roque",12,124.8,Ciclovías
+2407,"Udaondo, Guillermo Av.",13,61.11,Ciclovías
+2408,Del Libertador Av.,13,37.32,Ciclovías
+2409,"Calvo, Carlos",3,91.47,Ciclovías
+2410,11 De Septiembre De 1888,13,133.25,Ciclovías
+2411,Doblas,7,128.61,Ciclovías
+2412,Caboto,4,112.21,Ciclovías
+2413,"Pedraza, Manuela",12,97.78,Ciclovías
+2414,Ibera,12,52.05,Ciclovías
+2415,"Figueroa Alcorta, Pres. Av.",2,222.78,Ciclovías
+2416,Blanco Encalada,13,27.77,Ciclovías
+2417,"Figueroa Alcorta, Pres. Av.",14,105.89,Ciclovías
+2418,15 De Noviembre De 1889,4,9.15,Ciclovías
+2419,San Martin,1,131.55,Ciclovías
+2420,Storni Alfonsina,12,59.32,Ciclovías
+2421,"Calvo, Carlos",3,120.21,Ciclovías
+2422,"Achaval Rodriguez, T., Dr. Av.",1,55.26,Ciclovías
+2423,"Pino, Virrey Del",13,62.59,Ciclovías
+2424,Superi,12,148.02,Ciclovías
+2425,Fray Cayetano Rodriguez,7,117.82,Ciclovías
+2426,Don Bosco,5,101.45,Ciclovías
+2427,Miller,12,107.22,Ciclovías
+2428,"Bonifacio, Jose",10,96.57,Ciclovías
+2429,Sarmiento,1,126.82,Ciclovías
+2430,Cordoba Av.,2,79.45,Ciclovías mano única
+2431,Fragata Pres. Sarmiento,6,128.72,Ciclovías
+2432,Del Libertador Av.,13,134.88,Ciclovías
+2433,Cordoba Av.,14,135.95,Ciclovías mano única
+2434,Unanue,8,149.69,Ciclovías mano única
+2435,Tucuman,3,93.72,Ciclovías
+2436,Godoy Cruz,14,39.28,Ciclovías
+2437,Griveo,11,148.79,Ciclovías
+2438,Complejo Ciudad Universitaria (Sin Nombre Oficial),13,88.86,Ciclovías
+2439,"Beiro, Francisco Av.",15,100.08,Ciclovías
+2440,Del Libertador Av.,14,42.57,Ciclovías
+2441,"Lamas, Andres",11,133.21,Ciclovías
+2442,Montevideo,2,159.82,Ciclovías
+2443,Montevideo,2,106.87,Ciclovías
+2444,"Roca, Cnel. Av.",8,279.07,Ciclovías
+2445,Tres Arroyos,15,51.58,Ciclovías
+2446,Echeverria,13,67.81,Ciclovías
+2447,"Vera Peñaloza, Rosario",1,78.81,Ciclovías
+2448,Humahuaca,5,109.82,Ciclovías
+2449,Caboto,4,5.0,Ciclovías
+2450,"Sastre, Marcos",10,180.51,Ciclovías
+2451,Patron,9,95.97,Ciclovías
+2452,"Barros Pazos, Jose",8,103.37,Ciclovías mano única
+2453,"Diaz, Cnel. Av.",14,175.49,Ciclovías
+2454,Mexico,3,108.48,Ciclovías
+2455,Mexico,3,156.76,Ciclovías
+2456,Ceretti,12,68.78,Ciclovías
+2457,"Garcia, Teodoro",15,95.5,Ciclovías mano única
+2458,"Peron, Juan Domingo, Tte. General",1,35.91,Ciclovías mano única
+2459,Roseti,15,130.49,Ciclovías
+2460,"Carrillo, Ramon, Dr.",4,33.54,Ciclovías
+2461,"Anchorena, Tomas Manuel De, Dr.",2,186.55,Ciclovías
+2462,Tres Arroyos,15,112.71,Ciclovías
+2463,Zavaleta,4,38.98,Ciclovías
+2464,Juncal,2,128.18,Ciclovías
+2465,"Bilbao, Francisco",7,102.95,Ciclovías
+2466,Irala,4,101.95,Ciclovías
+2467,Pasco,3,122.66,Ciclovías
+2468,Cucha Cucha,15,85.26,Ciclovías
+2469,"Gilardi, Gilardo",1,163.68,Ciclovías
+2470,"Figueroa Alcorta, Pres. Av.",13,66.5,Ciclovías
+2471,"Obligado Rafael, Av.Costanera",13,154.88,Ciclovías
+2472,Bouchard,1,112.16,Ciclovías
+2473,Valle,6,72.97,Ciclovías
+2474,Amenabar,13,101.59,Ciclovías
+2475,Corrientes Av.,15,107.27,Ciclovías mano única
+2476,Rincon,3,55.12,Ciclovías
+2477,Cordoba Av.,14,107.99,Ciclovías mano única
+2478,Cucha Cucha,15,102.18,Ciclovías
+2479,Miller,12,129.91,Ciclovías
+2480,Mendez De Andes,7,86.23,Ciclovías
+2481,Ceretti,12,142.26,Ciclovías
+2482,"Garcia, Juan Agustin",11,142.39,Ciclovías
+2483,"Borges, Jorge Luis",14,15.15,Ciclovías
+2484,Amenabar,13,127.85,Ciclovías
+2485,"Alsina, Adolfo",1,121.88,Ciclovías mano única
+2486,Montevideo,1,136.53,Ciclovías
+2487,Superi,12,100.18,Ciclovías
+2488,Ceretti,12,7.07,Ciclovías
+2489,Rincon,3,133.31,Ciclovías
+2490,"Pedraza, Manuela",12,60.03,Ciclovías
+2491,Cordoba Av.,14,127.99,Ciclovías mano única
+2492,Herrera,4,169.29,Ciclovías
+2493,"Perette, Carlos H.",1,129.63,Ciclovías
+2494,Griveo,12,34.84,Ciclovías
+2495,Estados Unidos,1,72.0,Ciclovías
+2496,Moron,10,102.66,Ciclovías
+2497,"Peron, Juan Domingo, Tte. General",1,38.95,Ciclovías mano única
+2498,Chivilcoy Av.,11,96.9,Ciclovías mano única
+2499,Suipacha,1,142.67,Ciclovías
+2500,Las Casas,5,132.64,Ciclovías
+2501,French,2,59.55,Ciclovías
+2502,Bolivar,4,95.47,Ciclovías
+2503,Uspallata,4,121.22,Ciclovías
+2504,Del Libertador Av.,13,39.82,Ciclovías
+2505,"Rivadavia Martin, Comodoro",13,78.01,Ciclovías
+2506,Chivilcoy Av.,11,102.41,Ciclovías mano única
+2507,Unanue,8,103.59,Ciclovías mano única
+2508,"Artigas, Jose Gervasio, Gral.",11,133.39,Ciclovías
+2509,Monroe,13,106.86,Ciclovías
+2510,Padilla,15,72.26,Ciclovías
+2511,Ceretti,12,118.69,Ciclovías
+2512,"Borges, Jorge Luis",14,55.65,Ciclovías
+2513,Corrientes Av.,15,126.13,Ciclovías mano única
+2514,Padilla,15,56.16,Ciclovías
+2515,"Uriburu Jose E., Pres.",3,145.97,Ciclovías
+2516,"Rodo, Jose E.",9,147.91,Ciclovías
+2517,Estado Plurinacional De Bolivia,12,121.5,Ciclovías
+2518,Del Libertador Av.,14,18.06,Ciclovías
+2519,Ituzaingo - Puente Jorge L. Borges,1,101.6,Ciclovías
+2520,"Sastre, Marcos",10,134.38,Ciclovías
+2521,"Sanchez De Thompson, Mariquita",1,112.91,Ciclovías
+2522,Patricias Argentinas Av.,6,35.43,Ciclovías
+2523,"Rodo, Jose E.",9,69.24,Ciclovías
+2524,"Diaz, Cnel. Av.",14,130.02,Ciclovías
+2525,Cuba,13,42.76,Ciclovías
+2526,"Alvear, Marcelo T. De",1,39.79,Ciclovías
+2527,"Villaflor, Azucena",1,76.97,Ciclovías
+2528,Tacuari,1,8.91,Ciclovías
+2529,Padilla,15,97.73,Ciclovías
+2530,Arenales,1,151.38,Ciclovías
+2531,Vilela,12,102.24,Ciclovías
+2532,Del Libertador Av.,14,123.87,Ciclovías
+2533,Del Libertador Av.,2,215.39,Ciclovías
+2534,Caseros Av.,1,37.07,Ciclovías
+2535,Don Pedro De Mendoza Av.,4,87.88,Ciclovías
+2536,"Acuña De Figueroa, Francisco",14,155.77,Ciclovías
+2537,"Sastre, Marcos",10,56.8,Ciclovías
+2538,"Sastre, Marcos",10,73.59,Ciclovías
+2539,Estado De Israel Av.,15,123.0,Ciclovías mano única
+2540,"Peron, Juan Domingo, Tte. General",3,129.37,Ciclovías mano única
+2541,"Alsina, Adolfo",1,133.53,Ciclovías mano única
+2542,Monroe,13,6.42,Ciclovías
+2543,Blanco Encalada,13,38.71,Ciclovías
+2544,"Roca, Cnel. Av.",8,13.19,Ciclovías
+2545,Amenabar,13,103.39,Ciclovías
+2546,Superi,13,118.53,Ciclovías
+2547,Montevideo,1,134.58,Ciclovías
+2548,Superi,13,101.98,Ciclovías
+2549,Estados Unidos,5,115.18,Ciclovías
+2550,Ceretti,12,169.27,Ciclovías
+2551,French,2,126.56,Ciclovías
+2552,Superi,13,94.07,Ciclovías
+2553,Del Libertador Av.,14,121.56,Ciclovías
+2554,"Cevallos, Virrey",1,186.56,Ciclovías
+2555,Caboto,4,100.51,Ciclovías
+2556,Pavon,1,133.65,Ciclovías
+2557,"Acuña De Figueroa, Francisco",14,134.92,Ciclovías
+2558,Monroe,13,125.93,Ciclovías
+2559,Bolivar,1,128.28,Ciclovías
+2560,Balbastro,7,5.4,Ciclovías
+2561,"Irigoyen, Bernardo De",1,124.97,Ciclovías
+2562,"Diaz, Cnel. Av.",14,97.7,Ciclovías
+2563,"Ravignani, Emilio, Dr.",14,123.43,Ciclovías
+2564,Corrientes Av.,3,132.12,Ciclovías mano única
+2565,Ecuador,2,139.75,Ciclovías
+2566,Griveo,12,130.04,Ciclovías
+2567,Del Libertador Av.,14,173.3,Ciclovías
+2568,Gorriti,2,111.7,Ciclovías
+2569,"Alvarez, Julian",15,125.12,Ciclovías
+2570,Sendero Parque Chacabuco (No Oficial),7,163.0,Ciclovías
+2571,Del Libertador Av.,1,138.67,Ciclovías
+2572,"Uriburu Jose E., Pres.",3,125.79,Ciclovías
+2573,Tacuari,4,101.25,Ciclovías
+2574,"Vera Peñaloza, Rosario",1,174.94,Ciclovías
+2575,Miller,12,11.14,Ciclovías
+2576,Complejo Ciudad Universitaria (Sin Nombre Oficial),13,61.84,Ciclovías
+2577,Patron,9,103.19,Ciclovías
+2578,Del Libertador Av.,2,90.12,Ciclovías
+2579,Superi,13,105.7,Ciclovías
+2580,Del Libertador Av.,14,131.04,Ciclovías
+2581,"Alsina, Adolfo",3,155.54,Ciclovías
+2582,Del Libertador Av.,13,116.26,Ciclovías
+2583,"Diaz, Cesar, Gral.",10,130.74,Ciclovías
+2584,Juncal,2,124.2,Ciclovías
+2585,Tucuman,3,136.19,Ciclovías
+2586,Estado Plurinacional De Bolivia,12,107.95,Ciclovías
+2587,Liniers Virrey,5,158.8,Ciclovías
+2588,Estados Unidos,5,117.81,Ciclovías
+2589,"Garcia, Teodoro",13,195.49,Ciclovías
+2590,Suipacha,1,122.32,Ciclovías
+2591,Santiago Del Estero,1,138.13,Ciclovías
+2592,"Borges, Jorge Luis",14,126.07,Ciclovías
+2593,"Favaloro, Rene Dr.",4,101.17,Ciclovías
+2594,La Pampa,12,120.23,Ciclovías
+2595,"Borges, Jorge Luis",14,144.97,Ciclovías
+2596,"Moreau De Justo, Alicia Av.",1,265.24,Ciclovías
+2597,Corrientes Av.,1,120.78,Ciclovías mano única
+2598,Congreso,13,56.31,Ciclovías
+2599,Miller,12,30.28,Ciclovías
+2600,San Martin,1,136.82,Ciclovías
+2601,Miller,12,132.95,Ciclovías
+2602,Cordoba Av.,15,169.75,Ciclovías mano única
+2603,"Alvarez, Julian",14,115.94,Ciclovías
+2604,15 De Noviembre De 1889,4,93.42,Ciclovías
+2605,Independencia Av.,5,29.74,Ciclovías
+2606,Forest Av.,13,113.95,Ciclovías mano única
+2607,Humahuaca,5,129.05,Ciclovías
+2608,Pavon,1,101.01,Ciclovías
+2609,Ceretti,12,99.85,Ciclovías
+2610,Treinta Y Tres Orientales,5,76.48,Ciclovías
+2611,Superi,13,224.45,Ciclovías
+2612,Monroe,13,124.92,Ciclovías
+2613,Chile,3,132.67,Ciclovías
+2614,Cordoba Av.,1,138.52,Ciclovías mano única
+2615,"Peron, Juan Domingo, Tte. General",1,132.07,Ciclovías mano única
+2616,Loyola,15,130.08,Ciclovías
+2617,Martinez Castro,9,103.1,Ciclovías
+2618,"Sastre, Marcos",10,53.95,Ciclovías
+2619,"Figueroa Alcorta, Pres. Av.",2,75.46,Ciclovías
+2620,Chile,1,137.47,Ciclovías
+2621,Palos,4,106.86,Ciclovías
+2622,Chaco,6,72.07,Ciclovías
+2623,Corrientes Av.,3,132.34,Ciclovías mano única
+2624,Cordoba Av.,14,145.79,Ciclovías mano única
+2625,"Garcia, Teodoro",15,16.9,Ciclovías mano única
+2626,Granaderos,7,140.06,Ciclovías
+2627,Pepiri,4,122.53,Ciclovías
+2628,Del Libertador Av.,14,55.04,Ciclovías
+2629,Humahuaca,5,134.78,Ciclovías
+2630,"Vallese, Felipe",6,102.02,Ciclovías
+2631,Treinta Y Tres Orientales,5,106.89,Ciclovías
+2632,Chivilcoy,11,101.72,Ciclovías
+2633,La Rabida (S) Av.,1,112.17,Ciclovías
+2634,Riglos,7,121.06,Ciclovías
+2635,Liniers Virrey,5,169.64,Ciclovías
+2636,Chiclana Av.,3,44.01,Ciclovías
+2637,Tacuari,1,146.81,Ciclovías
+2638,Valle,6,123.1,Ciclovías
+2639,Baigorri,4,161.25,Ciclovías
+2640,"Barros Pazos, Jose",8,87.18,Ciclovías mano única
+2641,Liniers Virrey,5,91.46,Ciclovías
+2642,"Udaondo, Guillermo Av.",13,126.73,Ciclovías
+2643,Lugones,12,121.33,Ciclovías
+2644,"Moreau De Justo, Alicia Av.",1,154.92,Ciclovías
+2645,"Alvear, Marcelo T. De",1,129.99,Ciclovías
+2646,Cerviño Av.,14,287.72,Ciclovías
+2647,"Figueroa Alcorta, Pres. Av.",2,166.13,Ciclovías
+2648,Ibera,13,108.93,Ciclovías
+2649,Congreso,13,111.94,Ciclovías
+2650,Moron,10,102.24,Ciclovías
+2651,Superi,12,121.01,Ciclovías
+2652,Cordoba Av.,14,123.73,Ciclovías mano única
+2653,Superi,12,139.4,Ciclovías
+2654,Doblas,7,140.07,Ciclovías
+2655,"Rabanal, Francisco, Intendente Av.",8,134.25,Ciclovías
+2656,"Newbery, Jorge Av.",15,118.91,Ciclovías
+2657,Quilmes,4,112.01,Ciclovías
+2658,"Alvarez, Julian",15,195.26,Ciclovías
+2659,Blanco Encalada,12,103.12,Ciclovías
+2660,"Obligado Rafael, Av.Costanera",14,232.36,Ciclovías
+2661,"Ravignani, Emilio, Dr.",14,126.18,Ciclovías
+2662,Tres Arroyos,6,70.37,Ciclovías
+2663,Uspallata,4,70.89,Ciclovías
+2664,Corrientes Av.,15,47.82,Ciclovías mano única
+2665,Billinghurst,5,103.35,Ciclovías
+2666,Griveo,12,129.53,Ciclovías
+2667,Miller,12,94.71,Ciclovías
+2668,Corrientes Av.,3,131.3,Ciclovías mano única
+2669,Superi,12,112.89,Ciclovías
+2670,Uspallata,4,90.47,Ciclovías
+2671,"Pellegrini, Carlos E.",12,62.6,Ciclovías
+2672,"Rodriguez, Martin",4,101.82,Ciclovías
+2673,Chivilcoy Av.,11,108.18,Ciclovías mano única
+2674,Tres Arroyos,15,113.49,Ciclovías
+2675,Valle,6,71.63,Ciclovías
+2676,Treinta Y Tres Orientales,5,117.9,Ciclovías
+2677,Fragata Pres. Sarmiento,6,149.96,Ciclovías
+2678,Superi,12,87.19,Ciclovías
+2679,Corrientes Av.,3,131.54,Ciclovías mano única
+2680,Nueva York,15,83.82,Ciclovías
+2681,Cordoba Av.,2,95.4,Ciclovías mano única
+2682,Godoy Cruz,14,146.43,Ciclovías
+2683,"Peron, Juan Domingo, Tte. General",3,135.38,Ciclovías mano única
+2684,Estados Unidos,5,145.41,Ciclovías
+2685,Ceretti,12,128.56,Ciclovías
+2686,Herrera,4,227.27,Ciclovías
+2687,Machu Picchu,1,48.29,Ciclovías
+2688,Liniers Virrey,5,123.95,Ciclovías
+2689,"Sastre, Marcos",10,89.23,Ciclovías
+2690,Suipacha,1,124.73,Ciclovías
+2691,Cordoba Av.,14,81.61,Ciclovías mano única
+2692,"Artigas, Jose Gervasio, Gral.",11,133.66,Ciclovías
+2693,Cordoba Av.,2,106.44,Ciclovías mano única
+2694,Cuba,13,142.9,Ciclovías
+2695,Billinghurst,5,16.88,Ciclovías
+2696,Olleros,13,109.89,Ciclovías
+2697,Chivilcoy,10,135.72,Ciclovías
+2698,Tacuari,1,132.07,Ciclovías
+2699,Calzada Circular Plaza Italia,14,87.3,Ciclovías
+2700,"Cevallos, Virrey",1,127.78,Ciclovías
+2701,Rosario,6,22.02,Ciclovías
+2702,"Udaondo, Guillermo Av.",13,52.74,Ciclovías
+2703,Unanue,8,103.31,Ciclovías mano única
+2704,Azcuenaga,2,120.71,Ciclovías
+2705,"Diaz, Cesar, Gral.",11,96.7,Ciclovías
+2706,Treinta Y Tres Orientales,5,111.88,Ciclovías
+2707,Chile,1,136.84,Ciclovías
+2708,"Diaz, Cnel. Av.",14,106.49,Ciclovías
+2709,"Alsina, Adolfo",1,131.78,Ciclovías
+2710,Tucuman,3,138.75,Ciclovías
+2711,Corrientes Av.,3,124.49,Ciclovías mano única
+2712,Chile,3,98.53,Ciclovías
+2713,"Garay, Juan De Av.",3,98.17,Ciclovías
+2714,"Rodriguez, Martin",4,100.71,Ciclovías
+2715,Congreso,13,102.45,Ciclovías
+2716,Padilla,15,129.97,Ciclovías
+2717,Pedernera,7,176.09,Ciclovías
+2718,Chivilcoy,10,131.35,Ciclovías
+2719,Pola,9,67.09,Ciclovías
+2720,Gorriti,14,128.91,Ciclovías
+2721,"Rabanal, Francisco, Intendente Av.",8,11.63,Ciclovías
+2722,Tucuman,1,122.92,Ciclovías
+2723,Lanteri Julieta,1,52.14,Ciclovías
+2724,Moldes,13,79.35,Ciclovías
+2725,Chivilcoy Av.,11,151.29,Ciclovías mano única
+2726,"Newbery, Jorge Av.",15,148.78,Ciclovías
+2727,Fray Cayetano Rodriguez,7,120.12,Ciclovías
+2728,"Alvarez, Julian",14,55.12,Ciclovías
+2729,Pola,9,73.5,Ciclovías
+2730,Estado De Israel Av.,15,130.73,Ciclovías mano única
+2731,"Vera Peñaloza, Rosario",1,97.68,Ciclovías
+2732,Chile,1,133.16,Ciclovías mano única
+2733,"Alsina, Adolfo",1,40.97,Ciclovías mano única
+2734,Valle,6,141.72,Ciclovías
+2735,"Pedraza, Manuela",12,143.5,Ciclovías
+2736,Bolivar,1,128.23,Ciclovías
+2737,Suipacha,1,130.32,Ciclovías
+2738,"Rivadavia Martin, Comodoro",13,108.1,Ciclovías
+2739,"Figueroa Alcorta, Pres. Av.",2,301.79,Ciclovías
+2740,"Alsina, Adolfo",3,162.92,Ciclovías
+2741,Del Libertador Av.,2,70.5,Ciclovías
+2742,Cordoba Av.,14,153.97,Ciclovías mano única
+2743,Rincon,3,106.99,Ciclovías
+2744,"Alvear, Marcelo T. De",1,38.34,Ciclovías
+2745,"Irigoyen, Bernardo De",1,66.89,Ciclovías
+2746,"Rabanal, Francisco, Intendente Av.",4,176.93,Ciclovías
+2747,Billinghurst,5,111.43,Ciclovías
+2748,Griveo,12,129.69,Ciclovías
+2749,Senillosa,6,128.15,Ciclovías
+2750,Riglos,6,57.48,Ciclovías
+2751,"Roca, Cnel. Av.",8,104.38,Ciclovías
+2752,Montevideo,1,131.61,Ciclovías
+2753,11 De Septiembre De 1888,14,126.26,Ciclovías
+2754,Forest Av.,15,61.92,Ciclovías mano única
+2755,"Calvo, Carlos",1,37.09,Ciclovías
+2756,Treinta Y Tres Orientales,5,132.9,Ciclovías
+2757,Superi,12,50.39,Ciclovías
+2758,"Rodo, Jose E.",9,62.27,Ciclovías
+2759,Moron,7,158.79,Ciclovías
+2760,"Gonzalez, Elpidio",10,120.94,Ciclovías
+2761,Don Bosco,5,126.4,Ciclovías
+2762,"Freire, Ramon, Cap. Gral.",12,156.19,Ciclovías
+2763,Zapata,14,130.31,Ciclovías
+2764,Corrientes Av.,5,27.86,Ciclovías mano única
