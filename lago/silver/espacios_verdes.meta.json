@@ -6,7 +6,7 @@
   "licencia": "CC-BY",
   "_origen": "semilla_demo",
   "raw_file": "lago\\raw\\espacios_verdes\\2026-10-06.csv",
-  "fecha_transformacion": "2026-10-06T16:15:52",
+  "fecha_transformacion": "2026-10-06T16:49:26",
   "filas_salida": 250,
   "filas_descartadas": 0,
   "formato_parquet": true

@@ -33,7 +33,30 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 SILVER = ROOT / "lago" / "silver"
 GOLD = ROOT / "lago" / "gold"
+RAW = ROOT / "lago" / "raw"
 COMUNAS = list(range(1, 16))
+
+
+def _copiar_geojson_comunas() -> bool:
+    """Copia el geojson de comunas más reciente de RAW a GOLD (para el mapa).
+
+    El dashboard lee lago/gold/comunas.geojson. La geometría puede ser Point
+    (semilla) o Polygon/MultiPolygon (datos reales); el dashboard se adapta.
+    """
+    import glob
+    # excluir auxiliares que empiezan con "_" (p.ej. _oficial.geojson sin simplificar);
+    # solo tomamos los datasets con fecha (YYYY-MM-DD.geojson)
+    candidatos = sorted(
+        p for p in glob.glob(str(RAW / "comunas" / "*.geojson"))
+        if not Path(p).name.startswith("_")
+    )
+    if not candidatos:
+        return False
+    origen = Path(candidatos[-1])
+    (GOLD / "comunas.geojson").write_text(
+        origen.read_text(encoding="utf-8"), encoding="utf-8")
+    return True
+
 
 
 def _verificacion() -> dict:
@@ -204,8 +227,10 @@ def main() -> int:
     }, ensure_ascii=False, indent=2), encoding="utf-8")
 
     con.close()
+    geojson_ok = _copiar_geojson_comunas()
     print(f"[ok] {len(cols_ind)} indicadores por comuna -> {ancha.relative_to(ROOT)}")
     print(f"     indicadores: {cols_ind}")
+    print(f"     geojson comunas -> {'copiado a gold/comunas.geojson' if geojson_ok else 'no encontrado en raw'}")
     return 0
 
 

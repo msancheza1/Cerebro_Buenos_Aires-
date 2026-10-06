@@ -17,6 +17,7 @@ import datetime as dt
 import io
 import json
 import random
+import sys
 from pathlib import Path
 
 random.seed(1515)  # reproducible
@@ -158,7 +159,23 @@ def gen_hospitales():
 
 
 def gen_comunas():
-    # capa base: 15 comunas (GeoJSON simplificado, sin geometría real -> centroide)
+    # capa base: 15 comunas.
+    # Si existe el GeoJSON OFICIAL descargado (lago/raw/comunas/_oficial.geojson),
+    # usamos los POLÍGONOS REALES de CABA (vía prep_comunas). Si no, caemos a
+    # centroides semilla para que el pipeline corra igual sin internet.
+    d = RAW / "comunas"
+    d.mkdir(parents=True, exist_ok=True)
+    oficial = d / "_oficial.geojson"
+    if oficial.exists():
+        try:
+            import prep_comunas
+            prep_comunas.main()   # genera {HOY}.geojson con polígonos reales simplificados
+            print("[seed] comunas          -> polígonos REALES de CABA (BA Data, simplificado)")
+            return
+        except Exception as e:
+            print(f"[seed] comunas: no se pudo usar el oficial ({e}); uso centroides semilla",
+                  file=sys.stderr)
+
     feats = []
     for c in COMUNAS:
         feats.append({
@@ -169,8 +186,6 @@ def gen_comunas():
     fc = {"type": "FeatureCollection",
           "_origen": "semilla_demo",
           "features": feats}
-    d = RAW / "comunas"
-    d.mkdir(parents=True, exist_ok=True)
     (d / f"{HOY}.geojson").write_text(json.dumps(fc, ensure_ascii=False, indent=2),
                                       encoding="utf-8")
     (d / f"{HOY}.geojson.meta.json").write_text(json.dumps({

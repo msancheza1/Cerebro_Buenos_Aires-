@@ -2,11 +2,12 @@
   "dominio": "comunas",
   "fuente": "Buenos Aires Data",
   "organismo": "GCBA",
-  "url": "https://data.buenosaires.gob.ar/dataset/comunas",
+  "url": "https://cdn.buenosaires.gob.ar/datosabiertos/datasets/ministerio-de-educacion/comunas/comunas.geojson",
   "licencia": "CC-BY",
   "formato": "geojson",
-  "fecha_ingesta": "2026-10-06T16:15:51",
-  "herramienta": "semilla",
-  "_origen": "semilla_demo",
-  "features": 15
+  "fecha_ingesta": "2026-10-06T16:49:25",
+  "herramienta": "prep_comunas (RDP)",
+  "_origen": "oficial",
+  "vertices_in": 12688,
+  "vertices_out": 1413
 }
