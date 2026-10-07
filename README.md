@@ -24,67 +24,56 @@ Indicadores por comuna:
 - Estaciones de Ecobici por comuna
 - Kilómetros de ciclovías por comuna
 - Espacios verdes (cantidad y superficie) por comuna
-- Hospitales / centros de salud por comuna
+- Hospitales por comuna (CeSAC no está incorporado como dominio independiente)
 
 ## Arquitectura (medallón: bronce → plata → oro)
 
+```mermaid
+flowchart TD
+    F["Fuentes oficiales: recursos descargables/CDN"] --> C["Catálogo propio"]
+    C --> I["Ingesta con urllib"]
+    I --> R["Bronze: CSV originales y geometría de comunas"]
+    R --> S["Silver: limpieza y normalización"]
+    S --> V{"Verificación por dominio"}
+    V -->|Publicable| G["Gold: indicadores por comuna con SQLite"]
+    V -->|No publicable| X["Dominio excluido de la construcción de Gold"]
+    G --> D["Dashboard HTML y mapa Leaflet"]
 ```
-        BUENOS AIRES DATA  ·  data.buenosaires.gob.ar
-                       │
-                       ▼
-             ┌───────────────────┐
-             │     CATÁLOGO      │  catalogo/catalogo.csv
-             │ fuente, fecha,    │  (qué hay, qué sirve, por qué)
-             │ licencia, URL     │
-             └─────────┬─────────┘
-                       ▼
-                    INGESTA           scripts/ingest_*.py  (urllib | curl)
-                       │
-                       ▼
-             ┌───────────────────┐
-             │   BRONZE (raw)    │   lago/raw/<dominio>/<fecha>.{json,csv}
-             │  tal cual salió   │   NO se modifica
-             └─────────┬─────────┘
-                       │  transformación / limpieza
-                       ▼
-             ┌───────────────────┐
-             │  SILVER (limpio)  │   lago/silver/*.parquet (+ *.csv fallback)
-             │  tipos, coords,   │   con columna de fuente y fecha
-             │  normalización    │
-             └─────────┬─────────┘
-                       │  VERIFICACIÓN (si falla, NO se publica)
-                       ▼
-             ┌───────────────────┐
-             │    GOLD (vistas)  │   lago/gold/*.parquet + indicadores por comuna
-             └─────────┬─────────┘
-                       │  DuckDB / SQLite
-                       ▼
-               DASHBOARD / VISTAS     app/  (HTML estático + Streamlit)
-```
+
+| Capa | Archivos y comportamiento actuales |
+|---|---|
+| Bronze | `lago/raw/<dominio>/<fecha>.csv` y sidecars de ingesta. La geometría de comunas incluye un GeoJSON simplificado mediante `prep_comunas.py`. |
+| Silver | CSV y Parquet por dominio. Los metadatos de procedencia están en `*.meta.json`, no en columnas adicionales. CSV se escribe siempre; Parquet requiere `pyarrow`. |
+| Verificación | `lago/silver/_verificacion.json` determina qué dominios son publicables. |
+| Gold | `build_gold.py` carga los CSV de SILVER en SQLite y genera indicadores CSV, `_meta.json` y la base local `cerebro.sqlite`. También copia `comunas.geojson` para el mapa. No genera Parquet en GOLD. |
+| Consumo | `app/index.html` contiene el dashboard generado. DuckDB sobre SILVER Parquet y Streamlit son alternativas con scripts disponibles. |
+
 
 Equivalencia con Cerebro Lima: `lago/raw` = **bronce**, `lago/silver` = **plata**,
 `lago/gold` + vistas = **oro** (medallion architecture de Databricks).
 
-## Dos herramientas por tramo (requisito del taller)
+## Herramientas exploradas por tramo
 
-| Tramo          | Herramienta A         | Herramienta B          | Elegida (ver bitácora) |
-|----------------|-----------------------|------------------------|------------------------|
-| Descubrimiento | Catálogo CSV a mano   | CKAN API (`/api/3/...`)| CKAN + catálogo propio |
-| Ingesta        | `urllib` (Python std) | `curl`                 | Python (`urllib`)      |
-| Transformación | Python stdlib `csv`   | Node.js                | Python stdlib          |
-| (alt. docum.)  | Pandas                | Polars                 | Polars                 |
-| Lago/formato   | CSV                   | Parquet                | Parquet                |
-| Consulta       | SQLite                | DuckDB                 | DuckDB (SQLite corrido)|
-| Lakehouse      | DuckLake              | Apache Iceberg         | DuckLake               |
-| Validación     | Reglas propias (std)  | Pandera / GE           | Pandera                |
-| Vistas         | HTML estático + mapa  | Streamlit              | HTML (Streamlit docum.)|
-| Mapa           | SVG coroplético       | Leaflet + tiles reales | Leaflet (fallback SVG) |
-| Despliegue     | Archivo local         | Vercel (estático)      | Vercel                 |
+| Tramo | Herramienta A | Herramienta B | Estado / decisión actual |
+|---|---|---|---|
+| Descubrimiento | Catálogo propio | API CKAN | Catálogo propio + recursos descargables/CDN; CKAN bloqueado por WAF según las pruebas documentadas |
+| Ingesta | `urllib` | `curl` | `urllib` ejecutado con datos oficiales; `curl` disponible sin comparación actual medida |
+| Transformación | Python stdlib `csv` | Polars | stdlib ejecutado; Polars pendiente de evidencia comparativa sobre los mismos datos |
+| Lago/formato | CSV | Parquet | Ambos formatos presentes en SILVER; la construcción actual de GOLD consume CSV mediante SQLite |
+| Consulta | SQLite | DuckDB | SQLite ejecutado; DuckDB pendiente de evidencia comparativa |
+| Lakehouse | DuckLake | Apache Iceberg | Scripts disponibles; pendiente acreditar ambas ejecuciones sobre los mismos datos. La demo SQLite de snapshots es histórica |
+| Validación | Reglas propias | Pandera | Reglas propias ejecutadas; Pandera pendiente de evidencia actual |
+| Vistas | HTML + Leaflet | Streamlit | HTML/Leaflet es la vista publicada; Streamlit está disponible como alternativa |
+| Mapa | SVG coroplético | Leaflet | Leaflet implementado con fallback SVG; sin benchmark comparativo registrado |
+| Despliegue | Archivo local | Vercel | Dashboard estático publicado en Vercel; sin comparación medida documentada |
 
-> La bitácora (`bitacora/exploracion.md`) justifica cada elección con tiempos,
-> ventajas/desventajas y **fecha de prueba**.
+> La bitácora (`bitacora/exploracion.md`) registra qué herramientas fueron ejecutadas,
+> cuáles quedaron como alternativas y qué evidencia existe para cada decisión.
+> La existencia de un script no demuestra su ejecución. El requisito de probar al
+> menos dos herramientas sobre los mismos datos por tramo sigue parcialmente
+> pendiente; no se presentan tiempos ni comparaciones que no estén registrados.
 
-## Datos: oficiales por defecto, semilla como fallback
+## Datos publicados oficiales y modo semilla explícito
 
 El dashboard publicado usa **datos oficiales descargados de Buenos Aires Data**
 (marcados `"_origen": "descarga"` en los metadatos). El pipeline soporta dos modos:
@@ -232,12 +221,12 @@ cerebro-buenos-aires/
 └── README.md
 ```
 
-## Fuentes públicas usadas (Buenos Aires y nacionales)
+## Fuentes implementadas y referencias exploradas
 
 - **Buenos Aires Data** — portal oficial CKAN de datos abiertos de CABA:
   <https://data.buenosaires.gob.ar/>
-- **API CKAN de BA Data** — <https://data.buenosaires.gob.ar/api/3/action/package_search>
-- **Datos Argentina** (nacional) — <https://datos.gob.ar/>
-- **INDEC** — <https://www.indec.gob.ar/> (contexto demográfico/socioeconómico)
+- **API CKAN de BA Data** (explorada; bloqueada por WAF, no utilizada en la ingesta vigente) — <https://data.buenosaires.gob.ar/api/3/action/package_search>
+- **Datos Argentina** (referencia para futuras fuentes de población, no incorporada a GOLD) — <https://datos.gob.ar/>
+- **INDEC** (referencia de contexto, no incorporada a GOLD) — <https://www.indec.gob.ar/> (contexto demográfico/socioeconómico)
 
 Cada dataset concreto, con su URL y vigencia, está en `catalogo/catalogo.csv`.
