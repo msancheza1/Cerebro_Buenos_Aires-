@@ -11,10 +11,9 @@ Dos herramientas (requisito del taller):
      (Great Expectations sería una tercera; ver bitácora por qué preferimos Pandera.)
 
 Reglas por dominio:
-  comunes:  id no nulo y único ; comuna en 1..15
-  coords:   lat en [-34.71,-34.52] ; lon en [-58.54,-58.33]   (bounding box CABA)
-  ecobici:  anclajes_totales > 0
-  ciclovias:long_metros > 0
+  comunes: id no nulo y único ; comuna en 1..15
+  ecobici: lat/lon dentro del bounding box de CABA
+  ciclovias: long_metros > 0
   espacios_verdes: area_m2 > 0
   hospitales: nombre no vacío
 
