@@ -16,13 +16,13 @@
         "unidad": "-",
         "pii": false,
         "descripcion": "Nombre de la estación (normalizado a Title Case).",
-        "regla": "no vacío"
+        "regla": "normalizado; sin validación de no vacío en verify.py"
       },
       "comuna": {
         "tipo": "entero",
         "unidad": "comuna",
         "pii": false,
-        "descripcion": "Comuna de CABA donde se ubica la estación.",
+        "descripcion": "Comuna de CABA derivada por punto-en-polígono a partir de lat/lon.",
         "regla": "entero en 1..15"
       },
       "lat": {
@@ -38,13 +38,6 @@
         "pii": false,
         "descripcion": "Longitud (WGS84).",
         "regla": "entre -58.54 y -58.33 (bounding box CABA)"
-      },
-      "anclajes_totales": {
-        "tipo": "entero",
-        "unidad": "anclajes",
-        "pii": false,
-        "descripcion": "Cantidad de anclajes de la estación.",
-        "regla": "> 0"
       }
     }
   },
@@ -65,7 +58,7 @@
         "unidad": "-",
         "pii": false,
         "descripcion": "Nombre o calle del tramo de ciclovía.",
-        "regla": "no vacío"
+        "regla": "normalizado; sin validación de no vacío en verify.py"
       },
       "comuna": {
         "tipo": "entero",
@@ -107,7 +100,7 @@
         "unidad": "-",
         "pii": false,
         "descripcion": "Nombre del espacio verde.",
-        "regla": "no vacío"
+        "regla": "normalizado; sin validación de no vacío en verify.py"
       },
       "comuna": {
         "tipo": "entero",
@@ -129,25 +122,11 @@
         "pii": false,
         "descripcion": "Clasificación del espacio (plaza, parque, etc.).",
         "regla": "libre"
-      },
-      "lat": {
-        "tipo": "decimal",
-        "unidad": "grados",
-        "pii": false,
-        "descripcion": "Latitud del centroide (WGS84).",
-        "regla": "entre -34.71 y -34.52"
-      },
-      "lon": {
-        "tipo": "decimal",
-        "unidad": "grados",
-        "pii": false,
-        "descripcion": "Longitud del centroide (WGS84).",
-        "regla": "entre -58.54 y -58.33"
       }
     }
   },
   "hospitales": {
-    "descripcion": "Hospitales y centros de salud de la Ciudad de Buenos Aires.",
+    "descripcion": "Hospitales de la Ciudad de Buenos Aires; no incluye un dominio independiente de CeSAC.",
     "grano": "una fila = un establecimiento de salud",
     "clave": "id",
     "columnas": {
@@ -162,14 +141,14 @@
         "tipo": "texto",
         "unidad": "-",
         "pii": false,
-        "descripcion": "Nombre del hospital o centro de salud.",
+        "descripcion": "Nombre del hospital.",
         "regla": "no vacío"
       },
       "tipo": {
         "tipo": "texto",
         "unidad": "-",
         "pii": false,
-        "descripcion": "Tipo de establecimiento (hospital, CeSAC, etc.).",
+        "descripcion": "Especialidad o tipo informado por la fuente (esp).",
         "regla": "libre"
       },
       "comuna": {
@@ -185,20 +164,6 @@
         "pii": false,
         "descripcion": "Dirección postal del establecimiento.",
         "regla": "libre"
-      },
-      "lat": {
-        "tipo": "decimal",
-        "unidad": "grados",
-        "pii": false,
-        "descripcion": "Latitud (WGS84).",
-        "regla": "entre -34.71 y -34.52"
-      },
-      "lon": {
-        "tipo": "decimal",
-        "unidad": "grados",
-        "pii": false,
-        "descripcion": "Longitud (WGS84).",
-        "regla": "entre -58.54 y -58.33"
       }
     }
   }
