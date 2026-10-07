@@ -33,11 +33,10 @@ DICCIONARIO = {
         "clave": "id",
         "columnas": {
             "id":               {"tipo": "entero",  "unidad": "-",       "pii": False, "descripcion": "Identificador único de la estación.",                 "regla": "no nulo y único"},
-            "nombre":           {"tipo": "texto",   "unidad": "-",       "pii": False, "descripcion": "Nombre de la estación (normalizado a Title Case).",   "regla": "no vacío"},
-            "comuna":           {"tipo": "entero",  "unidad": "comuna",  "pii": False, "descripcion": "Comuna de CABA donde se ubica la estación.",          "regla": "entero en 1..15"},
+            "nombre":           {"tipo": "texto",   "unidad": "-",       "pii": False, "descripcion": "Nombre de la estación (normalizado a Title Case).",   "regla": "normalizado; sin validación de no vacío en verify.py"},
+            "comuna":           {"tipo": "entero",  "unidad": "comuna",  "pii": False, "descripcion": "Comuna de CABA derivada por punto-en-polígono a partir de lat/lon.",          "regla": "entero en 1..15"},
             "lat":              {"tipo": "decimal", "unidad": "grados",  "pii": False, "descripcion": "Latitud (WGS84).",                                    "regla": "entre -34.71 y -34.52 (bounding box CABA)"},
             "lon":              {"tipo": "decimal", "unidad": "grados",  "pii": False, "descripcion": "Longitud (WGS84).",                                   "regla": "entre -58.54 y -58.33 (bounding box CABA)"},
-            "anclajes_totales": {"tipo": "entero",  "unidad": "anclajes","pii": False, "descripcion": "Cantidad de anclajes de la estación.",               "regla": "> 0"},
         },
     },
     "ciclovias": {
@@ -46,7 +45,7 @@ DICCIONARIO = {
         "clave": "id",
         "columnas": {
             "id":          {"tipo": "entero",  "unidad": "-",      "pii": False, "descripcion": "Identificador único del tramo.",            "regla": "no nulo y único"},
-            "nombre":      {"tipo": "texto",   "unidad": "-",      "pii": False, "descripcion": "Nombre o calle del tramo de ciclovía.",     "regla": "no vacío"},
+            "nombre":      {"tipo": "texto",   "unidad": "-",      "pii": False, "descripcion": "Nombre o calle del tramo de ciclovía.",     "regla": "normalizado; sin validación de no vacío en verify.py"},
             "comuna":      {"tipo": "entero",  "unidad": "comuna", "pii": False, "descripcion": "Comuna de CABA del tramo.",                 "regla": "entero en 1..15"},
             "long_metros": {"tipo": "decimal", "unidad": "metros", "pii": False, "descripcion": "Longitud del tramo en metros.",            "regla": "> 0"},
             "tipo":        {"tipo": "texto",   "unidad": "-",      "pii": False, "descripcion": "Tipo de infraestructura ciclista.",         "regla": "libre"},
@@ -58,26 +57,22 @@ DICCIONARIO = {
         "clave": "id",
         "columnas": {
             "id":            {"tipo": "entero",  "unidad": "-",      "pii": False, "descripcion": "Identificador único del espacio verde.",    "regla": "no nulo y único"},
-            "nombre":        {"tipo": "texto",   "unidad": "-",      "pii": False, "descripcion": "Nombre del espacio verde.",                 "regla": "no vacío"},
+            "nombre":        {"tipo": "texto",   "unidad": "-",      "pii": False, "descripcion": "Nombre del espacio verde.",                 "regla": "normalizado; sin validación de no vacío en verify.py"},
             "comuna":        {"tipo": "entero",  "unidad": "comuna", "pii": False, "descripcion": "Comuna de CABA del espacio verde.",         "regla": "entero en 1..15"},
             "area_m2":       {"tipo": "decimal", "unidad": "m²",     "pii": False, "descripcion": "Superficie del espacio verde en metros cuadrados.", "regla": "> 0"},
             "clasificacion": {"tipo": "texto",   "unidad": "-",      "pii": False, "descripcion": "Clasificación del espacio (plaza, parque, etc.).",  "regla": "libre"},
-            "lat":           {"tipo": "decimal", "unidad": "grados", "pii": False, "descripcion": "Latitud del centroide (WGS84).",            "regla": "entre -34.71 y -34.52"},
-            "lon":           {"tipo": "decimal", "unidad": "grados", "pii": False, "descripcion": "Longitud del centroide (WGS84).",           "regla": "entre -58.54 y -58.33"},
         },
     },
     "hospitales": {
-        "descripcion": "Hospitales y centros de salud de la Ciudad de Buenos Aires.",
+        "descripcion": "Hospitales de la Ciudad de Buenos Aires; no incluye un dominio independiente de CeSAC.",
         "grano": "una fila = un establecimiento de salud",
         "clave": "id",
         "columnas": {
             "id":        {"tipo": "entero",  "unidad": "-",      "pii": False, "descripcion": "Identificador único del establecimiento.",   "regla": "no nulo y único"},
-            "nombre":    {"tipo": "texto",   "unidad": "-",      "pii": False, "descripcion": "Nombre del hospital o centro de salud.",     "regla": "no vacío"},
-            "tipo":      {"tipo": "texto",   "unidad": "-",      "pii": False, "descripcion": "Tipo de establecimiento (hospital, CeSAC, etc.).", "regla": "libre"},
+            "nombre":    {"tipo": "texto",   "unidad": "-",      "pii": False, "descripcion": "Nombre del hospital.",     "regla": "no vacío"},
+            "tipo":      {"tipo": "texto",   "unidad": "-",      "pii": False, "descripcion": "Especialidad o tipo informado por la fuente (esp).", "regla": "libre"},
             "comuna":    {"tipo": "entero",  "unidad": "comuna", "pii": False, "descripcion": "Comuna de CABA del establecimiento.",        "regla": "entero en 1..15"},
             "direccion": {"tipo": "texto",   "unidad": "-",      "pii": False, "descripcion": "Dirección postal del establecimiento.",      "regla": "libre"},
-            "lat":       {"tipo": "decimal", "unidad": "grados", "pii": False, "descripcion": "Latitud (WGS84).",                           "regla": "entre -34.71 y -34.52"},
-            "lon":       {"tipo": "decimal", "unidad": "grados", "pii": False, "descripcion": "Longitud (WGS84).",                          "regla": "entre -58.54 y -58.33"},
         },
     },
 }
@@ -99,7 +94,10 @@ def generar_md() -> Path:
         "",
         "Metadatos formales de cada dominio de la capa **SILVER**. Fuente única de verdad: "
         "`scripts/diccionario.py`. Los tipos coinciden con `transform_silver.py` y las "
-        "reglas con `verify.py`.",
+        "reglas con `verify.py`. Esquema vigente contrastado con los CSV de SILVER "
+        "y la ingesta del **2026-10-06**. La procedencia se guarda en archivos "
+        "`*.meta.json`, no en columnas adicionales. Los ID pueden ser generados "
+        "por la transformación cuando faltan o se repiten en RAW.",
         "",
     ]
     for dominio, info in DICCIONARIO.items():
