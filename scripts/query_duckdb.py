@@ -17,8 +17,7 @@ import _utf8  # noqa: F401  (reconfigura stdout/stderr a UTF-8; portabilidad Win
 import sys
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parents[1]
-SILVER = ROOT / "lago" / "silver"
+from pipeline_common import SILVER
 
 
 def main() -> int:

@@ -1,4 +1,12 @@
-# artefactos derivados y binarios (se regeneran con el pipeline)
+# artefactos derivados y datos locales (se regeneran con el pipeline)
+build/
+demo/raw/
+lago/raw/*
+!lago/raw/.gitkeep
+lago/silver/*
+!lago/silver/.gitkeep
+lago/gold/*
+!lago/gold/.gitkeep
 *.sqlite
 *.sqlite-wal
 *.sqlite-shm

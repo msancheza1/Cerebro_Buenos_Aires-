@@ -11,10 +11,9 @@ Uso:
 from __future__ import annotations
 import _utf8  # noqa: F401  (reconfigura stdout/stderr a UTF-8; portabilidad Windows)
 import sqlite3
-from pathlib import Path
+from pipeline_common import GOLD
 
-ROOT = Path(__file__).resolve().parents[1]
-DB = ROOT / "lago" / "gold" / "cerebro.sqlite"
+DB = GOLD / "cerebro.sqlite"
 
 
 def tabla(con, titulo, sql):
