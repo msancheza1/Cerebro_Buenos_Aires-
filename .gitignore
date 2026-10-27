@@ -17,3 +17,4 @@ __pycache__/
 *.pyc
 .venv/
 .python-version
+.vercel

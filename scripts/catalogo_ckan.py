@@ -15,6 +15,7 @@ Uso:
     python scripts/catalogo_ckan.py --save     # además escribe catalogo/catalogo_ckan.csv
 """
 from __future__ import annotations
+import _utf8  # noqa: F401  (reconfigura stdout/stderr a UTF-8; portabilidad Windows)
 import csv
 import json
 import sys
