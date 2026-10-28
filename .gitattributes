@@ -1,0 +1,3 @@
+# Las evidencias conservan los bytes sobre los que se calcularon los hashes.
+evidencias/f10/** -text
+*.sh text eol=lf
