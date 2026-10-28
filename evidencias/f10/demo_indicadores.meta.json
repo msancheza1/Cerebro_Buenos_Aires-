@@ -1,0 +1,119 @@
+{
+  "generado": "2026-10-28T14:27:27+00:00",
+  "motor": "sqlite",
+  "quality_status": "verified",
+  "provenance_status": "demo",
+  "datos_oficiales": false,
+  "estado": "demo_no_oficial",
+  "run_id": "demo-seed-v1",
+  "indicadores": [
+    "estaciones_ecobici",
+    "km_ciclovias",
+    "espacios_verdes",
+    "m2_espacios_verdes",
+    "hospitales"
+  ],
+  "indicadores_normalizados": [
+    "estaciones_ecobici_por_10000_hab",
+    "km_ciclovias_por_10000_hab",
+    "espacios_verdes_por_10000_hab",
+    "m2_verdes_por_hab",
+    "hospitales_por_10000_hab"
+  ],
+  "normalizacion": {
+    "estaciones_ecobici_por_10000_hab": {
+      "formula": "estaciones_ecobici / poblacion * 10000",
+      "unidad": "estaciones / 10.000 habitantes",
+      "anio_poblacion": 2022
+    },
+    "km_ciclovias_por_10000_hab": {
+      "formula": "km_ciclovias / poblacion * 10000",
+      "unidad": "km / 10.000 habitantes",
+      "anio_poblacion": 2022
+    },
+    "espacios_verdes_por_10000_hab": {
+      "formula": "espacios_verdes / poblacion * 10000",
+      "unidad": "espacios / 10.000 habitantes",
+      "anio_poblacion": 2022
+    },
+    "m2_verdes_por_hab": {
+      "formula": "m2_espacios_verdes / poblacion * 1",
+      "unidad": "m² / habitante",
+      "anio_poblacion": 2022
+    },
+    "hospitales_por_10000_hab": {
+      "formula": "hospitales / poblacion * 10000",
+      "unidad": "hospitales / 10.000 habitantes",
+      "anio_poblacion": 2022
+    }
+  },
+  "publicables": {
+    "ecobici": true,
+    "ciclovias": true,
+    "espacios_verdes": true,
+    "hospitales": true,
+    "poblacion": true
+  },
+  "fuentes": {
+    "ecobici": {
+      "anio_poblacion": null,
+      "fuente": "Buenos Aires Data (fuente de referencia; datos generados)",
+      "organismo": "Secretaría de Transporte y Obras Públicas (GCBA)",
+      "url": "https://data.buenosaires.gob.ar/dataset/estaciones-bicicletas-publicas",
+      "licencia": "CC-BY",
+      "_origen": "semilla_demo",
+      "run_id": "demo-seed-v1",
+      "raw_sha256": "9299d8a8db437bcc17824e2fcd72bf3e647cc1d0d07f9e3cb7fd138a7321adc9",
+      "fecha_ingesta": "2026-10-28T09:27:22",
+      "source_updated_at": null
+    },
+    "ciclovias": {
+      "anio_poblacion": null,
+      "fuente": "Buenos Aires Data (fuente de referencia; datos generados)",
+      "organismo": "Secretaría de Transporte y Obras Públicas (GCBA)",
+      "url": "https://data.buenosaires.gob.ar/dataset/ciclovias",
+      "licencia": "CC-BY",
+      "_origen": "semilla_demo",
+      "run_id": "demo-seed-v1",
+      "raw_sha256": "7d57eaadde11ffbfd9e13b3b98d0403c2c4d614e4f4ca0bf6e45341750c1b474",
+      "fecha_ingesta": "2026-10-28T09:27:22",
+      "source_updated_at": null
+    },
+    "espacios_verdes": {
+      "anio_poblacion": null,
+      "fuente": "Buenos Aires Data (fuente de referencia; datos generados)",
+      "organismo": "Ministerio de Espacio Público e Higiene Urbana (GCBA)",
+      "url": "https://data.buenosaires.gob.ar/dataset/espacios-verdes",
+      "licencia": "CC-BY",
+      "_origen": "semilla_demo",
+      "run_id": "demo-seed-v1",
+      "raw_sha256": "258045ac1b8e8920b652b18a60fb7ae42efeaab00d1711e1297dae73424b0f8b",
+      "fecha_ingesta": "2026-10-28T09:27:22",
+      "source_updated_at": null
+    },
+    "hospitales": {
+      "anio_poblacion": null,
+      "fuente": "Buenos Aires Data (fuente de referencia; datos generados)",
+      "organismo": "Ministerio de Salud (GCBA)",
+      "url": "https://data.buenosaires.gob.ar/dataset/hospitales",
+      "licencia": "CC-BY",
+      "_origen": "semilla_demo",
+      "run_id": "demo-seed-v1",
+      "raw_sha256": "4f54d1f9a86eba4167c5851af153a535d3e03db742a2bbfd358bedf906a66873",
+      "fecha_ingesta": "2026-10-28T09:27:22",
+      "source_updated_at": null
+    },
+    "poblacion": {
+      "anio_poblacion": null,
+      "fuente": "Buenos Aires Data (fuente de referencia; datos generados)",
+      "organismo": "DEMO: datos ficticios",
+      "url": "https://example.invalid/demo-poblacion",
+      "licencia": "CC-BY",
+      "_origen": "semilla_demo",
+      "run_id": "demo-seed-v1",
+      "raw_sha256": "0895b890eabed56a1fe124e022e904ca3cafe2325ece7836c12f2884a6173599",
+      "fecha_ingesta": "2026-10-28T09:27:22",
+      "source_updated_at": null
+    }
+  }
+}

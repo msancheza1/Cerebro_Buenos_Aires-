@@ -18,6 +18,8 @@ Código de salida:
 """
 from __future__ import annotations
 import _utf8  # noqa: F401  (reconfigura stdout/stderr a UTF-8; portabilidad Windows)
+import argparse
+import os
 import subprocess
 import sys
 from pathlib import Path
@@ -43,9 +45,22 @@ def paso(numero: int, total: int, titulo: str, script: Path, *args: str) -> None
 
 
 def main() -> int:
-    ingesta = "--ingesta" in sys.argv or "--curl" in sys.argv
-    usar_curl = "--curl" in sys.argv
-    total = 9
+    parser = argparse.ArgumentParser(description="Pipeline aislado y seguro")
+    modes = parser.add_mutually_exclusive_group()
+    modes.add_argument("--demo", action="store_true")
+    modes.add_argument("--ingesta", action="store_true")
+    modes.add_argument("--curl", action="store_true")
+    args = parser.parse_args()
+    ingesta = args.ingesta or args.curl
+    usar_curl = args.curl
+    os.environ.update({
+        "CEREBRO_MODE": "official" if ingesta else "demo",
+        "CEREBRO_RAW_DIR": str(ROOT / ("lago/raw" if ingesta else "demo/raw")),
+        "CEREBRO_SILVER_DIR": str(ROOT / ("lago/silver" if ingesta else "build/demo/silver")),
+        "CEREBRO_GOLD_DIR": str(ROOT / ("lago/gold" if ingesta else "build/demo/gold")),
+        "CEREBRO_APP_DIR": str(ROOT / ("app/official" if ingesta else "app/demo")),
+    })
+    total = 10
 
     print(LINEA)
     print(" CEREBRO BUENOS AIRES · pipeline")
@@ -59,8 +74,9 @@ def main() -> int:
         extra = ["--curl"] if usar_curl else []
         res = subprocess.run([PY, str(SCRIPTS / "ingest_all.py"), *extra], cwd=str(ROOT))
         if res.returncode != 0:
-            print("  (ingesta falló o incompleta; sigo con lo que haya en lago/raw/)",
+            print("Ingesta fallida: pipeline detenido sin reutilizar BRONZE antiguo.",
                   file=sys.stderr)
+            return 1
     else:
         paso(1, total, "Datos semilla (offline)", SCRIPTS / "_gen_seed.py")
 
@@ -74,15 +90,17 @@ def main() -> int:
     paso(5, total, "Perfilado / completitud de SILVER", SCRIPTS / "profile_silver.py")
     # [6] tests de las reglas
     paso(6, total, "Tests de verificación", TESTS / "test_verificacion.py")
+    paso(7, total, "Tests F10 y normalización", TESTS / "test_poblacion.py")
+
     # [7] silver -> gold (incluye linaje raw+sha256)
-    paso(7, total, "Indicadores  silver -> gold (con linaje)", SCRIPTS / "build_gold.py")
+    paso(8, total, "Indicadores  silver -> gold (con linaje)", SCRIPTS / "build_gold.py")
     # [8] consultas de ejemplo
-    paso(8, total, "Consultas de ejemplo (SQLite)", SCRIPTS / "query_sqlite.py")
+    paso(9, total, "Consultas de ejemplo (SQLite)", SCRIPTS / "query_sqlite.py")
     # [9] dashboard estático (regenera fecha + cifras + linaje)
-    paso(9, total, "Dashboard estático", SCRIPTS / "build_dashboard.py")
+    paso(10, total, "Dashboard estático", SCRIPTS / "build_dashboard.py")
 
     print("\n" + LINEA)
-    print(" OK. Pipeline completo. Abrí app/index.html en el navegador.")
+    print(f" OK. Pipeline completo. Salida: {os.environ['CEREBRO_APP_DIR']}")
     print(LINEA)
     return 0
 

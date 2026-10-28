@@ -124,3 +124,11 @@ bitacora/               exploración y justificación
 
 Las URLs descargables y sus contratos mínimos están centralizados en
 `scripts/fuentes.py`; el inventario curado está en `catalogo/catalogo.csv`.
+
+
+## F10: población censal e indicadores por habitante
+
+Implementación y reproducción: [PERSONA_1_F10.md](PERSONA_1_F10.md).
+La población oficial aislada está en `evidencias/f10/poblacion.csv`.
+GOLD exige las cinco fuentes del mismo lote verificado; la infraestructura heredada
+aún impide acreditar una ejecución oficial completa. Las tasas usan censo 2022.

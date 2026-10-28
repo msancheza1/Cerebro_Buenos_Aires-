@@ -200,4 +200,7 @@ if __name__ == "__main__":
     gen_espacios_verdes()
     gen_hospitales()
     gen_comunas()
+    escribir_csv("poblacion", ["comuna", "poblacion", "anio"],
+                 [{"comuna": c, "poblacion": 100000 + c * 1000, "anio": 2022} for c in COMUNAS],
+                 "DEMO: datos ficticios", "https://example.invalid/demo-poblacion")
     print("\n[ok] Semilla demo aislada del lago oficial.")

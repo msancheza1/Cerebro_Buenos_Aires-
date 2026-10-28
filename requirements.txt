@@ -32,3 +32,6 @@ pandas==3.0.6
 # --- Ingesta real desde BA Data con cliente HTTP de alto nivel (opcional;
 #     ingest_all.py usa urllib de stdlib por defecto) ---
 requests==2.34.2
+
+# Lectura de F10 oficial en XLS
+xlrd==2.0.2

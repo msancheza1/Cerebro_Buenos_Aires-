@@ -10,6 +10,14 @@ from __future__ import annotations
 BASE = "https://data.buenosaires.gob.ar"
 
 FUENTES = {
+    "poblacion": {
+        "url": "https://www.estadisticaciudad.gob.ar/eyc/wp-content/uploads/2022/12/PB2_22nb.xls",
+        "ficha": "https://www.estadisticaciudad.gob.ar/eyc/banco-datos/poblacion-total-por-sexo-registrado-al-nacer-superficie-y-densidad-poblacional-segun-comuna-ciudad-de-buenos-aires-anos-2010-2022/",
+        "formato": "xls", "licencia": "No verificada",
+        "organismo": "IDECBA (GCBA), sobre la base de INDEC, Censo 2022",
+        "fuente": "Instituto de Estadística y Censos de la Ciudad Autónoma de Buenos Aires",
+        "anio_poblacion": 2022,
+    },
     "ecobici": {
         "url": f"{BASE}/api/datasets/estaciones-bicicletas-publicas/estaciones-bicicletas-publicas.csv",
         "formato": "csv",

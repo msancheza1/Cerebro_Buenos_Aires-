@@ -6,6 +6,7 @@ ningún recurso del lote se promueve a ``lago/raw``. Nunca continúa con datos a
 de demostración. Se puede comparar urllib (predeterminado) con curl usando ``--curl``.
 """
 from __future__ import annotations
+import _utf8  # salida portable en Windows
 
 import argparse
 import csv
@@ -66,7 +67,8 @@ def validar_url_oficial(url: str) -> None:
     parsed = urllib.parse.urlparse(url)
     host = (parsed.hostname or "").lower()
     if parsed.scheme != "https" or not (host == "data.buenosaires.gob.ar"
-                                         or host.endswith(".buenosaires.gob.ar")):
+                                         or host.endswith(".buenosaires.gob.ar")
+                                         or host == "www.estadisticaciudad.gob.ar"):
         raise ValueError(f"redirección fuera de la allowlist oficial: {url}")
 
 
@@ -86,6 +88,12 @@ def validar_contenido(dominio: str, meta: dict, contenido: bytes) -> None:
             raise ValueError(f"contrato de columnas incompatible; faltan {missing}")
         if next(reader, None) is None:
             raise ValueError("CSV sin filas de datos")
+    elif formato == "xls" and dominio == "poblacion":
+        from poblacion import extraer_xls
+        with tempfile.TemporaryDirectory() as folder:
+            path = Path(folder) / "f10.xls"
+            path.write_bytes(contenido)
+            extraer_xls(path)
     elif formato == "geojson":
         try:
             document = json.loads(contenido)
@@ -110,6 +118,8 @@ def preparar_recurso(dominio: str, meta: dict, usar_curl: bool, staging: Path,
     sidecar_path = data_path.with_suffix(data_path.suffix + ".meta.json")
     atomic_write_bytes(data_path, contenido)
     metadata = {
+        "anio_poblacion": meta.get("anio_poblacion"),
+        "ficha": meta.get("ficha"),
         "dominio": dominio,
         "fuente": meta["fuente"],
         "organismo": meta["organismo"],

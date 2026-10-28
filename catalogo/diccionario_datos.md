@@ -2,6 +2,19 @@
 
 Metadatos formales de cada dominio de la capa **SILVER**. Fuente única de verdad: `scripts/diccionario.py`. Los tipos coinciden con `transform_silver.py` y las reglas con `verify.py`. Esquema vigente contrastado con los CSV de SILVER y la ingesta del **2026-10-06**. La procedencia se guarda en archivos `*.meta.json`, no en columnas adicionales. Los ID pueden ser generados por la transformación cuando faltan o se repiten en RAW.
 
+## poblacion
+
+Población censal total 2022. Fuente: IDECBA sobre la base de INDEC.
+
+- **Grano:** una fila por comuna
+- **Clave primaria:** `comuna`
+
+| Columna | Tipo | Unidad | PII | Descripción | Regla de calidad |
+|---------|------|--------|-----|-------------|------------------|
+| `comuna` | entero | comuna | no | Comuna CABA | 15 valores únicos 1..15 |
+| `poblacion` | entero | habitantes | no | Población censal total | positiva; XLS reconcilia 3121707 |
+| `anio` | entero | año | no | Año del censo | 2022 |
+
 ## ecobici
 
 Estaciones de bicicletas públicas (Ecobici) de la Ciudad de Buenos Aires.

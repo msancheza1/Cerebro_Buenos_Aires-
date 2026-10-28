@@ -29,7 +29,7 @@ import math
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-SILVER = ROOT / "lago" / "silver"
+from pipeline_common import SILVER, REQUIRED_DOMAINS
 CATALOGO = ROOT / "catalogo"
 
 # rangos para outliers (coinciden con verify.py / diccionario.py)
@@ -149,7 +149,7 @@ def main() -> int:
     print("=" * 60)
 
     resultado = {}
-    for dominio in ("ecobici", "ciclovias", "espacios_verdes", "hospitales"):
+    for dominio in REQUIRED_DOMAINS:
         info = perfilar_dominio(dominio, dicc)
         resultado[dominio] = info
         if info["filas"]:
@@ -163,7 +163,7 @@ def main() -> int:
     }, ensure_ascii=False, indent=2), encoding="utf-8")
 
     print("\n" + "=" * 60)
-    print("Perfilado -> lago/silver/_perfilado.json")
+    print(f"Perfilado -> {SILVER}")
     return 0
 
 

@@ -6,6 +6,7 @@ faltante, un contrato de columnas incompatible o una procedencia inválida cance
 la transformación; no se reutilizan salidas SILVER antiguas.
 """
 from __future__ import annotations
+import _utf8  # salida portable en Windows
 
 import csv
 import datetime as dt
@@ -175,6 +176,7 @@ def dom_hospitales(archivo):
 
 
 SCHEMAS = {
+    "poblacion": [("comuna", "INT64"), ("poblacion", "INT64"), ("anio", "INT64")],
     "ecobici": [("id", "INT64"), ("nombre", "UTF8"), ("comuna", "INT64"),
                 ("lat", "DOUBLE"), ("lon", "DOUBLE"), ("anclajes_totales", "INT64")],
     "ciclovias": [("id", "INT64"), ("nombre", "UTF8"), ("comuna", "INT64"),
@@ -186,7 +188,10 @@ SCHEMAS = {
                    ("comuna", "INT64"), ("direccion", "UTF8"),
                    ("lat", "DOUBLE"), ("lon", "DOUBLE")],
 }
+from poblacion import limpiar as dom_poblacion
+
 LIMPIADORES = {
+    "poblacion": dom_poblacion,
     "ecobici": dom_ecobici,
     "ciclovias": dom_ciclovias,
     "espacios_verdes": dom_espacios_verdes,
@@ -219,6 +224,8 @@ def escribir_silver(output: Path, dominio: str, filas: list[dict], schema,
 
     discarded = sum(rechazos.values())
     silver_meta = {
+        "anio_poblacion": metadata.get("anio_poblacion"),
+        "ficha": metadata.get("ficha"),
         "dominio": dominio,
         "fuente": metadata["fuente"],
         "organismo": metadata["organismo"],
@@ -251,7 +258,10 @@ def main() -> int:
     try:
         inputs = {}
         for dominio in REQUIRED_DOMAINS:
-            raw_file = _ultimo_raw(dominio)
+            try:
+                raw_file = _ultimo_raw(dominio, "xls") if dominio == "poblacion" else _ultimo_raw(dominio)
+            except FileNotFoundError:
+                raw_file = _ultimo_raw(dominio)
             inputs[dominio] = (raw_file, _meta_raw(raw_file, dominio))
         run_ids = {metadata["run_id"] for _, metadata in inputs.values()}
         origins = {metadata["_origen"] for _, metadata in inputs.values()}

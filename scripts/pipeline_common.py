@@ -21,7 +21,7 @@ SILVER = configured_path("CEREBRO_SILVER_DIR", "lago/silver")
 GOLD = configured_path("CEREBRO_GOLD_DIR", "lago/gold")
 APP = configured_path("CEREBRO_APP_DIR", "app")
 MODE = os.environ.get("CEREBRO_MODE", "official")
-REQUIRED_DOMAINS = ("ecobici", "ciclovias", "espacios_verdes", "hospitales")
+REQUIRED_DOMAINS = ("ecobici", "ciclovias", "espacios_verdes", "hospitales", "poblacion")
 
 
 def sha256_bytes(content: bytes) -> str:

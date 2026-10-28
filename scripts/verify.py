@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Verifica SILVER y bloquea la publicación completa si un dominio falla."""
 from __future__ import annotations
+import _utf8  # salida portable en Windows
 
 import csv
 import datetime as dt
@@ -62,7 +63,17 @@ def regla_no_vacio(filas, column):
     return [(f"{column}_no_vacio", count)] if count else []
 
 
+def reglas_poblacion(rows):
+    from poblacion import validar
+    try:
+        validar(rows)
+        return []
+    except (ValueError, KeyError):
+        return [("contrato_poblacion_2022_15_comunas", 1)]
+
+
 CHECKS = {
+    "poblacion": reglas_poblacion,
     "ecobici": lambda rows: reglas_comunes(rows) + reglas_coords(rows)
     + regla_positivo(rows, "anclajes_totales"),
     "ciclovias": lambda rows: reglas_comunes(rows) + regla_positivo(rows, "long_metros"),
@@ -85,6 +96,9 @@ def _metadata_violations(dominio: str, csv_path: Path) -> tuple[list[tuple[str, 
     violations = []
     if metadata.get("silver_sha256") != sha256_file(csv_path):
         violations.append(("silver_sha256_no_coincide", 1))
+    raw_path = Path(metadata.get("raw_file", ""))
+    if not raw_path.is_file() or metadata.get("raw_sha256") != sha256_file(raw_path):
+        violations.append(("raw_sha256_no_coincide", 1))
     input_rows = int(metadata.get("filas_entrada") or 0)
     discarded = int(metadata.get("filas_descartadas") or 0)
     rejection_rate = discarded / input_rows if input_rows else 1.0

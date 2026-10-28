@@ -60,3 +60,6 @@ uvicorn==0.54.0
 watchdog==6.0.0
 websockets==16.1.1
 zstandard==0.25.0
+
+# Lectura de F10 oficial en XLS
+xlrd==2.0.2

@@ -27,6 +27,15 @@ CATALOGO = ROOT / "catalogo"
 # dominio -> metadatos (descripción del dataset + columnas)
 # Cada columna: tipo lógico, unidad, descripción, regla de calidad, PII (sí/no).
 DICCIONARIO = {
+    "poblacion": {
+        "descripcion": "Población censal total 2022. Fuente: IDECBA sobre la base de INDEC.",
+        "grano": "una fila por comuna", "clave": "comuna",
+        "columnas": {
+            "comuna": {"tipo": "entero", "unidad": "comuna", "pii": False, "descripcion": "Comuna CABA", "regla": "15 valores únicos 1..15"},
+            "poblacion": {"tipo": "entero", "unidad": "habitantes", "pii": False, "descripcion": "Población censal total", "regla": "positiva; XLS reconcilia 3121707"},
+            "anio": {"tipo": "entero", "unidad": "año", "pii": False, "descripcion": "Año del censo", "regla": "2022"},
+        },
+    },
     "ecobici": {
         "descripcion": "Estaciones de bicicletas públicas (Ecobici) de la Ciudad de Buenos Aires.",
         "grano": "una fila = una estación de Ecobici",

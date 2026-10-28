@@ -40,6 +40,7 @@ echo "[2/6] Verificación atómica"
 
 echo "[3/6] Validaciones existentes"
 "$PY" tests/test_verificacion.py
+"$PY" tests/test_poblacion.py
 
 echo "[4/6] Publicación SILVER -> GOLD"
 "$PY" scripts/build_gold.py

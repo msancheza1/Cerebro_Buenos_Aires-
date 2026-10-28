@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Construye GOLD sólo desde un lote SILVER completo, vigente y verificado."""
 from __future__ import annotations
+import _utf8  # salida portable en Windows
 
 import csv
 import datetime as dt
@@ -11,6 +12,8 @@ import tempfile
 from pathlib import Path
 
 from pipeline_common import GOLD, REQUIRED_DOMAINS, ROOT, SILVER, atomic_write_text, replace_directory, sha256_file
+
+from poblacion import normalizar, TASAS
 
 COMUNAS = tuple(range(1, 16))
 
@@ -35,6 +38,10 @@ def _verification() -> dict:
             raise ValueError(f"{domain} cambió después de ser verificado")
         if not meta_path.exists() or result.get("meta_sha256") != sha256_file(meta_path):
             raise ValueError(f"la procedencia de {domain} cambió después de ser verificada")
+        metadata = json.loads(meta_path.read_text(encoding="utf-8"))
+        raw_path = Path(metadata.get("raw_file", ""))
+        if not raw_path.is_file() or sha256_file(raw_path) != metadata.get("raw_sha256"):
+            raise ValueError(f"BRONZE de {domain} cambió después de la transformación")
     return verification
 
 
@@ -56,6 +63,7 @@ def _sources_meta(domains) -> dict:
     for domain in domains:
         metadata = json.loads((SILVER / f"{domain}.meta.json").read_text(encoding="utf-8"))
         sources[domain] = {
+            "anio_poblacion": metadata.get("anio_poblacion"),
             "fuente": metadata["fuente"],
             "organismo": metadata["organismo"],
             "url": metadata["url"],
@@ -94,9 +102,9 @@ def build_into(output: Path, verification: dict) -> None:
             indicators[alias] = {int(row[0]): row[1] for row in connection.execute(query)}
 
         aggregate("ecobici", "COUNT(*)", "estaciones_ecobici")
-        aggregate("ciclovias", "ROUND(SUM(CAST(long_metros AS REAL))/1000.0, 2)", "km_ciclovias")
+        aggregate("ciclovias", "SUM(CAST(long_metros AS REAL))/1000.0", "km_ciclovias")
         aggregate("espacios_verdes", "COUNT(*)", "espacios_verdes")
-        aggregate("espacios_verdes", "ROUND(SUM(CAST(area_m2 AS REAL)), 1)", "m2_espacios_verdes")
+        aggregate("espacios_verdes", "SUM(CAST(area_m2 AS REAL))", "m2_espacios_verdes")
         aggregate("hospitales", "COUNT(*)", "hospitales")
 
         indicator_names = list(indicators)
@@ -104,7 +112,11 @@ def build_into(output: Path, verification: dict) -> None:
             {"comuna": comuna, **{name: indicators[name].get(comuna, 0) for name in indicator_names}}
             for comuna in COMUNAS
         ]
-        _write_csv(output / "indicadores_por_comuna.csv", ["comuna", *indicator_names], rows)
+        with (SILVER / "poblacion.csv").open(encoding="utf-8") as stream:
+            population = list(csv.DictReader(stream))
+        normalizar(rows, population)
+        _write_csv(output / "indicadores_por_comuna.csv",
+                   ["comuna", *indicator_names, "poblacion", "anio_poblacion", *TASAS], rows)
         for name in indicator_names:
             _write_csv(output / f"{name}.csv", ["comuna", name],
                        [{"comuna": comuna, name: indicators[name].get(comuna, 0)} for comuna in COMUNAS])
@@ -119,6 +131,10 @@ def build_into(output: Path, verification: dict) -> None:
             "estado": "verificado" if provenance == "official" else "demo_no_oficial",
             "run_id": verification["run_id"],
             "indicadores": indicator_names,
+            "indicadores_normalizados": list(TASAS),
+            "normalizacion": {name: {"formula": f"{num} / poblacion * {factor}",
+                                     "unidad": unit, "anio_poblacion": 2022}
+                              for name, (num, factor, unit) in TASAS.items()},
             "publicables": {domain: True for domain in REQUIRED_DOMAINS},
             "fuentes": _sources_meta(REQUIRED_DOMAINS),
         }
