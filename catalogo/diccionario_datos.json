@@ -50,8 +50,8 @@
         "tipo": "texto",
         "unidad": "-",
         "pii": false,
-        "descripcion": "Nombre de la estación (normalizado a Title Case).",
-        "regla": "normalizado; sin validación de no vacío en verify.py"
+        "descripcion": "Nombre informado por la fuente oficial; Title Case en demo.",
+        "regla": "texto; sin validación de no vacío en verify.py"
       },
       "comuna": {
         "tipo": "entero",
@@ -157,6 +157,20 @@
         "pii": false,
         "descripcion": "Clasificación del espacio (plaza, parque, etc.).",
         "regla": "libre"
+      },
+      "lat": {
+        "tipo": "decimal",
+        "unidad": "grados",
+        "pii": false,
+        "descripcion": "Latitud (WGS84).",
+        "regla": "entre -34.71 y -34.52 (bounding box CABA)"
+      },
+      "lon": {
+        "tipo": "decimal",
+        "unidad": "grados",
+        "pii": false,
+        "descripcion": "Longitud (WGS84).",
+        "regla": "entre -58.54 y -58.33 (bounding box CABA)"
       }
     }
   },
@@ -169,7 +183,7 @@
         "tipo": "entero",
         "unidad": "-",
         "pii": false,
-        "descripcion": "Identificador único del establecimiento.",
+        "descripcion": "Clave estable derivada de nombre completo y dirección; se rechazan duplicados.",
         "regla": "no nulo y único"
       },
       "nombre": {
@@ -183,7 +197,7 @@
         "tipo": "texto",
         "unidad": "-",
         "pii": false,
-        "descripcion": "Especialidad o tipo informado por la fuente (esp).",
+        "descripcion": "Tipo de establecimiento informado por la fuente (gna).",
         "regla": "libre"
       },
       "comuna": {
@@ -199,6 +213,20 @@
         "pii": false,
         "descripcion": "Dirección postal del establecimiento.",
         "regla": "libre"
+      },
+      "lat": {
+        "tipo": "decimal",
+        "unidad": "grados",
+        "pii": false,
+        "descripcion": "Latitud (WGS84).",
+        "regla": "entre -34.71 y -34.52 (bounding box CABA)"
+      },
+      "lon": {
+        "tipo": "decimal",
+        "unidad": "grados",
+        "pii": false,
+        "descripcion": "Longitud (WGS84).",
+        "regla": "entre -58.54 y -58.33 (bounding box CABA)"
       }
     }
   }

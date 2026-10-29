@@ -1,8 +1,8 @@
 # Cerebro Buenos Aires — dependencias directas del proyecto
 # ------------------------------------------------------------------
 # El pipeline "núcleo" (ingesta -> silver -> verify -> gold -> query SQLite
-# -> dashboard HTML -> lakehouse de bolsillo) corre SOLO con la biblioteca
-# estándar de Python. Estas dependencias habilitan las "herramientas B"
+# -> dashboard HTML) requiere xlrd para F10 y Shapely/pyproj para geometrías
+# oficiales. Las demás dependencias habilitan las "herramientas B"
 # documentadas en la bitácora (Parquet, Polars, DuckDB, Pandera, Streamlit,
 # Iceberg) y el dashboard interactivo.
 #

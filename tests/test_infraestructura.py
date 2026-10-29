@@ -15,6 +15,18 @@ import verify
 
 
 class ContratosOficiales(unittest.TestCase):
+    def test_diccionario_cubre_columnas_de_silver(self):
+        from diccionario import DICCIONARIO
+        from transform_silver import SCHEMAS
+        for domain, columns in SCHEMAS.items():
+            self.assertEqual(set(DICCIONARIO[domain]['columnas']), {name for name, _ in columns})
+
+    def test_verificador_rechaza_no_finitos_y_comunas_fraccionarias(self):
+        for value in ('NaN', 'inf', '-inf'):
+            with self.subTest(value=value):
+                self.assertTrue(verify.regla_positivo([{'area_m2': value}], 'area_m2'))
+        self.assertTrue(verify.reglas_comunes([{'id': 1, 'comuna': 1.5}]))
+
     def setUp(self):
         self.temp = tempfile.TemporaryDirectory(dir=ROOT)
         self.addCleanup(self.temp.cleanup)

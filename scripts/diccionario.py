@@ -43,7 +43,7 @@ DICCIONARIO = {
         "columnas": {
             "anclajes_totales": {"tipo": "entero", "unidad": "anclajes", "pii": False, "descripcion": "Capacidad opcional; nula cuando la fuente no la informa. No se usa en las tasas de estaciones.", "regla": "nulo o entero positivo"},
             "id":               {"tipo": "entero",  "unidad": "-",       "pii": False, "descripcion": "Identificador oficial de la estación; comuna asignada con capa oficial trazable.",                 "regla": "no nulo y único"},
-            "nombre":           {"tipo": "texto",   "unidad": "-",       "pii": False, "descripcion": "Nombre de la estación (normalizado a Title Case).",   "regla": "normalizado; sin validación de no vacío en verify.py"},
+            "nombre":           {"tipo": "texto",   "unidad": "-",       "pii": False, "descripcion": "Nombre informado por la fuente oficial; Title Case en demo.",   "regla": "texto; sin validación de no vacío en verify.py"},
             "comuna":           {"tipo": "entero",  "unidad": "comuna",  "pii": False, "descripcion": "Comuna de CABA derivada por punto-en-polígono a partir de lat/lon.",          "regla": "entero en 1..15"},
             "lat":              {"tipo": "decimal", "unidad": "grados",  "pii": False, "descripcion": "Latitud (WGS84).",                                    "regla": "entre -34.71 y -34.52 (bounding box CABA)"},
             "lon":              {"tipo": "decimal", "unidad": "grados",  "pii": False, "descripcion": "Longitud (WGS84).",                                   "regla": "entre -58.54 y -58.33 (bounding box CABA)"},
@@ -80,12 +80,19 @@ DICCIONARIO = {
         "columnas": {
             "id":        {"tipo": "entero",  "unidad": "-",      "pii": False, "descripcion": "Identificador único del establecimiento.",   "regla": "no nulo y único"},
             "nombre":    {"tipo": "texto",   "unidad": "-",      "pii": False, "descripcion": "Nombre del hospital.",     "regla": "no vacío"},
-            "tipo":      {"tipo": "texto",   "unidad": "-",      "pii": False, "descripcion": "Especialidad o tipo informado por la fuente (esp).", "regla": "libre"},
+            "tipo":      {"tipo": "texto",   "unidad": "-",      "pii": False, "descripcion": "Tipo de establecimiento informado por la fuente (gna).", "regla": "libre"},
             "comuna":    {"tipo": "entero",  "unidad": "comuna", "pii": False, "descripcion": "Comuna de CABA del establecimiento.",        "regla": "entero en 1..15"},
             "direccion": {"tipo": "texto",   "unidad": "-",      "pii": False, "descripcion": "Dirección postal del establecimiento.",      "regla": "libre"},
         },
     },
 }
+
+for dominio in ("espacios_verdes", "hospitales"):
+    for columna in ("lat", "lon"):
+        DICCIONARIO[dominio]["columnas"][columna] = dict(DICCIONARIO["ecobici"]["columnas"][columna])
+DICCIONARIO["hospitales"]["columnas"]["id"]["descripcion"] = (
+    "Clave estable derivada de nombre completo y dirección; se rechazan duplicados."
+)
 
 
 def generar_json() -> Path:
@@ -105,9 +112,9 @@ def generar_md() -> Path:
         "Metadatos formales de cada dominio de la capa **SILVER**. Fuente única de verdad: "
         "`scripts/diccionario.py`. Los tipos coinciden con `transform_silver.py` y las "
         "reglas con `verify.py`. Esquema vigente contrastado con los CSV de SILVER "
-        "y la ingesta del **2026-10-06**. La procedencia se guarda en archivos "
-        "`*.meta.json`, no en columnas adicionales. Los ID pueden ser generados "
-        "por la transformación cuando faltan o se repiten en RAW.",
+        "y el lote oficial del **2026-10-28**. La procedencia se guarda en archivos "
+        "`*.meta.json`, no en columnas adicionales. Hospitales usa claves estables "
+        "derivadas de nombre y dirección; se rechazan los ID duplicados.",
         "",
     ]
     for dominio, info in DICCIONARIO.items():

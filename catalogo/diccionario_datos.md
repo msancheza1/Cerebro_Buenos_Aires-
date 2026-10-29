@@ -1,6 +1,6 @@
 # Diccionario de datos — Cerebro Buenos Aires
 
-Metadatos formales de cada dominio de la capa **SILVER**. Fuente única de verdad: `scripts/diccionario.py`. Los tipos coinciden con `transform_silver.py` y las reglas con `verify.py`. Esquema vigente contrastado con los CSV de SILVER y la ingesta del **2026-10-06**. La procedencia se guarda en archivos `*.meta.json`, no en columnas adicionales. Los ID pueden ser generados por la transformación cuando faltan o se repiten en RAW.
+Metadatos formales de cada dominio de la capa **SILVER**. Fuente única de verdad: `scripts/diccionario.py`. Los tipos coinciden con `transform_silver.py` y las reglas con `verify.py`. Esquema vigente contrastado con los CSV de SILVER y el lote oficial del **2026-10-28**. La procedencia se guarda en archivos `*.meta.json`, no en columnas adicionales. Hospitales usa claves estables derivadas de nombre y dirección; se rechazan los ID duplicados.
 
 ## poblacion
 
@@ -26,7 +26,7 @@ Estaciones de bicicletas públicas (Ecobici) de la Ciudad de Buenos Aires.
 |---------|------|--------|-----|-------------|------------------|
 | `anclajes_totales` | entero | anclajes | no | Capacidad opcional; nula cuando la fuente no la informa. No se usa en las tasas de estaciones. | nulo o entero positivo |
 | `id` | entero | - | no | Identificador oficial de la estación; comuna asignada con capa oficial trazable. | no nulo y único |
-| `nombre` | texto | - | no | Nombre de la estación (normalizado a Title Case). | normalizado; sin validación de no vacío en verify.py |
+| `nombre` | texto | - | no | Nombre informado por la fuente oficial; Title Case en demo. | texto; sin validación de no vacío en verify.py |
 | `comuna` | entero | comuna | no | Comuna de CABA derivada por punto-en-polígono a partir de lat/lon. | entero en 1..15 |
 | `lat` | decimal | grados | no | Latitud (WGS84). | entre -34.71 y -34.52 (bounding box CABA) |
 | `lon` | decimal | grados | no | Longitud (WGS84). | entre -58.54 y -58.33 (bounding box CABA) |
@@ -60,6 +60,8 @@ Espacios verdes públicos (plazas, parques) de la Ciudad de Buenos Aires.
 | `comuna` | entero | comuna | no | Comuna de CABA del espacio verde. | entero en 1..15 |
 | `area_m2` | decimal | m² | no | Área geométrica calculada en EPSG:9498, con geometría validada; no equivale a cobertura vegetal. | > 0 |
 | `clasificacion` | texto | - | no | Clasificación del espacio (plaza, parque, etc.). | libre |
+| `lat` | decimal | grados | no | Latitud (WGS84). | entre -34.71 y -34.52 (bounding box CABA) |
+| `lon` | decimal | grados | no | Longitud (WGS84). | entre -58.54 y -58.33 (bounding box CABA) |
 
 ## hospitales
 
@@ -70,8 +72,10 @@ Hospitales de la Ciudad de Buenos Aires; no incluye un dominio independiente de 
 
 | Columna | Tipo | Unidad | PII | Descripción | Regla de calidad |
 |---------|------|--------|-----|-------------|------------------|
-| `id` | entero | - | no | Identificador único del establecimiento. | no nulo y único |
+| `id` | entero | - | no | Clave estable derivada de nombre completo y dirección; se rechazan duplicados. | no nulo y único |
 | `nombre` | texto | - | no | Nombre del hospital. | no vacío |
-| `tipo` | texto | - | no | Especialidad o tipo informado por la fuente (esp). | libre |
+| `tipo` | texto | - | no | Tipo de establecimiento informado por la fuente (gna). | libre |
 | `comuna` | entero | comuna | no | Comuna de CABA del establecimiento. | entero en 1..15 |
 | `direccion` | texto | - | no | Dirección postal del establecimiento. | libre |
+| `lat` | decimal | grados | no | Latitud (WGS84). | entre -34.71 y -34.52 (bounding box CABA) |
+| `lon` | decimal | grados | no | Longitud (WGS84). | entre -58.54 y -58.33 (bounding box CABA) |

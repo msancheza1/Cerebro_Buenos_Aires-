@@ -6,6 +6,7 @@ import _utf8  # salida portable en Windows
 import csv
 import datetime as dt
 import json
+import math
 from pathlib import Path
 from pipeline_common import reference_path, resolve_reference
 
@@ -26,7 +27,8 @@ def leer(dominio: str) -> list[dict]:
 
 def _num(value):
     try:
-        return float(value)
+        number = float(value)
+        return number if math.isfinite(number) else None
     except (ValueError, TypeError):
         return None
 
@@ -39,7 +41,8 @@ def reglas_comunes(filas):
     if len(ids) != len(set(ids)):
         violations.append(("id_unico", len(ids) - len(set(ids))))
     outside = sum(1 for row in filas if _num(row.get("comuna")) is None
-                  or not (1 <= _num(row.get("comuna")) <= 15))
+                  or not (1 <= _num(row.get("comuna")) <= 15)
+                  or not _num(row.get("comuna")).is_integer())
     if outside:
         violations.append(("comuna_1_15", outside))
     return violations
