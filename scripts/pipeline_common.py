@@ -36,6 +36,19 @@ def sha256_file(path: Path) -> str:
     return digest.hexdigest()
 
 
+def reference_path(path: Path) -> str:
+    """Referencia portable dentro del repositorio; rutas externas se preservan."""
+    try:
+        return path.resolve().relative_to(ROOT).as_posix()
+    except ValueError:
+        return str(path.resolve())
+
+
+def resolve_reference(value: str) -> Path:
+    path = Path(value)
+    return path if path.is_absolute() else ROOT / path
+
+
 def atomic_write_bytes(path: Path, content: bytes) -> None:
     """Escribe un archivo completo sin exponer contenido parcial."""
     path.parent.mkdir(parents=True, exist_ok=True)

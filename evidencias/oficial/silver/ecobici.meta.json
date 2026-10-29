@@ -1,0 +1,42 @@
+{
+  "auxiliares": [
+    {
+      "raw_file": "evidencias/oficial/raw/comunas/20261028T145728Z.geojson",
+      "sha256": "c128dadf5b8a3c43c68cad4dacd8c0995d774b93060a785b156861bcb9de062e",
+      "run_id": "20261028T145728Z",
+      "url": "https://cdn.buenosaires.gob.ar/datosabiertos/datasets/ministerio-de-educacion/comunas/comunas.geojson"
+    }
+  ],
+  "transformaciones": {
+    "comuna_asignada_por_geometria": 406,
+    "cuarentena": [
+      {
+        "id": "541",
+        "nombre": "AEROPARQUE",
+        "motivo": "comuna_espacial_ambigua_o_ausente"
+      }
+    ]
+  },
+  "anio_poblacion": null,
+  "ficha": null,
+  "dominio": "ecobici",
+  "fuente": "Buenos Aires Data",
+  "organismo": "Secretaría de Transporte y Obras Públicas (GCBA)",
+  "url": "https://cdn.buenosaires.gob.ar/datosabiertos/datasets/transporte-y-obras-publicas/estaciones-bicicletas-publicas/nuevas-estaciones-bicicletas-publicas.csv",
+  "licencia": "CC-BY-2.5-AR",
+  "_origen": "descarga_oficial",
+  "run_id": "20261028T145728Z",
+  "raw_file": "evidencias/oficial/raw/ecobici/20261028T145728Z.csv",
+  "raw_sha256": "a41f942446658d818adc568a441db1f63cd64dc6827f3dbe89cc2d53604af107",
+  "fecha_ingesta": "2026-10-28T14:57:29+00:00",
+  "source_updated_at": "Sat, 01 Mar 2025 13:02:03 GMT",
+  "fecha_transformacion": "2026-10-28T14:59:26+00:00",
+  "filas_entrada": 407,
+  "filas_salida": 406,
+  "filas_descartadas": 1,
+  "rechazos_por_regla": {
+    "comuna_espacial_ambigua_o_ausente": 1
+  },
+  "silver_sha256": "8462d9b89599cd1e80ae87d06e2b846ed1ea0b891a5120acededf4d45fdbc596",
+  "formato_parquet": true
+}

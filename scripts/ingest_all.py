@@ -155,7 +155,7 @@ def parse_args() -> argparse.Namespace:
 
 def main() -> int:
     args = parse_args()
-    dominios = tuple(args.dominios) if args.dominios else REQUIRED_DOMAINS
+    dominios = tuple(args.dominios) if args.dominios else (*REQUIRED_DOMAINS, "comunas")
     run_id = dt.datetime.now(dt.timezone.utc).strftime("%Y%m%dT%H%M%SZ")
     staging_parent = RAW.parent / ".ingest-staging"
     staging_parent.mkdir(parents=True, exist_ok=True)

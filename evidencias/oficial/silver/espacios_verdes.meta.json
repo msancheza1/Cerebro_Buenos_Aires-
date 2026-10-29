@@ -1,0 +1,34 @@
+{
+  "auxiliares": [
+    {
+      "raw_file": "evidencias/oficial/raw/comunas/20261028T145728Z.geojson",
+      "sha256": "c128dadf5b8a3c43c68cad4dacd8c0995d774b93060a785b156861bcb9de062e",
+      "run_id": "20261028T145728Z",
+      "url": "https://cdn.buenosaires.gob.ar/datosabiertos/datasets/ministerio-de-educacion/comunas/comunas.geojson"
+    }
+  ],
+  "transformaciones": {
+    "geometria_reparada_para_area_y_punto": 25,
+    "cuarentena": []
+  },
+  "anio_poblacion": null,
+  "ficha": null,
+  "dominio": "espacios_verdes",
+  "fuente": "Buenos Aires Data",
+  "organismo": "GCBA, DG Gobernanza de Datos Abiertos",
+  "url": "https://cdn.buenosaires.gob.ar/datosabiertos/datasets/secretaria-de-desarrollo-urbano/espacios-verdes/espacio_verde_publico.geojson",
+  "licencia": "CC-BY-2.5-AR",
+  "_origen": "descarga_oficial",
+  "run_id": "20261028T145728Z",
+  "raw_file": "evidencias/oficial/raw/espacios_verdes/20261028T145728Z.geojson",
+  "raw_sha256": "eb848cf853e6c6f65309fd78bd2688bae032ed88c074eb5a534aee91885eb728",
+  "fecha_ingesta": "2026-10-28T14:58:16+00:00",
+  "source_updated_at": "Mon, 06 Jul 2026 18:43:12 GMT",
+  "fecha_transformacion": "2026-10-28T14:59:30+00:00",
+  "filas_entrada": 2176,
+  "filas_salida": 2176,
+  "filas_descartadas": 0,
+  "rechazos_por_regla": {},
+  "silver_sha256": "e44632c557535ce431ddb4a3fb039ca430307a3ce3f8fdfde23032fbffbb7578",
+  "formato_parquet": true
+}

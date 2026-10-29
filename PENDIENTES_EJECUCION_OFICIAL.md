@@ -1,79 +1,80 @@
-# Cómo completar la ejecución oficial
+# Ejecución oficial: realizada y pendientes restantes
 
-La implementación F10 y la prueba completa con datos ficticios están realizadas.
-La tabla oficial de indicadores requiere corregir primero los cuatro contratos de
-infraestructura. No basta con añadir run_id a archivos antiguos.
+El 28 de octubre de 2026 (Colombia) se completó el procesamiento oficial del lote
+20261028T145728Z: descarga → Silver → verificación → Gold → consultas → dashboard local.
+No se reutilizaron sidecars heredados ni se mezcló infraestructura demo con F10 oficial.
 
-## 1. Descargar un lote nuevo y acreditar el origen
+## Resultados
 
-En scripts/fuentes.py, confirmar las URLs vigentes de los recursos oficiales de
-Ecobici, ciclovías, espacios verdes y hospitales. Las URLs históricas están en sus
-sidecars de lago/raw, pero deben volver a comprobarse antes de usarlas.
-Conservar cada descarga sin modificar, con URL original/final, fecha UTC,
-organismo, licencia acreditada o explícitamente no verificada, tamaño y SHA-256.
-El mismo proceso de ingesta debe crear run_id y _origen=descarga_oficial para el
-lote. No atribuir un origen o una fecha nueva a los archivos heredados.
+| Dominio | Filas aceptadas / entrada |
+|---|---|
+| Ecobici | 406 / 407 |
+| Ciclovías | 2764 / 2764 |
+| Espacios verdes públicos | 2176 / 2176 |
+| Hospitales | 36 / 36 |
+| Población | 15 / 15 |
 
-## 2. Adaptar y comprobar cada contrato
+Población censal 2022: 3.121.707 habitantes. Se recalcularon independientemente las
+75 tasas (cinco por cada una de las 15 comunas) desde Silver y se contrastaron con Gold.
+Las comprobaciones guardan ejemplos de las comunas 1, 8 y 15.
+Pruebas: 6 F10, 5 de adaptadores oficiales, 2 del orquestador y 6 reglas existentes.
 
-Modificar tanto la validación de entrada de scripts/ingest_all.py y
-scripts/fuentes.py como los adaptadores de scripts/transform_silver.py.
-Mantener el original en Bronze y hacer las conversiones en Silver.
+## Cómo se resolvieron los bloqueos
 
-| Fuente | Diferencia observada | Trabajo necesario |
-|---|---|---|
-| Ecobici | latitud/longitud; comuna vacía en algunas filas; sin anclajes_totales | Mapear latitud a lat y longitud a lon. Asignar comunas ausentes mediante polígonos oficiales trazables. Si el recurso no informa anclajes, acordar ese campo como opcional y actualizar el contrato y su regla de verificación; no inventar valores. El indicador solicitado cuenta estaciones. |
-| Ciclovías | longitud_m | Mapear a long_metros y comprobar que la unidad sea metro. Revisar tramos que cruzan comunas para evitar doble conteo o atribuciones arbitrarias. |
-| Espacios verdes | area, clasificac y geometría | Verificar que area represente m² y mapear a area_m2; clasificac a clasificacion. Identificar el sistema de coordenadas y derivar una ubicación representativa con una regla explícita. No confundir grados cuadrados con m². |
-| Hospitales | com, fna/nam, dir y geometría proyectada; sin id numérico | Mapear comuna/nombre/dirección. Acreditar el CRS de origen antes de transformar a WGS84; no inferirlo solo por los números. Definir un identificador estable, documentado y comprobado contra duplicados. |
+- Se sustituyeron las URLs 404 por los recursos directos del servidor oficial.
+- Se descargó la capa oficial de comunas en el mismo lote y se controla su SHA-256
+  tanto al verificar como al construir Gold.
+- Ecobici: latitud/longitud y comuna por intersección espacial única. Anclajes queda
+  nulo si la fuente no lo informa; la cantidad de estaciones no depende de ese campo.
+- Ciclovías: longitud_m se convierte a long_metros, conservando longitud y comuna
+  declaradas por tramo; no se subdividen tramos en fronteras comunales.
+- Espacios verdes: el GeoJSON declara CRS84. Se reparan 25 geometrías inválidas
+  con make_valid y se calcula área en el CRS métrico EPSG:9498 y un punto representativo.
+  Esta superficie corresponde a polígonos públicos, no a cobertura vegetal efectiva.
+- Hospitales: el GeoJSON declara EPSG:9498; se transforma a WGS84. Se usa una clave
+  estable derivada de nombre completo y dirección, comprobando duplicados.
 
-Si se usa una capa oficial de comunas para asignación espacial, descargarla y
-validarla dentro del lote, guardar también su hash y registrar ese linaje en Silver.
-No usar centroides ni identificadores artificiales sin documentar su derivación.
-Actualizar scripts/diccionario.py y regenerar el diccionario cuando cambie un contrato.
+La estación 541 AEROPARQUE (-34.55572, -58.41321) no intersecta los polígonos de comunas
+descargados. Se excluye de los indicadores comunales y se registra en cuarentena:
+1/407, aproximadamente 0,246 %. No se asigna a la comuna más cercana.
 
-## 3. Probar los adaptadores antes de publicar
+## Evidencias
 
-Añadir pruebas con muestras reales de cada recurso: columnas, tipos, unidades,
-coordenadas, comuna, claves duplicadas y campos ausentes. Revisar los rechazos y
-su efecto sobre los totales. La verificación actual bloquea dominios vacíos,
-calidad inválida y más del 10 % de filas descartadas; no elevar el umbral para
-ocultar una conversión incorrecta. Guardar recuentos antes y después y explicar
-cualquier descarte. Comparar manualmente al menos tres comunas contra las fuentes.
+- evidencias/oficial/raw/: seis descargas originales y sus sidecars, con fecha UTC,
+  URL, organismo, tamaño y SHA-256, además del manifiesto del lote.
+- evidencias/oficial/silver/: cinco tablas, metadatos de transformación y verificación.
+- evidencias/oficial/gold/indicadores_por_comuna.csv: totales, población, año y cinco tasas.
+- evidencias/oficial/resumen.json: recuentos, muestras y comprobación de las 75 tasas.
+- app/official/index.html: dashboard local generado con los totales oficiales.
 
-## 4. Ejecutar las cinco fuentes oficiales juntas
+## Reproducir
 
 Desde la raíz del proyecto:
 
 ```powershell
-python -m pip install xlrd==2.0.2
+python -m pip install xlrd==2.0.2 shapely==2.1.2 pyproj==3.7.2
 python tests/test_poblacion.py
-python tests/test_verificacion.py
+python tests/test_infraestructura.py
 python tests/test_orquestador.py
+python tests/test_verificacion.py
 python scripts/run_pipeline.py --ingesta
+python scripts/evidencia_oficial.py
 ```
 
-Si hay un fallo de ingesta o transformación, corregirlo y repetir el lote completo.
-No copiar poblacion.csv oficial sobre una salida demo ni reutilizar un reporte viejo.
-Confirmar en lago/silver/_verificacion.json quality_status=verified y
-provenance_status=official, con el mismo run_id en los cinco dominios.
-Confirmar en lago/gold/_meta.json datos_oficiales=true y las cinco fuentes.
-La tabla lago/gold/indicadores_por_comuna.csv debe tener 15 filas, población 2022
-positiva y cinco tasas; sus denominadores deben sumar 3.121.707 habitantes.
-Comprobar manualmente estaciones/población*10000 y m²/población en tres comunas.
+Para verificar la evidencia guardada sin volver a descargar, configurar CEREBRO_SILVER_DIR
+con la ruta absoluta de evidencias/oficial/silver y CEREBRO_GOLD_DIR con otra carpeta de
+salida; ejecutar scripts/verify.py y después scripts/build_gold.py. Los originales
+de evidencia deben conservar sus bytes y ubicación relativa dentro del repositorio.
 
-## 5. Entrega a las otras personas
+## Lo que aún falta
 
-Persona 2: usar las columnas y unidades de PERSONA_1_F10.md, implementar el selector
-de totales/tasas en scripts/build_dashboard.py, mostrar año 2022 y “Sin datos” si
-no hay población, y validar la salida oficial de app/official/index.html.
-Para una tasa de toda la ciudad, sumar numeradores y dividir por la población total.
-Nunca sumar las tasas de las comunas.
+1. Revisión humana de tres comunas, de la cuarentena y de las decisiones geográficas.
+2. Persona 2: selector de totales/tasas, unidades, año 2022 y validación visual.
+   El generador actual conserva los totales; no se acredita esa mejora visual.
+3. Persona 3: revisión individual y evidencia de las 11 licencias. F10 sigue como
+   No verificada; las cinco fuentes BA Data utilizadas declaran CC-BY-2.5-AR en sus fichas.
+4. Revisar y publicar el dashboard final después de integrar la visualización.
+5. Completar las comparaciones entre dos herramientas que exige el taller.
 
-Persona 3: revisar individualmente las 11 licencias, conservar evidencias y consolidar
-los encargos reales y sus verificaciones en la bitácora. El registro de F10 está en
-PERSONA_1_F10.md; falta completar el responsable y la revisión humana.
-
-El despliegue del dashboard debe hacerse después de revisar los datos oficiales y
-los cambios de visualización. Subir esta implementación a GitHub no acredita esos
-pendientes ni una ejecución oficial completa.
+El procesamiento oficial realizado no sustituye esos entregables ni acredita un
+despliegue público del nuevo dashboard.

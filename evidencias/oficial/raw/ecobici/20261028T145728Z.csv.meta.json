@@ -1,0 +1,20 @@
+{
+  "anio_poblacion": null,
+  "ficha": null,
+  "dominio": "ecobici",
+  "fuente": "Buenos Aires Data",
+  "organismo": "Secretaría de Transporte y Obras Públicas (GCBA)",
+  "url": "https://cdn.buenosaires.gob.ar/datosabiertos/datasets/transporte-y-obras-publicas/estaciones-bicicletas-publicas/nuevas-estaciones-bicicletas-publicas.csv",
+  "final_url": "https://cdn.buenosaires.gob.ar/datosabiertos/datasets/transporte-y-obras-publicas/estaciones-bicicletas-publicas/nuevas-estaciones-bicicletas-publicas.csv",
+  "licencia": "CC-BY-2.5-AR",
+  "formato": "csv",
+  "fecha_ingesta": "2026-10-28T14:57:29+00:00",
+  "source_updated_at": "Sat, 01 Mar 2025 13:02:03 GMT",
+  "etag": "\"6805eb-7953-62f478783a8c0\"",
+  "content_type": "text/csv",
+  "herramienta": "urllib",
+  "_origen": "descarga_oficial",
+  "run_id": "20261028T145728Z",
+  "bytes": 31059,
+  "sha256": "a41f942446658d818adc568a441db1f63cd64dc6827f3dbe89cc2d53604af107"
+}

@@ -1,0 +1,54 @@
+{
+  "fecha": "2026-10-28T15:01:23+00:00",
+  "herramienta": "reglas_propias_stdlib",
+  "quality_status": "verified",
+  "provenance_status": "official",
+  "run_id": "20261028T145728Z",
+  "resultado": {
+    "ecobici": {
+      "publicable": true,
+      "filas": 406,
+      "sha256": "8462d9b89599cd1e80ae87d06e2b846ed1ea0b891a5120acededf4d45fdbc596",
+      "meta_sha256": "5ba256c0310a3efa4481a31b6fceb80dbdadd301bf3434a514cf195ab32f7599",
+      "run_id": "20261028T145728Z",
+      "_origen": "descarga_oficial",
+      "violaciones": []
+    },
+    "ciclovias": {
+      "publicable": true,
+      "filas": 2764,
+      "sha256": "7921d094a873d60e3c6830fe0e9978e33e4f20be37e3f022b7a140fc9d2cabde",
+      "meta_sha256": "b35886a017cbfbee6e39e3228ef496efc346af22a6774d8b918b39720782ef6d",
+      "run_id": "20261028T145728Z",
+      "_origen": "descarga_oficial",
+      "violaciones": []
+    },
+    "espacios_verdes": {
+      "publicable": true,
+      "filas": 2176,
+      "sha256": "e44632c557535ce431ddb4a3fb039ca430307a3ce3f8fdfde23032fbffbb7578",
+      "meta_sha256": "805e0f8348372c5a07856f76b236197f6c2c9f06aeee02db9a23149e7829b782",
+      "run_id": "20261028T145728Z",
+      "_origen": "descarga_oficial",
+      "violaciones": []
+    },
+    "hospitales": {
+      "publicable": true,
+      "filas": 36,
+      "sha256": "81e08b4520a4a40f3417931856f7462060671db5af5bfd72325ed1e3ed3c441f",
+      "meta_sha256": "1b41b3a8d996af55900c6a247633d56bb2588ec3a809642068b43dd0158ea4fc",
+      "run_id": "20261028T145728Z",
+      "_origen": "descarga_oficial",
+      "violaciones": []
+    },
+    "poblacion": {
+      "publicable": true,
+      "filas": 15,
+      "sha256": "6cc1eaab656ee72247d8f36f98ddad164ee05067df23f5c59f31413fb7f2462f",
+      "meta_sha256": "fe0d25823ad7b58cbbd4023f213cf7387bdbdd929c9d8a3c2244e63af80f0d94",
+      "run_id": "20261028T145728Z",
+      "_origen": "descarga_oficial",
+      "violaciones": []
+    }
+  }
+}

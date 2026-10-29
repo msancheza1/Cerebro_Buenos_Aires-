@@ -130,5 +130,9 @@ Las URLs descargables y sus contratos mínimos están centralizados en
 
 Implementación y reproducción: [PERSONA_1_F10.md](PERSONA_1_F10.md).
 La población oficial aislada está en `evidencias/f10/poblacion.csv`.
-GOLD exige las cinco fuentes del mismo lote verificado; la infraestructura heredada
-aún impide acreditar una ejecución oficial completa. Las tasas usan censo 2022.
+GOLD exige las cinco fuentes del mismo lote verificado. La ejecución oficial del
+28 de octubre de 2026 completó Bronze → Silver → verificación → Gold → dashboard local.
+Resultados y originales trazables: `evidencias/oficial/`; resumen en
+`evidencias/oficial/resumen.json`. Se excluye una estación sin comuna espacial.
+Las tasas usan censo 2022. El selector del dashboard y la revisión de las 11 licencias
+siguen pendientes. Detalles en [PENDIENTES_EJECUCION_OFICIAL.md](PENDIENTES_EJECUCION_OFICIAL.md).

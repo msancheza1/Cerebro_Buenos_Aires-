@@ -32,11 +32,18 @@
     "grano": "una fila = una estación de Ecobici",
     "clave": "id",
     "columnas": {
+      "anclajes_totales": {
+        "tipo": "entero",
+        "unidad": "anclajes",
+        "pii": false,
+        "descripcion": "Capacidad opcional; nula cuando la fuente no la informa. No se usa en las tasas de estaciones.",
+        "regla": "nulo o entero positivo"
+      },
       "id": {
         "tipo": "entero",
         "unidad": "-",
         "pii": false,
-        "descripcion": "Identificador único de la estación.",
+        "descripcion": "Identificador oficial de la estación; comuna asignada con capa oficial trazable.",
         "regla": "no nulo y único"
       },
       "nombre": {
@@ -141,7 +148,7 @@
         "tipo": "decimal",
         "unidad": "m²",
         "pii": false,
-        "descripcion": "Superficie del espacio verde en metros cuadrados.",
+        "descripcion": "Área geométrica calculada en EPSG:9498, con geometría validada; no equivale a cobertura vegetal.",
         "regla": "> 0"
       },
       "clasificacion": {

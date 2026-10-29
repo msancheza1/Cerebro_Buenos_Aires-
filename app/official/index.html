@@ -1,0 +1,473 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cerebro Buenos Aires</title>
+<style>
+  :root { --bg:#0e1116; --card:#161b22; --line:#30363d; --fg:#e6edf3;
+           --acc:#4cc9f0; --acc2:#80ffdb; --muted:#8b949e; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--fg);
+          font-family:system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif; }
+  header { padding:32px 24px 16px; border-bottom:1px solid var(--line); }
+  h1 { margin:0; font-size:28px; letter-spacing:.5px; }
+  h1 .brain { color:var(--acc); }
+  .sub { color:var(--muted); margin-top:6px; }
+  main { max-width:1000px; margin:0 auto; padding:24px; }
+  .aviso { background:#3d2b00; border:1px solid #7a5b00; color:#ffd166;
+            padding:12px 14px; border-radius:8px; margin-bottom:20px; font-size:14px; }
+  .cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+            gap:14px; margin-bottom:28px; }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:12px;
+           padding:18px; text-align:center; }
+  .card-val { font-size:30px; font-weight:700; color:var(--acc2); }
+  .card-lbl { color:var(--muted); font-size:13px; margin-top:4px; }
+  h2 { font-size:18px; border-left:3px solid var(--acc); padding-left:10px; margin-top:32px; }
+  table { width:100%; border-collapse:collapse; font-size:14px; }
+  th,td { padding:8px 10px; border-bottom:1px solid var(--line); text-align:right; }
+  th { color:var(--muted); font-weight:600; }
+  td.com, th:first-child { text-align:left; }
+  .bar-row { display:grid; grid-template-columns:90px 1fr 60px; align-items:center;
+              gap:10px; margin:6px 0; font-size:13px; }
+  .bar-track { background:#21262d; border-radius:6px; height:14px; overflow:hidden; }
+  .bar-fill { display:block; height:100%;
+               background:linear-gradient(90deg,var(--acc),var(--acc2)); }
+  .bar-val { text-align:right; color:var(--muted); }
+  .ficha { background:var(--card); border:1px solid var(--line); border-radius:12px;
+            padding:18px; margin-top:32px; font-size:14px; }
+  .ficha b { color:var(--acc2); }
+  .estado { display:inline-block; padding:2px 10px; border-radius:20px; font-size:13px; }
+  .estado.demo { background:#7a4b00; color:#fff3cd; }
+  .estado.official { background:#0f5132; color:#d1fae5; }
+  a { color:var(--acc); }
+  footer { color:var(--muted); font-size:12px; text-align:center; padding:24px; }
+</style>
+</head>
+<body>
+<header>
+  <h1><span class="brain">🧠</span> Cerebro Buenos Aires</h1>
+  <div class="sub">Infraestructura y servicios urbanos por comuna · réplica del ejemplo Cerebro Lima</div>
+</header>
+<main>
+
+  <section class="cards">
+            <div class="card">
+              <div class="card-val">406</div>
+              <div class="card-lbl">Estaciones Ecobici</div>
+            </div>
+            <div class="card">
+              <div class="card-val">305.84</div>
+              <div class="card-lbl">Km de ciclovías</div>
+            </div>
+            <div class="card">
+              <div class="card-val">2,176</div>
+              <div class="card-lbl">Espacios verdes</div>
+            </div>
+            <div class="card">
+              <div class="card-val">15,837,242.5</div>
+              <div class="card-lbl">m² de espacios verdes</div>
+            </div>
+            <div class="card">
+              <div class="card-val">36</div>
+              <div class="card-lbl">Hospitales</div>
+            </div></section>
+
+  <h2>Estaciones Ecobici por comuna</h2><div>
+            <div class="bar-row">
+              <span class="bar-lbl">Comuna 1</span>
+              <span class="bar-track"><span class="bar-fill" style="width:100.0%"></span></span>
+              <span class="bar-val">57</span>
+            </div>
+            <div class="bar-row">
+              <span class="bar-lbl">Comuna 14</span>
+              <span class="bar-track"><span class="bar-fill" style="width:82.5%"></span></span>
+              <span class="bar-val">47</span>
+            </div>
+            <div class="bar-row">
+              <span class="bar-lbl">Comuna 13</span>
+              <span class="bar-track"><span class="bar-fill" style="width:77.2%"></span></span>
+              <span class="bar-val">44</span>
+            </div>
+            <div class="bar-row">
+              <span class="bar-lbl">Comuna 12</span>
+              <span class="bar-track"><span class="bar-fill" style="width:68.4%"></span></span>
+              <span class="bar-val">39</span>
+            </div>
+            <div class="bar-row">
+              <span class="bar-lbl">Comuna 15</span>
+              <span class="bar-track"><span class="bar-fill" style="width:59.6%"></span></span>
+              <span class="bar-val">34</span>
+            </div>
+            <div class="bar-row">
+              <span class="bar-lbl">Comuna 11</span>
+              <span class="bar-track"><span class="bar-fill" style="width:45.6%"></span></span>
+              <span class="bar-val">26</span>
+            </div>
+            <div class="bar-row">
+              <span class="bar-lbl">Comuna 4</span>
+              <span class="bar-track"><span class="bar-fill" style="width:43.9%"></span></span>
+              <span class="bar-val">25</span>
+            </div>
+            <div class="bar-row">
+              <span class="bar-lbl">Comuna 2</span>
+              <span class="bar-track"><span class="bar-fill" style="width:35.1%"></span></span>
+              <span class="bar-val">20</span>
+            </div>
+            <div class="bar-row">
+              <span class="bar-lbl">Comuna 6</span>
+              <span class="bar-track"><span class="bar-fill" style="width:33.3%"></span></span>
+              <span class="bar-val">19</span>
+            </div>
+            <div class="bar-row">
+              <span class="bar-lbl">Comuna 10</span>
+              <span class="bar-track"><span class="bar-fill" style="width:33.3%"></span></span>
+              <span class="bar-val">19</span>
+            </div>
+            <div class="bar-row">
+              <span class="bar-lbl">Comuna 3</span>
+              <span class="bar-track"><span class="bar-fill" style="width:31.6%"></span></span>
+              <span class="bar-val">18</span>
+            </div>
+            <div class="bar-row">
+              <span class="bar-lbl">Comuna 7</span>
+              <span class="bar-track"><span class="bar-fill" style="width:31.6%"></span></span>
+              <span class="bar-val">18</span>
+            </div>
+            <div class="bar-row">
+              <span class="bar-lbl">Comuna 5</span>
+              <span class="bar-track"><span class="bar-fill" style="width:29.8%"></span></span>
+              <span class="bar-val">17</span>
+            </div>
+            <div class="bar-row">
+              <span class="bar-lbl">Comuna 9</span>
+              <span class="bar-track"><span class="bar-fill" style="width:26.3%"></span></span>
+              <span class="bar-val">15</span>
+            </div>
+            <div class="bar-row">
+              <span class="bar-lbl">Comuna 8</span>
+              <span class="bar-track"><span class="bar-fill" style="width:14.0%"></span></span>
+              <span class="bar-val">8</span>
+            </div></div><h2>Km de ciclovías por comuna</h2><div>
+            <div class="bar-row">
+              <span class="bar-lbl">Comuna 1</span>
+              <span class="bar-track"><span class="bar-fill" style="width:100.0%"></span></span>
+              <span class="bar-val">39.20</span>
+            </div>
+            <div class="bar-row">
+              <span class="bar-lbl">Comuna 14</span>
+              <span class="bar-track"><span class="bar-fill" style="width:94.2%"></span></span>
+              <span class="bar-val">36.93</span>
+            </div>
+            <div class="bar-row">
+              <span class="bar-lbl">Comuna 13</span>
+              <span class="bar-track"><span class="bar-fill" style="width:90.9%"></span></span>
+              <span class="bar-val">35.64</span>
+            </div>
+            <div class="bar-row">
+              <span class="bar-lbl">Comuna 4</span>
+              <span class="bar-track"><span class="bar-fill" style="width:61.5%"></span></span>
+              <span class="bar-val">24.09</span>
+            </div>
+            <div class="bar-row">
+              <span class="bar-lbl">Comuna 15</span>
+              <span class="bar-track"><span class="bar-fill" style="width:57.4%"></span></span>
+              <span class="bar-val">22.51</span>
+            </div>
+            <div class="bar-row">
+              <span class="bar-lbl">Comuna 12</span>
+              <span class="bar-track"><span class="bar-fill" style="width:53.7%"></span></span>
+              <span class="bar-val">21.04</span>
+            </div>
+            <div class="bar-row">
+              <span class="bar-lbl">Comuna 3</span>
+              <span class="bar-track"><span class="bar-fill" style="width:49.3%"></span></span>
+              <span class="bar-val">19.34</span>
+            </div>
+            <div class="bar-row">
+              <span class="bar-lbl">Comuna 5</span>
+              <span class="bar-track"><span class="bar-fill" style="width:48.1%"></span></span>
+              <span class="bar-val">18.87</span>
+            </div>
+            <div class="bar-row">
+              <span class="bar-lbl">Comuna 7</span>
+              <span class="bar-track"><span class="bar-fill" style="width:41.7%"></span></span>
+              <span class="bar-val">16.34</span>
+            </div>
+            <div class="bar-row">
+              <span class="bar-lbl">Comuna 2</span>
+              <span class="bar-track"><span class="bar-fill" style="width:39.0%"></span></span>
+              <span class="bar-val">15.31</span>
+            </div>
+            <div class="bar-row">
+              <span class="bar-lbl">Comuna 6</span>
+              <span class="bar-track"><span class="bar-fill" style="width:33.9%"></span></span>
+              <span class="bar-val">13.27</span>
+            </div>
+            <div class="bar-row">
+              <span class="bar-lbl">Comuna 11</span>
+              <span class="bar-track"><span class="bar-fill" style="width:32.8%"></span></span>
+              <span class="bar-val">12.85</span>
+            </div>
+            <div class="bar-row">
+              <span class="bar-lbl">Comuna 10</span>
+              <span class="bar-track"><span class="bar-fill" style="width:29.1%"></span></span>
+              <span class="bar-val">11.42</span>
+            </div>
+            <div class="bar-row">
+              <span class="bar-lbl">Comuna 9</span>
+              <span class="bar-track"><span class="bar-fill" style="width:24.3%"></span></span>
+              <span class="bar-val">9.54</span>
+            </div>
+            <div class="bar-row">
+              <span class="bar-lbl">Comuna 8</span>
+              <span class="bar-track"><span class="bar-fill" style="width:24.3%"></span></span>
+              <span class="bar-val">9.51</span>
+            </div></div><h2>Espacios verdes por comuna</h2><div>
+            <div class="bar-row">
+              <span class="bar-lbl">Comuna 8</span>
+              <span class="bar-track"><span class="bar-fill" style="width:100.0%"></span></span>
+              <span class="bar-val">400</span>
+            </div>
+            <div class="bar-row">
+              <span class="bar-lbl">Comuna 1</span>
+              <span class="bar-track"><span class="bar-fill" style="width:96.8%"></span></span>
+              <span class="bar-val">387</span>
+            </div>
+            <div class="bar-row">
+              <span class="bar-lbl">Comuna 4</span>
+              <span class="bar-track"><span class="bar-fill" style="width:56.0%"></span></span>
+              <span class="bar-val">224</span>
+            </div>
+            <div class="bar-row">
+              <span class="bar-lbl">Comuna 12</span>
+              <span class="bar-track"><span class="bar-fill" style="width:46.5%"></span></span>
+              <span class="bar-val">186</span>
+            </div>
+            <div class="bar-row">
+              <span class="bar-lbl">Comuna 9</span>
+              <span class="bar-track"><span class="bar-fill" style="width:43.8%"></span></span>
+              <span class="bar-val">175</span>
+            </div>
+            <div class="bar-row">
+              <span class="bar-lbl">Comuna 14</span>
+              <span class="bar-track"><span class="bar-fill" style="width:41.2%"></span></span>
+              <span class="bar-val">165</span>
+            </div>
+            <div class="bar-row">
+              <span class="bar-lbl">Comuna 7</span>
+              <span class="bar-track"><span class="bar-fill" style="width:27.0%"></span></span>
+              <span class="bar-val">108</span>
+            </div>
+            <div class="bar-row">
+              <span class="bar-lbl">Comuna 13</span>
+              <span class="bar-track"><span class="bar-fill" style="width:26.8%"></span></span>
+              <span class="bar-val">107</span>
+            </div>
+            <div class="bar-row">
+              <span class="bar-lbl">Comuna 11</span>
+              <span class="bar-track"><span class="bar-fill" style="width:24.2%"></span></span>
+              <span class="bar-val">97</span>
+            </div>
+            <div class="bar-row">
+              <span class="bar-lbl">Comuna 15</span>
+              <span class="bar-track"><span class="bar-fill" style="width:23.5%"></span></span>
+              <span class="bar-val">94</span>
+            </div>
+            <div class="bar-row">
+              <span class="bar-lbl">Comuna 10</span>
+              <span class="bar-track"><span class="bar-fill" style="width:21.0%"></span></span>
+              <span class="bar-val">84</span>
+            </div>
+            <div class="bar-row">
+              <span class="bar-lbl">Comuna 2</span>
+              <span class="bar-track"><span class="bar-fill" style="width:16.8%"></span></span>
+              <span class="bar-val">67</span>
+            </div>
+            <div class="bar-row">
+              <span class="bar-lbl">Comuna 6</span>
+              <span class="bar-track"><span class="bar-fill" style="width:8.8%"></span></span>
+              <span class="bar-val">35</span>
+            </div>
+            <div class="bar-row">
+              <span class="bar-lbl">Comuna 3</span>
+              <span class="bar-track"><span class="bar-fill" style="width:6.0%"></span></span>
+              <span class="bar-val">24</span>
+            </div>
+            <div class="bar-row">
+              <span class="bar-lbl">Comuna 5</span>
+              <span class="bar-track"><span class="bar-fill" style="width:5.8%"></span></span>
+              <span class="bar-val">23</span>
+            </div></div><h2>m² de espacios verdes por comuna</h2><div>
+            <div class="bar-row">
+              <span class="bar-lbl">Comuna 8</span>
+              <span class="bar-track"><span class="bar-fill" style="width:100.0%"></span></span>
+              <span class="bar-val">3,815,131.5</span>
+            </div>
+            <div class="bar-row">
+              <span class="bar-lbl">Comuna 1</span>
+              <span class="bar-track"><span class="bar-fill" style="width:85.5%"></span></span>
+              <span class="bar-val">3,260,171.8</span>
+            </div>
+            <div class="bar-row">
+              <span class="bar-lbl">Comuna 14</span>
+              <span class="bar-track"><span class="bar-fill" style="width:58.0%"></span></span>
+              <span class="bar-val">2,212,073.3</span>
+            </div>
+            <div class="bar-row">
+              <span class="bar-lbl">Comuna 13</span>
+              <span class="bar-track"><span class="bar-fill" style="width:40.5%"></span></span>
+              <span class="bar-val">1,546,231.4</span>
+            </div>
+            <div class="bar-row">
+              <span class="bar-lbl">Comuna 10</span>
+              <span class="bar-track"><span class="bar-fill" style="width:32.2%"></span></span>
+              <span class="bar-val">1,229,495.5</span>
+            </div>
+            <div class="bar-row">
+              <span class="bar-lbl">Comuna 12</span>
+              <span class="bar-track"><span class="bar-fill" style="width:27.7%"></span></span>
+              <span class="bar-val">1,058,599.6</span>
+            </div>
+            <div class="bar-row">
+              <span class="bar-lbl">Comuna 9</span>
+              <span class="bar-track"><span class="bar-fill" style="width:19.3%"></span></span>
+              <span class="bar-val">734,427.3</span>
+            </div>
+            <div class="bar-row">
+              <span class="bar-lbl">Comuna 4</span>
+              <span class="bar-track"><span class="bar-fill" style="width:18.8%"></span></span>
+              <span class="bar-val">715,877.3</span>
+            </div>
+            <div class="bar-row">
+              <span class="bar-lbl">Comuna 7</span>
+              <span class="bar-track"><span class="bar-fill" style="width:9.3%"></span></span>
+              <span class="bar-val">353,374.6</span>
+            </div>
+            <div class="bar-row">
+              <span class="bar-lbl">Comuna 2</span>
+              <span class="bar-track"><span class="bar-fill" style="width:8.8%"></span></span>
+              <span class="bar-val">337,557.1</span>
+            </div>
+            <div class="bar-row">
+              <span class="bar-lbl">Comuna 15</span>
+              <span class="bar-track"><span class="bar-fill" style="width:5.8%"></span></span>
+              <span class="bar-val">219,479.6</span>
+            </div>
+            <div class="bar-row">
+              <span class="bar-lbl">Comuna 6</span>
+              <span class="bar-track"><span class="bar-fill" style="width:4.5%"></span></span>
+              <span class="bar-val">173,559.5</span>
+            </div>
+            <div class="bar-row">
+              <span class="bar-lbl">Comuna 11</span>
+              <span class="bar-track"><span class="bar-fill" style="width:2.9%"></span></span>
+              <span class="bar-val">112,281.9</span>
+            </div>
+            <div class="bar-row">
+              <span class="bar-lbl">Comuna 3</span>
+              <span class="bar-track"><span class="bar-fill" style="width:1.2%"></span></span>
+              <span class="bar-val">46,096.3</span>
+            </div>
+            <div class="bar-row">
+              <span class="bar-lbl">Comuna 5</span>
+              <span class="bar-track"><span class="bar-fill" style="width:0.6%"></span></span>
+              <span class="bar-val">22,885.6</span>
+            </div></div><h2>Hospitales por comuna</h2><div>
+            <div class="bar-row">
+              <span class="bar-lbl">Comuna 4</span>
+              <span class="bar-track"><span class="bar-fill" style="width:100.0%"></span></span>
+              <span class="bar-val">13</span>
+            </div>
+            <div class="bar-row">
+              <span class="bar-lbl">Comuna 6</span>
+              <span class="bar-track"><span class="bar-fill" style="width:30.8%"></span></span>
+              <span class="bar-val">4</span>
+            </div>
+            <div class="bar-row">
+              <span class="bar-lbl">Comuna 2</span>
+              <span class="bar-track"><span class="bar-fill" style="width:23.1%"></span></span>
+              <span class="bar-val">3</span>
+            </div>
+            <div class="bar-row">
+              <span class="bar-lbl">Comuna 3</span>
+              <span class="bar-track"><span class="bar-fill" style="width:15.4%"></span></span>
+              <span class="bar-val">2</span>
+            </div>
+            <div class="bar-row">
+              <span class="bar-lbl">Comuna 7</span>
+              <span class="bar-track"><span class="bar-fill" style="width:15.4%"></span></span>
+              <span class="bar-val">2</span>
+            </div>
+            <div class="bar-row">
+              <span class="bar-lbl">Comuna 10</span>
+              <span class="bar-track"><span class="bar-fill" style="width:15.4%"></span></span>
+              <span class="bar-val">2</span>
+            </div>
+            <div class="bar-row">
+              <span class="bar-lbl">Comuna 11</span>
+              <span class="bar-track"><span class="bar-fill" style="width:15.4%"></span></span>
+              <span class="bar-val">2</span>
+            </div>
+            <div class="bar-row">
+              <span class="bar-lbl">Comuna 15</span>
+              <span class="bar-track"><span class="bar-fill" style="width:15.4%"></span></span>
+              <span class="bar-val">2</span>
+            </div>
+            <div class="bar-row">
+              <span class="bar-lbl">Comuna 5</span>
+              <span class="bar-track"><span class="bar-fill" style="width:7.7%"></span></span>
+              <span class="bar-val">1</span>
+            </div>
+            <div class="bar-row">
+              <span class="bar-lbl">Comuna 8</span>
+              <span class="bar-track"><span class="bar-fill" style="width:7.7%"></span></span>
+              <span class="bar-val">1</span>
+            </div>
+            <div class="bar-row">
+              <span class="bar-lbl">Comuna 9</span>
+              <span class="bar-track"><span class="bar-fill" style="width:7.7%"></span></span>
+              <span class="bar-val">1</span>
+            </div>
+            <div class="bar-row">
+              <span class="bar-lbl">Comuna 12</span>
+              <span class="bar-track"><span class="bar-fill" style="width:7.7%"></span></span>
+              <span class="bar-val">1</span>
+            </div>
+            <div class="bar-row">
+              <span class="bar-lbl">Comuna 13</span>
+              <span class="bar-track"><span class="bar-fill" style="width:7.7%"></span></span>
+              <span class="bar-val">1</span>
+            </div>
+            <div class="bar-row">
+              <span class="bar-lbl">Comuna 14</span>
+              <span class="bar-track"><span class="bar-fill" style="width:7.7%"></span></span>
+              <span class="bar-val">1</span>
+            </div>
+            <div class="bar-row">
+              <span class="bar-lbl">Comuna 1</span>
+              <span class="bar-track"><span class="bar-fill" style="width:0.0%"></span></span>
+              <span class="bar-val">0</span>
+            </div></div>
+
+  <h2>Tabla de indicadores por comuna</h2>
+  <table>
+    <thead><tr><th>Comuna</th><th>Estaciones Ecobici</th><th>Km de ciclovías</th><th>Espacios verdes</th><th>m² de espacios verdes</th><th>Hospitales</th></tr></thead>
+    <tbody><tr><td class='com'>Comuna 1</td><td>57</td><td>39.20</td><td>387</td><td>3,260,171.8</td><td>0</td></tr><tr><td class='com'>Comuna 2</td><td>20</td><td>15.31</td><td>67</td><td>337,557.1</td><td>3</td></tr><tr><td class='com'>Comuna 3</td><td>18</td><td>19.34</td><td>24</td><td>46,096.3</td><td>2</td></tr><tr><td class='com'>Comuna 4</td><td>25</td><td>24.09</td><td>224</td><td>715,877.3</td><td>13</td></tr><tr><td class='com'>Comuna 5</td><td>17</td><td>18.87</td><td>23</td><td>22,885.6</td><td>1</td></tr><tr><td class='com'>Comuna 6</td><td>19</td><td>13.27</td><td>35</td><td>173,559.5</td><td>4</td></tr><tr><td class='com'>Comuna 7</td><td>18</td><td>16.34</td><td>108</td><td>353,374.6</td><td>2</td></tr><tr><td class='com'>Comuna 8</td><td>8</td><td>9.51</td><td>400</td><td>3,815,131.5</td><td>1</td></tr><tr><td class='com'>Comuna 9</td><td>15</td><td>9.54</td><td>175</td><td>734,427.3</td><td>1</td></tr><tr><td class='com'>Comuna 10</td><td>19</td><td>11.42</td><td>84</td><td>1,229,495.5</td><td>2</td></tr><tr><td class='com'>Comuna 11</td><td>26</td><td>12.85</td><td>97</td><td>112,281.9</td><td>2</td></tr><tr><td class='com'>Comuna 12</td><td>39</td><td>21.04</td><td>186</td><td>1,058,599.6</td><td>1</td></tr><tr><td class='com'>Comuna 13</td><td>44</td><td>35.64</td><td>107</td><td>1,546,231.4</td><td>1</td></tr><tr><td class='com'>Comuna 14</td><td>47</td><td>36.93</td><td>165</td><td>2,212,073.3</td><td>1</td></tr><tr><td class='com'>Comuna 15</td><td>34</td><td>22.51</td><td>94</td><td>219,479.6</td><td>2</td></tr></tbody>
+  </table>
+
+  <div class="ficha">
+    <div><b>Fuentes</b><ul><li><b>ecobici</b>: Buenos Aires Data — Secretaría de Transporte y Obras Públicas (GCBA) (<a href='https://cdn.buenosaires.gob.ar/datosabiertos/datasets/transporte-y-obras-publicas/estaciones-bicicletas-publicas/nuevas-estaciones-bicicletas-publicas.csv' rel='noreferrer'>dataset</a>, licencia CC-BY-2.5-AR) · ingesta 2026-10-28T14:57:29+00:00</li><li><b>ciclovias</b>: Buenos Aires Data — Secretaría de Transporte y Obras Públicas (GCBA) (<a href='https://cdn.buenosaires.gob.ar/datosabiertos/datasets/transporte-y-obras-publicas/ciclovias/ciclovias.csv' rel='noreferrer'>dataset</a>, licencia CC-BY-2.5-AR) · ingesta 2026-10-28T14:57:32+00:00</li><li><b>espacios_verdes</b>: Buenos Aires Data — GCBA, DG Gobernanza de Datos Abiertos (<a href='https://cdn.buenosaires.gob.ar/datosabiertos/datasets/secretaria-de-desarrollo-urbano/espacios-verdes/espacio_verde_publico.geojson' rel='noreferrer'>dataset</a>, licencia CC-BY-2.5-AR) · ingesta 2026-10-28T14:58:16+00:00</li><li><b>hospitales</b>: Buenos Aires Data — Ministerio de Salud (GCBA) (<a href='https://cdn.buenosaires.gob.ar/datosabiertos/datasets/ministerio-de-salud/hospitales/hospitales.geojson' rel='noreferrer'>dataset</a>, licencia CC-BY-2.5-AR) · ingesta 2026-10-28T14:58:17+00:00</li><li><b>poblacion</b>: Instituto de Estadística y Censos de la Ciudad Autónoma de Buenos Aires — IDECBA (GCBA), sobre la base de INDEC, Censo 2022 (<a href='https://www.estadisticaciudad.gob.ar/eyc/wp-content/uploads/2022/12/PB2_22nb.xls' rel='noreferrer'>dataset</a>, licencia No verificada) · ingesta 2026-10-28T14:58:19+00:00</li></ul></div>
+    <div><b>Última construcción (gold):</b> 2026-10-28T15:01:23+00:00</div>
+    <div><b>Motor de consulta:</b> sqlite</div>
+    <div><b>Calidad:</b> <span class="estado official">✓ verificada</span></div>
+    <div style="margin-top:8px"><b>Procedencia:</b> <span class="estado official">official</span></div>
+    <div style="margin-top:8px; color:var(--muted)">
+      La verificación confirma estructura y reglas de calidad. No convierte una semilla
+      de demostración en una estadística oficial.
+    </div>
+  </div>
+</main>
+<footer>Cerebro Buenos Aires · datos descargados de BA Data</footer>
+</body>
+</html>

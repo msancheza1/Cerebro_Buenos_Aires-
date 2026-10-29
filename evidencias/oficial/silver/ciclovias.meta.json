@@ -1,0 +1,33 @@
+{
+  "auxiliares": [
+    {
+      "raw_file": "evidencias/oficial/raw/comunas/20261028T145728Z.geojson",
+      "sha256": "c128dadf5b8a3c43c68cad4dacd8c0995d774b93060a785b156861bcb9de062e",
+      "run_id": "20261028T145728Z",
+      "url": "https://cdn.buenosaires.gob.ar/datosabiertos/datasets/ministerio-de-educacion/comunas/comunas.geojson"
+    }
+  ],
+  "transformaciones": {
+    "cuarentena": []
+  },
+  "anio_poblacion": null,
+  "ficha": null,
+  "dominio": "ciclovias",
+  "fuente": "Buenos Aires Data",
+  "organismo": "Secretaría de Transporte y Obras Públicas (GCBA)",
+  "url": "https://cdn.buenosaires.gob.ar/datosabiertos/datasets/transporte-y-obras-publicas/ciclovias/ciclovias.csv",
+  "licencia": "CC-BY-2.5-AR",
+  "_origen": "descarga_oficial",
+  "run_id": "20261028T145728Z",
+  "raw_file": "evidencias/oficial/raw/ciclovias/20261028T145728Z.csv",
+  "raw_sha256": "ecd8694628b8a39013b61e7fb33fa0269bae35f2a8372de4d78dd93c5c0dba59",
+  "fecha_ingesta": "2026-10-28T14:57:32+00:00",
+  "source_updated_at": "Thu, 01 Oct 2026 13:58:26 GMT",
+  "fecha_transformacion": "2026-10-28T14:59:26+00:00",
+  "filas_entrada": 2764,
+  "filas_salida": 2764,
+  "filas_descartadas": 0,
+  "rechazos_por_regla": {},
+  "silver_sha256": "7921d094a873d60e3c6830fe0e9978e33e4f20be37e3f022b7a140fc9d2cabde",
+  "formato_parquet": true
+}

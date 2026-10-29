@@ -1,0 +1,20 @@
+{
+  "anio_poblacion": 2022,
+  "ficha": "https://www.estadisticaciudad.gob.ar/eyc/banco-datos/poblacion-total-por-sexo-registrado-al-nacer-superficie-y-densidad-poblacional-segun-comuna-ciudad-de-buenos-aires-anos-2010-2022/",
+  "dominio": "poblacion",
+  "fuente": "Instituto de Estadística y Censos de la Ciudad Autónoma de Buenos Aires",
+  "organismo": "IDECBA (GCBA), sobre la base de INDEC, Censo 2022",
+  "url": "https://www.estadisticaciudad.gob.ar/eyc/wp-content/uploads/2022/12/PB2_22nb.xls",
+  "final_url": "https://www.estadisticaciudad.gob.ar/eyc/wp-content/uploads/2022/12/PB2_22nb.xls",
+  "licencia": "No verificada",
+  "formato": "xls",
+  "fecha_ingesta": "2026-10-28T14:58:19+00:00",
+  "source_updated_at": "Tue, 09 Sep 2025 14:40:26 GMT",
+  "etag": "\"68c03c5a-ca00\"",
+  "content_type": "application/vnd.ms-excel",
+  "herramienta": "urllib",
+  "_origen": "descarga_oficial",
+  "run_id": "20261028T145728Z",
+  "bytes": 51712,
+  "sha256": "97cd7c23c95f227ed8ef9e6f617ea02d1242a36c37f58c0a6c3cc07fdab1258f"
+}

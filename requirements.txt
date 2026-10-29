@@ -35,3 +35,7 @@ requests==2.34.2
 
 # Lectura de F10 oficial en XLS
 xlrd==2.0.2
+
+# Adaptadores geográficos oficiales
+shapely==2.1.2
+pyproj==3.7.2

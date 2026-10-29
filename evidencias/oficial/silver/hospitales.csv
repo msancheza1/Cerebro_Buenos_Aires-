@@ -1,0 +1,37 @@
+id,nombre,tipo,comuna,direccion,lat,lon
+710211093144171699,Hospital de Pediatria Dr. J. Garrahan,Hospital de Niños,4,Combate De Los Pozos 1881,-34.62994967493115,-58.391883518211145
+56081213192415928,Hospital Especializado de Emerg Psiquiatricas Torcuato de Alvear,Hospital Especializado,15,Warnes Av. 2630,-34.59721533953288,-58.47525991090423
+827508069410565297,Hospital Especializado de Gastroenterologia B. Udaondo,Hospital Especializado,4,Caseros Av. 2061,-34.63415779064368,-58.39131577025839
+1054322551801224992,Hospital Especializado de Infecciosas F. Muñiz,Hospital Especializado,4,Uspallata 2272,-34.63751905386945,-58.39373333852867
+489176290051899629,Hospital Especializado de Odontologia  J. Dueñas,Hospital Especializado,5,Muñiz 15,-34.61463967146651,-58.42766269472181
+559369876005860025,Hospital Especializado de Odontologia Infantil Don Benito Quinquela Martin,Hospital Especializado,4,Don Pedro De Mendoza Av. 1795,-34.63887765861283,-58.360125758203935
+584376914447752758,Hospital Especializado de Oftalmologia Santa Lucia,Hospital Especializado,3,San Juan Av. 2021,-34.62278644110744,-58.39446148210937
+229103405412732132,Hospital Especializado de Quemados Dr. Arturo Umberto Illia,Hospital Especializado,6,"Goyena, Pedro Av. 369",-34.625507807737826,-58.43239935843649
+416057369794904176,Hospital Especializado de Rehabilitacion M. Rocca,Hospital Especializado,10,Segurola Av. 1949,-34.61798688012859,-58.50214470790737
+578534506368971738,Hospital Especializado de Rehabilitacion Respiratoria Maria Ferrer,Hospital Especializado,4,Finochietto Enrique Dr. 849,-34.63021543380956,-58.37584835780403
+629298176795228909,Hospital Especializado de Salud Mental Braulio Moyano,Hospital Especializado,4,Brandsen 2570,-34.63940819694868,-58.38516046357152
+583745611147796477,Hospital Especializado de Salud Mental J. Borda,Hospital Especializado,4,"Carrillo, Ramon, Dr. 375",-34.63643917278923,-58.38213307523834
+886940654926178985,Hospital Especializado Infanto Juvenil C. Tobar Garcia,Hospital Especializado,4,"Carrillo, Ramon, Dr. 315",-34.63570637092651,-58.38233314843709
+771018935035649477,Hospital Especializado Materno Infantil R. Sarda,Hospital Especializado,4,"Luca, Esteban De 2151",-34.63486056305044,-58.402754471627475
+940216115236556570,Hospital Especializado Odontologico Dr. R. Carrillo (Ex Nacional),Hospital Especializado,2,Sanchez De Bustamante 2529,-34.58446558866654,-58.40265089607275
+401302904002827512,Hospital Especializado Oftalmologico Dr. P. Lagleyze,Hospital Especializado,11,"Justo, Juan B. Av. 4151",-34.605439480722964,-58.460187217256504
+330852387316324312,Hospital General de Agudos A. Zubizarreta,Hospital General de Agudos,11,Nueva York 3952,-34.59998510413351,-58.51105204032241
+397846046408017890,Hospital General de Agudos B. Rivadavia,Hospital General de Agudos,2,Las Heras General Av. 2670,-34.5847713422784,-58.400517753225145
+369543836633906301,Hospital General de Agudos Cecilia Grierson,Hospital General de Agudos,8,"Fernandez De La Cruz, F., Gral. Av. 4402",-34.67175654029588,-58.45680806729176
+448191166644131063,Hospital General de Agudos D. Velez Sarsfield,Hospital General de Agudos,10,"Calderon De La Barca, Pedro 1550",-34.625341780942634,-58.50761464297997
+52068367902345666,Hospital General de Agudos Donacion F. Santojanni,Hospital General de Agudos,9,Pilar 950,-34.649191210101094,-58.515628187137416
+591037975566837810,Hospital General de Agudos Dr C. Argerich,Hospital General de Agudos,4,Pi Y Margall 750,-34.627848189190544,-58.36594018463418
+784840551004731920,Hospital General de Agudos Dr. C. Durand,Hospital General de Agudos,6,Diaz Velez Av. 5044,-34.60897787034018,-58.4379839096644
+43564904307072142,Hospital General de Agudos Dr. E. Tornu,Hospital General de Agudos,15,Combatientes De Malvinas Av. 3002,-34.58739743739494,-58.471118556936695
+666212507325998286,Hospital General de Agudos Dr. I. Pirovano,Hospital General de Agudos,12,Monroe Av. 3555,-34.56505813344084,-58.47107963064222
+988408151894972848,Hospital General de Agudos Dr. J. A. Fernandez,Hospital General de Agudos,14,Cerviño Av. 3356,-34.581147208355674,-58.40689796748051
+47771464110340157,Hospital General de Agudos Dr. T. Alvarez,Hospital General de Agudos,7,"Aranguren, Juan F., Dr. 2701",-34.62417531895236,-58.46950315006809
+1095409952019448424,Hospital General de Agudos J. A. Penna,Hospital General de Agudos,4,"Chutro, Pedro, Prof., Dr. 3380",-34.64312136530347,-58.41086366300014
+78423128182689667,Hospital General de Agudos J. M. Ramos Mejia,Hospital General de Agudos,3,"Urquiza, Gral. 609",-34.61766452357053,-58.40961442653774
+590186783115855733,Hospital General de Agudos P. Piñero,Hospital General de Agudos,7,Varela Av. 1301,-34.643898372115274,-58.45411840058594
+1079548644894579484,Hospital General de Niños P. de Elizalde,Hospital de Niños,4,"Montes De Oca, Manuel Av. 40",-34.628851629204014,-58.377555796004
+407565496292153522,Hospital General de Niños R. Gutierrez,Hospital de Niños,2,Gallo 1330,-34.59419719883555,-58.41207381946787
+639489931421662221,Hospital Municipal de Oncologia M. Curie,Hospital Especializado,6,Patricias Argentinas Av. 150,-34.607071449505256,-58.4330747466535
+826861017449766850,Inst. de Zoonosis L. Pasteur,Hospital Especializado,6,Diaz Velez Av. 4821,-34.6084771384392,-58.434946026792694
+158806819768454230,Instituto de Rehabilitacion Psicofisica (I.R.E.P.),Hospital Especializado,13,Echeverria 955,-34.55390261485875,-58.44099105277654
+78640524669617142,Talleres Protegidos de Rehabilitacion Psiquiatrica,Hospital Especializado,4,Suarez Av. 2215,-34.64226979139057,-58.38310991157556

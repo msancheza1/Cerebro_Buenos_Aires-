@@ -41,7 +41,8 @@ DICCIONARIO = {
         "grano": "una fila = una estación de Ecobici",
         "clave": "id",
         "columnas": {
-            "id":               {"tipo": "entero",  "unidad": "-",       "pii": False, "descripcion": "Identificador único de la estación.",                 "regla": "no nulo y único"},
+            "anclajes_totales": {"tipo": "entero", "unidad": "anclajes", "pii": False, "descripcion": "Capacidad opcional; nula cuando la fuente no la informa. No se usa en las tasas de estaciones.", "regla": "nulo o entero positivo"},
+            "id":               {"tipo": "entero",  "unidad": "-",       "pii": False, "descripcion": "Identificador oficial de la estación; comuna asignada con capa oficial trazable.",                 "regla": "no nulo y único"},
             "nombre":           {"tipo": "texto",   "unidad": "-",       "pii": False, "descripcion": "Nombre de la estación (normalizado a Title Case).",   "regla": "normalizado; sin validación de no vacío en verify.py"},
             "comuna":           {"tipo": "entero",  "unidad": "comuna",  "pii": False, "descripcion": "Comuna de CABA derivada por punto-en-polígono a partir de lat/lon.",          "regla": "entero en 1..15"},
             "lat":              {"tipo": "decimal", "unidad": "grados",  "pii": False, "descripcion": "Latitud (WGS84).",                                    "regla": "entre -34.71 y -34.52 (bounding box CABA)"},
@@ -68,7 +69,7 @@ DICCIONARIO = {
             "id":            {"tipo": "entero",  "unidad": "-",      "pii": False, "descripcion": "Identificador único del espacio verde.",    "regla": "no nulo y único"},
             "nombre":        {"tipo": "texto",   "unidad": "-",      "pii": False, "descripcion": "Nombre del espacio verde.",                 "regla": "normalizado; sin validación de no vacío en verify.py"},
             "comuna":        {"tipo": "entero",  "unidad": "comuna", "pii": False, "descripcion": "Comuna de CABA del espacio verde.",         "regla": "entero en 1..15"},
-            "area_m2":       {"tipo": "decimal", "unidad": "m²",     "pii": False, "descripcion": "Superficie del espacio verde en metros cuadrados.", "regla": "> 0"},
+            "area_m2":       {"tipo": "decimal", "unidad": "m²",     "pii": False, "descripcion": "Área geométrica calculada en EPSG:9498, con geometría validada; no equivale a cobertura vegetal.", "regla": "> 0"},
             "clasificacion": {"tipo": "texto",   "unidad": "-",      "pii": False, "descripcion": "Clasificación del espacio (plaza, parque, etc.).",  "regla": "libre"},
         },
     },

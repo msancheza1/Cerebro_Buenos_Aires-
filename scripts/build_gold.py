@@ -10,6 +10,7 @@ import shutil
 import sqlite3
 import tempfile
 from pathlib import Path
+from pipeline_common import reference_path, resolve_reference
 
 from pipeline_common import GOLD, REQUIRED_DOMAINS, ROOT, SILVER, atomic_write_text, replace_directory, sha256_file
 
@@ -39,9 +40,13 @@ def _verification() -> dict:
         if not meta_path.exists() or result.get("meta_sha256") != sha256_file(meta_path):
             raise ValueError(f"la procedencia de {domain} cambió después de ser verificada")
         metadata = json.loads(meta_path.read_text(encoding="utf-8"))
-        raw_path = Path(metadata.get("raw_file", ""))
+        raw_path = resolve_reference(metadata.get("raw_file", ""))
         if not raw_path.is_file() or sha256_file(raw_path) != metadata.get("raw_sha256"):
             raise ValueError(f"BRONZE de {domain} cambió después de la transformación")
+        for aux in metadata.get("auxiliares", []):
+            aux_path = resolve_reference(aux['raw_file'])
+            if not aux_path.is_file() or sha256_file(aux_path) != aux['sha256']:
+                raise ValueError("La capa auxiliar de comunas cambió")
     return verification
 
 
@@ -63,6 +68,8 @@ def _sources_meta(domains) -> dict:
     for domain in domains:
         metadata = json.loads((SILVER / f"{domain}.meta.json").read_text(encoding="utf-8"))
         sources[domain] = {
+            "auxiliares": metadata.get("auxiliares", []),
+            "transformaciones": metadata.get("transformaciones", {}),
             "anio_poblacion": metadata.get("anio_poblacion"),
             "fuente": metadata["fuente"],
             "organismo": metadata["organismo"],

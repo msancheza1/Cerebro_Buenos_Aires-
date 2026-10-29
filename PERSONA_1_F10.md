@@ -34,8 +34,10 @@ Para intentar las cinco fuentes oficiales en el mismo lote:
 
 La ingesta fallida detiene el procesamiento. No se completan sidecars heredados con
 metadatos inventados, ni se mezcla población oficial con infraestructura demo.
-La infraestructura heredada aún tiene contratos incompatibles y metadatos incompletos.
-Por ello la validación oficial aislada de F10 no acredita una corrida oficial completa.
+La infraestructura heredada no se reutiliza. El 28 de octubre de 2026 se descargó un
+lote nuevo y se adaptaron sus contratos: la ejecución oficial completa del procesamiento
+ya pasó. Consultar evidencias/oficial/resumen.json y PENDIENTES_EJECUCION_OFICIAL.md.
+El selector de tasas, el despliegue y la revisión humana permanecen pendientes.
 
 ## Contrato para persona 2
 
@@ -68,10 +70,26 @@ Se comprobó la extracción de las comunas 1, 8 y 15: 223.554, 204.367 y 196.876
 Las pruebas comparan cinco tasas en las 15 comunas contra cálculos independientes,
 rechazan población faltante, duplicada, fraccionaria, no finita o no positiva,
 año incorrecto y alteración de SILVER. GOLD también revalida los hashes de BRONZE.
-La revisión humana de fuente, fórmulas y tres comunas sigue pendiente.
+Las 75 tasas oficiales se recalcularon automáticamente; se guardaron muestras de las
+comunas 1, 8 y 15. La revisión humana de fuente, fórmulas y tres comunas sigue pendiente.
 
 ## Aporte real a bitácora (para consolidar por persona 3)
 
 | Fecha y responsable | Encargo real | Aporte IA | Decisión | Verificación |
 |---|---|---|---|---|
 | 2026-10-28, responsable humano pendiente de completar | “haz la persona 1 ignora lo anteriro que te dije”, con la ruta local del proyecto | Verificación de la fuente oficial, integración F10, tasas, controles de hashes, pruebas y entrega local | Usar censo 2022 y licencia no verificada; mantener bloqueo de infraestructura heredada | Descarga real, reconciliación de 15 comunas y pruebas automatizadas; revisión humana pendiente |
+
+## Ejecución oficial completada
+
+Lote 20261028T145728Z: 406/407 estaciones, 2764 tramos, 2176 polígonos de espacios
+verdes públicos, 36 hospitales y 15 comunas con población. La estación 541 AEROPARQUE
+no intersecta la capa de comunas y se mantiene en cuarentena sin asignación arbitraria.
+Se reparan 25 geometrías verdes con make_valid; el área se calcula en EPSG:9498.
+Hospitales declara EPSG:9498 en su GeoJSON y se transforma a WGS84.
+Anclajes queda nulo cuando la fuente no informa capacidad; no interviene en estas tasas.
+Los tramos de ciclovías conservan longitud_m y comuna declarados en la fuente.
+
+Para los adaptadores oficiales instalar también shapely==2.1.2 y pyproj==3.7.2.
+Pruebas adicionales: python tests/test_infraestructura.py.
+Para archivar un lote ya verificado: python scripts/evidencia_oficial.py.
+Los metadatos de evidencia usan rutas relativas para preservar su verificación en otras computadoras.

@@ -24,7 +24,8 @@ Estaciones de bicicletas públicas (Ecobici) de la Ciudad de Buenos Aires.
 
 | Columna | Tipo | Unidad | PII | Descripción | Regla de calidad |
 |---------|------|--------|-----|-------------|------------------|
-| `id` | entero | - | no | Identificador único de la estación. | no nulo y único |
+| `anclajes_totales` | entero | anclajes | no | Capacidad opcional; nula cuando la fuente no la informa. No se usa en las tasas de estaciones. | nulo o entero positivo |
+| `id` | entero | - | no | Identificador oficial de la estación; comuna asignada con capa oficial trazable. | no nulo y único |
 | `nombre` | texto | - | no | Nombre de la estación (normalizado a Title Case). | normalizado; sin validación de no vacío en verify.py |
 | `comuna` | entero | comuna | no | Comuna de CABA derivada por punto-en-polígono a partir de lat/lon. | entero en 1..15 |
 | `lat` | decimal | grados | no | Latitud (WGS84). | entre -34.71 y -34.52 (bounding box CABA) |
@@ -57,7 +58,7 @@ Espacios verdes públicos (plazas, parques) de la Ciudad de Buenos Aires.
 | `id` | entero | - | no | Identificador único del espacio verde. | no nulo y único |
 | `nombre` | texto | - | no | Nombre del espacio verde. | normalizado; sin validación de no vacío en verify.py |
 | `comuna` | entero | comuna | no | Comuna de CABA del espacio verde. | entero en 1..15 |
-| `area_m2` | decimal | m² | no | Superficie del espacio verde en metros cuadrados. | > 0 |
+| `area_m2` | decimal | m² | no | Área geométrica calculada en EPSG:9498, con geometría validada; no equivale a cobertura vegetal. | > 0 |
 | `clasificacion` | texto | - | no | Clasificación del espacio (plaza, parque, etc.). | libre |
 
 ## hospitales

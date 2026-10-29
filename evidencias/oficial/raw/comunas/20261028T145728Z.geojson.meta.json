@@ -1,0 +1,20 @@
+{
+  "anio_poblacion": null,
+  "ficha": null,
+  "dominio": "comunas",
+  "fuente": "Buenos Aires Data",
+  "organismo": "GCBA",
+  "url": "https://cdn.buenosaires.gob.ar/datosabiertos/datasets/ministerio-de-educacion/comunas/comunas.geojson",
+  "final_url": "https://cdn.buenosaires.gob.ar/datosabiertos/datasets/ministerio-de-educacion/comunas/comunas.geojson",
+  "licencia": "CC-BY-2.5-AR",
+  "formato": "geojson",
+  "fecha_ingesta": "2026-10-28T14:58:21+00:00",
+  "source_updated_at": "Mon, 18 Aug 2025 16:43:55 GMT",
+  "etag": "\"820012-8eb50-63ca671fe68c0\"",
+  "content_type": "text/plain; charset=UTF-8",
+  "herramienta": "urllib",
+  "_origen": "descarga_oficial",
+  "run_id": "20261028T145728Z",
+  "bytes": 584528,
+  "sha256": "c128dadf5b8a3c43c68cad4dacd8c0995d774b93060a785b156861bcb9de062e"
+}

@@ -7,6 +7,7 @@ import csv
 import datetime as dt
 import json
 from pathlib import Path
+from pipeline_common import reference_path, resolve_reference
 
 from pipeline_common import REQUIRED_DOMAINS, SILVER, atomic_write_text, sha256_file
 
@@ -75,7 +76,7 @@ def reglas_poblacion(rows):
 CHECKS = {
     "poblacion": reglas_poblacion,
     "ecobici": lambda rows: reglas_comunes(rows) + reglas_coords(rows)
-    + regla_positivo(rows, "anclajes_totales"),
+    + regla_positivo([r for r in rows if r.get("anclajes_totales") not in (None, "")], "anclajes_totales"),
     "ciclovias": lambda rows: reglas_comunes(rows) + regla_positivo(rows, "long_metros"),
     "espacios_verdes": lambda rows: reglas_comunes(rows) + reglas_coords(rows)
     + regla_positivo(rows, "area_m2"),
@@ -96,9 +97,13 @@ def _metadata_violations(dominio: str, csv_path: Path) -> tuple[list[tuple[str, 
     violations = []
     if metadata.get("silver_sha256") != sha256_file(csv_path):
         violations.append(("silver_sha256_no_coincide", 1))
-    raw_path = Path(metadata.get("raw_file", ""))
+    raw_path = resolve_reference(metadata.get("raw_file", ""))
     if not raw_path.is_file() or metadata.get("raw_sha256") != sha256_file(raw_path):
         violations.append(("raw_sha256_no_coincide", 1))
+    for aux in metadata.get("auxiliares", []):
+        aux_path = resolve_reference(aux['raw_file'])
+        if not aux_path.is_file() or sha256_file(aux_path) != aux['sha256']:
+            violations.append(("auxiliar_sha256_no_coincide", 1))
     input_rows = int(metadata.get("filas_entrada") or 0)
     discarded = int(metadata.get("filas_descartadas") or 0)
     rejection_rate = discarded / input_rows if input_rows else 1.0

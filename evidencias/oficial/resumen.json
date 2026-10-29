@@ -1,0 +1,59 @@
+{
+  "run_id": "20261028T145728Z",
+  "quality_status": "verified",
+  "provenance_status": "official",
+  "comunas": 15,
+  "poblacion_total": 3121707,
+  "anio_poblacion": 2022,
+  "tasas_recalculadas": 75,
+  "muestras": [
+    {
+      "comuna": 1,
+      "poblacion": 223554,
+      "tasas_recalculadas": {
+        "estaciones_ecobici_por_10000_hab": 2.5497195308516063,
+        "km_ciclovias_por_10000_hab": 1.753293611386958,
+        "espacios_verdes_por_10000_hab": 17.31125365683459,
+        "m2_verdes_por_hab": 14.583374897462827,
+        "hospitales_por_10000_hab": 0.0
+      }
+    },
+    {
+      "comuna": 8,
+      "poblacion": 204367,
+      "tasas_recalculadas": {
+        "estaciones_ecobici_por_10000_hab": 0.3914526317849751,
+        "km_ciclovias_por_10000_hab": 0.4652257947711715,
+        "espacios_verdes_por_10000_hab": 19.572631589248754,
+        "m2_verdes_por_hab": 18.66804088650096,
+        "hospitales_por_10000_hab": 0.048931578973121885
+      }
+    },
+    {
+      "comuna": 15,
+      "poblacion": 196876,
+      "tasas_recalculadas": {
+        "estaciones_ecobici_por_10000_hab": 1.7269753550458158,
+        "km_ciclovias_por_10000_hab": 1.1432988276884943,
+        "espacios_verdes_por_10000_hab": 4.774578922773726,
+        "m2_verdes_por_hab": 1.1148115059290402,
+        "hospitales_por_10000_hab": 0.10158678559093033
+      }
+    }
+  ],
+  "filas": {
+    "ecobici": 406,
+    "ciclovias": 2764,
+    "espacios_verdes": 2176,
+    "hospitales": 36,
+    "poblacion": 15
+  },
+  "observaciones": [
+    "Ecobici 541 AEROPARQUE: excluida por falta de intersección con polígonos oficiales; 1/407.",
+    "25 geometrías de espacios verdes reparadas con make_valid para calcular área y punto representativo.",
+    "Superficie de polígonos públicos calculada en EPSG:9498; no mide cobertura vegetal.",
+    "Ciclovías conserva comuna y longitud_m oficiales por tramo; no subdivide fronteras.",
+    "El dashboard generado conserva totales; el selector de tasas corresponde a persona 2.",
+    "Licencia F10 sin verificar; la revisión humana sigue pendiente."
+  ]
+}

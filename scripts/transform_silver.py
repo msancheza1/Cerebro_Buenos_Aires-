@@ -17,6 +17,7 @@ import shutil
 import tempfile
 from collections import Counter
 from pathlib import Path
+from pipeline_common import reference_path, resolve_reference
 
 from pipeline_common import RAW, REQUIRED_DOMAINS, ROOT, SILVER, atomic_write_text, replace_directory, sha256_file
 
@@ -224,6 +225,8 @@ def escribir_silver(output: Path, dominio: str, filas: list[dict], schema,
 
     discarded = sum(rechazos.values())
     silver_meta = {
+        "auxiliares": metadata.get("auxiliares", []),
+        "transformaciones": metadata.get("transformaciones", {}),
         "anio_poblacion": metadata.get("anio_poblacion"),
         "ficha": metadata.get("ficha"),
         "dominio": dominio,
@@ -233,7 +236,7 @@ def escribir_silver(output: Path, dominio: str, filas: list[dict], schema,
         "licencia": metadata["licencia"],
         "_origen": metadata["_origen"],
         "run_id": metadata["run_id"],
-        "raw_file": str(raw_file),
+        "raw_file": reference_path(raw_file),
         "raw_sha256": metadata["sha256"],
         "fecha_ingesta": metadata["fecha_ingesta"],
         "source_updated_at": metadata.get("source_updated_at"),
@@ -259,7 +262,9 @@ def main() -> int:
         inputs = {}
         for dominio in REQUIRED_DOMAINS:
             try:
-                raw_file = _ultimo_raw(dominio, "xls") if dominio == "poblacion" else _ultimo_raw(dominio)
+                from fuentes import FUENTES
+                extension = FUENTES[dominio]['formato']
+                raw_file = _ultimo_raw(dominio, extension)
             except FileNotFoundError:
                 raw_file = _ultimo_raw(dominio)
             inputs[dominio] = (raw_file, _meta_raw(raw_file, dominio))
@@ -268,9 +273,23 @@ def main() -> int:
         if len(run_ids) != 1 or len(origins) != 1:
             raise ValueError("BRONZE mezcla corridas o procedencias")
 
+        auxiliary = None
+        if origins == {'descarga_oficial'}:
+            auxiliary = _ultimo_raw('comunas', 'geojson')
+            auxiliary_meta = _meta_raw(auxiliary, 'comunas')
+            if auxiliary_meta['run_id'] not in run_ids or auxiliary_meta['_origen'] != 'descarga_oficial':
+                raise ValueError('La capa de comunas debe pertenecer al mismo lote oficial')
+
         for dominio in REQUIRED_DOMAINS:
             raw_file, metadata = inputs[dominio]
-            filas, rechazos, input_rows = LIMPIADORES[dominio](raw_file)
+            if auxiliary is not None and dominio != 'poblacion':
+                from infraestructura import adaptar
+                filas, rechazos, input_rows, audit = adaptar(dominio, raw_file, auxiliary)
+                metadata['transformaciones'] = audit
+                metadata['auxiliares'] = [{'raw_file': reference_path(auxiliary), 'sha256': auxiliary_meta['sha256'],
+                                          'run_id': auxiliary_meta['run_id'], 'url': auxiliary_meta['url']}]
+            else:
+                filas, rechazos, input_rows = LIMPIADORES[dominio](raw_file)
             if not filas:
                 raise ValueError(f"{dominio}: ninguna fila válida")
             escribir_silver(staging, dominio, filas, SCHEMAS[dominio], metadata,
