@@ -56,7 +56,11 @@ bash scripts/run_pipeline.sh --demo
 ```
 
 Genera datos sintéticos fuera del lago oficial, limpia, verifica, publica GOLD, ejecuta
-consultas y actualiza `app/demo/index.html`. También se acepta `bash scripts/run_pipeline.sh`,
+consultas y actualiza `app/demo/index.html`. El dashboard usa MapLibre local para mostrar
+las 15 comunas en 3D: altura y color responden al indicador, permite rotar, inclinar,
+acercar y volar hacia una comuna. Cuando hay conexión carga calles desde OpenFreeMap sin
+API key; si no, conserva las extrusiones sobre un fondo local. Un SVG queda como respaldo
+cuando WebGL no está disponible. También se acepta `bash scripts/run_pipeline.sh`,
 que equivale a `--demo` por compatibilidad.
 
 ### Ingesta oficial
@@ -104,7 +108,7 @@ verificable. Las variantes exploratorias están en `transform_silver_polars.py`,
 | Verificación | reglas propias vs Pandera/GE | reglas propias |
 | Consulta | SQLite vs DuckDB | SQLite |
 | Lakehouse | DuckLake vs Iceberg | demo conceptual separada |
-| Vistas | HTML estático vs Streamlit | HTML estático |
+| Vistas | HTML 3D híbrido con MapLibre local vs Streamlit | HTML 3D híbrido |
 
 La evidencia y las decisiones están en `bitacora/exploracion.md`.
 

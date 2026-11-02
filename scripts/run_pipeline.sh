@@ -49,6 +49,7 @@ echo "[5/8] Validaciones existentes"
 "$PY" tests/test_poblacion.py
 "$PY" tests/test_infraestructura.py
 "$PY" tests/test_orquestador.py
+"$PY" tests/test_dashboard.py
 
 echo "[6/8] Publicación SILVER -> GOLD"
 "$PY" scripts/build_gold.py

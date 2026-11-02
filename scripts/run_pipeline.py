@@ -60,7 +60,7 @@ def main() -> int:
         "CEREBRO_GOLD_DIR": str(ROOT / ("lago/gold" if ingesta else "build/demo/gold")),
         "CEREBRO_APP_DIR": str(ROOT / ("app/official" if ingesta else "app/demo")),
     })
-    total = 12
+    total = 13
 
     print(LINEA)
     print(" CEREBRO BUENOS AIRES · pipeline")
@@ -88,18 +88,19 @@ def main() -> int:
     paso(4, total, "Verificación (si falla, no se publica)", SCRIPTS / "verify.py")
     # [5] perfilado / completitud por columna
     paso(5, total, "Perfilado / completitud de SILVER", SCRIPTS / "profile_silver.py")
-    # [6-9] tests
+    # [6-10] tests
     paso(6, total, "Tests de verificación", TESTS / "test_verificacion.py")
     paso(7, total, "Tests F10 y normalización", TESTS / "test_poblacion.py")
     paso(8, total, "Tests de contratos oficiales", TESTS / "test_infraestructura.py")
     paso(9, total, "Tests del orquestador", TESTS / "test_orquestador.py")
+    paso(10, total, "Tests del dashboard y mapa", TESTS / "test_dashboard.py")
 
-    # [10] silver -> gold (incluye linaje raw+sha256)
-    paso(10, total, "Indicadores  silver -> gold (con linaje)", SCRIPTS / "build_gold.py")
-    # [11] consultas de ejemplo
-    paso(11, total, "Consultas de ejemplo (SQLite)", SCRIPTS / "query_sqlite.py")
-    # [12] dashboard estático (regenera fecha + cifras + linaje)
-    paso(12, total, "Dashboard estático", SCRIPTS / "build_dashboard.py")
+    # [11] silver -> gold (incluye linaje raw+sha256)
+    paso(11, total, "Indicadores  silver -> gold (con linaje)", SCRIPTS / "build_gold.py")
+    # [12] consultas de ejemplo
+    paso(12, total, "Consultas de ejemplo (SQLite)", SCRIPTS / "query_sqlite.py")
+    # [13] dashboard estático (regenera fecha + cifras + linaje)
+    paso(13, total, "Dashboard estático", SCRIPTS / "build_dashboard.py")
 
     print("\n" + LINEA)
     print(f" OK. Pipeline completo. Salida: {os.environ['CEREBRO_APP_DIR']}")

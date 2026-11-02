@@ -250,3 +250,25 @@ Con acceso a red e instalación de dependencias (`shapely`, `pyproj`, `xlrd`, `p
    - Se incorporó el selector interactivo **`Totales absolutos` vs. `Tasas por habitante (Censo 2022)`**, mostrando unidades explícitas (`estaciones / 10.000 habitantes`, `km / 10.000 habitantes`, `espacios / 10.000 habitantes`, `m² / habitante`, `hospitales / 10.000 habitantes`) y el denominador censal `2022` tanto en `app/official/index.html` como en `app/demo/index.html` y `app/streamlit_app.py`.
 4. **Despliegue público:**
    - Publicado en Vercel sirviendo `app/` (`vercel.json`).
+
+
+---
+
+## Mejora técnica de visualización — 2026-11-01
+
+Se delegó a un asistente de IA la implementación técnica del nuevo dashboard estático:
+
+- rediseño responsive en HTML y CSS con estilo de observatorio urbano;
+- mapa cartográfico híbrido de las 15 comunas: MapLibre GL JS 5.24.0 almacenado en `app/vendor/`, polígonos extruidos en WebGL y SVG de respaldo;
+- interacción en JavaScript para alternar totales/tasas e indicadores, consultar una comuna y actualizar mapa, altura, color, detalle, ranking y tabla;
+- exploración territorial con rotación, inclinación, zoom, vuelo a comuna, vista 2D/3D, selector directo, comparación con el promedio y leyenda dinámica;
+- calles opcionales mediante el estilo Liberty de OpenFreeMap, sin API key; una falla de red conserva la vista 3D local;
+- separación visual y de datos entre `app/official/` y `app/demo/`;
+- pruebas automatizadas de geometría, autocontención y avisos de procedencia.
+
+La intervención no modificó las fuentes, las transformaciones BRONZE/SILVER/GOLD, las
+fórmulas, las cifras oficiales ni la revisión humana registrada. El mapa no consulta
+servicios externos para los datos ni para el motor 3D: el generador simplifica la
+geometría oficial con RDP y la incorpora en cada HTML; MapLibre se sirve desde
+`app/vendor/`. Solo las calles de fondo son externas y se solicitan a OpenFreeMap cuando
+hay conexión, con atribución a OpenStreetMap/OpenFreeMap.
