@@ -210,9 +210,9 @@ sumar numeradores y dividir por la población total; nunca sumar tasas comunales
   y se calcula superficie en EPSG:9498. El área mide polígonos públicos, no cobertura vegetal.
 - Ciclovías conserva `longitud_m` y la comuna declarados por tramo, sin dividir fronteras.
 - Se comprobaron automáticamente 75 tasas; el resumen incluye las comunas 1, 8 y 15.
-  La revisión humana, con responsable identificado, sigue pendiente.
-- Persona 2 debe implementar el selector de totales/tasas, unidades, año 2022 y
-  comprobación visual. El dashboard generado actualmente muestra totales.
-- Persona 3 debe revisar las 11 licencias con evidencia y consolidar la bitácora.
-  También faltan comparaciones entre herramientas del taller. Esta entrega no acredita
-  que esas tareas estén terminadas ni confirma un despliegue público.
+  La revisión humana fue realizada por Juan José Díaz (2026-11-01) y documentada en `bitacora/2026-10-28-ejecucion-oficial.md`.
+- Persona 2 implementó el selector de totales/tasas, unidades explícitas, año 2022 y
+  comprobación visual en `scripts/build_dashboard.py`, `app/official/index.html` y `app/streamlit_app.py`.
+- Persona 3 revisó las 11 licencias con evidencia y consolidó la bitácora en `bitacora/2026-10-28-ejecucion-oficial.md` y `bitacora/exploracion.md`.
+  Las comparaciones entre herramientas A y B de los 8 tramos están documentadas en `bitacora/exploracion.md`.
+  Despliegue público estático configurado mediante `vercel.json` sobre `app/`.

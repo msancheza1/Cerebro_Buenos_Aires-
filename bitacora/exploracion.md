@@ -230,3 +230,23 @@ corrigieron esas debilidades:
 
 **Decisión revisada:** «si falla, no se publica» se interpreta de manera **atómica por
 corrida**, no como publicación parcial por dominio.
+
+
+---
+
+## Ejecución oficial y cierre de pendientes — 2026-10-28 a 2026-11-01
+
+Con acceso a red e instalación de dependencias (`shapely`, `pyproj`, `xlrd`, `pyarrow`, `polars`, `duckdb`, `pandera`, `streamlit`), se ejecutó el lote oficial **`20261028T145728Z`** documentado en detalle en [`bitacora/2026-10-28-ejecucion-oficial.md`](2026-10-28-ejecucion-oficial.md):
+
+1. **Ingesta y limpieza oficial (`evidencias/oficial/`):**
+   - `ecobici`: **406/407** estaciones válidas (`541 AEROPARQUE` en cuarentena por no intersectar los polígonos comunales descargados; descarte `0,246 % < 10 %`).
+   - `ciclovias`: **2.764** tramos oficiales (`305,84 km` totales).
+   - `espacios_verdes`: **2.176** polígonos públicos (`25` geometrías reparadas con `make_valid`; área `15.837.242,5 m²` calculada en `EPSG:9498`).
+   - `hospitales`: **36** establecimientos reproyectados de `EPSG:9498` a `WGS84` con clave estable `nombre + dirección`.
+   - `poblacion` (F10): **15** comunas del Censo 2022 (`PB2_22nb.xls`, IDECBA/INDEC) que concilian exactamente **`3.121.707` habitantes**.
+2. **Normalización y verificación humana:**
+   - Se calcularon y verificaron automáticamente las **75 tasas** ($15 \times 5$) en `indicadores_por_comuna.csv` y se auditó manualmente el recálculo en las comunas testigo **1, 8 y 15** (responsable: Juan José Díaz, `2026-11-01`).
+3. **Vistas (`scripts/build_dashboard.py` y `app/streamlit_app.py`):**
+   - Se incorporó el selector interactivo **`Totales absolutos` vs. `Tasas por habitante (Censo 2022)`**, mostrando unidades explícitas (`estaciones / 10.000 habitantes`, `km / 10.000 habitantes`, `espacios / 10.000 habitantes`, `m² / habitante`, `hospitales / 10.000 habitantes`) y el denominador censal `2022` tanto en `app/official/index.html` como en `app/demo/index.html` y `app/streamlit_app.py`.
+4. **Despliegue público:**
+   - Publicado en Vercel sirviendo `app/` (`vercel.json`).

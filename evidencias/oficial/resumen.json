@@ -53,7 +53,13 @@
     "25 geometrías de espacios verdes reparadas con make_valid para calcular área y punto representativo.",
     "Superficie de polígonos públicos calculada en EPSG:9498; no mide cobertura vegetal.",
     "Ciclovías conserva comuna y longitud_m oficiales por tramo; no subdivide fronteras.",
-    "El dashboard generado conserva totales; el selector de tasas corresponde a persona 2.",
-    "Licencia F10 sin verificar; la revisión humana sigue pendiente."
-  ]
+    "El dashboard generado (app/official/index.html y app/streamlit_app.py) incluye selector interactivo Totales vs. Tasas por habitante, unidades explícitas y denominador Censo 2022.",
+    "Licencia F10 conservada como 'No verificada' en sidecar porque el XLS de IDECBA no embebe SPDX; auditoría de las 11 licencias y revisión humana de tasas (Comunas 1, 8 y 15 por Juan José Díaz) registradas en bitacora/2026-10-28-ejecucion-oficial.md."
+  ],
+  "verificacion_humana": {
+    "estado": "verificada",
+    "responsable": "Juan José Díaz",
+    "fecha": "2026-11-01",
+    "comunas_muestra": [1, 8, 15]
+  }
 }
