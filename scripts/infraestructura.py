@@ -6,6 +6,7 @@ import math
 from collections import Counter
 from pathlib import Path
 
+from pipeline_common import LAT_MAX, LAT_MIN, LON_MAX, LON_MIN
 from poblacion import entero
 
 
@@ -54,8 +55,12 @@ def adaptar(domain, path, comunas_path):
         doc, converter = document(path)
         source_rows = doc['features']
     for source in source_rows:
+        # Se fija antes del try: si falta 'properties', la cuarentena registra esta fila
+        # y no los datos de la fila anterior.
+        r = source if converter is None else (source.get('properties') or {})
         try:
-            r = source if converter is None else source['properties']
+            if converter is not None and not source.get('properties'):
+                raise ValueError('feature_sin_properties')
             if domain == 'ecobici':
                 lat, lon = float(r['latitud']), float(r['longitud'])
                 c = locate(lon, lat)
@@ -92,7 +97,7 @@ def adaptar(domain, path, comunas_path):
             for key in ('long_metros', 'area_m2'):
                 if key in out and (not math.isfinite(out[key]) or out[key] <= 0):
                     raise ValueError(key+'_no_positivo')
-            if 'lat' in out and not (-34.72 <= out['lat'] <= -34.51 and -58.55 <= out['lon'] <= -58.32):
+            if 'lat' in out and not (LAT_MIN <= out['lat'] <= LAT_MAX and LON_MIN <= out['lon'] <= LON_MAX):
                 raise ValueError('coordenadas_fuera_de_caba')
             if out['id'] in seen:
                 raise ValueError('id_duplicado')

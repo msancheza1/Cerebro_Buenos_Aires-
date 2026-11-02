@@ -29,12 +29,10 @@ import math
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-from pipeline_common import SILVER, REQUIRED_DOMAINS
+from pipeline_common import SILVER, REQUIRED_DOMAINS, LAT_MIN, LAT_MAX, LON_MIN, LON_MAX
 CATALOGO = ROOT / "catalogo"
 
-# rangos para outliers (coinciden con verify.py / diccionario.py)
-LAT_MIN, LAT_MAX = -34.71, -34.52
-LON_MIN, LON_MAX = -58.54, -58.33
+# rangos para outliers (bounding box compartido en pipeline_common.py)
 COMUNA_MIN, COMUNA_MAX = 1, 15
 
 RANGOS = {

@@ -44,6 +44,12 @@ def _num(v):
         return 0
 
 
+def _es(value, decimals: int = 0) -> str:
+    """Formato numérico en español: punto para miles y coma decimal (3.121.707 / 14,58)."""
+    text = f"{float(value):,.{decimals}f}"
+    return text.replace(",", "\0").replace(".", ",").replace("\0", ".")
+
+
 def main() -> int:
     APP.mkdir(parents=True, exist_ok=True)
     filas, meta = _cargar()
@@ -62,6 +68,7 @@ def main() -> int:
 
     # Población censal total y año censal
     poblacion_total = sum(int(_num(r.get("poblacion", 0))) for r in filas)
+    poblacion_es = _es(poblacion_total)
     anios_pob = {int(_num(r.get("anio_poblacion", 2022))) for r in filas if r.get("anio_poblacion")}
     anio_poblacion = sorted(anios_pob)[0] if anios_pob else 2022
 
@@ -127,11 +134,11 @@ def main() -> int:
 
     def format_value(indicator, value):
         if indicator in indicadores_tasas:
-            return f"{float(value):,.2f}"
+            return _es(value, 2)
         decimals = 2 if indicator == "km_ciclovias" else (
             1 if indicator == "m2_espacios_verdes" else 0
         )
-        return f"{float(value):,.{decimals}f}"
+        return _es(value, decimals)
 
     provenance = meta.get("provenance_status", "unknown")
     origen_demo = provenance == "demo"
@@ -141,7 +148,7 @@ def main() -> int:
     def tarjetas_totales():
         out = [f"""
             <div class="card">
-              <div class="card-val">{poblacion_total:,}</div>
+              <div class="card-val">{poblacion_es}</div>
               <div class="card-lbl">Población CABA</div>
               <div class="card-unit">habitantes · Censo {anio_poblacion}</div>
             </div>"""]
@@ -157,7 +164,7 @@ def main() -> int:
     def tarjetas_tasas():
         out = [f"""
             <div class="card">
-              <div class="card-val">{poblacion_total:,}</div>
+              <div class="card-val">{poblacion_es}</div>
               <div class="card-lbl">Denominador poblacional</div>
               <div class="card-unit">habitantes · Censo {anio_poblacion}</div>
             </div>"""]
@@ -173,7 +180,7 @@ def main() -> int:
     def filas_tabla(cols):
         out = []
         for r in filas:
-            pob = f"{int(_num(r.get('poblacion', 0))):,}"
+            pob = _es(int(_num(r.get('poblacion', 0))))
             celdas = "".join(f"<td>{format_value(k, r.get(k, 0))}</td>" for k in cols)
             out.append(
                 f"<tr><td class='com'>Comuna {r['comuna']}</td>"
@@ -312,7 +319,7 @@ def main() -> int:
 
   <div class="toolbar" role="region" aria-label="Selector de modo de indicadores">
     <div class="toolbar-info">
-      <b>Denominador poblacional:</b> Censo {anio_poblacion} ({poblacion_total:,} habitantes en 15 comunas)
+      <b>Denominador poblacional:</b> Censo {anio_poblacion} ({poblacion_es} habitantes en 15 comunas)
     </div>
     <div class="mode-switch" role="tablist" aria-label="Modo de visualización">
       <button type="button" id="btn-totales" class="mode-btn active" role="tab" aria-selected="true" onclick="setMode('totales')">
@@ -366,7 +373,7 @@ def main() -> int:
 
   <div class="ficha">
     <div><b>Fuentes</b><ul>{fuentes_html}</ul></div>
-    <div><b>Denominador demográfico:</b> {poblacion_total:,} habitantes (año censal {anio_poblacion})</div>
+    <div><b>Denominador demográfico:</b> {poblacion_es} habitantes (año censal {anio_poblacion})</div>
     <div><b>Última construcción (gold):</b> {generado}</div>
     <div><b>Motor de consulta:</b> {meta.get('motor','sqlite')}</div>
     <div><b>Calidad:</b> <span class="estado {'demo' if origen_demo else 'official'}">✓ verificada</span></div>

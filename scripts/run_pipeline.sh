@@ -32,23 +32,31 @@ case "$MODE" in
     ;;
 esac
 
-echo "[1/6] Limpieza BRONZE -> SILVER"
+echo "[1/8] Limpieza BRONZE -> SILVER"
 "$PY" scripts/transform_silver.py
 
-echo "[2/6] Verificación atómica"
+echo "[2/8] Diccionario de datos (gobernanza)"
+"$PY" scripts/diccionario.py
+
+echo "[3/8] Verificación atómica"
 "$PY" scripts/verify.py
 
-echo "[3/6] Validaciones existentes"
+echo "[4/8] Perfilado / completitud de SILVER"
+"$PY" scripts/profile_silver.py
+
+echo "[5/8] Validaciones existentes"
 "$PY" tests/test_verificacion.py
 "$PY" tests/test_poblacion.py
+"$PY" tests/test_infraestructura.py
+"$PY" tests/test_orquestador.py
 
-echo "[4/6] Publicación SILVER -> GOLD"
+echo "[6/8] Publicación SILVER -> GOLD"
 "$PY" scripts/build_gold.py
 
-echo "[5/6] Consultas SQLite"
+echo "[7/8] Consultas SQLite"
 "$PY" scripts/query_sqlite.py
 
-echo "[6/6] Dashboard"
+echo "[8/8] Dashboard"
 "$PY" scripts/build_dashboard.py
 
 echo "OK · $CEREBRO_APP_DIR/index.html · modo=$CEREBRO_MODE"

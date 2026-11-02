@@ -17,12 +17,11 @@ import shutil
 import tempfile
 from collections import Counter
 from pathlib import Path
-from pipeline_common import reference_path, resolve_reference
+from pipeline_common import reference_path
 
-from pipeline_common import RAW, REQUIRED_DOMAINS, ROOT, SILVER, atomic_write_text, replace_directory, sha256_file
+from pipeline_common import (LAT_MAX, LAT_MIN, LON_MAX, LON_MIN, RAW, REQUIRED_DOMAINS, SILVER,
+                             atomic_write_text, replace_directory, sha256_file)
 
-LAT_MIN, LAT_MAX = -34.71, -34.52
-LON_MIN, LON_MAX = -58.54, -58.33
 COMUNA_MIN, COMUNA_MAX = 1, 15
 REQUIRED_META = {"dominio", "fuente", "organismo", "url", "licencia", "formato",
                  "fecha_ingesta", "_origen", "run_id", "sha256"}

@@ -45,7 +45,7 @@ El lote `20261028T145728Z` completó de punta a punta la cadena **BRONZE → SIL
 
 ## 3. Verificación independiente y humana de las 75 tasas por habitante
 
-Además de la comprobación automática de las **75 tasas** ($15 \text{ comunas} \times 5 \text{ indicadores}$) en `build_gold.py` y `tests/test_poblacion.py`, se realizó la verificación manual sobre **3 comunas testigo** (extremos norte/centro, sur y noroeste):
+Además de la comprobación automática de las **75 tasas** ($15 \text{ comunas} \times 5 \text{ indicadores}$) en `scripts/evidencia_oficial.py` (lote oficial) y `tests/test_poblacion.py` (datos demo), se realizó la verificación manual sobre **3 comunas testigo** (extremos norte/centro, sur y noroeste):
 
 | Comuna | Población (Censo 2022) | Ecobici (tot / tasa ×10k) | Ciclovías (km / tasa ×10k) | Esp. verdes (tot / tasa ×10k) | Sup. verde (m² / m² por hab.) | Hospitales (tot / tasa ×10k) | Estado revisión |
 |---:|---:|---|---|---|---|---|---|

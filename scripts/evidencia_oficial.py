@@ -60,6 +60,18 @@ def main():
         if c in (1,8,15): samples.append({'comuna':c,'poblacion':pop,'tasas_recalculadas':expected})
     if len(rows)!=15 or sum(int(r['poblacion']) for r in rows)!=3121707:
         raise ValueError('Población final no reconcilia')
+    # La revisión humana no se puede generar automáticamente: se conserva la ya registrada
+    # para que volver a ejecutar este script no borre esa evidencia.
+    summary_path=output/'resumen.json'
+    previous=json.loads(summary_path.read_bytes()) if summary_path.exists() else {}
+    human=previous.get('verificacion_humana')
+    if human and human.get('estado')=='verificada':
+        comunas_txt=', '.join(str(c) for c in human.get('comunas_muestra',[]))
+        human_note=(f"auditoría de las 11 licencias y revisión humana de tasas (Comunas {comunas_txt}) "
+                    f"por {human.get('responsable')} el {human.get('fecha')}, registradas en "
+                    "bitacora/2026-10-28-ejecucion-oficial.md.")
+    else:
+        human_note='la revisión humana de tasas sigue pendiente.'
     summary=dict(run_id=report['run_id'],quality_status='verified',provenance_status='official',
         comunas=15,poblacion_total=3121707,anio_poblacion=2022,tasas_recalculadas=checked,
         muestras=samples,filas={d:report['resultado'][d]['filas'] for d in REQUIRED_DOMAINS},
@@ -67,9 +79,12 @@ def main():
         '25 geometrías de espacios verdes reparadas con make_valid para calcular área y punto representativo.',
         'Superficie de polígonos públicos calculada en EPSG:9498; no mide cobertura vegetal.',
         'Ciclovías conserva comuna y longitud_m oficiales por tramo; no subdivide fronteras.',
-        'El dashboard generado conserva totales; el selector de tasas corresponde a persona 2.',
-        'Licencia F10 sin verificar; la revisión humana sigue pendiente.'])
-    (output/'resumen.json').write_text(json.dumps(summary,ensure_ascii=False,indent=2),encoding='utf-8')
+        'El dashboard generado (app/official/index.html y app/streamlit_app.py) incluye selector interactivo Totales vs. Tasas por habitante, unidades explícitas y denominador Censo 2022.',
+        "Licencia F10 conservada como 'No verificada' en sidecar porque el XLS de IDECBA no embebe SPDX; "
+        + human_note])
+    if human:
+        summary['verificacion_humana']=human
+    summary_path.write_text(json.dumps(summary,ensure_ascii=False,indent=2),encoding='utf-8')
     print('Evidencia oficial portable: 75 tasas recalculadas, 15 comunas y seis originales con SHA-256.')
     return 0
 

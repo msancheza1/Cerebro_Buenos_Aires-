@@ -23,6 +23,11 @@ APP = configured_path("CEREBRO_APP_DIR", "app")
 MODE = os.environ.get("CEREBRO_MODE", "official")
 REQUIRED_DOMAINS = ("ecobici", "ciclovias", "espacios_verdes", "hospitales", "poblacion")
 
+# Bounding box de CABA en WGS84. Única definición: limpieza, verificación y perfilado
+# deben usar los mismos límites para que un punto aceptado en SILVER no bloquee el lote.
+LAT_MIN, LAT_MAX = -34.71, -34.52
+LON_MIN, LON_MAX = -58.54, -58.33
+
 
 def sha256_bytes(content: bytes) -> str:
     return hashlib.sha256(content).hexdigest()

@@ -10,9 +10,9 @@ import shutil
 import sqlite3
 import tempfile
 from pathlib import Path
-from pipeline_common import reference_path, resolve_reference
+from pipeline_common import resolve_reference
 
-from pipeline_common import GOLD, REQUIRED_DOMAINS, ROOT, SILVER, atomic_write_text, replace_directory, sha256_file
+from pipeline_common import GOLD, REQUIRED_DOMAINS, SILVER, atomic_write_text, replace_directory, sha256_file
 
 from poblacion import normalizar, TASAS
 

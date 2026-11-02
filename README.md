@@ -67,8 +67,12 @@ bash scripts/run_pipeline.sh --ingesta
 
 Requiere internet. Descarga cinco dominios usados por GOLD y la capa auxiliar de comunas
 en el mismo lote. Los CSV, GeoJSON y XLS deben cumplir los contratos de
-`scripts/fuentes.py`; si una URL o columna cambió, la ejecución
-termina antes de SILVER/GOLD. **No existe fallback automático a datos antiguos o demo.**
+`scripts/fuentes.py`; si una URL o una columna de CSV cambió, la ejecución
+termina antes de SILVER/GOLD. En los GeoJSON, la descarga solo comprueba que sea una
+`FeatureCollection` con features; si cambian sus propiedades (`fna`, `dir`, `com`,
+`clasificac`…), las filas afectadas van a cuarentena en la limpieza a SILVER; si no queda
+ninguna fila válida o el rechazo supera el 10 %, no se publica GOLD.
+**No existe fallback automático a datos antiguos o demo.**
 
 ### Etapas individuales
 

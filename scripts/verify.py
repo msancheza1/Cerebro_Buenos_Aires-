@@ -8,12 +8,11 @@ import datetime as dt
 import json
 import math
 from pathlib import Path
-from pipeline_common import reference_path, resolve_reference
+from pipeline_common import resolve_reference
 
-from pipeline_common import REQUIRED_DOMAINS, SILVER, atomic_write_text, sha256_file
+from pipeline_common import (LAT_MAX, LAT_MIN, LON_MAX, LON_MIN, REQUIRED_DOMAINS, SILVER,
+                             atomic_write_text, sha256_file)
 
-LAT_MIN, LAT_MAX = -34.71, -34.52
-LON_MIN, LON_MAX = -58.54, -58.33
 MAX_REJECTION_RATE = 0.10
 
 
@@ -131,8 +130,6 @@ def main() -> int:
         metadata = {}
         if not rows:
             violations.append(("sin_datos", 1))
-        elif not csv_path.exists():
-            violations.append(("archivo_ausente", 1))
         else:
             violations.extend(CHECKS[domain](rows))
             meta_violations, metadata = _metadata_violations(domain, csv_path)
