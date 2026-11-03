@@ -1,4 +1,7 @@
 """Pruebas del dashboard híbrido: mapa WebGL 3D y respaldo SVG autocontenido."""
+import csv
+import shutil
+from unittest.mock import patch
 import hashlib
 import json
 import os
@@ -86,13 +89,44 @@ class Dashboard(unittest.TestCase):
         self.assertNotIn("mapbox", document.lower())
 
     def test_vista_demo_conserva_aviso_y_usa_la_misma_geometria_real(self):
-        document = self._generate(ROOT / "build/demo/gold")
+        # Fixture aislada: no requiere ejecutar previamente el pipeline demo.
+        with tempfile.TemporaryDirectory() as folder:
+            gold = Path(folder)
+            source = ROOT / "evidencias/oficial/gold"
+            shutil.copy(source / "indicadores_por_comuna.csv", gold)
+            metadata = json.loads((source / "_meta.json").read_text())
+            metadata["provenance_status"] = "demo"
+            (gold / "_meta.json").write_text(json.dumps(metadata))
+            document = self._generate(gold)
         self.assertEqual(document.count('class="commune"'), 15)
         self.assertIn("DEMO · NO OFICIAL", document)
         self.assertIn("Estas cifras son sintéticas", document)
         self.assertIn("evidencias", document)
         self.assertIn("oficial", document)
         self.assertIn("comunas", document)
+
+    def test_gold_invalido_bloquea_publicacion_sin_convertir_a_cero(self):
+        source = ROOT / "evidencias/oficial/gold"
+        with (source / "indicadores_por_comuna.csv").open() as stream:
+            original = list(csv.DictReader(stream))
+        for field, value in [("poblacion", ""), ("poblacion", "0"),
+                             ("poblacion", "1.5"), ("hospitales", ""),
+                             ("hospitales", "NaN"), ("hospitales", "inf"),
+                             ("hospitales", "-1"),
+                             ("hospitales_por_10000_hab", "")]:
+            with self.subTest(field=field, value=value), tempfile.TemporaryDirectory() as folder:
+                gold = Path(folder)
+                shutil.copy(source / "_meta.json", gold)
+                rows = [dict(row) for row in original]
+                rows[0][field] = value
+                with (gold / "indicadores_por_comuna.csv").open("w") as stream:
+                    writer = csv.DictWriter(stream, fieldnames=list(rows[0]))
+                    writer.writeheader()
+                    writer.writerows(rows)
+                with patch.object(build_dashboard, "GOLD", gold):
+                    with self.assertRaises(ValueError):
+                        build_dashboard._load_gold()
+        self.assertEqual(build_dashboard._num("0"), 0)
 
 
 if __name__ == "__main__":

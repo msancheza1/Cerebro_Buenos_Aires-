@@ -272,3 +272,16 @@ servicios externos para los datos ni para el motor 3D: el generador simplifica l
 geometría oficial con RDP y la incorpora en cada HTML; MapLibre se sirve desde
 `app/vendor/`. Solo las calles de fondo son externas y se solicitan a OpenFreeMap cuando
 hay conexión, con atribución a OpenStreetMap/OpenFreeMap.
+
+
+## Revisión de consistencia — 2026-11-02
+
+Las comparaciones de alternativas no ejecutadas de este documento se conservan como
+propuestas, no como evidencia experimental. No se midieron tiempos ni equivalencia
+con Polars/Pandera/DuckDB/DuckLake/Iceberg en esta corrección. Para cerrar cada
+comparación se requiere comando, versiones, mismo lote de entrada, salida contrastada
+y conclusión basada en resultados. El pipeline SQLite no demuestra por sí solo
+haber probado Iceberg o DuckLake.
+
+La ampliación trazable de encargos IA está en [ia.md](ia.md). La revisión de
+licencias está en [../catalogo/licencias.md](../catalogo/licencias.md).

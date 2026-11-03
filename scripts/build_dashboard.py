@@ -12,6 +12,7 @@ import csv
 import datetime as dt
 import html as html_lib
 import json
+import math
 from pathlib import Path
 from urllib.parse import urlparse
 
@@ -82,11 +83,14 @@ def _safe_url(value: str) -> str:
 
 
 def _num(value):
+    """No confundir ausencias o valores no finitos con ceros observados."""
     try:
         number = float(value)
-        return int(number) if number.is_integer() else number
-    except (ValueError, TypeError):
-        return 0
+    except (ValueError, TypeError) as exc:
+        raise ValueError(f"Valor numérico ausente o inválido: {value!r}") from exc
+    if not math.isfinite(number):
+        raise ValueError(f"Valor numérico no finito: {value!r}")
+    return int(number) if number.is_integer() else number
 
 
 def _es(value, decimals: int = 0) -> str:
@@ -103,6 +107,17 @@ def _load_gold() -> tuple[list[dict], dict]:
         raise ValueError("GOLD no tiene quality_status=verified")
     if len(rows) != 15 or {int(row["comuna"]) for row in rows} != set(range(1, 16)):
         raise ValueError("GOLD debe contener exactamente las 15 comunas")
+    required = {"poblacion", "anio_poblacion"}
+    required.update(item[field] for item in INDICATORS for field in ("total", "rate"))
+    for row in rows:
+        for field in required:
+            number = _num(row.get(field))
+            if number < 0:
+                raise ValueError(f"Comuna {row['comuna']}: {field} negativo")
+            if field in {"poblacion", "anio_poblacion"} and (number <= 0 or number != int(number)):
+                raise ValueError(f"Comuna {row['comuna']}: {field} debe ser entero positivo")
+    if len({row["anio_poblacion"] for row in rows}) != 1:
+        raise ValueError("GOLD mezcla años censales")
     return rows, metadata
 
 
@@ -488,13 +503,13 @@ const INDICATORS=__INDICATORS_JSON__;
 let mode="total",indicatorId="ecobici",selectedCommune=1,heightBoost=1;
 const byCommune=Object.fromEntries(ROWS.map(row=>[Number(row.comuna),row]));
 const paths=[...document.querySelectorAll(".commune")];
-const format=(value,decimals=0)=>new Intl.NumberFormat("es-AR",{minimumFractionDigits:decimals,maximumFractionDigits:decimals}).format(Number(value)||0);
+const format=(value,decimals=0)=>new Intl.NumberFormat("es-AR",{minimumFractionDigits:decimals,maximumFractionDigits:decimals}).format(Number(value));
 const indicator=()=>INDICATORS.find(item=>item.id===indicatorId);
 const key=()=>indicator()[mode];
 const unit=()=>indicator()[mode+"_unit"];
 const decimals=itemKey=>itemKey.includes("km_")||itemKey.includes("_por_")||itemKey==="m2_verdes_por_hab"?2:(itemKey==="m2_espacios_verdes"?1:0);
-const value=row=>Number(row[key()])||0;
-function cityValue(item){const total=ROWS.reduce((sum,row)=>sum+Number(row[item.total]||0),0);if(mode==="total")return total;const population=ROWS.reduce((sum,row)=>sum+Number(row.poblacion||0),0);return total/population*item.factor}
+const value=row=>Number(row[key()]);
+function cityValue(item){const total=ROWS.reduce((sum,row)=>sum+Number(row[item.total]),0);if(mode==="total")return total;const population=ROWS.reduce((sum,row)=>sum+Number(row.poblacion),0);return total/population*item.factor}
 function rgbTuple(value,min,max){const t=max===min ? 0.65 : Math.max(0,Math.min(1,(value-min)/(max-min)));const stops=[[21,49,79],[25,99,135],[34,176,181],[73,229,181],[168,255,223]];const p=t*(stops.length-1),i=Math.min(stops.length-2,Math.floor(p)),f=p-i;return stops[i].map((v,j)=>Math.round(v+(stops[i+1][j]-v)*f))}
 function color(value,min,max){return `rgb(${rgbTuple(value,min,max).join(",")})`}
 function shadeRgb(rgb,factor){return `rgb(${rgb.map(c=>Math.max(0,Math.min(255,Math.round(c*factor)))).join(",")})`}

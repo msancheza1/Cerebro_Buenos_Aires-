@@ -60,18 +60,11 @@ Además de la comprobación automática de las **75 tasas** ($15 \text{ comunas}
 
 ---
 
-## 4. Auditoría de licencias de los 11 recursos del catálogo (`catalogo/catalogo.csv`)
+## 4. Auditoría de licencias (corrección 2026-11-02)
 
-| ID | Dataset / Recurso | Organismo | Licencia declarada / estado | Evidencia de gobernanza |
-|---:|---|---|---|---|
-| 1 | Estaciones Ecobici | Sec. Transporte y Obras Públicas (GCBA) | `CC-BY-2.5-AR` | Términos de uso de Buenos Aires Data (`data.buenosaires.gob.ar/acerca/terminos-de-uso`) y metadatos CKAN del paquete. |
-| 2 | Ciclovías | Sec. Transporte y Obras Públicas (GCBA) | `CC-BY-2.5-AR` | Portal Buenos Aires Data (`CC-BY-2.5-AR`); exige atribución al GCBA. |
-| 3 | Espacios verdes | Min. Espacio Público / Sec. Desarrollo Urbano (GCBA) | `CC-BY-2.5-AR` | Portal Buenos Aires Data (`CC-BY-2.5-AR`). |
-| 4 | Hospitales | Ministerio de Salud (GCBA) | `CC-BY-2.5-AR` | Portal Buenos Aires Data (`CC-BY-2.5-AR`). |
-| 5 | Centros de salud (CeSAC) | Ministerio de Salud (GCBA) | `CC-BY-2.5-AR` | Portal Buenos Aires Data (`CC-BY-2.5-AR`); descartado del MVP para no mezclar atención primaria con hospitales. |
-| 6 | Comunas | Min. Educación / GCBA | `CC-BY-2.5-AR` | Portal Buenos Aires Data (`CC-BY-2.5-AR`); usado como capa auxiliar geométrica verificada. |
-| 7 | Barrios | GCBA | `CC-BY-2.5-AR` | Portal Buenos Aires Data (`CC-BY-2.5-AR`); descartado por redundancia con el grano comunal. |
-| 8 | Catálogo de datos abiertos | GCBA | `CC-BY-2.5-AR` | Portal Buenos Aires Data (`CC-BY-2.5-AR`). |
-| 9 | API CKAN `package_search` | GCBA | `CC-BY-2.5-AR` | Endpoint público de metadatos CKAN de BA Data. |
-| 10 | Población censal por comuna 2022 (`PB2_22nb.xls`) | IDECBA (GCBA) / INDEC Censo 2022 | `No verificada` *(Estadística pública oficial Ley 1.777 / Ley 104 GCBA)* | El archivo `.xls` del Banco de Datos de IDECBA no embebe etiqueta SPDX `CC-BY` en su cabecera; por rigor de gobernanza se conserva `"No verificada"` en el sidecar técnico para no inventar una licencia no explícita en el binario. |
-| 11 | API de Catastro / GTFS | GCBA | `CC-BY-2.5-AR` *(recurso suspendido)* | Documentado como hallazgo: el portal informa suspensión temporal por revisión; se descartó depender de APIs en vivo. |
+La tabla anterior atribuía una licencia uniforme sin evidencia individual suficiente.
+La revisión actual está en [licencias por fuente](../catalogo/licencias.md) y
+[catálogo](../catalogo/catalogo.csv), con URL, fecha y estado de cada comprobación.
+Se verificó `CC-BY-2.5-AR` en nueve fichas. F9 (respuesta del endpoint CKAN) y
+F10 (XLS censal IDECBA) siguen sin declaración explícita verificada.
+Este estado de licencia es independiente de la verificación técnica del lote.
