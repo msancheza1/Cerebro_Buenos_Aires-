@@ -173,7 +173,7 @@ python scripts/run_pipeline.py --ingesta
 python scripts/evidencia_oficial.py
 ```
 
-Las pruebas suman 21 casos, con subcasos para entradas inválidas. La demo se ejecuta
+Las pruebas incluyen casos de entradas inválidas y no requieren GOLD demo preexistente. La demo se ejecuta
 con `python scripts/run_pipeline.py --demo` y usa carpetas separadas.
 Para descargar y exportar únicamente F10, sin sustituir Silver ni publicar Gold:
 
@@ -221,6 +221,10 @@ sumar numeradores y dividir por la población total; nunca sumar tasas comunales
   La revisión humana fue realizada por Juan José Díaz (2026-11-01) y documentada en `bitacora/2026-10-28-ejecucion-oficial.md`.
 - Persona 2 implementó el selector de totales/tasas, unidades explícitas, año 2022 y
   comprobación visual en `scripts/build_dashboard.py`, `app/official/index.html` y `app/streamlit_app.py`.
-- Persona 3 revisó las 11 licencias con evidencia y consolidó la bitácora en `bitacora/2026-10-28-ejecucion-oficial.md` y `bitacora/exploracion.md`.
-  Las comparaciones entre herramientas A y B de los 8 tramos están documentadas en `bitacora/exploracion.md`.
-  Despliegue público estático configurado mediante `vercel.json` sobre `app/`.
+- Licencias: nueve fichas verificadas y dos estados pendientes (F9/F10), con evidencia
+  individual en [catalogo/licencias.md](catalogo/licencias.md). No se declara cierre total.
+- Las comparaciones A/B de `bitacora/exploracion.md` contienen alternativas propuestas;
+  las marcadas como no ejecutadas siguen pendientes y no son benchmarks realizados.
+- Registro ampliado y límites de la asistencia IA: [bitacora/ia.md](bitacora/ia.md).
+- Despliegue estático configurado mediante `vercel.json` sobre `app/`; la configuración
+  no acredita por sí sola una prueba visual del sitio público.
